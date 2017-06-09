@@ -4,8 +4,6 @@ layout: default
 
 # Welcome!
 
-{% include image.html url="/images/SciencesPO.jpg" width=350 align="right" %}
-<br>
 
 
 
