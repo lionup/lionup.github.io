@@ -8,4 +8,3 @@ Here is my CV. You can also [download the PDF here](https://www.dropbox.com/s/31
 
 {% include embedpdf.html %}
 
-
