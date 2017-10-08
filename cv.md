@@ -4,7 +4,7 @@ title: CV
 permalink: /cv/
 ---
 
-Here is my CV. You can also [download the PDF here](https://www.dropbox.com/s/lep8jd9q7rf25z1/RanCV.pdf?dl=0).
+Here is my CV. You can also [download the PDF here](https://drive.google.com/file/d/0B-yAdp5D_qlrd01DSEdaOEtKQWc/view?usp=sharing).
 
 {% include embedpdf.html width=100 height=800 %}
 

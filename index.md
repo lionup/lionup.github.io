@@ -11,7 +11,7 @@ My research interests are Macro-labor, Search and Matching, Durable Goods, and H
 
 
 ## CV
-You can [download my CV here](https://www.dropbox.com/s/lep8jd9q7rf25z1/RanCV.pdf?dl=0).
+You can [download my CV here](https://drive.google.com/file/d/0B-yAdp5D_qlrd01DSEdaOEtKQWc/view?usp=sharing).
 
 
 ## Research
