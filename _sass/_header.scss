@@ -88,7 +88,8 @@ color: $scpo-darkred;
 }
 
 .site-nav .sub-menu a:hover {
-	color: $scpo-red;
+	color: $clemson-orange;
+    //color: $scpo-red;
 }
 .site-nav  .sub-menu {
 	background: #ffffff;
@@ -98,8 +99,10 @@ color: $scpo-darkred;
 	z-index:2147483647;
 }
 .site-nav .sub-menu li.current-menu-item > a {
-	border-left-color: $scpo-red;
-	border-right-color: $scpo-red;
+	border-left-color: $clemson-orange;
+	border-right-color: $clemson-orange;
+    //border-left-color: $scpo-red;
+    //border-right-color: $scpo-red;
 	border-right: 0px;
 
 }
@@ -158,7 +161,8 @@ z-index:999;
 
     .page-link {
         color: #ffffff;
-    background: $scpo-red;
+    //background: $scpo-red;
+    background: $clemson-orange;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the first one
