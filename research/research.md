@@ -8,14 +8,14 @@ permalink: /research/
 
 ## Job Market Paper
 
-### [Specific Skills and the Business Cycle Effects on the Postgraduate Wage Premium](https://www.dropbox.com/s/4ho1awm1r5x31v6/RanPaper.pdf?dl=0)
+### [Specific Skills and the Business Cycle Effects on the Postgraduate Wage Premium](https://www.dropbox.com/s/bpdt4c4strch7cv/RanPaper.pdf?dl=0)
 
 This paper studies the business cycle effect on the postgraduate wage premium. Using US. micro data, I show this wage premium is counter-cyclical — the postgraduate wage is smoother than the bachelor wage over the cycle. I argue that specific skill is the reason for this pattern. Empirical statistics show that postgraduates have longer training duration and higher displacement costs, indicating higher specific skills. Using a contracting model featured with training, asymmetric information, and aggregate shocks, I show specific skills reduce workers’ outside options, increase their commitment in the match, and allow firms to better insure them against aggregate shocks. The model shows that specific skills alone can explain the differences in the turnovers and wage cyclicality between postgraduates and bachelors. The model also shows that postgraduates accept relatively lower starting wages, but the subsequent wage growth is faster. On the other hand, non-college workers are more risk-averse, so they select into contracts with smoother wages. Once holding risk aversion equal, less educated workers get less wage insurance from firms. I also show that an increase in the unemployment insurance crowds out firm insurance, particularly for the postgraduates. Non-college workers have the highest welfare gain from such a policy.
 
 
 ## Working Papers
 
-### [Durables, Lemons, and Shocks](https://www.dropbox.com/s/suuahscm6ursn0x/RanCar.pdf?dl=0)
+### [Durables, Lemons, and Shocks](https://www.dropbox.com/s/ahk8ea35jmsyinj/RanCar.pdf?dl=00)
 
 joint with R. Blundell, H. Low, S. Leth-Petersen, and C. Meghir
 
@@ -23,7 +23,7 @@ This paper addresses the question of how workers insure themselves against earni
 
 
 
-### [The Impact of Unemployment Insurance on the Cyclicality of Labour Force Participation](https://www.dropbox.com/s/nhx17b1okk33xus/RanUI.pdf?dl=0)
+### [The Impact of Unemployment Insurance on the Cyclicality of Labour Force Participation](https://www.dropbox.com/s/zpn0ree9kf7s8tr/RanUI.pdf?dl=0)
 
 This paper studies how business cycle affects worker's labour force participation, and how unemployment insurance policy changes this behavior. Standard theories of labour market predict that workers should search less when the returns to search are low, yielding the counter-factual prediction that labour market participation should be strongly pro-cyclical — decrease in recessions. In fact, labour market participation is acyclical. I argue that the unemployment insurance benefit, being negatively correlated with the business cycle, is the reason for this pattern. Using a search and matching model with aggregate productivity shocks and endogenous labour force participation, I show that counter-cyclical unemployment insurance make unemployment more attractive in recessions, implying less workers drop out of the labour force. My parsimonious model is able to capture the key features of the cyclical movements in labour market stocks and gross worker flows. Although the change in the unemployment insurance benefit is small, it plays an important role in shaping fluctuations in the participation rate.
 
