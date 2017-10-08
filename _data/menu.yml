@@ -1,0 +1,16 @@
+- title: "CV"
+  href: "/cv/"
+
+- title: "Research"
+  href: "/research/"
+
+- title: "Teaching"
+  href: "/teaching/"
+  subcategories:
+    - subtitle: "Graduate Labor Economics"
+      subhref: "/teaching/grad-labor/"
+    - subtitle: "Computational Economics"
+      subhref: "/teaching/comp-econ/"
+
+- title: "Computing"
+  href: "/computing/"
