@@ -17,7 +17,7 @@ You can [find my CV here](/cv/index.html).
 ## Research
 You can [find my Research here](/research/index.html).
 
-In my job market paper, I find postgraduates have smoother wages than bachelors over the business cycle. Using an equilibrium search model, I show adaptation costs of postgraduates reduce their outside options, increase their commitment in the match, and allow firms to better insure them against aggregate shocks. Furthermore, I show that an increase in social insurance crowds out firm insurance, but less for the low-educated.
+In my job market paper, I find postgraduates have smoother wages than bachelors over the business cycle. Using an equilibrium search model, I show adaptation costs of postgraduates reduce their outside options, increase their commitment in the match, and allow firms to better insure them against aggregate shocks. Furthermore, I show that an increase in the unemployment insurance has heterogeneous effects across education groups: it crowds out firm insurance, but less for the low-educated.
 
 In my other research papers, I examine: (i) how workers insure themselves against earnings shocks using cars that are plagued with asymmetric information about quality; and (ii) how unemployment insurance policy changes labour force participation behaviour over the business cycle.
 
