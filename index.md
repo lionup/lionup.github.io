@@ -5,7 +5,7 @@ layout: default
 {% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
 <br>
 
-Welcome to my website! I am a job market candidate at UCL (Department of Economics).
+Welcome! I am a job market candidate at UCL (Department of Economics).
 
 My research interests are Macro-labor, Search and Matching, Durable Goods, and Human Capital.
 
