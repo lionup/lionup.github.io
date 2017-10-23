@@ -23,4 +23,4 @@ In my job market paper, I find postgraduates have smoother wages than bachelors 
 
 In my other research papers, I examine: (i) how workers insure themselves against earnings shocks using cars that are plagued with asymmetric information about quality; and (ii) how unemployment insurance policy changes labour force participation behaviour over the business cycle.
 
-I will be available for interviews at the 2018 ASSA Annual Meeting in Philadelphia, the SAEe meetings in Barcelona and the RES meetings in London.
+I will be available for interviews at the 2018 ASSA Meeting in Philadelphia, the SAEe meetings in Barcelona and the RES meetings in London.
