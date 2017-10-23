@@ -4,7 +4,7 @@ title: Computing
 permalink: /computing/
 ---
 
-For computation my preferred tool is the combination of [R](https://www.r-project.org/) and [C++](http://www.cplusplus.com/). [Rccp](http://www.rcpp.org/) offers a seamless integration of the two.
+For computation I prefer the combination of [R](https://www.r-project.org/) and [C++](http://www.cplusplus.com/). [Rccp](http://www.rcpp.org/) offers a nice integration of the two.
 
 I have been involving in the following open source projects:
 ### [mopt](https://github.com/tlamadon/mopt): Parallel derivative-free moment optimization in R.
