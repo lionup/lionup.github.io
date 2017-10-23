@@ -7,7 +7,7 @@ layout: default
 
 Welcome! I am a job market candidate at University College London (Economics).
 
-Research fields: Macro-labor, Equilibrium Search, Durable Goods, and Human Capital.
+###Research fields: Macro-labor, Equilibrium Search, Durable Goods, and Human Capital.
 
 ## [CV](/cv/index.html)
 
