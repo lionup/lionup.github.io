@@ -7,7 +7,7 @@ layout: default
 
 I am a job market candidate in Economics at University College London.
 
-My research interests are Macro-labour, Equilibrium Search, Durable Goods, and Human Capital.
+My research interests are Macro-labour, Equilibrium Search, Durables, and Human Capital.
 
 ## [Download my CV here](/cv/index.html)
 
