@@ -5,13 +5,13 @@ layout: default
 {% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
 <br>
 
-Welcome! I am a job market candidate at University College London (Economics).
+I am a job market candidate in Economics at University College London.
 
-Research fields: Macro-labour, Equilibrium Search, Durable Goods, Human Capital
+My research interests are Macro-labour, Equilibrium Search, Durable Goods, and Human Capital.
 
-## [CV](/cv/index.html)
+## [Download my CV here](/cv/index.html)
 
-## [Research](/research/index.html)
+## [Find my research here](/research/index.html)
 
 In my job market paper, I find postgraduates have smoother wages than bachelors over the business cycle. Using an equilibrium search model, I show adaptation costs of postgraduates reduce their outside options, increase their commitment in the match, and allow firms to better insure them against aggregate shocks. Furthermore, I show that an increase in the unemployment insurance has heterogeneous effects across education groups: it crowds out firm insurance, but less for the low-educated.
 
