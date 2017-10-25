@@ -9,7 +9,7 @@ I am a PhD candidate in Economics at University College London.
 
 My research interests are Macro-labour, Equilibrium Search, Durables, and Human Capital.
 
-### [Email:ran.gu.10@ucl.ac.uk](ran.gu.10@ucl.ac.uk)
+<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
 
 ### [Download my CV here](/cv/index.html)
 
