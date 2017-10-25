@@ -9,7 +9,7 @@ I am a PhD candidate in Economics at University College London.
 
 My research interests are Macro-labour, Equilibrium Search, Durables, and Human Capital.
 
-<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
 ### [Download my CV here](/cv/index.html)
 
