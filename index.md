@@ -15,7 +15,7 @@ Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
 ### [Find my research here](/research/index.html)
 
-In my [job market paper](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing), I find postgraduates have smoother wages than bachelors over the business cycle, particularly for workers with long tenures. Using an equilibrium search model, I show adaptation costs of postgraduates reduce their outside options, increase their commitment in the match, and allow firms to better insure them against aggregate shocks. Furthermore, I show that an increase in the unemployment insurance has heterogeneous effects across education groups: it crowds out firm insurance, but less for the low-educated.
+In my [job market paper](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing), I find postgraduates have smoother wages than bachelors over the business cycle, particularly for workers with long tenures. Using an equilibrium search model, I show higher adaptation costs of postgraduates reduce their outside options, increase their commitment in the current job, and allow firms to better insure them against aggregate shocks. Furthermore, I show that an increase in the unemployment insurance crowds out firm insurance, but the effect is heterogeneous across education groups, which is smaller for the less educated.
 
 In my other research papers, I examine: (i) how workers insure themselves against earnings shocks using cars that are plagued with asymmetric information about quality; and (ii) how unemployment insurance policy changes labour force participation behaviour over the business cycle.
 
