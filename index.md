@@ -7,7 +7,7 @@ layout: default
 
 I am a PhD candidate in Economics at University College London.
 
-My research interests are Macro-labour, Equilibrium Search, Durables, and Education.
+My research interests are Macro-labour, Applied Microeconomics, Durables, and Human Capital.
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
