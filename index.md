@@ -5,7 +5,7 @@ layout: default
 {% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
 <br>
 
-I am a PhD candidate in Economics at UCL. My field is Macro-labour. I will be joining the Econ Department at University of Essex as a Lecturer (Assistant Prof) from Summer 2018.
+I am a PhD candidate at UCL. My field is Macro-labour. I will be joining the Econ Department at University of Essex as a Lecturer (Assistant Prof) from Summer 2018.
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
