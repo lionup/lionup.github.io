@@ -5,7 +5,7 @@ layout: default
 {% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
 <br>
 
-I am a PhD candidate in Economics at University College London. My research interests are Macro-labour, Applied Microeconomics, Durables, and Education.
+I am a PhD candidate in Economics at University College London. My field is Macro-labour.
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
