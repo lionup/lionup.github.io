@@ -5,7 +5,7 @@ layout: default
 {% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
 <br>
 
-I am a PhD candidate in Economics at University College London. My field is Macro-labour.
+I am a PhD candidate in Economics at UCL. My field is Macro-labour. I will be joining the Econ Department at University of Essex as a Lecturer (Assistant Prof) from Summer 2018.
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
@@ -16,5 +16,3 @@ Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 In my [job market paper](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing), I find that workers with postgraduate degrees have smaller wage shocks than those only have bachelor degrees over the business cycle. Using an equilibrium search model, I show higher adaptation costs of postgraduates reduce the value of their outside options, increase their commitment to the current jobs and thus the degree to which firms will offer contracts with smoother wages and greater risk sharing. Also, I show that an increase in the unemployment insurance crowds out firm insurance, but the effect is smaller for lower educated workers than postgraduates.
 
 In my other research papers, (i) we quantify the lemon's problem in the quality of second-hand cars using Danish administrative data and study its implications for transactions and consumption smoothing; and (ii) how the level of unemployment insurance changes labour force participation behaviour over the business cycle.
-
-I will be joining the Department of Economics at University of Essex as a Lecturer (Assistant Professor) from Summer 2018.
