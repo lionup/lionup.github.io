@@ -1,10 +1,10 @@
 # Site settings
 
 title: Ran Gu
-email: ran.gu.10@ucl.ac.uk
+email: rg18762@essex.ac.uk
 description: > # this means to ignore newlines until "baseurl:"
-  UCL <br>
-  London
+  University of Essex <br>
+  Institute for Fiscal Studies
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lionup.github.io" # the base hostname & protocol for your site
 github_username:  lionup
@@ -21,7 +21,7 @@ exclude:
 # other options
 # Other options
 permalink: blog/:year/:month/:title
-job.title: "PhD student"
+job.title: "Lecturer"
 excerpt_separator: "<!--more-->"
 
 # SEO stuff
