@@ -8,8 +8,6 @@ For computation I prefer the combination of [R](https://www.r-project.org/) and 
 
 I have been involving in the following open source projects:
 
-[mopt](https://github.com/tlamadon/mopt): Parallel derivative-free moment optimization in R.
-
-[EconR](http://www.econr.org/index.html): A collection of methods to do economics in R and C++/Fortran.
-
-[parallelTest](https://github.com/floswald/parallelTest): Repo with tests for parallel computation for a host of hpc systems.
+* [mopt](https://github.com/tlamadon/mopt): Parallel derivative-free moment optimization in R.
+* [EconR](http://www.econr.org/index.html): A collection of methods to do economics in R and C++/Fortran.
+* [parallelTest](https://github.com/floswald/parallelTest): Repo with tests for parallel computation for a host of hpc systems.
