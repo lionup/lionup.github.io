@@ -6,7 +6,7 @@ layout: default
 <br>
 
 Lecturer (Assistant Prof) in Economics at the University of Essex  
-Research Fellow at the Institute for Fiscal Studies.  
+Research Associate at the Institute for Fiscal Studies.  
 My research interest is in macro-labour.  
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
