@@ -6,13 +6,12 @@ permalink: /research/
 
 
 
-## Job Market Paper
-
-### [Adaptation Costs and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing)
-
-Using U.S. data, I document a new fact that the wage gap between those with postgraduate and undergraduate degrees is countercyclical – postgraduates have smaller wage shocks than undergraduates over the business cycle. I argue the reason for this phenomenon is the adaptation costs due to the relatively low productivity of new hires who need time to adapt to their jobs. These adaptation costs reduce the value of workers' outside options and thus the degree to which firms will offer contracts with smoother wages. I find robust facts that are consistent with the predictions of the theory: 1) Postgraduates need longer time to adapt to new jobs than undergraduates; 2) Postgraduates suffer larger wage loses from job displacement; 3) Postgraduates have lower job finding and job-to-job transition rates; 4) The difference in wage cyclicality between postgraduates and undergraduates is higher for workers with long tenure than new hires. To understand how adaptaion costs affect wage cyclicality, I develop an equilibrium search model with long-term contracts and aggregate shocks. In the model, imperfect monitoring of workers' effort creates a moral hazard problem that requires firms to pay an efficiency wage and restricts risk-sharing between firms and workers. Workers with higher adaptaion costs have more to lose when they leave the current jobs, so they exert more effort regardless of what the firm offers, which alleviates moral hazard and improves risk-sharing. The estimation shows that adaptaion costs alone can explain the differences both in the labour market turnover rates and in the wage cyclicality between postgraduates and undergraduates. The model also shows that postgraduates will accept relatively lower starting wages, but have faster wage growth. Finally, I find that unemployment insurance (UI) crowds out firm insurance, but the effect is smaller for lower educated workers. Lower educated workers have higher welfare gain than postgraduates, which supports the argument for a lower UI replacement rate for postgraduates.
-
 ## Working Papers
+
+### [Specific Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing)
+
+Over the business cycle, postgraduate degree holders experience lower wage variation than those with undergraduate degrees. Moreover, postgraduates have more specific human capital. Using an equilibrium search model with long-term contracts and imperfect monitoring of workers' effort, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in match-specific capital. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. On the other hand, more specific capital lower mobility thereby alleviating moral hazard and improving risk-sharing. Estimates reveal that specific capital explains the differences both in labour turnover and in wage cyclicality across education groups. 
+
 
 ### [Durables, Lemons, and Shocks](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing)
 
