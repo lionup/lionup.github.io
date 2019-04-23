@@ -8,9 +8,9 @@ permalink: /research/
 
 ## Working Papers
 
-### [Specific Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing)
+### [Specific Capital, Optimal Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing)
 
-Over the business cycle, postgraduate degree holders experience lower wage variation than those with undergraduate degrees. Moreover, postgraduates have more specific human capital. Using an equilibrium search model with long-term contracts and imperfect monitoring of workers' effort, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in match-specific capital. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. On the other hand, more specific capital lower mobility thereby alleviating moral hazard and improving risk-sharing. Estimates reveal that specific capital explains the differences both in labour turnover and in wage cyclicality across education groups. 
+This paper examines how firm-specific human capital affects variability of wages in a frictional labour market. I develop an equilibrium search model with long-term contracts and imperfect monitoring of workers' efforts. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. On the other hand, more specific capital leads to lower mobility, thereby increasing risk-sharing for two reasons. First, as the probability of separation decreases, firms do not need to compensate workers for such risk. Second, it increases the marginal cost of providing incentives for efforts, making it optimal for firms to provide more insurance. I use the model to study the cyclicality of the postgraduate-undergraduate wage gap. Over the business cycle, postgraduate degree holders experience lower wage variation than those with undergraduate degrees. Moreover, postgraduates have more specific capital. Estimates reveal that specific capital explains the differences both in labour turnover and in wage cyclicality across education groups. 
 
 
 ### [Durables, Lemons, and Shocks](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing)
