@@ -12,8 +12,6 @@ permalink: /research/
 
 Postgraduate degree holders experience lower cyclical wage variation than those with undergraduate degrees. Moreover, postgraduates have more specific human capital than undergraduates. Using an equilibrium search model with long-term contracts and imperfect monitoring of worker effort, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. More specific capital leads to lower mobility, thereby alleviating the moral hazard and improving risk-sharing. Estimates reveal that specific capital explains the differences both in labour turnover and in wage cyclicality across education groups. 
 
-[_ONLINE APPENDIXES_](https://drive.google.com/open?id=1qLKBo8ZoKHgE6gV3N-7YWBGaSX4Ket5o)
-
 ### [Durables, Lemons, and Shocks](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing)
 
 joint with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
