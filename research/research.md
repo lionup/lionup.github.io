@@ -8,7 +8,7 @@ permalink: /research/
 
 ## Working Papers
 
-### [Specific Capital, Optimal Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing)
+### [Specific Capital, Optimal Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing) (under review)
 
 Postgraduate degree holders experience lower cyclical wage variation than those with undergraduate degrees. Moreover, postgraduates have more specific human capital than undergraduates. Using an equilibrium search model with long-term contracts and imperfect monitoring of worker effort, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. More specific capital leads to lower mobility, thereby alleviating the moral hazard and improving risk-sharing. Estimates reveal that specific capital explains the differences both in labour turnover and in wage cyclicality across education groups. 
 
