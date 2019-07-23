@@ -10,6 +10,8 @@ permalink: /research/
 
 ### [Specific Capital, Optimal Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://drive.google.com/file/d/0B-yAdp5D_qlrLS12SURsTjFJdEU/view?usp=sharing) (under review)
 
+**Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/), [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html)
+
 Postgraduate degree holders experience lower cyclical wage variation than those with undergraduate degrees. Moreover, postgraduates have more specific human capital than undergraduates. Using an equilibrium search model with long-term contracts and imperfect monitoring of worker effort, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. More specific capital leads to lower mobility, thereby alleviating the moral hazard and improving risk-sharing. Estimates reveal that specific capital explains the differences both in labour turnover and in wage cyclicality across education groups. 
 
 ### [Durables, Lemons, and Shocks](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing)
