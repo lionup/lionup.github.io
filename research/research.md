@@ -16,7 +16,7 @@ Postgraduate degree holders experience lower cyclical wage variation than those 
 
 
 
-### [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/open?id=0B-yAdp5D_qlrVndMVFg0SlU3dEk) joint with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir (under review)
+### [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/open?id=0B-yAdp5D_qlrVndMVFg0SlU3dEk), joint with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir (under review)
 
 We specify an equilibrium model of car ownership with private information where individuals sell and purchase new and second-hand cars over their life-cycle. Private information induces a transaction cost and distorts the market reducing the value of a car as a savings instrument. We estimate the model using data on car ownership in Denmark, linked to register data. The lemons penalty is estimated to be 18% of the price in the first year of ownership, declining with the length of ownership. It leads to large reductions in the turnover of cars and in the probability of downgrading at job loss.
 
