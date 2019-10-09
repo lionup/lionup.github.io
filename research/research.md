@@ -24,7 +24,7 @@ We specify an equilibrium model of car ownership with private information where 
 
 
 
-### [Gross Worker Flows over the Business Cycle and the Reverse Added Worker Effect](https://drive.google.com/open?id=0B-yAdp5D_qlrdGc3Tl94VFB5WjA)
+### [The Reverse Added Worker Effect and Gross Worker Flows over the Business Cycle](https://drive.google.com/open?id=0B-yAdp5D_qlrdGc3Tl94VFB5WjA)
 
 I develop an equilibrium search model with incomplete markets and endogenous labour force participation, where households are formed by a job-seeker and an employed spouse. Households face aggregate shocks on the income of the employed member, but the spouse adjusts her labour supply to insure against the risk. I use the model to explain the cyclical properties of the transition rate from employment to out-of-labour-force (E2O). As in the US data, the model predicts that E2O is strongly pro-cyclical. This property is in sharp contrast to the prediction of the standard search theory that labour force participation should increase in booms. In the two-member household model and in the data, the secondary earner leaves the labour force when the primary earner's income increases. This model also shows that the spouse’s behaviour is affected by the counter-cyclical unemployment benefits, which is in line with the data.
 
