@@ -8,7 +8,7 @@ permalink: /research/
 
 ## Working Papers
 
-### [Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://ssrn.com/abstract=3443574) (under review)
+### [Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://ssrn.com/abstract=3443574), MPRA Paper 96254 (under review)
 
 **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/), [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html)
 
