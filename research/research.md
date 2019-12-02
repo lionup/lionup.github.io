@@ -8,7 +8,7 @@ permalink: /research/
 
 ## Working Papers
 
-### 1. [Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium](https://www.ifs.org.uk/uploads/WP201926-Speci%EF%AC%81c-capital-firm-insurance-and-the-dynamics-of-the-postgraduate-wage-premium.pdf), IFS Working Paper WP19/26 (under review)
+### 1. [Specific Human Capital and Real Wage Cyclicality: An Application to Postgraduate Wage Premium](https://drive.google.com/open?id=0B-yAdp5D_qlrLS12SURsTjFJdEU), IFS Working Paper WP19/26 (under review. The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium")
 
 **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/), [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html)
 
