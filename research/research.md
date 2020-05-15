@@ -8,11 +8,11 @@ permalink: /research/
 
 ## Working Papers
 
-### 1. [Specific Human Capital and Real Wage Cyclicality: An Application to Postgraduate Wage Premium](https://drive.google.com/open?id=0B-yAdp5D_qlrLS12SURsTjFJdEU), IFS Working Paper WP19/26 (under review. The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium")
+### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/open?id=1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj), IFS Working Paper WP19/26 (under review. The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium")
 
 **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/), [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html)
 
-This paper examines how specific human capital affects labour turnover and real wage cyclicality in a frictional labour market. I develop an equilibrium search model with long-term contracts and imperfect monitoring of worker effort. Imperfect monitoring creates a moral hazard problem that requires firms to pay efficiency wages. The optimal contract implies that more specific capital reduces job separation, thereby alleviating the moral hazard and increasing wage stability over the business cycle. I apply this model to explain novel stylised facts about the cyclicality of the postgraduate-undergraduate wage premium. Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. This effect is significant for workers with a long tenure, but not for new hires. Moreover, postgraduates have more specific human capital than undergraduates. Estimates reveal that specific capital can explain the educational gaps both in labour turnover and in real wage cyclicality.
+Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.
  
 
 
