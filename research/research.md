@@ -8,7 +8,8 @@ permalink: /research/
 
 ## Working Papers
 
-### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/open?id=1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj), **New version May 2020!**, IFS Working Paper WP19/26 (under review. The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium")
+### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/open?id=1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj), **New version May 2020!**, IFS Working Paper WP19/26    
+(The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium")
 
 **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/), [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html)
 
