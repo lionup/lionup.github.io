@@ -15,16 +15,16 @@ permalink: /research/
 
 Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.
  
-
-
+    
+    
 
 ### 2. [Durables and Lemons: Private Information and the Market for Cars](https://www.nber.org/papers/w26281), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, __New version coming  June 2020!__, NBER Working Paper w26281
 
 **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car), [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond)
 
 We specify an equilibrium model of car ownership with private information where individuals sell and purchase new and second-hand cars over their life-cycle. Private information induces a transaction cost and distorts the market reducing the value of a car as a savings instrument. We estimate the model using data on car ownership in Denmark, linked to register data. The lemons penalty is estimated to be 18% of the price in the first year of ownership, declining with the length of ownership. It leads to large reductions in the turnover of cars and in the probability of downgrading at job loss.
-
-
+    
+    
 ## Work in Progress
 
 ### 1. Risk Attitude and Portfolio Choice: An Intra-household Perspective, with Cameron Peng and Weilong Zhang
