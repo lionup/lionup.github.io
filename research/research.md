@@ -8,7 +8,7 @@ permalink: /research/
 
 ## Working Papers
 
-### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/open?id=1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj), __New version May 2020!__, IFS Working Paper WP19/26    
+### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/open?id=1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj), **New version May 2020!**, IFS Working Paper WP19/26    
 (The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium")
 
 **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/), [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html)
@@ -18,7 +18,7 @@ Postgraduate degree holders experience lower cyclical variation in real wages th
     
     
 
-### 2. [Durables and Lemons: Private Information and the Market for Cars](https://www.nber.org/papers/w26281), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, __New version coming  June 2020!__, NBER Working Paper w26281
+### 2. [Durables and Lemons: Private Information and the Market for Cars](https://www.nber.org/papers/w26281), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version coming  June 2020!**, NBER Working Paper w26281
 
 **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car), [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond)
 
