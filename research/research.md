@@ -18,7 +18,7 @@ Postgraduate degree holders experience lower cyclical variation in real wages th
     
     
 
-### 2. [Durables and Lemons: Private Information and the Market for Cars](https://www.nber.org/papers/w26281), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version coming  June 2020!**, NBER Working Paper w26281
+### 2. [Durables and Lemons: Private Information and the Market for Cars](https://www.nber.org/papers/w26281), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version coming June 2020!**, NBER Working Paper w26281
 
 **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car), [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond)
 
@@ -27,7 +27,7 @@ We specify an equilibrium model of car ownership with private information where 
     
 ## Work in Progress
 
-### 1. Risk Attitude and Portfolio Choice: An Intra-household Perspective, with Cameron Peng and Weilong Zhang
+### 1. Risk Attitude and Portfolio Choice: An Intra-household Perspective, with Cameron Peng and Weilong Zhang, **Draft coming July 2020!**
 
 Using the Household, Income and Labour Dynamics in Australia (HILDA) data, we document that the households whose financial decision-makers are husbands are more attached to the financial market than those whose decision-makers are wives. To explain this fact, we develop a simple intra-household bargaining model of household portfolio choice, in which the couple first collectively decides the household risk preference, which, in turn, determines their portfolio allocations. The bargaining power of each spouse depends on a wide range of economic and non-economic characteristics. Our channel decomposition analysis shows the risk related variables (income, education, cognitive ability and financial literacy) are most important factors in explaining the gender asymmetric associations between the bargaining power and household investment decisions. Incorporating "Big-five" personality traits in the bargaining equation reduces the household risk taking preference and therefore leads to the decrease of stock market participation rates, which is opposite to the effect of gender identify norm. 
 
