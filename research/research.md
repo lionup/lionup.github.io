@@ -18,7 +18,7 @@ Postgraduate degree holders experience lower cyclical variation in real wages th
     
     
 
-### 2. [Durables and Lemons: Private Information and the Market for Cars](https://www.nber.org/papers/w26281), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version coming June 2020!**, NBER Working Paper w26281
+### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/open?id=0B-yAdp5D_qlrVndMVFg0SlU3dEk), with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version coming June 2020!**, [NBER Working Paper w26281](https://www.nber.org/papers/w26281)
 
 **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car), [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond)
 
