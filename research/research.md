@@ -22,8 +22,8 @@ Postgraduate degree holders experience lower cyclical variation in real wages th
 
 **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car), [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond)
 
-We specify an equilibrium model of car ownership with private information where individuals sell and purchase new and second-hand cars over their life-cycle. Private information induces a transaction cost and distorts the market reducing the value of a car as a savings instrument. We estimate the model using data on car ownership in Denmark, linked to register data. The lemons penalty is estimated to be 18% of the price in the first year of ownership, declining with the length of ownership. It leads to large reductions in the turnover of cars and in the probability of downgrading at job loss.
-    
+We specify an equilibrium model of car ownership with private information where individuals sell and purchase new and second-hand cars over their life-cycle. This private information introduces a transaction cost, distorts the market and reduces the value of a car as a savings instrument. We estimate the model using Danish linked registry data on car ownership, income and wealth. The transaction cost, which we term the lemons penalty, is estimated to be 18\% of the price in the first year of ownership, declining with the length of ownership. It leads to large reductions in the turnover of cars and in the probability of downgrading at job loss. The size of the lemons penalty decreases when other uncertainty in the economy increases, for example during recessions: negative income shocks induce individuals to sell their cars for consumption smoothing purposes rather than because of low quality.
+
     
 ## Work in Progress
 
