@@ -43,5 +43,5 @@ We develop an equilibrium search model with endogenous labour force participatio
 [Costas Meghir](https://sites.google.com/site/costasmeghir/home)  
 [Cameron Peng](https://sites.google.com/site/cameronpengresearch/)  
 [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/)  
-[Weilong Zhang](https://www.weilongzhang.com/)  
+[Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}  
 
