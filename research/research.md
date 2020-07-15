@@ -36,3 +36,12 @@ Using the Household, Income and Labour Dynamics in Australia (HILDA) data, we do
 
 We develop an equilibrium search model with endogenous labour force participation and countercyclical unemployment insurance (UI). Workers optimally search for jobs and their search intensity increases with the return from searching. Despite negative aggregate shocks, countercyclical UI provides incentive to search on the extensive margin during recessions. We use the model to explain the cyclical properties of the transition rate from employment to out-of-labour-force (E2O). As in the US data, the model predicts that E2O is procyclical. This property is in sharp contrast to the prediction of the standard search theory without countercyclical UI that the labour force participation should increase in booms. We also find that the role of reverse added worker effect on the E2O transitions is relatively limited.
 
+
+## My co-authors
+[Richard Blundell](https://www.ucl.ac.uk/~uctp39a/) 
+[Hamish Low](https://sites.google.com/site/hamishlowecon/)
+[Soren Leth-Petersen](http://web.econ.ku.dk/leth/)
+[Costas Meghir](https://sites.google.com/site/costasmeghir/home)
+[Cameron Peng](https://sites.google.com/site/cameronpengresearch/)
+[Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/)
+[Weilong Zhang](https://www.weilongzhang.com/)
