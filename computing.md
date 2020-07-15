@@ -4,10 +4,10 @@ title: Computing
 permalink: /computing/
 ---
 
-For computation I prefer the combination of [R](https://www.r-project.org/) and [C++](http://www.cplusplus.com/). [Rcpp](http://www.rcpp.org/) offers a nice integration of the two.
+For computation I prefer the combination of [R](https://www.r-project.org/){:target="_blank"} and [C++](http://www.cplusplus.com/){:target="_blank"}. [Rcpp](http://www.rcpp.org/){:target="_blank"} offers a nice integration of the two.
 
 I have been involving in the following open source projects:
 
-* [mopt](https://github.com/tlamadon/mopt): Parallel derivative-free moment optimization in R.
-* [EconR](http://www.econr.org/index.html): A collection of methods to do economics in R and C++/Fortran.
-* [parallelTest](https://github.com/floswald/parallelTest): Repo with tests for parallel computation for a host of hpc systems.
+* [mopt](https://github.com/tlamadon/mopt){:target="_blank"}: Parallel derivative-free moment optimization in R.
+* [EconR](http://www.econr.org/index.html){:target="_blank"}: A collection of methods to do economics in R and C++/Fortran.
+* [parallelTest](https://github.com/floswald/parallelTest){:target="_blank"}: Repo with tests for parallel computation for a host of hpc systems.
