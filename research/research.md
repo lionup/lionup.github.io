@@ -38,10 +38,17 @@ We develop an equilibrium search model with endogenous labour force participatio
 
 
 ## My co-authors
-[Richard Blundell](https://www.ucl.ac.uk/~uctp39a/) 
-[Hamish Low](https://sites.google.com/site/hamishlowecon/)
-[Soren Leth-Petersen](http://web.econ.ku.dk/leth/)
-[Costas Meghir](https://sites.google.com/site/costasmeghir/home)
-[Cameron Peng](https://sites.google.com/site/cameronpengresearch/)
-[Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/)
-[Weilong Zhang](https://www.weilongzhang.com/)
+[Richard Blundell](https://www.ucl.ac.uk/~uctp39a/)  
+
+[Hamish Low](https://sites.google.com/site/hamishlowecon/)  
+
+[Soren Leth-Petersen](http://web.econ.ku.dk/leth/)  
+
+[Costas Meghir](https://sites.google.com/site/costasmeghir/home)  
+
+[Cameron Peng](https://sites.google.com/site/cameronpengresearch/)  
+
+[Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/)  
+
+[Weilong Zhang](https://www.weilongzhang.com/)  
+
