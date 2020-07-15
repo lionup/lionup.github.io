@@ -11,9 +11,10 @@ I am a Lecturer (Assistant Professor) in Economics at the **_University of Essex
 I am also a Research Associate at the **_Institute for Fiscal Studies_**.    
 
 I received my Ph.D. from **_University College London_** in 2018.       
-
+    
+    
 ### Research Field
-_**Labour Economics, Search and matching, Education Economics, Family Economics**_
+Labour Economics, Search and matching, Education Economics, Family Economics
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
