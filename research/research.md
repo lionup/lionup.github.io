@@ -17,7 +17,7 @@ Postgraduate degree holders experience lower cyclical variation in real wages th
     
     
 
-### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version July 2020!**, [NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}
+### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **New version September 2020!**, [NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}
 
 **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
 
@@ -33,7 +33,7 @@ Using the Household, Income and Labour Dynamics in Australia (HILDA) data, we do
 
 ### 2. Cyclical Employment Exits and Unemployment Insurance, with Similan Rujiwattanapong
 
-We develop an equilibrium search model with endogenous labour force participation and countercyclical unemployment insurance (UI). Workers optimally search for jobs and their search intensity increases with the return from searching. Despite negative aggregate shocks, countercyclical UI provides incentive to search on the extensive margin during recessions. We use the model to explain the cyclical properties of the transition rate from employment to out-of-labour-force (E2O). As in the US data, the model predicts that E2O is procyclical. This property is in sharp contrast to the prediction of the standard search theory without countercyclical UI that the labour force participation should increase in booms. We also find that the role of reverse added worker effect on the E2O transitions is relatively limited.
+We develop an equilibrium search model with endogenous labour force participation and countercyclical unemployment insurance (UI). Workers optimally search for jobs and their search intensity increases with the return from searching. Despite negative aggregate shocks, countercyclical UI provides incentive to search on the extensive margin during recessions. We use the model to explain the cyclical properties of the transition rate from employment to out-of-labour-force (E2O). As in the US data, the model predicts that E2O is procyclical. This property is in sharp contrast to the prediction of the standard search theory without countercyclical UI that the labour force participation should increase in booms.
 
 
 ## My co-authors
