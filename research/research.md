@@ -29,7 +29,7 @@ We specify an equilibrium model of car ownership with private information where 
 ### 1. Risk Attitude and Portfolio Choice: An Intra-household Perspective, with Cameron Peng and Weilong Zhang, **Draft coming soon!**
 
 
-### 2. The Impact of Unemployment Insurance on the Cyclicality of Labour Force Participation, with Similan Rujiwattanapong
+### 2. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
 
 
 ## My co-authors
