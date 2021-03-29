@@ -24,13 +24,16 @@ Postgraduate degree holders experience lower cyclical variation in real wages th
 We quantify the aggregate implications and distributional consequences of asymmetric information, focusing on the car market. Private information introduces a lemons penalty, a wedge between the sale price and average quality in the population. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income and wealth. 
 In the first year of ownership, the lemons penalty is 11% of the price. The penalty declines sharply with the length of ownership. The penalty leads to large reductions in transaction volumes and in the rate of turnover of cars. But the market does not collapse: income shocks induce individuals to sell their cars, even if of good quality, and this limits the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases, as happens in recessions.  
 
+
+### 3. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **New version March 2021!**{:target="_blank"}
+
+We use a revealed-preference approach to quantify how bargaining power is distributed when spouses make financial decisions together. We build a model in which each spouse has a risk preference and must bargain with each other to make asset decisions for the household. By structurally estimating the model with longitudinal data from Australian households, we show that the average household's asset allocation reflects the husband's risk preference 44% more than the wife's. This gap in bargaining power is partially explained by gender differences in income and employment status, but is also due to gender effects. We provide further evidence that links the distribution of bargaining power to views on gender norms in the cross-section.
+
+
     
 ## Work in Progress
 
-### 1. Risk Attitude and Portfolio Choice: An Intra-household Perspective, with Cameron Peng and Weilong Zhang, **Draft coming soon!**
-
-
-### 2. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
+### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
 
 
 ## My co-authors
