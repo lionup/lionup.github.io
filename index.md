@@ -19,6 +19,6 @@ Labour Economics, Search and matching, Education Economics, Family Economics
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
-### [Download my CV here](/cv/index.html)
+### [Download my CV here](https://drive.google.com/file/d/0B-yAdp5D_qlrd01DSEdaOEtKQWc/view?usp=sharing&resourcekey=0-XSgarmYxZr3dfZc04unXYw)
 
 ### [Find my research here](/research/index.html)
