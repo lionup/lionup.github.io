@@ -30,7 +30,7 @@ In the first year of ownership, the lemons penalty is 11% of the price. The pena
 
 We quantify how bargaining power is distributed when spouses make financial decisions together. We build a model in which each spouse has a risk preference and must bargain with each other to make asset decisions for the household. By structurally estimating the model with longitudinal data from Australian households, we show that the average household's asset allocation reflects the husband's risk preference 44% more than the wife's. This gap in bargaining power is partially explained by gender differences in income and employment status, but is also due to gender effects. We provide further evidence that links the distribution of bargaining power to views on gender norms in the cross-section.
 
-
+### 3. Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings, with Ling Zhong, **Submitted**
     
 ## Work in Progress
 
@@ -45,4 +45,5 @@ We quantify how bargaining power is distributed when spouses make financial deci
 [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"}  
 [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}  
 [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}  
+[Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
 
