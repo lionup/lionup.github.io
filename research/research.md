@@ -30,7 +30,7 @@ In the first year of ownership, the lemons penalty is 11% of the price. The pena
 
 When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level. This allows us to back out the distribution and determinants of bargaining power from household portfolio choice. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap in bargaining power. While the gap is partially explained by gender differences in individual characteristics such as income and employment, it is also due to gender effects. These patterns hold broadly across Australia, Germany, and the US. We further link the distribution of bargaining power to perceived gender norms in the cross-section of households.
 
-### 3. Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings, with Ling Zhong, **Submitted**
+### 3. **Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings**, with Ling Zhong, **Submitted**
     
 ## Work in Progress
 
