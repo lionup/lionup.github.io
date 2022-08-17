@@ -17,7 +17,7 @@ permalink: /research/
  
     
     
-## Working Papers
+## Papers under Revision
 
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **R&R Quantitative Economics**
 
@@ -32,7 +32,9 @@ permalink: /research/
 
   * **Abstract**: The COVID-19 pandemic and containment policies have profound economic impacts on the labor market. Most states issued stay-at-home orders (SAHOs) that change the location and the way of working. We categorize the skill requirements of online job postings from 2018 to 2021. Exploiting spatial variations in the SAHO duration, we find that the time span of this temporary policy has persistent impacts on the skill requirement in labor demand after restrictions are lifted. Longer SAHOs motivate management style transformation to adapt to remote working schemes by requiring more self-management skills and less on personality to reduce reliance on people management skills of managers. SAHOs increase the demand for administration and language skills. We also find that SAHOs have larger and more thorough impacts for occupations with partial work-from-home capacity, and jobs that do not require a postsecondary degree. The evidence suggests SAHOs change management structure and job task assignments in firms.
 
-### 3. [The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **Submitted, New version April 2022!**
+## Working Papers
+
+### 1. [The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **Submitted, New version April 2022!**
 
   * Previous version: [IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}
 
