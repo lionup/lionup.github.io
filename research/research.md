@@ -7,7 +7,7 @@ permalink: /research/
 
 ## Publications
 
-### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/file/d/1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj/view?usp=sharing){:target="_blank"}, **Forthcoming, Review of Economic Dynamics**
+### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, **Forthcoming, Review of Economic Dynamics**
 
   * The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium", [_IFS Working Paper WP19/26_](https://www.ifs.org.uk/publications/14515){:target="_blank"}
   
