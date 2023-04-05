@@ -34,7 +34,7 @@ permalink: /research/
 
 <>## Working Papers
 
-### 2. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **R&R Review of FInancial Studies**
+### 2. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **R&R Review of Financial Studies**
 
   * The previous title of this paper is "The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach", [_IFS Working Paper WP21/11_](https://www.ifs.org.uk/publications/15437){:target="_blank"}
 
