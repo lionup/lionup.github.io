@@ -32,9 +32,9 @@ permalink: /research/
   * **Abstract**: We quantify the aggregate implications and distributional consequences of asymmetric information, focusing on the car market. Private information introduces a lemons penalty, a wedge between the sale price and average quality in the population. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income and wealth. In the first year of ownership, the lemons penalty is 11% of the price. The penalty declines sharply with the length of ownership. The penalty leads to large reductions in transaction volumes and in the rate of turnover of cars. But the market does not collapse: income shocks induce individuals to sell their cars, even if of good quality, and this limits the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases, as happens in recessions.  
 
 
-## Working Papers
+<>## Working Papers
 
-### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **Submitted, New version January 2023!**
+### 2. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **R&R Review of FInancial Studies**
 
   * The previous title of this paper is "The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach", [_IFS Working Paper WP21/11_](https://www.ifs.org.uk/publications/15437){:target="_blank"}
 
