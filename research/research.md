@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 
-## Publications
+# Publications
 
 ### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, **Review of Economic Dynamics, Volume 48, April 2023, Pages 345-376**
 
@@ -25,7 +25,7 @@ permalink: /research/
 -->
 
   
-## Papers under Revision
+# Papers under Revision
 
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **R&R Quantitative Economics**
 
@@ -49,7 +49,7 @@ permalink: /research/
 ## Working Papers 
 -->
 
-## Work in Progress
+# Work in Progress
 
 ### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
 
