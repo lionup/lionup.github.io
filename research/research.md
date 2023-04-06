@@ -37,7 +37,8 @@ permalink: /research/
 
   * **Abstract**: When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level as a result of bargaining. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap. The gap is partially explained by gender differences in individual characteristics such as income and employment, but it is also driven by gender effects. These patterns hold broadly across Australia, Germany, and the US. We further link the distribution of bargaining power to perceived gender norms in the cross-section of households.
     
-## Working Papers/Work in Progress
+<!-- ## Working Papers -->
+## Work in Progress
 
 ### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
 
