@@ -58,7 +58,7 @@ permalink: /research/
 
 ---
 
-## My co-authors
+## My co-authors:
 [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}  
 [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}  
 [Soren Leth-Petersen](http://web.econ.ku.dk/leth/){:target="_blank"}  
