@@ -17,6 +17,8 @@ permalink: /research/
   * **Abstract**: Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.
 -->
 
+---
+
     
 ### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong, **Labour Economics, Volume 82, June 2023**
 
@@ -39,6 +41,8 @@ permalink: /research/
   * **Abstract**: We quantify the aggregate implications and distributional consequences of asymmetric information, focusing on the car market. Private information introduces a lemons penalty, a wedge between the sale price and average quality in the population. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income and wealth. In the first year of ownership, the lemons penalty is 11% of the price. The penalty declines sharply with the length of ownership. The penalty leads to large reductions in transaction volumes and in the rate of turnover of cars. But the market does not collapse: income shocks induce individuals to sell their cars, even if of good quality, and this limits the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases, as happens in recessions.  
 -->
 
+---
+
 ### 2. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **R&R Review of Financial Studies**
 
   * The previous title of this paper is "The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach", [_IFS Working Paper WP21/11_](https://www.ifs.org.uk/publications/15437){:target="_blank"}
@@ -47,12 +51,12 @@ permalink: /research/
   * **Abstract**: When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level as a result of bargaining. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap. The gap is partially explained by gender differences in individual characteristics such as income and employment, but it is also driven by gender effects. These patterns hold broadly across Australia, Germany, and the US. We further link the distribution of bargaining power to perceived gender norms in the cross-section of households.
 -->
 
+---
+<br/><br/>
+
 <!-- 
 ## Working Papers 
 -->
-
----
-<br/><br/>
 
 ## Work in Progress:
 
