@@ -25,7 +25,7 @@ permalink: /research/
 ---
 <br/><br/>
 
-## Papers under Revision:
+## Revise & Resubmit:
 
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **R&R Quantitative Economics**
 
