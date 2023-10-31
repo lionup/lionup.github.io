@@ -21,7 +21,6 @@ permalink: /research/
   * **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}
 
 <br/>
----
 
     
 ### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
@@ -35,7 +34,6 @@ permalink: /research/
 </details>
 
 <br/>
----
 
 
 ## Revise & Resubmit:
@@ -53,7 +51,6 @@ permalink: /research/
   * The previous title of this paper is "The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach", [_IFS Working Paper WP21/11_](https://www.ifs.org.uk/publications/15437){:target="_blank"}
 
 <br/>
----
 
 
 ### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
@@ -70,7 +67,6 @@ permalink: /research/
   * **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
 
 <br/>
----
 
 <!-- 
 ## Working Papers 
