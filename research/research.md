@@ -5,7 +5,7 @@ permalink: /research/
 ---
 
 
-## Publications:
+## <ins>Publications:</ins>
 
 ### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
