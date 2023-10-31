@@ -9,7 +9,7 @@ permalink: /research/
 
 ### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
-[**Review of Economic Dynamics, 2023**]
+[**Review of Economic Dynamics, 2023**][*Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
 
 <details>
   <summary>Abstract</summary>
@@ -17,8 +17,9 @@ permalink: /research/
   Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.
 </details>
 
+<!--
   * The previous title of this paper is "Specific Capital, Firm Insurance, and the Dynamics of the Postgraduate Wage Premium", [_IFS Working Paper WP19/26_](https://www.ifs.org.uk/publications/14515){:target="_blank"}
-  * **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}
+-->
 
 <br/>
 
