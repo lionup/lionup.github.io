@@ -7,10 +7,10 @@ permalink: /research/
 
 ## Publications:
 
-1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
+### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
-    * **Review of Economic Dynamics, 2023**
-    * **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
+* **Review of Economic Dynamics, 2023**
+* **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
 
 <details>
   <summary>Abstract</summary>
@@ -25,9 +25,9 @@ permalink: /research/
 <br/>
 
     
-2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
+### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
 
-    * **Labour Economics, 2023**]
+* **Labour Economics, 2023**
 
 <details>
   <summary>Abstract</summary>
@@ -42,7 +42,7 @@ permalink: /research/
 
 ### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang
 
-[**conditionally accepted, Review of Financial Studies**]
+* **conditionally accepted, Review of Financial Studies**
 
 <details>
   <summary>Abstract</summary>
@@ -50,14 +50,17 @@ permalink: /research/
   When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level as a result of bargaining. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap. The gap is partially explained by gender differences in individual characteristics such as income and employment, but it is also driven by gender effects. These patterns hold broadly across Australia, Germany, and the US. We further link the distribution of bargaining power to perceived gender norms in the cross-section of households.
 </details>
 
+<!--
   * The previous title of this paper is "The Gender Gap in Household Bargaining Power: A Portfolio-Choice Approach", [_IFS Working Paper WP21/11_](https://www.ifs.org.uk/publications/15437){:target="_blank"}
+-->
 
 <br/>
 
 
 ### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
 
-[**revise and resubmit, Quantitative Economics**]
+* **revise and resubmit, Quantitative Economics**
+* **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
 
 <details>
   <summary>Abstract</summary>
@@ -65,8 +68,9 @@ permalink: /research/
   We examine the aggregate implications and distributional consequences of asymmetric information in durable goods markets, with a focus on the car market. Private information introduces a lemons penalty, a wedge between the sale price and the average car value in the population, consequently reducing turnover. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income, and wealth. In the first year of ownership, we estimate the lemons penalty is 12% of the price. The penalty declines sharply with the length of ownership. The penalty reduces the self-insurance value of cars and leads to a large reduction in transaction volumes and the rate of turnover of cars. The market does not collapse: income shocks induce individuals to sell their cars, even if they are of good quality, and this helps mitigate the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases and when the credit limit decreases.
 </details>
 
+<!--
   * Previous version: [NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}
-  * **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
+-->
 
 <br/>
 
