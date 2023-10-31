@@ -7,7 +7,10 @@ permalink: /research/
 
 ## Publications:
 
-### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, **Review of Economic Dynamics, Volume 48, April 2023, Pages 345-376**
+### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
+
+[**Review of Economic Dynamics, Volume 48, April 2023, Pages 345-376**]
+
 <details>
   <summary>Abstract</summary>
 
@@ -19,7 +22,10 @@ permalink: /research/
 ---
 
     
-### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong, **Labour Economics, Volume 82, June 2023**
+### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
+
+[**Labour Economics, Volume 82, June 2023**]
+
 <details>
   <summary>Abstract</summary>
 
@@ -31,7 +37,10 @@ permalink: /research/
 
 ## Revise & Resubmit:
 
-### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang, **Conditional accepted Review of Financial Studies**
+### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang
+
+[**conditionally accepted, Review of Financial Studies**]
+
 <details>
   <summary>Abstract</summary>
 
@@ -41,7 +50,10 @@ permalink: /research/
 
 ---
 
-### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir, **R&R Quantitative Economics**
+### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
+
+[**revise and resubmit, Quantitative Economics**]
+
 <details>
   <summary>Abstract</summary>
 
