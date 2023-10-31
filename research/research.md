@@ -13,7 +13,7 @@ permalink: /research/
   
   * **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}
 
-  * **Abstract**: Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.
+  <!--* **Abstract**: Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.-->
 
 ---
 
@@ -33,7 +33,15 @@ permalink: /research/
 
   * **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
 
+<!-- 
   * **Abstract**: We examine the aggregate implications and distributional consequences of asymmetric information in durable goods markets, with a focus on the car market. Private information introduces a lemons penalty, a wedge between the sale price and the average car value in the population, consequently reducing turnover. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income, and wealth. In the first year of ownership, we estimate the lemons penalty is 12% of the price. The penalty declines sharply with the length of ownership. The penalty reduces the self-insurance value of cars and leads to a large reduction in transaction volumes and the rate of turnover of cars. The market does not collapse: income shocks induce individuals to sell their cars, even if they are of good quality, and this helps mitigate the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases and when the credit limit decreases.
+-->
+
+<details>
+  <summary>Abstract</summary>
+
+  * **Abstract**: We examine the aggregate implications and distributional consequences of asymmetric information in durable goods markets, with a focus on the car market. Private information introduces a lemons penalty, a wedge between the sale price and the average car value in the population, consequently reducing turnover. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income, and wealth. In the first year of ownership, we estimate the lemons penalty is 12% of the price. The penalty declines sharply with the length of ownership. The penalty reduces the self-insurance value of cars and leads to a large reduction in transaction volumes and the rate of turnover of cars. The market does not collapse: income shocks induce individuals to sell their cars, even if they are of good quality, and this helps mitigate the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases and when the credit limit decreases.
+</details>
 
 ---
 
