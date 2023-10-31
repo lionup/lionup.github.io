@@ -7,7 +7,7 @@ permalink: /research/
 
 ## Publications:
 
-### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
+1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
     * **Review of Economic Dynamics, 2023**
     * **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
@@ -25,9 +25,9 @@ permalink: /research/
 <br/>
 
     
-### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
+2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
 
-[**Labour Economics, 2023**]
+    * **Labour Economics, 2023**]
 
 <details>
   <summary>Abstract</summary>
