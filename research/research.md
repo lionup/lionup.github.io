@@ -13,7 +13,7 @@ permalink: /research/
 * **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
 
 <details>
-  <summary>Abstract</summary>
+  <summary><font color="grey">Abstract</font></summary>
 
   Postgraduate degree holders experience lower cyclical variation in real wages than those with undergraduate degrees. Moreover, postgraduate jobs require more specific human capital and take longer to adapt to. Using an equilibrium search model with dynamic incentive contracts, this paper attributes the cyclicality of the postgraduate-undergraduate wage gap to the differences in specific capital. Greater specific capital leads to lower mobility, thereby improving risk-sharing between workers and firms. The estimates of the model reveal that specific capital can explain the differences both in labour turnover and in real wage cyclicality between education groups.
 </details>
