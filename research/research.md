@@ -9,7 +9,7 @@ permalink: /research/
 
 ### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
-* \[**Review of Economic Dynamics, 2023**\] \[Media Coverage: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\]
+\[**Review of Economic Dynamics, 2023**\] \[Media Coverage: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
@@ -26,7 +26,7 @@ permalink: /research/
     
 ### 2. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
 
-* **Labour Economics, 2023**
+\[**Labour Economics, 2023**\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
@@ -41,7 +41,7 @@ permalink: /research/
 
 ### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang
 
-* **conditionally accepted, Review of Financial Studies**
+\[**conditionally accepted, Review of Financial Studies**\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
@@ -58,8 +58,7 @@ permalink: /research/
 
 ### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
 
-* **revise and resubmit, Quantitative Economics**
-* Media Coverage: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
+\[**revise and resubmit, Quantitative Economics**\] \[Media Coverage: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
