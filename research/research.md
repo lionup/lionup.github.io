@@ -38,7 +38,7 @@ permalink: /research/
 <br/>
 
 
-## Revise & Resubmit:
+## <ins>Revise & Resubmit:</ins>
 
 ### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang
 
@@ -78,14 +78,14 @@ permalink: /research/
 ## Working Papers 
 -->
 
-## Work in Progress:
+## <ins>Work in Progress:</ins>
 
 ### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
 
 <br/>
 ---
 
-## My co-authors:
+## <ins>My co-authors:</ins>
 [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}  
 [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}  
 [Soren Leth-Petersen](http://web.econ.ku.dk/leth/){:target="_blank"}  
