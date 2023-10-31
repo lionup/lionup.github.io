@@ -10,7 +10,7 @@ permalink: /research/
 ### 1. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
 * **Review of Economic Dynamics, 2023**
-* **Media Coverage**: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
+* <font color="grey">Media Coverage</font>: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
@@ -30,7 +30,7 @@ permalink: /research/
 * **Labour Economics, 2023**
 
 <details>
-  <summary>Abstract</summary>
+  <summary><font color="grey">Abstract</font></summary>
 
   The COVID-19 pandemic and containment policies have had profound economic impacts on the labor market. Stay-at-home orders (SAHOs) implemented across most of the United States changed the way of people worked. In this paper, we quantify the effect of SAHO durations on skill demands to study how firms adjust labor demand within occupation. We use skill requirement information from the 2018 to 2021 online job vacancy posting data from Burning Glass Technologies, exploit the spatial variations in the SAHO duration, and use instrumental variables to correct for the endogeneity in the policy duration related to local social and economic factors. We find that policy durations have persistent impacts on the labor demand after restrictions are lifted. Longer SAHOs motivate management style transformation from people-oriented to operation-oriented by requiring more of operational and administrative skills and less of personality and people management skills to carry out standard workflows. SAHOs also change the focus of interpersonal skill demands from specific customer services to general communication such as social and writing skills. SAHOs more thoroughly affect occupations with partial work-from-home capacity. The evidence suggests SAHOs change management structure and communication in firms.
 </details>
@@ -45,7 +45,7 @@ permalink: /research/
 * **conditionally accepted, Review of Financial Studies**
 
 <details>
-  <summary>Abstract</summary>
+  <summary><font color="grey">Abstract</font></summary>
 
   When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level as a result of bargaining. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap. The gap is partially explained by gender differences in individual characteristics such as income and employment, but it is also driven by gender effects. These patterns hold broadly across Australia, Germany, and the US. We further link the distribution of bargaining power to perceived gender norms in the cross-section of households.
 </details>
@@ -60,10 +60,10 @@ permalink: /research/
 ### 2. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
 
 * **revise and resubmit, Quantitative Economics**
-* **Media Coverage**: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
+* <font color="grey">Media Coverage</font>: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}
 
 <details>
-  <summary>Abstract</summary>
+  <summary><font color="grey">Abstract</font></summary>
 
   We examine the aggregate implications and distributional consequences of asymmetric information in durable goods markets, with a focus on the car market. Private information introduces a lemons penalty, a wedge between the sale price and the average car value in the population, consequently reducing turnover. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income, and wealth. In the first year of ownership, we estimate the lemons penalty is 12% of the price. The penalty declines sharply with the length of ownership. The penalty reduces the self-insurance value of cars and leads to a large reduction in transaction volumes and the rate of turnover of cars. The market does not collapse: income shocks induce individuals to sell their cars, even if they are of good quality, and this helps mitigate the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases and when the credit limit decreases.
 </details>
