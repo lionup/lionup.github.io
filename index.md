@@ -6,11 +6,11 @@ layout: default
 <br>
 
 ## About Me
-I am a Lecturer (Assistant Professor) in Economics at the **_University of Essex_**.      
+I am a Lecturer (Assistant Professor) in Economics at the **University of Essex**.      
 
-I am also a Research Associate at the **_Institute for Fiscal Studies_**.    
+I am also a Research Associate at the **Institute for Fiscal Studies**.    
 
-I received my Ph.D. from **_University College London_** in 2018.       
+I received my Ph.D. from **University College London** in 2018.       
 <br/>
 
 ## Research Field
