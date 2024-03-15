@@ -7,7 +7,7 @@ permalink: /research/
 
 ## <ins>Publications:</ins>
 
-### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with Cameron Peng and Weilong Zhang
+### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"} 
 
 &nbsp;&nbsp;&nbsp;&nbsp;\[ ***Accepted, Review of Financial Studies*** \]
 
@@ -40,8 +40,7 @@ permalink: /research/
 <br/>
 
     
-### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with Ling Zhong
-
+### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
 &nbsp;&nbsp;&nbsp;&nbsp;\[ ***Labour Economics, 2023*** \]
 
 <details>
@@ -56,7 +55,7 @@ permalink: /research/
 ## <ins>Revise & Resubmit:</ins>
 
 
-### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with Richard Blundell, Hamish Low, Soren Leth-Petersen, and Costas Meghir
+### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, [Soren Leth-Petersen](http://web.econ.ku.dk/leth/){:target="_blank"}, and [Costas Meghir](https://sites.google.com/site/costasmeghir/home){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;\[ ***revise and resubmit, Quantitative Economics*** \] \[Media Coverage: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}\]
 
@@ -78,7 +77,7 @@ permalink: /research/
 
 ## <ins>Work in Progress:</ins>
 
-### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with Similan Rujiwattanapong
+### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"} 
 
 <br/>
 ---
