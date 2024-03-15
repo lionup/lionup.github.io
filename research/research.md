@@ -23,9 +23,9 @@ permalink: /research/
 
 <br/>
 
-### 2. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
+### 2. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium (2023)](https://drive.google.com/file/d/1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj/view?usp=sharing){:target="_blank"}
 
-&nbsp;&nbsp;&nbsp;&nbsp;\[ ***Review of Economic Dynamics, 2023*** \] \[Media Coverage: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\]
+&nbsp;&nbsp;&nbsp;&nbsp;\[[Review of Economic Dynamics](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, 2023\] \[Media Coverage: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
@@ -40,8 +40,8 @@ permalink: /research/
 <br/>
 
     
-### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
-&nbsp;&nbsp;&nbsp;&nbsp;\[ ***Labour Economics, 2023*** \]
+### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings (2023)](https://drive.google.com/file/d/1LF5lhpLsD3hOyJSRvYHh_mDSRIRS78FN/view?usp=drive_link){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
+&nbsp;&nbsp;&nbsp;&nbsp;\[[Labour Economics](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, 2023\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
