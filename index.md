@@ -14,7 +14,7 @@ I received my Ph.D. from **University College London** in 2018.
 <br/>
 
 ## Research Field
-Labour Economics, Household Finance, Search-matching, Education Economics
+Labour, Macro, Household Finance, Education
 <br/>
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
