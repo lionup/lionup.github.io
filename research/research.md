@@ -29,7 +29,7 @@ permalink: /research/
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Review of Economic Dynamics](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, 2023\] 
-\[Media Coverage: [_LSE Business Review_](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [_Royal Economic Society_](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\] 
+\[Media Coverage: [LSE Business Review](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [Royal Economic Society](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\] 
 \[[IFS Working Paper WP19/26](https://www.ifs.org.uk/publications/14515){:target="_blank"}\]
 
 <details>
@@ -65,7 +65,7 @@ permalink: /research/
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[revise and resubmit at Quantitative Economics \] 
-\[Media Coverage: [_The Economist_](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [_NEP-DGE blog_](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}\]
+\[Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}\]
 \[[NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}\]
 
 <details>
