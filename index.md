@@ -19,6 +19,6 @@ Labour, Macro, Household Finance, Education
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
 
-### [Download my CV here](https://drive.google.com/file/d/0B-yAdp5D_qlrd01DSEdaOEtKQWc/view?usp=sharing&resourcekey=0-XSgarmYxZr3dfZc04unXYw)
+### [Download my CV here](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
 
 ### [Find my research here](/research/index.html)
