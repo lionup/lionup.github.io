@@ -64,7 +64,8 @@ permalink: /research/
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-\[revise and resubmit at Quantitative Economics \] 
+\[[Quantitative Economics](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, Revise and Resubmit \] 
+
 \[Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}\]
 \[[NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}\]
 
