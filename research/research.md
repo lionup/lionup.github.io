@@ -10,7 +10,7 @@ permalink: /research/
 ### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1YlS20eus5G7yT3ic9KNrWXPQU1LxN8sT/view?usp=sharing){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"} 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-\[Accepted at Review of Financial Studies \] 
+\[Forthcoming, Review of Financial Studies \] 
 \[[IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}\]
 
 <details>
@@ -25,7 +25,7 @@ permalink: /research/
 
 <br/>
 
-### 2. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://drive.google.com/file/d/1LlPoWh1vo3VAmLDogM7KDyruYY1nBaFj/view?usp=sharing){:target="_blank"}
+### 2. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Review of Economic Dynamics](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, 2023\] 
@@ -45,7 +45,7 @@ permalink: /research/
 <br/>
 
     
-### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings](https://drive.google.com/file/d/1LF5lhpLsD3hOyJSRvYHh_mDSRIRS78FN/view?usp=drive_link){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
+### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Labour Economics](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, 2023\]
 
@@ -61,7 +61,7 @@ permalink: /research/
 ## <ins>Revise & Resubmit:</ins>
 
 
-### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/0B-yAdp5D_qlrVndMVFg0SlU3dEk/view?usp=sharing&resourcekey=0-kGyhQ2_GzUWbiQWrpeH27Q){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
+### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=sharing){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[revise and resubmit at Quantitative Economics \] 
