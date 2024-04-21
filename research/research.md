@@ -10,7 +10,7 @@ permalink: /research/
 ### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1c2DRwUS90isQdRMNxwig-TRunaIjrVtB/view?usp=drive_link){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"} 
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-\[Forthcoming, Review of Financial Studies \] 
+\[[Review of Financial Studies](https://drive.google.com/file/d/1c2DRwUS90isQdRMNxwig-TRunaIjrVtB/view?usp=drive_link){:target="_blank"}, Forthcoming \] 
 \[[IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}\]
 
 <details>
