@@ -11,8 +11,7 @@ Assistant Professor, Department of Economics, **University of Essex**.
 Research Associate, **Institute for Fiscal Studies**.    
 <br/>
 
-## Research Field
-Labour, Macro, Household Finance, Education
+**Research Interests:** Labour, Macro, Household Finance, Education
 <br/>
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
