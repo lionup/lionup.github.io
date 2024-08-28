@@ -7,16 +7,16 @@ permalink: /research/
 
 ## <ins>Publications:</ins>
 
-### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://drive.google.com/file/d/1c2DRwUS90isQdRMNxwig-TRunaIjrVtB/view?usp=drive_link){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"} 
+### 1. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-\[[Review of Financial Studies](https://drive.google.com/file/d/1c2DRwUS90isQdRMNxwig-TRunaIjrVtB/view?usp=drive_link){:target="_blank"}, Forthcoming \] 
+\[[Review of Financial Studies](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, 2024 \] 
 \[[IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}\]
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
 
-  When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level as a result of bargaining. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap. The gap is partially explained by gender differences in individual characteristics such as income and employment, but it is also driven by gender effects. These patterns hold broadly across Australia, Germany, and the US. We further link the distribution of bargaining power to perceived gender norms in the cross-section of households.
+  When members of the same household have different risk preferences, whose preference matters more for investment decisions and why? We propose an intrahousehold model that aggregates individual preferences at the household level as a result of bargaining. We structurally estimate the model, analyze the determinants of bargaining power, and find a significant gender gap. Gender differences in individual characteristics, as well as gender effects, partially explain the gap. These patterns hold broadly across Australia, Germany, and the United States. We further link the distribution of bargaining power to households’ perceived gender norms in a cross-sectional analysis.
 </details>
 
 <!--
@@ -45,7 +45,7 @@ permalink: /research/
 <br/>
 
     
-### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
+### 3. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Labour Economics](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, 2023\]
 
@@ -83,7 +83,7 @@ permalink: /research/
 
 ## <ins>Work in Progress:</ins>
 
-### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"} 
+### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
 
 <br/>
 ---
