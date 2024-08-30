@@ -11,6 +11,7 @@ permalink: /research/
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Review of Financial Studies](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, 2024 \] 
+\[Media Coverage: [Science X](https://phys.org/news/2024-08-husbands-dominate-investment-decisions-reveals.html){:target="_blank"}, [ScienMag](https://scienmag.com/husbands-still-dominate-investment-decisions){:target="_blank"}\] 
 \[[IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}\]
 
 <details>
