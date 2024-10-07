@@ -14,8 +14,8 @@ Research Associate, **Institute for Fiscal Studies**.
 **Research Interests:** Labour, Macro, Household Finance, Education
 <br/>
 
-Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-
 ### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
 
-### [Find my research here](/research/index.html)
+### [Research](/research/index.html)
+
+Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
