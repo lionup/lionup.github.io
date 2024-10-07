@@ -11,7 +11,7 @@ permalink: /research/
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Review of Financial Studies](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, 2024 \] 
-\[Media Coverage: [Science X](https://phys.org/news/2024-08-husbands-dominate-investment-decisions-reveals.html){:target="_blank"}, [ScienMag](https://scienmag.com/husbands-still-dominate-investment-decisions){:target="_blank"}\] 
+\[Media Coverage: [U of Essex News](https://www.essex.ac.uk/news/2024/08/28/husbands-still-dominate-investment-decisions){:target="_blank"}, [Science X](https://phys.org/news/2024-08-husbands-dominate-investment-decisions-reveals.html){:target="_blank"}, [ScienMag](https://scienmag.com/husbands-still-dominate-investment-decisions){:target="_blank"}\] 
 \[[IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}\]
 
 <details>
@@ -30,7 +30,7 @@ permalink: /research/
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Review of Economic Dynamics](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, 2023\] 
-\[Media Coverage: [LSE Business Review](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [Royal Economic Society](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}\] 
+\[Media Coverage: [LSE Business Review](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [Royal Economic Society](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}, [IFS Comment](https://doi.org/10.1920/co.ifs.2024.0093)\] 
 \[[IFS Working Paper WP19/26](https://www.ifs.org.uk/publications/14515){:target="_blank"}\]
 
 <details>
