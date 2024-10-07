@@ -6,9 +6,9 @@ layout: default
 <br>
 
 ## About Me
-Assistant Professor, Department of Economics, **University of Essex**.      
+Assistant Professor, Department of Economics, *University of Essex*.      
 
-Research Associate, **Institute for Fiscal Studies**.    
+Research Associate, *Institute for Fiscal Studies*.    
 <br/>
 
 **Research Interests:** Labour, Macro, Household Finance, Education
