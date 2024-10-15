@@ -11,7 +11,7 @@ permalink: /research/
 
 &nbsp;&nbsp;&nbsp;&nbsp;
 \[[Review of Financial Studies](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, 2024 \] 
-\[Media Coverage: [U of Essex News](https://www.essex.ac.uk/news/2024/08/28/husbands-still-dominate-investment-decisions){:target="_blank"}, [Science X](https://phys.org/news/2024-08-husbands-dominate-investment-decisions-reveals.html){:target="_blank"}, [ScienMag](https://scienmag.com/husbands-still-dominate-investment-decisions){:target="_blank"}\] 
+\[Media Coverage: [The Conversation](https://theconversation.com/who-really-holds-the-purse-strings-why-it-matters-which-partner-decides-where-the-money-goes-241089){:target="_blank"}, [U of Essex News](https://www.essex.ac.uk/news/2024/08/28/husbands-still-dominate-investment-decisions){:target="_blank"}, [Science X](https://phys.org/news/2024-08-husbands-dominate-investment-decisions-reveals.html){:target="_blank"}, [ScienMag](https://scienmag.com/husbands-still-dominate-investment-decisions){:target="_blank"}\] 
 \[[IFS Working Paper WP21/11](https://www.ifs.org.uk/publications/15437){:target="_blank"}\]
 
 <details>
