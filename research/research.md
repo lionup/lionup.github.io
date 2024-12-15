@@ -58,8 +58,11 @@ permalink: /research/
 
 <br/>
 
-
+<!-- 
 ## <ins>Revise & Resubmit:</ins>
+-->
+
+## <ins>Working Papers:</ins>
 
 
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
@@ -79,12 +82,14 @@ permalink: /research/
 <br/>
 
 <!-- 
-## Working Papers 
+## <ins>Work in Progress:</ins>
 -->
 
-## <ins>Work in Progress:</ins>
+### 1. Housing Energy Efficiency and the Horizon Effect, with [Egl\.{e} Jaku\v{c}ionyt\.{e}](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
 
 ### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
+
+### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
 <br/>
 ---
