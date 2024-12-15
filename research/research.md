@@ -90,7 +90,7 @@ permalink: /research/
 
 ### 2. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
 
-### 3. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+### 3. Effect of the ‘right to request’ flexible work policy on men’s and women’s uptake of flexible working and well-being, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
 <br/>
 ---
