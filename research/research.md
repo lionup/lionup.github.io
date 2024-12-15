@@ -97,15 +97,15 @@ permalink: /research/
 
 ## <ins>My co-authors:</ins>
 [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}  
-[Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}
-[Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"}
+[Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}  
+[Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"}  
 [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}  
 [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}  
-[Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+[Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}  
 [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}  
 [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"}  
 [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}  
-[Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
+[Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}  
 [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}  
 [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
-[Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}
+[Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}  
