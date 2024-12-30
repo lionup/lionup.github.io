@@ -111,6 +111,8 @@ permalink: /research/
 
 ### 3. How Privacy Policies Affect Young Adolescents: Exploring the Impact of the GDPR on Social Media Usage, Academic Performance, and Mental Health,  with [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}
 
+### 4. Financial Commitments and Labour Market Outcomes, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, and [Attila Lindner](https://sites.google.com/site/attilalindner/){:target="_blank"}
+
 <br/>
 ---
 
@@ -119,6 +121,7 @@ permalink: /research/
 [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}  
 [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"}  
 [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}  
+[Attila Lindner](https://sites.google.com/site/attilalindner/){:target="_blank"}  
 [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}  
 [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}  
 [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}  
