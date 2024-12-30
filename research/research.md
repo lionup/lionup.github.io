@@ -59,8 +59,12 @@ permalink: /research/
 <br/>
 
 
-
+<!-- 
 ## <ins>Revise & Resubmit:</ins>
+-->
+
+## <ins>Working Papers:</ins>
+
 
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
 
@@ -78,19 +82,34 @@ permalink: /research/
 
 <br/>
 
+### 2. Effect of the ‘right to request’ flexible work policy on men’s and women’s uptake of flexible working and well-being, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
-<!-- 
-## <ins>Working Papers:</ins>
--->
+<details>
+  <summary><font color="grey">Abstract</font></summary>
+
+  This paper investigates the impact of the UK's 2014 "right to request" flexible working policy on the uptake of flexible working arrangements and the resulting effects on employee health and well-being. We use a doubly robust difference-in-differences (DiD) method, comparing the outcomes of employees who became eligible for flexible working after the 2014 policy reform with those who were already eligible. The key findings reveal that the 2014 policy reform increased women's uptake of reduced-hours arrangements but did not have the same effect on men. The reform also led to a reduction in women's psychological distress and improved life satisfaction for both men and women. The study concludes that while flexible working arrangements can benefit both men and women in terms of improved well-being, gender-neutral policies may inadvertently exacerbate gender inequalities in labour force participation, possibly due to persistent traditional gender norms and expectations. 
+</details>
+
+<br/>
+
+### 3. Housing Energy Efficiency and the Horizon Effect, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
+
+<details>
+  <summary><font color="grey">Abstract</font></summary>
+
+  This paper examines how the investment horizon effect influences energy-efficiency investments, showing that older individuals have lower incentives to invest in energy efficiency. Using detailed microdata from England, we document that properties occupied by older households are systematically more energy inefficient. We develop a two-period model where households make energy-efficiency investment decisions under mortality risk, generating predictions about both individual and neighborhood-level investment patterns. Testing these predictions using historical instruments for neighborhood age structure, we find that a one-year increase in neighborhood mean age causes a 0.7 percentage point increase in energy inefficiency. 
+</details>
+
+<br/>
 
 
 ## <ins>Work in Progress:</ins>
 
-### 1. Housing Energy Efficiency and the Horizon Effect, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
+### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
 
-### 2. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
+### 2. Doubling Down on Success: Double Major, Human Capital Diversification, and Leadership Advancement,  with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}
 
-### 3. Effect of the ‘right to request’ flexible work policy on men’s and women’s uptake of flexible working and well-being, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+### 3. How Privacy Policies Affect Young Adolescents: Exploring the Impact of the GDPR on Social Media Usage, Academic Performance, and Mental Health,  with [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}
 
 <br/>
 ---
@@ -106,6 +125,7 @@ permalink: /research/
 [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"}  
 [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}  
 [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}  
+[Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}
 [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}  
 [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
 [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}  
