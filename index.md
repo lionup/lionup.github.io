@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include image.html url="/images/RanGu.jpg" width=300 align="right" %}
+{% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
 <br>
 
 ## About Me
@@ -11,8 +11,7 @@ Assistant Professor, Department of Economics, *University of Essex*.
 Research Associate, *Institute for Fiscal Studies*.    
 <br/>
 
-## Research Field
-Household Finance, Macro Labour
+**Research Interests:** Household Finance, Macro Labour, Health
 <br/>
 
 ### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
