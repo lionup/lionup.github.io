@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include image.html url="/images/RanGu.jpg" width=250 align="right" %}
+{% include image.html url="/images/RanGu.jpg" width=300 align="right" %}
 <br>
 
 ## About Me
