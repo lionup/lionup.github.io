@@ -7,7 +7,7 @@ seo:
   author: "Ran Gu"
 ---
 
-{% include image.html url="/images/RanGu.jpg" width=250 align="right" alt="Photo of Ran Gu" %}
+{% include image.html url="/images/ran2024.jpg" width=350 align="right" caption="Pamukkale, Turkey, 2024" %}
 <br>
 
 ## About Me
