@@ -3,12 +3,8 @@
 ---
 @charset "utf-8";
 
-
-
 // Our variables
 $base-font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-//$base-font-size:   .95em;
-//$small-font-size:  $base-font-size * 0.875;
 $base-font-size:   1em;
 $small-font-size:  $base-font-size * 0.9;
 $base-line-height: 1.5;
@@ -18,12 +14,10 @@ $spacing-unit:     30px;
 $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      #0077CC;
-// $gameday-sky: #109dc0;
 $clemson-purple:      #522d80;
 $clemson-orange:      #f66733;
 $scpo-red:   #C60202;
 $scpo-darkred: #640000;
-
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -35,7 +29,6 @@ $content-width:    950px;
 
 $on-palm:          600px;
 $on-laptop:        950px;
-
 
 
 // Using media queries with like this:
@@ -51,14 +44,26 @@ $on-laptop:        950px;
     }
 }
 
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "header",
-	"mobile-header",
+        "mobile-header",
         "base",
         "layout",
         "syntax-highlighting",
-	"fancy-image"
+        "fancy-image"
 ;
+
+// Custom styles for the header section
+.site-title {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 2em;
+}
+
+.site-title .english-name {
+  margin-right: 10px; /* Adjust the value to control space */
+}
+
+.site-title .chinese-name {
+  margin-left: 5px; /* Adds space before 顾然 */
+}

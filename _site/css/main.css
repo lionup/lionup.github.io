@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** Site header */
 .site-header { border-top: 0px solid #424242; border-bottom: 4px solid #640000; min-height: 56px; background: #522d80; position: relative; }
 
@@ -263,3 +264,9 @@ ul.listing li.listing-item a { color: #640000; font-weight: 400; font-family: 'S
 .alignright { float: right; margin-left: 20px; margin-bottom: 15px; }
 
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+.site-title { font-family: 'Noto Sans', sans-serif; font-size: 2em; }
+
+.site-title .english-name { margin-right: 10px; /* Adjust the value to control space */ }
+
+.site-title .chinese-name { margin-left: 5px; /* Adds space before 顾然 */ }
