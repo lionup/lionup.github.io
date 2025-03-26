@@ -6,19 +6,16 @@ layout: default
 <br>
 
 ## About Me
-I am a Lecturer (Assistant Professor) in Economics at the **_University of Essex_**.      
+Assistant Professor, Department of Economics, *University of Essex*.      
 
-I am also a Research Associate at the **_Institute for Fiscal Studies_**.    
-
-I received my Ph.D. from **_University College London_** in 2018.       
+Research Associate, *Institute for Fiscal Studies*.    
 <br/>
 
-## Research Field
-Labour Economics, Search and matching, Education Economics, Family Economics  
+**Research Interests:** Household Finance, Macro Labour, Health
 <br/>
+
+### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
+
+### [Research](/research/index.html)
 
 Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-
-### [Download my CV here](https://drive.google.com/file/d/0B-yAdp5D_qlrd01DSEdaOEtKQWc/view?usp=sharing&resourcekey=0-XSgarmYxZr3dfZc04unXYw)
-
-### [Find my research here](/research/index.html)
