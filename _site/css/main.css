@@ -269,4 +269,4 @@ ul.listing li.listing-item a { color: #640000; font-weight: 400; font-family: 'S
 
 .site-title .english-name { margin-right: 10px; /* Adjust the value to control space */ }
 
-.site-title .chinese-name { margin-left: 5px; /* Adds space before 顾然 */ }
+.site-title .chinese-name { margin-left: 10px; /* Adds space before 顾然 */ }

@@ -1,12 +1,25 @@
 # Site settings
 title: Ran Gu
-email: ran.gu@essex.ac.uk
-description: > # this means to ignore newlines until "baseurl:"
-  University of Essex <br>
+contact_email_primary: "ran.gu@essex.ac.uk"
+contact_email_secondary: "lionup@gmail.com"
+description: > 
+  University of Essex <br> 
   Institute for Fiscal Studies
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://lionup.github.io" # the base hostname & protocol for your site
-github_username:  lionup
+url: "https://lionup.github.io"
+github_username: lionup
+
+# SEO
+seo:
+  description: "Ran Gu - Assistant Professor at the University of Essex, Research Associate at the Institute for Fiscal Studies."
+  author: "Ran Gu"
+  keywords: "economics, household finance, macro labour, applied microeconomics"
+
+# Social Links
+social:
+  linkedin: "https://www.linkedin.com/in/ran-gu-666192124/"
+  twitter: "https://x.com/LionupRan"
+  github: "https://github.com/lionup"
 
 # Build settings
 markdown: kramdown
@@ -14,16 +27,26 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-target-blank
+  - jekyll-seo-tag
 exclude:
   - Gemfile
   - Gemfile.lock
 
-# Other options
-permalink: blog/:year/:month/:title
-job.title: "Lecturer"
+# Permalinks for specific sections
+permalink: /:categories/:year/:month/:title/
+cv_permalink: "/cv/:title/"
+research_permalink: "/research/:title/"
+teaching_permalink: "/teaching/:title/"
+computing_permalink: "/computing/:title/"
+
+# Job and other settings
+job:
+  title: "Lecturer"
+  institution: "University of Essex"
+  research_focus: ["Household Finance", "Macro Labour", "Applied Microeconomics"]
 excerpt_separator: "<!--more-->"
 
-# SEO stuff
-# google_author: ""
-# google_site_verification: ""
-# bing_webmastertools_id: ""
+# Locale settings
+lang: "en"
+timezone: "Europe/London"
+safe: true
