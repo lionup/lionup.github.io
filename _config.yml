@@ -2,11 +2,9 @@
 title: Ran Gu
 contact_email_primary: "ran.gu@essex.ac.uk"
 contact_email_secondary: "lionup@gmail.com"
-description: > 
-  University of Essex <br> 
-  Institute for Fiscal Studies
+description: "University of Essex, Institute for Fiscal Studies"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://lionup.github.io"
+url: "https://rangu.org/"
 github_username: lionup
 
 # SEO
@@ -41,7 +39,6 @@ computing_permalink: "/computing/:title/"
 
 # Job and other settings
 job:
-  title: "Lecturer"
   institution: "University of Essex"
   research_focus: ["Household Finance", "Macro Labour", "Applied Microeconomics"]
 excerpt_separator: "<!--more-->"
