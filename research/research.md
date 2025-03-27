@@ -2,6 +2,10 @@
 layout: page
 title: Research
 permalink: /research/
+seo:
+  description: "Research by Ran Gu"
+  author: "Ran Gu"
+  keywords: "research, economics, household finance, macro labour, applied microeconomics"
 ---
 
 

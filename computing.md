@@ -2,6 +2,10 @@
 layout: page
 title: Computing
 permalink: /computing/
+seo:
+  description: "Computing expertise of Ran Gu"
+  author: "Ran Gu"
+  keywords: "computing, R, C++, optimization"
 ---
 
 For computation I prefer the combination of [R](https://www.r-project.org/){:target="_blank"} and [C++](http://www.cplusplus.com/){:target="_blank"}. [Rcpp](http://www.rcpp.org/){:target="_blank"} offers a nice integration of the two.

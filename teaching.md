@@ -2,7 +2,12 @@
 layout: page
 title: Teaching
 permalink: /teaching/
+seo:
+  description: "Teaching experience of Ran Gu"
+  author: "Ran Gu"
+  keywords: "teaching, economics"
 ---
+
 
 * [EC910 Computational Economics (MSc):](https://www1.essex.ac.uk/modules/Default.aspx?coursecode=EC910&year=24){:target="_blank"}
 
