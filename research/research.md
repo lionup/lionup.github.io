@@ -111,11 +111,14 @@ seo:
 
 ### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
 
-### 2. Doubling Down on Success: Double Major, Human Capital Diversification, and Leadership Advancement,  with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}
+### 2. How Privacy Policies Affect Young Adolescents: Exploring the Impact of the GDPR on Social Media Usage, Academic Performance, and Mental Health,  with [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}
 
-### 3. How Privacy Policies Affect Young Adolescents: Exploring the Impact of the GDPR on Social Media Usage, Academic Performance, and Mental Health,  with [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}
+<!-- 
+
+### 3. Doubling Down on Success: Double Major, Human Capital Diversification, and Leadership Advancement,  with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}
 
 ### 4. Financial Commitments and Labour Market Outcomes, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, and [Attila Lindner](https://sites.google.com/site/attilalindner/){:target="_blank"}
+-->
 
 <br/>
 ---
