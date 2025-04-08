@@ -86,7 +86,10 @@ seo:
 
 <br/>
 
-### 2. Effect of the ‘right to request’ flexible work policy on men’s and women’s uptake of flexible working and well-being, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+### 2. Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well-being, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+\[Under Review \] 
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
