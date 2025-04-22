@@ -137,7 +137,10 @@ seo:
 [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"}  
 [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}  
 [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}  
-[Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}  
 [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}  
 [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}  
 [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}  
+
+<!-- 
+[Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}  
+-->
