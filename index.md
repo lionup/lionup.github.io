@@ -12,13 +12,14 @@ seo:
 
 ## About Me
 
-Assistant Professor, Department of Economics, *University of Essex*.      
-
-Research Associate, *Institute for Fiscal Studies*.  
+I am an Assistant Professor in the **Department of Economics** at the *University of Essex* and a **Research Associate** at the *Institute for Fiscal Studies*.
 
 <br/>
 
-Research Interests: *Household Finance, Macro Labour, Applied Microeconomics*
+### Research Interests:
+- **Household Finance**
+- **Macro Labour**
+- **Applied Microeconomics**
 
 <br/>
 
@@ -29,7 +30,11 @@ Research Interests: *Household Finance, Macro Labour, Applied Microeconomics*
 <br/>
 
 ### Contact
-- Primary Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
-- Secondary Email: [{{ site.contact_email_secondary }}](mailto:{{ site.contact_email_secondary }})
+- Email: [{{ site.contact_email_secondary }}](mailto:{{ site.contact_email_secondary }})
 - LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ran-gu-666192124/)
 - Twitter: [@LionupRan](https://x.com/LionupRan)
+
+<!-- 
+- Primary Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
+- Secondary Email: [{{ site.contact_email_secondary }}](mailto:{{ site.contact_email_secondary }})
+-->

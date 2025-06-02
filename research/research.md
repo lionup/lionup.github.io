@@ -73,7 +73,7 @@ seo:
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-\[[Quantitative Economics](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, Conditionally Accepted\] 
+\[[Quantitative Economics](https://drive.google.com/file/d/1ItkzDeBgWGnMsq7_wxBZijprltMUjvlX/view?usp=drive_link){:target="_blank"}, **Conditionally Accepted**\] 
 
 \[Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}\]
 \[[NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}\]
@@ -89,7 +89,7 @@ seo:
 ### 2. Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well-being, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
 &nbsp;&nbsp;&nbsp;&nbsp;
-\[Under Review \] 
+\[**Journal of Epidemiology & Community Health**, **Revise and Resubmit**\] 
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
@@ -130,7 +130,6 @@ seo:
 [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}  
 [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"}  
 [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}  
-[Attila Lindner](https://sites.google.com/site/attilalindner/){:target="_blank"}  
 [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}  
 [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}  
 [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}  
@@ -143,4 +142,5 @@ seo:
 
 <!-- 
 [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}  
+[Attila Lindner](https://sites.google.com/site/attilalindner/){:target="_blank"}  
 -->
