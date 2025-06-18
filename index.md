@@ -7,6 +7,12 @@ seo:
   author: "Ran Gu"
 ---
 
+<!-- Announcement about the move -->
+<div class="announcement">
+  <p>{{ site.announcement }}</p>
+</div>
+
+
 {% include image.html url="/images/ran2024.jpg" width=350 align="right" caption="Pamukkale, Turkey, 2024" %}
 <br>
 

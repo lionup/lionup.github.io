@@ -4,10 +4,10 @@
     <title>Ran Gu</title>
     <description>University of Essex, &lt;br&gt;  Institute for Fiscal Studies
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Jun 2025 11:39:14 +0100</pubDate>
-    <lastBuildDate>Mon, 02 Jun 2025 11:39:14 +0100</lastBuildDate>
+    <link>https://rangu.org//</link>
+    <atom:link href="https://rangu.org//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 18 Jun 2025 15:15:02 +0100</pubDate>
+    <lastBuildDate>Wed, 18 Jun 2025 15:15:02 +0100</lastBuildDate>
     <generator>Jekyll v3.10.0</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Sun, 16 Aug 2015 16:36:27 +0100</pubDate>
-        <link>http://localhost:4000/jekyll/update/2015/08/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2015/08/welcome-to-jekyll/</guid>
+        <link>https://rangu.org//jekyll/update/2015/08/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">https://rangu.org//jekyll/update/2015/08/welcome-to-jekyll/</guid>
         
         
         <category>jekyll</category>
