@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Ran Gu - Assistant Professor, University of Essex"
-description: "Assistant Professor at the University of Essex. Research Associate at the Institute for Fiscal Studies. Research Interests: Household Finance, Macro Labour, Applied Microeconomics."
+title: "Ran Gu - Senior Lecturer (Associate Professor), City St George's, University of London"
+description: "Senior Lecturer (Associate Professor) at City St George's, University of London. Research Associate at the Institute for Fiscal Studies. Research Interests: Household Finance, Macro Labour, Applied Microeconomics."
 seo:
-  keywords: "Ran Gu, University of Essex, Household Finance, Macro Labour, Applied Microeconomics"
+  keywords: "Ran Gu, City St George's, University of London, Household Finance, Macro Labour, Applied Microeconomics, Economics"
   author: "Ran Gu"
 ---
 
@@ -18,29 +18,33 @@ seo:
 
 ## About Me
 
-I am an Assistant Professor in the **Department of Economics** at the *University of Essex* and a **Research Associate** at the *Institute for Fiscal Studies*.
+I am a **Senior Lecturer (Associate Professor)** in the **Department of Economics** at *City St George's, University of London*. <br>
+In addition, I am a **Research Associate** at the *Institute for Fiscal Studies* and a **Visiting Fellow** at the *University of Essex*. 
 
-<br/>
+<br>
 
 ### Research Interests:
 - **Household Finance**
 - **Macro Labour**
 - **Applied Microeconomics**
 
-<br/>
+<br>
 
-### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
+### Quick Links
+- [CV](/cv/RanCV.pdf)
+- [Research](/research/index.html)
 
-### [Research](/research/index.html)
-
-<br/>
+<br>
 
 ### Contact
-- Email: [{{ site.contact_email_secondary }}](mailto:{{ site.contact_email_secondary }})
+- Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
 - LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ran-gu-666192124/)
 - Twitter: [@LionupRan](https://x.com/LionupRan)
 
 <!-- 
-- Primary Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
+### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
+
+- Email: [{{ site.contact_email_secondary }}](mailto:{{ site.contact_email_secondary }})
 - Secondary Email: [{{ site.contact_email_secondary }}](mailto:{{ site.contact_email_secondary }})
+
 -->

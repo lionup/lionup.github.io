@@ -1,19 +1,22 @@
 # Site settings
 title: Ran Gu
-contact_email_primary: "ran.gu@essex.ac.uk"
+contact_email_primary: "ran.gu@citystgeorges.ac.uk"
 contact_email_secondary: "lionup@gmail.com"
+
+# Keep this plain text for better SEO snippets
 description: > 
-  University of Essex, <br> 
-  Institute for Fiscal Studies
+  City St George’s, University of London. <br>
+  Institute for Fiscal Studies.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rangu.org/"
 github_username: lionup
 
 # SEO
 seo:
-  description: "Ran Gu - Assistant Professor at the University of Essex, Research Associate at the Institute for Fiscal Studies."
+  description: "Ran Gu - Senior Lecturer (Associate Professor) at City St George’s, University of London; Research Associate at the Institute for Fiscal Studies."
   author: "Ran Gu"
-  keywords: "economics, household finance, macro labour, applied microeconomics"
+  keywords: "Ran Gu, economics, household finance, macro labour, applied microeconomics, City St George’s, University of London"
 
 # Social Links
 social:
@@ -21,9 +24,8 @@ social:
   twitter: "https://x.com/LionupRan"
   github: "https://github.com/lionup"
 
-# Announcement about the move to City, University of London
-announcement: "I am excited to announce that I will be joining City St George’s, University of London as a Senior Lecturer (Associate Professor) in 2025. I look forward to this exciting new chapter in my career!"
-
+# Homepage announcement
+announcement: "Our new research on flexible working & gender equality — with Baowen Xue, Heejung Chung & Anne McMunn — will soon appear in BMJ's Journal of Epidemiology & Community Health. Coverage via <a href='https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work' target='_blank'>Bloomberg</a>."
 
 # Build settings
 markdown: kramdown
@@ -45,7 +47,8 @@ computing_permalink: "/computing/:title/"
 
 # Job and other settings
 job:
-  institution: "University of Essex"
+  title: "Senior Lecturer (Associate Professor)"
+  institution: "City St George’s, University of London"
   research_focus: ["Household Finance", "Macro Labour", "Applied Microeconomics"]
 excerpt_separator: "<!--more-->"
 
