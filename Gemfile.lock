@@ -284,6 +284,7 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   jekyll-target-blank
   rexml (~> 3.4)
+  webrick
 
 BUNDLED WITH
    2.0.1

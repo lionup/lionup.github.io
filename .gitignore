@@ -1,0 +1,24 @@
+# Build output
+_site/
+
+# Cache files
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+*.tmp
+
+# Bundler install dir
+/vendor/
+
+# Node (if you ever add JS tooling)
+node_modules/
+
+# --- DO NOT IGNORE Gemfile.lock ---
+# (keep it under version control so Actions uses the same gem versions)
