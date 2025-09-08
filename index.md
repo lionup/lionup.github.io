@@ -39,7 +39,7 @@ In addition, I am a **Research Associate** at the *Institute for Fiscal Studies*
 ### Contact
 - Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
 - LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ran-gu-666192124/)
-- Twitter: [@LionupRan](https://x.com/LionupRan)
+- Twitter/X: [@LionupRan](https://x.com/LionupRan)
 
 <!-- 
 ### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
