@@ -35,8 +35,10 @@ plugins:
   - jekyll-target-blank
   - jekyll-seo-tag
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
+  - node_modules
 
 # Permalinks for specific sections
 permalink: /:categories/:year/:month/:title/
