@@ -10,8 +10,23 @@ seo:
 
 
 ## <ins>Publications:</ins>
+### 1. [Durables and Lemons: Private Information and the Market for Cars](/research/durables_and_lemons_PAPER.pdf){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
 
-### 1. Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well- being - Findings from the UK Household Longitudinal Study, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+> **Quantitative Economics**, **forthcoming**  
+> Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}  
+> Earlier version: [NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}
+
+<details>
+  <summary><font color="grey">Abstract</font></summary>
+
+  We examine the aggregate implications and distributional consequences of asymmetric information in durable goods markets, with a focus on the car market. Private information introduces a lemons penalty, a wedge between the sale price and the average car value in the population, consequently reducing turnover. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income, and wealth. In the first year of ownership, we estimate the lemons penalty is 12% of the price. The penalty declines sharply with the length of ownership. The penalty reduces the self-insurance value of cars and leads to a large reduction in transaction volumes and the rate of turnover of cars. The market does not collapse: income shocks induce individuals to sell their cars, even if they are of good quality, and this helps mitigate the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases and when the credit limit decreases.
+</details>
+
+
+<br/>
+
+
+### 2. Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well- being - Findings from the UK Household Longitudinal Study, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
 > **Journal of Epidemiology & Community Health**, **forthcoming**  
 > Media Coverage: [Bloomberg](https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work?utm_source=website&utm_medium=share&utm_campaign=copy){:target="_blank"}
@@ -25,7 +40,7 @@ seo:
 
 <br/>
 
-### 2. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}
+### 3. [The Gender Gap in Household Bargaining Power: A Revealed-Preference Approach](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, with [Cameron Peng](https://sites.google.com/site/cameronpengresearch/){:target="_blank"} and [Weilong Zhang](https://www.weilongzhang.com/){:target="_blank"}
 
 > [Review of Financial Studies](https://doi.org/10.1093/rfs/hhae039){:target="_blank"}, 2024  
 > Media Coverage: [The Conversation](https://theconversation.com/who-really-holds-the-purse-strings-why-it-matters-which-partner-decides-where-the-money-goes-241089){:target="_blank"}, [U of Essex News](https://www.essex.ac.uk/news/2024/08/28/husbands-still-dominate-investment-decisions){:target="_blank"}, [Science X](https://phys.org/news/2024-08-husbands-dominate-investment-decisions-reveals.html){:target="_blank"}, [ScienMag](https://scienmag.com/husbands-still-dominate-investment-decisions){:target="_blank"}  
@@ -49,7 +64,7 @@ seo:
 
 <br/>
 
-### 3. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](/research/human-capital-business-cycle.pdf){:target="_blank"}
+### 4. [Human Capital and the Business Cycle Effects on the Postgraduate Wage Premium](/research/human-capital-business-cycle.pdf){:target="_blank"}
 
 > [Review of Economic Dynamics](https://doi.org/10.1016/j.red.2022.07.001){:target="_blank"}, 2023  
 > Media Coverage: [LSE Business Review](http://blogs.lse.ac.uk/businessreview/2018/06/13/a-postgraduate-degree-protects-you-against-the-business-cycle/){:target="_blank"}, [Royal Economic Society](http://www.res.org.uk/details/mediabrief/10938521/A-POSTGRADUATE-DEGREE-PROTECTS-YOU-AGAINST-THE-BUSINESS-CYCLE-US-evidence.html){:target="_blank"}, [IFS Comment](https://doi.org/10.1920/co.ifs.2024.0093)  
@@ -67,7 +82,7 @@ seo:
 
 <br/>
 
-### 4. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}
+### 5. [Effects of Stay-at-home Orders on Skill Requirements in Vacancy Postings](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, with [Ling Zhong](https://www.ling-zhong.com/){:target="_blank"}
 
 > [Labour Economics](https://doi.org/10.1016/j.labeco.2023.102342){:target="_blank"}, 2023  
 
@@ -88,22 +103,7 @@ seo:
 ## <ins>Working Papers:</ins>
 
 
-### 1. [Durables and Lemons: Private Information and the Market for Cars](/research/durables_and_lemons_PAPER.pdf){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
-
-> **Quantitative Economics**, **conditionally cccepted**  
-> Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"}, [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}  
-> Earlier version: [NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}
-
-<details>
-  <summary><font color="grey">Abstract</font></summary>
-
-  We examine the aggregate implications and distributional consequences of asymmetric information in durable goods markets, with a focus on the car market. Private information introduces a lemons penalty, a wedge between the sale price and the average car value in the population, consequently reducing turnover. We estimate an equilibrium model of car ownership with private information using Danish linked registry data on car ownership, income, and wealth. In the first year of ownership, we estimate the lemons penalty is 12% of the price. The penalty declines sharply with the length of ownership. The penalty reduces the self-insurance value of cars and leads to a large reduction in transaction volumes and the rate of turnover of cars. The market does not collapse: income shocks induce individuals to sell their cars, even if they are of good quality, and this helps mitigate the lemons problem. The size of the lemons penalty declines when income uncertainty in the economy increases and when the credit limit decreases.
-</details>
-
-
-<br/>
-
-### 2. Housing Energy Efficiency and the Horizon Effect, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
+### 1. Housing Energy Efficiency and the Horizon Effect, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
 
 <details>
   <summary><font color="grey">Abstract</font></summary>

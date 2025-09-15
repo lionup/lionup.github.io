@@ -25,7 +25,8 @@ social:
   github: "https://github.com/lionup"
 
 # Homepage announcement
-announcement: "Our new research on flexible working & gender equality — with Baowen Xue, Heejung Chung & Anne McMunn — will soon appear in BMJ's Journal of Epidemiology & Community Health. Coverage via <a href='https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work' target='_blank'>Bloomberg</a>."
+announcement: "New: Durables and Lemons: Private Information and the Market for Cars (with Richard Blundell, Soren Leth-Petersen, Hamish Low & Costas Meghir) accepted at Quantitative Economics. Also, our research on flexible working & gender equality (with Baowen Xue, Heejung Chung & Anne McMunn) accepted at BMJ's Journal of Epidemiology & Community Health."
+
 
 # Build settings
 markdown: kramdown
