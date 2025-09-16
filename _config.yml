@@ -25,7 +25,8 @@ social:
   github: "https://github.com/lionup"
 
 # Homepage announcement
-announcement: "New: Durables and Lemons: Private Information and the Market for Cars (with Richard Blundell, Soren Leth-Petersen, Hamish Low & Costas Meghir) accepted at Quantitative Economics. Also, our research on flexible working & gender equality (with Baowen Xue, Heejung Chung & Anne McMunn) accepted at BMJ's Journal of Epidemiology & Community Health."
+# announcement: "Our new research on flexible working & gender equality — with Baowen Xue, Heejung Chung & Anne McMunn — will soon appear in BMJ's Journal of Epidemiology & Community Health. Coverage via <a href='https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work' target='_blank'>Bloomberg</a>."
+announcement: "New: <a href='/research/durables_and_lemons_PAPER.pdf' target='_blank'>Durables and Lemons: Private Information and the Market for Cars</a> (with Richard Blundell, Soren Leth-Petersen, Hamish Low & Costas Meghir) accepted at Quantitative Economics. Also, our research on <a href='https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166' target='_blank'>flexible working & gender equality</a> (with Baowen Xue, Heejung Chung & Anne McMunn) accepted at BMJ's Journal of Epidemiology & Community Health."
 
 
 # Build settings
