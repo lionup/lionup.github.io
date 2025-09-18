@@ -28,7 +28,7 @@ seo:
 ### 2. [Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well- being - Findings from the UK Household Longitudinal Study](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166), with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
 > [BMJ's Journal of Epidemiology & Community Health](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166){:target="_blank"}, 2025  
-> Media Coverage: [Bloomberg](https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work?utm_source=website&utm_medium=share&utm_campaign=copy){:target="_blank"}, [King's College London News](https://www.kcl.ac.uk/news/flexible-working-policies-not-enough-to-change-workplace-practices){:target="_blank"}
+> Media Coverage: [Forbes](https://www.forbes.com/sites/josiecox/2025/09/16/flexible-working-policies-alone-dont-change-workplace-culture-study-shows/){:target="_blank"}, [Bloomberg](https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work?utm_source=website&utm_medium=share&utm_campaign=copy){:target="_blank"}, [King's College London News](https://www.kcl.ac.uk/news/flexible-working-policies-not-enough-to-change-workplace-practices){:target="_blank"}
 
 
 <details>
