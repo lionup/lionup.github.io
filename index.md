@@ -19,7 +19,7 @@ seo:
 ## About Me
 
 I am a **Senior Lecturer (Associate Professor)** in the **Department of Economics** at *City St George's, University of London*. <br>
-In addition, I am a **Research Associate** at the *Institute for Fiscal Studies* and a **Visiting Fellow** at the *University of Essex*. 
+In addition, I am a [Research Associate](https://ifs.org.uk/people/ran-gu) at the *Institute for Fiscal Studies* and a **Visiting Fellow** at the *University of Essex*. 
 
 <br>
 
