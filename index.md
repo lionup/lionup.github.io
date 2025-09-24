@@ -38,8 +38,9 @@ In addition, I am a [Research Associate](https://ifs.org.uk/people/ran-gu) at th
 
 ### Contact
 - Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
-- LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ran-gu-666192124/)
-- Twitter/X: [@LionupRan](https://x.com/LionupRan)
+- LinkedIn: [LinkedIn Profile]({{ site.social.linkedin }})
+- Twitter/X: [@LionupRan]({{ site.social.twitter }})
+- Bluesky: [@ran-gu.bsky.social]({{ site.social.bluesky }})
 
 <!-- 
 ### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
