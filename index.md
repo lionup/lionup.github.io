@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Ran Gu - Senior Lecturer (Associate Professor), City St George's, University of London"
-description: "Senior Lecturer (Associate Professor) at City St George's, University of London. Research Associate at the Institute for Fiscal Studies. Research Interests: Household Finance, Macro Labour, Applied Microeconomics."
+title: "Ran Gu - Senior Lecturer (Associate Professor), City St George’s, University of London"
+description: "Senior Lecturer (Associate Professor) at City St George’s, University of London. Research Associate at the Institute for Fiscal Studies. Research Interests: Macro Labour, Household Finance, Applied Microeconomics."
 seo:
-  keywords: "Ran Gu, City St George's, University of London, Household Finance, Macro Labour, Applied Microeconomics, Economics"
+  keywords: "Ran Gu, City St George’s, University of London, Macro Labour, Household Finance, Applied Microeconomics, Economics"
   author: "Ran Gu"
 ---
 
@@ -18,29 +18,29 @@ seo:
 
 ## About Me
 
-I am a **Senior Lecturer (Associate Professor)** in the **Department of Economics** at *City St George's, University of London*. <br>
-In addition, I am a [Research Associate](https://ifs.org.uk/people/ran-gu) at the *Institute for Fiscal Studies* and a **Visiting Fellow** at the *University of Essex*. 
+I am an [Associate Professor](https://www.citystgeorges.ac.uk/about/people/academics/ran-gu){:target="_blank"} in the **Department of Economics** at *City St George’s, University of London*. <br>
+I am also a [Research Associate](https://ifs.org.uk/people/ran-gu){:target="_blank"} at the *Institute for Fiscal Studies* and a [Visiting Fellow](https://www.essex.ac.uk/people/GURAN15605/Ran-Gu){:target="_blank"} at the *University of Essex*. 
 
 <br>
 
 ### Research Interests:
-- **Household Finance**
 - **Macro Labour**
+- **Household Finance**
 - **Applied Microeconomics**
 
 <br>
 
 ### Quick Links
-- [CV](/cv/RanCV.pdf)
-- [Research](/research/index.html)
+- [CV](/cv/RanCV.pdf){:target="_blank"}
+- [Research](/research/index.html){:target="_blank"}
 
 <br>
 
 ### Contact
 - Email: [{{ site.contact_email_primary }}](mailto:{{ site.contact_email_primary }})
-- LinkedIn: [LinkedIn Profile]({{ site.social.linkedin }})
-- Twitter/X: [@LionupRan]({{ site.social.twitter }})
-- Bluesky: [@ran-gu.bsky.social]({{ site.social.bluesky }})
+- LinkedIn: [LinkedIn]({{ site.social.linkedin }}){:target="_blank"}
+- Twitter/X: [@LionupRan]({{ site.social.twitter }}){:target="_blank"}
+- Bluesky: [@ran-gu.bsky.social]({{ site.social.bluesky }}){:target="_blank"}
 
 <!-- 
 ### [CV](https://drive.google.com/file/d/1CxtcSsPBSsJIAqw-mH986dI93GF8yXxB/view?usp=drive_link)
