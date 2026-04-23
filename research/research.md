@@ -13,7 +13,7 @@ seo:
 ### 1. [Durables and Lemons: Private Information and the Market for Cars](/research/durables_and_lemons_PAPER.pdf){:target="_blank"}, with [Richard Blundell](https://www.ucl.ac.uk/~uctp39a/){:target="_blank"}, [Soren Leth-Petersen](https://sites.google.com/view/sorenleth){:target="_blank"}, [Hamish Low](https://sites.google.com/site/hamishlowecon/){:target="_blank"}, and [Costas Meghir](https://sites.google.com/yale.edu/costasmeghir/home){:target="_blank"}
 
 > [Quantitative Economics](https://doi.org/10.3982/QE1822){:target="_blank"}, 2026  
-> Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"},  [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}  
+> Media Coverage: [The Economist](https://www.economist.com/finance-and-economics/2019/09/26/can-you-buy-a-good-second-hand-car){:target="_blank"},  [Econ Brief](https://ucleconbrief.co.uk/2026/03/02/the-lemons-penalty-evidence-from-denmarks-market-for-second-hand-cars/){:target="_blank"},  [CEBI News](https://www.econ.ku.dk/cebi/news/can-you-sell-a-good-used-car-evidence-from-the-danish-car-market/){:target="_blank"},  [NEP-DGE blog](https://nepdge.wordpress.com/2019/10/03/durables-and-lemons-private-information-and-the-market-for-cars/#respond){:target="_blank"}  
 > Earlier version: [NBER Working Paper w26281](https://www.nber.org/papers/w26281){:target="_blank"}
 
 <details>
@@ -27,7 +27,7 @@ seo:
 
 ### 2. [Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well- being - Findings from the UK Household Longitudinal Study](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166), with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
-> [BMJ's Journal of Epidemiology & Community Health](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166){:target="_blank"}, 2025  
+> [BMJ's Journal of Epidemiology & Community Health](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166){:target="_blank"}, 2026  
 > Media Coverage: [Forbes](https://www.forbes.com/sites/josiecox/2025/09/16/flexible-working-policies-alone-dont-change-workplace-culture-study-shows/){:target="_blank"},  [Bloomberg](https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work?utm_source=website&utm_medium=share&utm_campaign=copy){:target="_blank"},  [King's College London News](https://www.kcl.ac.uk/news/flexible-working-policies-not-enough-to-change-workplace-practices){:target="_blank"}
 
 

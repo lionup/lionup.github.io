@@ -53,7 +53,7 @@ computing_permalink: "/computing/:title/"
 
 # Job and other settings
 job:
-  title: "Senior Lecturer (Associate Professor)"
+  title: "Associate Professor"
   institution: "City St George’s, University of London"
   research_focus: ["Household Finance", "Macro Labour", "Applied Microeconomics"]
 excerpt_separator: "<!--more-->"
