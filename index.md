@@ -24,15 +24,15 @@ I am also a [Research Associate](https://ifs.org.uk/people/ran-gu){:target="_bla
 <br>
 
 ### Research Interests:
-- **Macro Labour**
 - **Household Finance**
+- **Macro Labour**
 - **Applied Microeconomics**
 
 <br>
 
 ### Quick Links
 - [CV](/cv/RanCV.pdf){:target="_blank"}
-- [Research](/research/index.html){:target="_blank"}
+- [Research](/research/){:target="_blank"}
 
 <br>
 

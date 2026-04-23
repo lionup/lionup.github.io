@@ -25,7 +25,7 @@ seo:
 
 <br/>
 
-### 2. [Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well- being - Findings from the UK Household Longitudinal Study](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166), with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
+### 2. [Does the “right to request” flexible work policy influence men’s and women’s uptake of flexible working and well- being - Findings from the UK Household Longitudinal Study](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166){:target="_blank"}, with [Baowen Xue](https://profiles.ucl.ac.uk/36824-baowen-xue/){:target="_blank"}, [Heejung Chung](https://www.kcl.ac.uk/people/heejung-chung/){:target="_blank"}, and [Anne McMunn](https://profiles.ucl.ac.uk/11074-anne-mcmunn/){:target="_blank"}
 
 > [BMJ's Journal of Epidemiology & Community Health](https://jech.bmj.com/content/early/2025/09/13/jech-2025-224166){:target="_blank"}, 2026  
 > Media Coverage: [Forbes](https://www.forbes.com/sites/josiecox/2025/09/16/flexible-working-policies-alone-dont-change-workplace-culture-study-shows/){:target="_blank"},  [Bloomberg](https://www.bloomberg.com/news/articles/2025-09-02/fathers-face-steeper-wage-cuts-when-stepping-back-from-work?utm_source=website&utm_medium=share&utm_campaign=copy){:target="_blank"},  [King's College London News](https://www.kcl.ac.uk/news/flexible-working-policies-not-enough-to-change-workplace-practices){:target="_blank"}
@@ -94,12 +94,7 @@ seo:
 <br/>
 
 
-
-<!-- 
-## <ins>Revise & Resubmit:</ins>
--->
-
-## <ins>Working Papers:</ins>
+## <ins>Current Projects:</ins>
 
 
 ### 1. Housing Energy Efficiency and the Horizon Effect, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
@@ -112,10 +107,7 @@ seo:
 
 <br/>
 
-
-## <ins>Work in Progress:</ins>
-
-### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
+### 2. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
 
 <!-- 
 ### 2. How Privacy Policies Affect Young Adolescents: Exploring the Impact of the GDPR on Social Media Usage, Academic Performance, and Mental Health,  with [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}

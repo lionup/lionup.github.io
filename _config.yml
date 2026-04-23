@@ -4,9 +4,8 @@ contact_email_primary: "ran.gu@citystgeorges.ac.uk"
 contact_email_secondary: "lionup@gmail.com"
 
 # Keep this plain text for better SEO snippets
-description: > 
-  City St George’s, University of London. <br>
-  Institute for Fiscal Studies.
+description: >
+  City St George’s, University of London. Institute for Fiscal Studies.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rangu.org/"
@@ -14,7 +13,7 @@ github_username: lionup
 
 # SEO
 seo:
-  description: "Ran Gu - Senior Lecturer (Associate Professor) at City St George’s, University of London; Research Associate at the Institute for Fiscal Studies."
+  description: "Ran Gu - Associate Professor at City St George’s, University of London; Research Associate at the Institute for Fiscal Studies."
   author: "Ran Gu"
   keywords: "Ran Gu, economics, household finance, macro labour, applied microeconomics, City St George’s, University of London"
 
