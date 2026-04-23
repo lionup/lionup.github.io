@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Ran Gu - Senior Lecturer (Associate Professor), City St George’s, University of London"
-description: "Senior Lecturer (Associate Professor) at City St George’s, University of London. Research Associate at the Institute for Fiscal Studies. Research Interests: Macro Labour, Household Finance, Applied Microeconomics."
+title: "Ran Gu - Associate Professor, City St George’s, University of London"
+description: "Associate Professor at City St George’s, University of London. Research Associate at the Institute for Fiscal Studies. Research Interests: Macro Labour, Household Finance, Applied Microeconomics."
 seo:
   keywords: "Ran Gu, City St George’s, University of London, Macro Labour, Household Finance, Applied Microeconomics, Economics"
   author: "Ran Gu"
