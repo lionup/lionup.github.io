@@ -1,0 +1,5 @@
+model_reasoning_effort = "medium"
+
+[features]
+multi_agent = false
+js_repl = false
