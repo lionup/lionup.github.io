@@ -20,18 +20,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install build dependencies
+        run: sudo apt-get install -y cmake
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-
-      - name: Install gems
-        env:
-          BUNDLE_FORCE_RUBY_PLATFORM: true
-        run: bundle install --jobs 4 --retry 3
+          bundler-cache: true
 
       - name: Build site
-        env:
-          BUNDLE_FORCE_RUBY_PLATFORM: true
         run: bundle exec jekyll build --trace
 
       - name: Upload artifact
