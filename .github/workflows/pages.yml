@@ -25,11 +25,13 @@ jobs:
           ruby-version: '3.2'
 
       - name: Install gems
-        run: |
-          bundle lock --add-platform x86_64-linux
-          bundle install --jobs 4 --retry 3
+        env:
+          BUNDLE_FORCE_RUBY_PLATFORM: true
+        run: bundle install --jobs 4 --retry 3
 
       - name: Build site
+        env:
+          BUNDLE_FORCE_RUBY_PLATFORM: true
         run: bundle exec jekyll build --trace
 
       - name: Upload artifact
