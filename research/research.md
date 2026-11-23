@@ -94,20 +94,25 @@ seo:
 <br/>
 
 
-## <ins>Current Projects:</ins>
+## <ins>Working Papers:</ins>
 
 
-### 1. Housing Energy Efficiency and the Horizon Effect, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
+### 1. [Housing Energy Efficiency over the Life Cycle](/research/epc-pd-6.pdf){:target="_blank"}, with [Egle Jakucionyte](https://sites.google.com/site/eglejakucionyte/){:target="_blank"} and [Swapnil Singh](https://sites.google.com/site/eswapnilsingh/){:target="_blank"}
+
+> October 2026
 
 <details>
   <summary><font color="grey">Abstract</font></summary>
 
-  This paper examines how the investment horizon effect influences energy-efficiency investments, showing that older individuals have lower incentives to invest in energy efficiency. Using detailed microdata from England, we document that properties occupied by older households are systematically more energy inefficient. We develop a two-period model where households make energy-efficiency investment decisions under mortality risk, generating predictions about both individual and neighborhood-level investment patterns. Testing these predictions using historical instruments for neighborhood age structure, we find that a one-year increase in neighborhood mean age causes a 0.7 percentage point increase in energy inefficiency. 
+  We document that older homeowners in England live in less energy-efficient homes. Two channels could explain this. Through the <em>horizon channel</em>, older owners have fewer years to collect the return on a renovation, so they invest less. Through the <em>purchase window</em>, efficiency is bought with the home. As mobility declines with age, older owners have fewer chances to acquire efficiency cheaply. We estimate a lifecycle model of housing, mobility, and renovation on English data. The age gradient comes from the purchase window, not the horizon channel. Efficiency wears off within a few years, so the payoff horizon hardly varies with age, while older owners buy less often. Hence renovation subsidies narrow the age gap, whereas point-of-sale standards widen it.
 </details>
 
 <br/>
 
-### 2. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
+## <ins>Current Projects:</ins>
+
+
+### 1. Unemployment Insurance Extensions and the Dynamics of Labour Force Participation, with [Similan Rujiwattanapong](https://sites.google.com/site/wsrujiwattanapong/){:target="_blank"}
 
 <!-- 
 ### 2. How Privacy Policies Affect Young Adolescents: Exploring the Impact of the GDPR on Social Media Usage, Academic Performance, and Mental Health,  with [Moe Suzuki](https://www.essex.ac.uk/people/SUZUK60709/moe-suzuki){:target="_blank"}

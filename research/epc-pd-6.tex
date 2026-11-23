@@ -1,0 +1,150 @@
+% ======================================================================
+% Housing Energy Efficiency over the Life Cycle -- manuscript revision 6 (outline stage)
+%
+% Sections live in sections-pd6/. Exhibits are read directly from the
+% replication package (replication/output/{figures,tables}), so the paper
+% always shows the package's current version.
+%
+% Outline conventions (remove before submission):
+%   \outpara{...}  a planned paragraph; the bullets under it say what it must
+%                  say, not how to say it.
+%   \addref{...}   a reference to cite that is not yet in epc-pd.bib.
+%   \open{...}     an open decision or a check to make before writing.
+% ======================================================================
+\documentclass[11pt,letterpaper,english,final]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[largesc]{newpxtext}
+\usepackage{newpxmath}
+\usepackage[margin=0.92in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parskip}{0.22em}
+\setlength{\parindent}{1.35em}
+
+\usepackage{amsmath}
+\let\Bbbk\relax
+\usepackage{amssymb}
+\let\openbox\undefined
+\usepackage{amsthm,mathtools,bm}
+\usepackage{booktabs,threeparttable,tabularx,multirow,array}
+\usepackage{graphicx}
+\usepackage{caption,subcaption}
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\usepackage[section]{placeins}
+\usepackage[longnamesfirst,authoryear]{natbib}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,
+            citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\hypersetup{
+  pdftitle={Housing Energy Efficiency over the Life Cycle},
+  pdfauthor={Ran Gu, Egle Jakucionyte, and Swapnil Singh}
+}
+
+\titleformat{\section}[block]{\Large\centering\scshape}{\thesection.}{0.5em}{}
+\titleformat{\subsection}[runin]{\normalsize\bfseries}{\thesubsection.}{0.45em}{}
+\titlespacing*{\subsection}{0pt}{1.15em}{0.45em}
+\numberwithin{equation}{section}
+\graphicspath{{../../replication/output/figures/}}
+\newcommand{\pkgtable}[1]{\input{../../replication/output/tables/#1}}
+
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\operatorname{Pr}}
+\newcommand{\ind}{\mathbf 1}
+\newcommand{\ABC}{\textnormal{A--C}}
+\newcommand{\NR}{\mathrm{nr}}
+\newcommand{\R}{\mathrm{r}}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\codepath}[1]{\texttt{\detokenize{#1}}}
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+
+% Outline macros (remove before submission)
+\newcommand{\outpara}[1]{\par\medskip\noindent\textbf{\textcolor{blue!50!black}{P: #1}}\par\nobreak}
+\newcommand{\addref}[1]{\textcolor{orange!80!black}{[add ref: #1]}}
+\newcommand{\open}[1]{\textcolor{red!70!black}{\textbf{[#1]}}}
+\newcommand{\draft}{\color{red}}% draft prose written by Claude, to be reviewed
+
+\theoremstyle{plain}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\DeclareCaptionFont{draft}{\color{red}}% use \captionsetup{font=draft} in a float
+\setlist[itemize]{topsep=0.2em,itemsep=0.1em,leftmargin=1.6em}
+
+\title{\vspace{-4ex}\textsc{
+Housing Energy Efficiency over the Life Cycle}}
+\author{Ran Gu\qquad Egl\.e Jaku\v{c}ionyt\.e\qquad Swapnil Singh\thanks{%
+Gu: City St George's, University of London and Institute for Fiscal
+Studies, \texttt{ran.gu@citystgeorges.ac.uk}. Jaku\v{c}ionyt\.e: Bank of Lithuania and
+Vilnius University, \texttt{ejakucionyte@lb.lt}. Singh: Bank of Lithuania
+and Kaunas University of Technology, \texttt{ssingh@lb.lt}. We thank
+Richard Blundell, James Carroll, Cristina Cella, Peter Reusens, and Orkun
+Saka for comments on an earlier draft, and Irma Spudien\.e and Marius
+Ma\v{s}alas for help with computing resources. We also thank participants at
+the ECB Research Cluster and the Royal Economic Society Annual Conference.
+Pangram classifies 89 percent of the
+main text as human written. The appendices were written using AI (Opus 5.5 and Sol 6.1). The views expressed are those of the authors and do not
+necessarily represent the views of the Bank of Lithuania or its Board.}}
+\date{October 2026}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+We document that older homeowners in England live in less energy-efficient homes. Two
+channels could explain this. Through the \emph{horizon channel}, older owners have
+fewer years to collect the return on a renovation, so they invest less.
+Through the \emph{purchase window}, efficiency is bought with the home. As mobility declines with age, older owners have fewer chances
+to acquire efficiency cheaply. We estimate a lifecycle model of housing, mobility, and renovation on
+English data. The age gradient comes from the purchase window, not the
+horizon channel. Efficiency
+wears off within a few years, so the payoff horizon hardly varies with age,
+while older owners buy less often. Hence renovation subsidies narrow the age
+gap, whereas point-of-sale standards widen it.
+
+\medskip
+\noindent\textit{JEL classifications:} D15, J14, Q41, Q48, R21, R31.\par
+\noindent\textit{Keywords:} energy efficiency, housing, renovation,
+residential mobility, lifecycle, population ageing.
+\end{abstract}
+
+\newpage
+\hypersetup{pageanchor=true}
+\pagenumbering{arabic}
+
+% ======================================================================
+\input{sections-pd6/01-introduction}
+\input{sections-pd6/02-data}
+\input{sections-pd6/03-model}
+\input{sections-pd6/04-calibration-estimation}
+\input{sections-pd6/05-results}
+\input{sections-pd6/06-counterfactual-policies}
+\input{sections-pd6/07-conclusion}
+
+\clearpage
+\bibliographystyle{chicago}
+\bibliography{epc-pd}
+
+% ======================================================================
+\clearpage
+\appendix
+\renewcommand{\thetable}{\thesection\arabic{table}}
+\renewcommand{\thefigure}{\thesection\arabic{figure}}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\input{sections-pd6/A1-data-construction}
+\input{sections-pd6/A2-model-details}
+\input{sections-pd6/A3-proofs}
+\input{sections-pd6/A4-computation}
+\input{sections-pd6/A5-retention}
+\input{sections-pd6/A6-online-results}
+
+\end{document}
