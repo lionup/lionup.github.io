@@ -22,11 +22,8 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version: '3.2'
           bundler-cache: true
-          # If you have .ruby-version, it will be used automatically.
-
-      - name: Install gems
-        run: bundle install --no-deployment
 
       - name: Build site
         run: bundle exec jekyll build --trace
