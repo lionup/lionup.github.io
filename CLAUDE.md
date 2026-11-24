@@ -30,7 +30,7 @@ bundle exec jekyll serve
 
 ## Common edits
 
-**Add a publication** — edit `research/research.md`. Copy an existing `<div class="paper">` block: title, `paper-authors`, `paper-venue` (journal, year), optional `paper-media` line, `paper-links` pills (paper / published version / earlier version / abstract button), and a hidden `paper-abstract` div. Newest first; entries are not numbered.
+**Add a publication** — edit `research/research.md`. Copy an existing `<div class="paper">` block: title (linked to the PDF if one exists, else the published version), `paper-authors`, `paper-venue` (journal, year), optional `paper-media` line, `paper-links` pills (`paper` = published version, earlier-version pill such as NBER/IFS WP, `abstract` button), and a hidden `paper-abstract` div. Newest first; entries are not numbered.
 
 **Add a working paper or current project** — add a `<div class="paper">` block under the `Working Papers` heading in `research/research.md` (there is no separate Current Projects section). If there's no abstract or PDF yet, omit the pills and abstract div.
 
