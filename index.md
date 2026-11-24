@@ -13,13 +13,24 @@ seo:
 </div>
 
 
-{% include image.html url="/images/ran2024.jpg" width=350 align="right" caption="Pamukkale, Turkey, 2024" %}
+<div class="home-photo">
+  <img src="/images/ran2024.jpg" alt="Ran Gu, Pamukkale, Turkey, 2024" />
+  <span>Pamukkale, Turkey, 2024</span>
+</div>
 <br>
 
-## About Me
+<h1 class="home-name">Ran Gu</h1>
+<p class="home-title"><a href="https://www.citystgeorges.ac.uk/about/people/academics/ran-gu" target="_blank">Associate Professor of Economics, City St George’s, University of London</a></p>
+<p class="home-affil">
+  <a href="https://ifs.org.uk/people/ran-gu" target="_blank">Research Associate, Institute for Fiscal Studies</a> &middot;
+  <a href="https://www.essex.ac.uk/people/GURAN15605/Ran-Gu" target="_blank">Visiting Fellow, University of Essex</a>
+</p>
 
-I am an [Associate Professor](https://www.citystgeorges.ac.uk/about/people/academics/ran-gu){:target="_blank"} in the **Department of Economics** at *City St George’s, University of London*. <br>
-I am also a [Research Associate](https://ifs.org.uk/people/ran-gu){:target="_blank"} at the *Institute for Fiscal Studies* and a [Visiting Fellow](https://www.essex.ac.uk/people/GURAN15605/Ran-Gu){:target="_blank"} at the *University of Essex*. 
+<div class="home-buttons">
+  <a class="home-btn home-btn-cv" href="/cv/RanCV.pdf" target="_blank">CV &raquo;</a>
+  <a class="home-btn home-btn-research" href="/research/">Research &raquo;</a>
+  <a class="home-btn home-btn-email" href="mailto:{{ site.contact_email_primary }}">Email &raquo;</a>
+</div>
 
 <br>
 
@@ -27,12 +38,6 @@ I am also a [Research Associate](https://ifs.org.uk/people/ran-gu){:target="_bla
 - **Household Finance**
 - **Macro Labour**
 - **Applied Microeconomics**
-
-<br>
-
-### Quick Links
-- [CV](/cv/RanCV.pdf){:target="_blank"}
-- [Research](/research/){:target="_blank"}
 
 <br>
 

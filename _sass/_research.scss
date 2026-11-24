@@ -92,3 +92,72 @@
         line-height: 1.5;
     }
 }
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        filter: brightness(0.9);
+    }
+}
+
+.home-btn-cv { background: #1a4dff; }
+.home-btn-research { background: #f0a500; }
+.home-btn-email { background: #00993d; }
+
+.home-name {
+    margin: 0 0 4px;
+    font-size: 2.4em;
+    font-weight: 700;
+}
+
+.home-title {
+    margin: 0 0 6px;
+    font-size: 1.25em;
+}
+
+.home-title a {
+    color: $grey-color-dark;
+}
+
+.home-affil {
+    margin: 0 0 4px;
+    color: $grey-color-dark;
+}
+
+.home-photo {
+    float: right;
+    margin: 0 0 16px 24px;
+    text-align: center;
+    width: 260px;
+    max-width: 40%;
+
+    img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: 50% 30%;
+        border-radius: 50%;
+    }
+
+    span {
+        display: block;
+        margin-top: 6px;
+        color: $grey-color;
+        font-size: 0.85em;
+    }
+}
