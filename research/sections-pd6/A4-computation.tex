@@ -1,0 +1,216 @@
+% Appendix D -- Computation (draft prose; from the R0 code and records)
+%   code      model-codes/codes/epc-lifecycle-deep-learning/notes/
+%             model-assumptions-review-2026-09-22/parallel-diagnostics-2026-09-25/
+%             completed-backup/code-training-first-full-20260925 (frozen R0 code)
+%             epc_backward/training_first/workflow.py (TrainingConfig, train_stage),
+%             epc_backward/nets.py (ValueNet baseline), physics.py (controls),
+%             features.py (inputs), simulate.py
+%   sizes     value net 42-512-512-512-1 (checkpoint tensors), policy net
+%             42-128-128-57; 20,480 rows per age; 71 stages, 9.71 h
+%   accuracy  replication/data/model/r0/final-validation/final-estimate-euler.json
+%             (128 states per age; euler_consumption_fraction_abs, interior states)
+%   search    replication/data/model/r0/estimation/estimation_results.json
+%   SEs       replication/code/3-model/standard_errors.py;
+%             replication/data/model/standard-errors-n4096/summary.json
+\section{Computation}\label{app:computation}
+
+\subsection{Networks.}\label{app:computation-networks}
+Each age has its own value network and policy network, 120 networks for the
+60 ages. Both take the same 42 inputs: the state, functions of it, the
+seven parameters in $\vartheta$, and the discount factor $\beta$. Each parameter is scaled to $[0,1]$ over its
+search range, the bequest scale $\upsilon$ on a log scale.
+
+The value network has three hidden layers of 512 units with the SiLU
+activation. The activation is smooth because the maximization at the
+previous age reads the slope of the value in liquid wealth. The network does
+not fit the value directly. When the bequest motive is strong, the value of
+a household is dominated by the bequest term, and the accuracy the choices
+need is a small fraction of it. The network therefore fits the deviation
+from an analytic baseline,
+\begin{equation*}
+  \widehat V_j(\mathbf x_j,\vartheta)=A_j(\beta)\,g(\tilde q_j)
+  +\bar v_j+\varsigma_j\,N_j(\mathbf x_j,\vartheta),
+  \qquad
+  A_j(\beta)=\sum_{k\geq0}\beta^k\Bigl(\prod_{i=0}^{k-1}\phi_{j+i}\Bigr)
+  (1-\phi_{j+k}),
+\end{equation*}
+where $g$ is the bequest utility~\eqref{eq:bequest}, $\tilde q_j$ is the
+household's net worth at the start of the period (cash on hand plus home
+equity), $A_j(\beta)$ is the discounted probability of dying at each future
+age, $N_j$ is the network, and $\bar v_j$ and $\varsigma_j$ standardize the values at
+age $j$.
+
+The policy network has two hidden layers of 128 units and two to four
+outputs for each alternative. For every alternative it predicts the
+logarithm of consumption and the probability that the household consumes
+the most the alternative allows: it saves nothing and, if it buys, borrows
+only what the purchase requires. When this probability exceeds 0.9, the
+household consumes that maximum. An owner who stays also has a payment
+share, which places the mortgage payment between the smallest payment the
+contract allows and the largest compatible with the predicted consumption.
+A buyer also has the size share $a_h$ and the mortgage share $a_m$,
+described below. A renter's home size is the optimal size given total
+spending, in closed form, because it does not affect the future. Liquid
+saving is the residual in every alternative.
+
+These outputs are not the choices themselves. A network outputs
+unrestricted real numbers, but the choices must satisfy the budget and
+borrowing constraints, so a fixed mapping turns the outputs into a feasible
+allocation. Take a renter who buys a home. The network predicts
+consumption $c$ and the two shares $a_h,a_m\in[0,1]$. The first places the
+size of the new home in the feasible range,
+\begin{equation*}
+  h'=\underline h^{\mathrm{own}}
+  +a_h\bigl(\overline h^{\mathrm{own}}-\underline h^{\mathrm{own}}\bigr),
+\end{equation*}
+and the second places the mortgage between the smallest balance that
+finances the purchase together with $c$ and the largest balance that the
+loan-to-value and payment limits allow. Liquid saving is what is left, so
+the budget holds by construction. If $c$ is not affordable at $h'$, the
+size is reduced until it is. An error in $a_m$ then moves money between the
+mortgage and liquid saving and leaves consumption unchanged. A purchase
+involves large sums relative to a year's consumption, so this matters: if
+the network predicted saving instead, a small error in it would be a large
+error in consumption.
+
+\subsection{Training.}\label{app:computation-training}
+At each age, the training sample has 20,480 points. It consists of 4,096
+draws of the state and the parameters, each with four values of liquid
+wealth, and 512 groups of points with small mortgages. The parameters are
+drawn uniformly over the box, $\upsilon$ log-uniformly. Ten percent of the
+draws are held out to measure the fit.
+
+At each point the expectation in equation~\eqref{eq:end-value} is computed
+by quadrature, with five nodes for the permanent income shock and three for
+the transitory shock, and exactly over whether an efficient home stays
+efficient. For every feasible alternative, the maximization in
+equation~\eqref{eq:choice-value} combines a grid in the choices refined by
+golden-section search, a grid in consumption, and candidates on the
+boundary of the feasible set, and keeps the best. The target of the value
+network is the logsum~\eqref{eq:logsum}. By the envelope condition, its
+derivative with respect to liquid wealth is $(1+r_b)$ times the
+probability-weighted marginal utility of consumption across alternatives.
+
+The value network minimizes the relative error in the value plus 0.01 times
+the error in this derivative, in 24,000 steps of the Adam optimizer, with a
+learning rate that decays from $10^{-4}$ to $10^{-6}$. The policy network
+fits the maximizing choices in 8,000 steps, with a learning rate that
+decays from $10^{-3}$ to $10^{-5}$. In its loss, the choices of each
+alternative are weighted by $0.05+0.95$ times the probability that the
+household chooses it, so the fit concentrates on the alternatives that
+households choose. Infeasible alternatives have zero weight. Both networks
+start from the trained networks of age $j+1$.
+
+The networks have no explicit penalty on their weights, such as weight
+decay or dropout. Instead, three devices keep them from fitting noise in
+the sample. Every 2,000 steps for the value network and every 1,000 steps
+for the policy network, the loss is computed on the held-out points, and
+the weights with the lowest held-out loss are kept. The norm of the
+gradient is clipped at 5. And each step uses a random minibatch of 2,048
+points. Table~\ref{tab:networks} collects these settings.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Network architecture and training}\label{tab:networks}
+  \begin{threeparttable}
+    \small
+    \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.33\textwidth}%
+                       >{\raggedright\arraybackslash}p{0.33\textwidth}@{}}
+      \toprule
+      & Value network & Policy network \\
+      \midrule
+      \multicolumn{3}{@{}l}{\textit{Architecture}} \\
+      \quad Inputs & 42 & 42 \\
+      \quad Hidden layers & $3\times512$ units & $2\times128$ units \\
+      \quad Activation & SiLU & SiLU \\
+      \quad Outputs & 1, the deviation from the bequest baseline
+        & 57, two to four for each alternative \\
+      \addlinespace
+      \multicolumn{3}{@{}l}{\textit{Sample at each age}} \\
+      \quad Points & 20,480 & 20,480 \\
+      \quad Held out & 10 percent of the draws & 10 percent of the draws \\
+      \addlinespace
+      \multicolumn{3}{@{}l}{\textit{Loss}} \\
+      \quad Fit & squared error relative to $1+|V|$
+        & Huber ($\delta=0.25$) in log consumption; cross-entropy in shares
+          and probabilities \\
+      \quad Derivative & $0.01\times$ squared relative error in
+        $\partial V/\partial b$ & -- \\
+      \quad Weight of a point & equal
+        & $0.05+0.95\times$ choice probability of the alternative \\
+      \addlinespace
+      \multicolumn{3}{@{}l}{\textit{Optimization}} \\
+      \quad Optimizer & Adam & Adam \\
+      \quad Steps & 24,000 & 8,000 \\
+      \quad Learning rate, cosine decay & $10^{-4}$ to $10^{-6}$
+        & $10^{-3}$ to $10^{-5}$ \\
+      \quad Minibatch & 2,048 points & 2,048 points \\
+      \quad Initial weights & networks of age $j+1$ & networks of age $j+1$ \\
+      \addlinespace
+      \multicolumn{3}{@{}l}{\textit{Regularization}} \\
+      \quad Weight decay, dropout & none & none \\
+      \quad Gradient-norm clipping & 5 & 5 \\
+      \quad Early stopping & best held-out loss, checked every 2,000 steps
+        & best held-out loss, checked every 1,000 steps \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} Each of the 60 ages has one network of each
+      kind. The sample has 4,096 draws of the state and the parameters, each
+      at four values of liquid wealth, and 512 draws of owners, each with a
+      small mortgage and with none, at the same four values. Points that
+      share a draw are held out together.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+At ages 82 and above the problem is stationary. The networks of this age
+are fitted to targets computed from their previous iteration, at least 6
+and at most 12 times. The iteration stops early when the choices change by
+less than a tolerance in two consecutive iterations.
+With the 59 younger ages, training has 71 stages. They took 9.7
+hours on one GPU, 8.8 of them in computing the targets.
+
+\subsection{Accuracy.}\label{app:computation-accuracy}
+On the held-out points at age 23, the value network's mean relative error
+is 0.3 percent and its 95th percentile is 1.0 percent. We also check the
+policies at the estimate with Euler-equation errors, expressed as a share of
+consumption, at 128 states at each of the ages 23, 40, 64, 65, 78, and 82+,
+among the states in which neither the borrowing limit nor the consumption
+floor binds. The median error is 0.9 percent at 23 and at 82+, 1.2 percent at
+78, 3.3 percent at 40, and 2.9 and 4.7 percent at 64 and 65. The 95th
+percentiles range from 3.6 percent at 78 to 13.6 percent at 65. The largest
+error, 54.6 percent, is at age 40. The errors are largest around
+retirement, where income falls.
+
+\subsection{Search.}\label{app:computation-search}
+The search has three stages, all with the same draws of the shocks. First,
+it simulates 96 points of a scrambled Sobol sequence over the box with
+2,048 households each. Three of the points are replaced by estimates from
+earlier runs. It keeps the best 12. Second, it refines them locally over
+three rounds, drawing 16, 12, and 8 normal perturbations of each candidate
+with standard deviations of 10, 5, and 2 percent of the width of each
+range, with 4,096 households, and keeping the best 8 after each round.
+Third, it simulates the best 10 candidates with 32,768 households, and the
+best of them is the estimate. The search evaluates 486 candidates. The
+moments in Panel~B of Table~\ref{tab:estimates} are simulated at the estimate with 65,536
+households and new draws.
+
+
+\subsection{Standard errors.}\label{app:computation-se}
+The derivative $G$ in equation~\eqref{eq:smm-variance} is computed by
+central differences at $\pm3$ percent of the width of each range, with
+65,536 households and the same draws at every point, on the scale on which
+the moments enter the criterion: levels for shares, logs for ratios. The
+covariance $\Omega$ of the data moments comes from a bootstrap of the
+surveys that resamples clusters, on the same scale.
+
+The simulation noise is $\Sigma_S=r\,D\Omega D$, with
+$D=\operatorname{diag}(1/\sqrt{S_k})$. Here $S_k$ is the number of simulated
+households in the age group of moment $k$, at the 4,096 households of the
+search, divided by the number of observations in the data. A simulated
+household counts once however many ages it contributes, so $D\Omega D$
+overstates the noise. The factor $r=0.069$ corrects for this. It is the
+ratio of the simulation noise measured at four parameter vectors, as the
+difference between two independent sets of draws with 65,536 households, to
+the noise $D\Omega D$ predicts for that number of households.

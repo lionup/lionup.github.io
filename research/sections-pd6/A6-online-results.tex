@@ -1,0 +1,40 @@
+% Appendix F -- Additional results (online appendix; draft, 30 October 2026)
+%   tables    replication/output/tables/tab-mechanisms-payoff.tex
+%             (code/4-exhibits/tab_mechanisms.R): Table 7 of Section 5.1 until
+%             30 October, replaced there by fig:mechanisms-payoff
+%             (code/4-exhibits/fig_mechanisms_payoff.R)
+\section{Additional Results}\label{app:results-more}
+
+Table~\ref{tab:mechanisms-payoff} gives the numbers behind
+Figure~\ref{fig:mechanisms-payoff}, with the efficient share at 35--64,
+which the figure leaves out, and purchases at 65--75. The share at 35--64
+lies between the shares at 25--34 and 65--75 in every row but one: at
+$\varrho=0.96$ it is the highest of the three, 45.9 percent. Purchases at
+65--75 rise with comfort, from 5.5 per 100 owners a year without it to 6.6
+with comfort doubled, but stay at 6.0 to 6.1 as $\varrho$ rises.
+
+\begin{table}[htbp]
+  \centering
+  \caption[The efficient share of owners when the payoff changes]{The efficient share of owners when the payoff changes}\label{tab:mechanisms-payoff}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-mechanisms-payoff}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} The runs of
+      Figure~\ref{fig:mechanisms-payoff}. Each row changes one element of the
+      model, keeps the other parameters at the estimates of
+      Table~\ref{tab:estimates} (values in parentheses), and lets households
+      re-optimize. Shares are A--C owners as a percentage of owners in each
+      age group, from 65,536 simulated households. The gap is the share at
+      25--34 less the share at 65--75, in percentage points; the ratio is
+      the share at 25--34 over the share at 65--75. EHS: the targets of
+      Table~\ref{tab:estimates}.
+      \item $^a$All home purchases, by renters and owners, per 100
+      owners aged 65--75 a year.
+      \item $^b$The rows for $\varrho$ are simulated on a CPU and the
+      others on a GPU. The CPU simulation at the estimates gives shares of
+      22.5, 17.7, and 12.7 percent, a gap of 9.9, and a ratio of 1.78; the
+      two differ by simulation noise only.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

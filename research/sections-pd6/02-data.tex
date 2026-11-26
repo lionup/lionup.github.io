@@ -1,0 +1,204 @@
+% Section 2 -- Data (draft prose, written from 02-data-outline.tex)
+%
+% Numbers below are from the replication package:
+%   Fig. 1   replication/output/figures/fig-ehs-age-gradient.csv (owners rows;
+%            the text reports exp(coef) - 1, column pct)
+%   Table 2  replication/output/tables/tab-vintage-gradient.csv
+%   Table 3  replication/output/tables/tab-epc-transitions.csv
+%   Fig. 2   replication/output/figures/fig-abc-years-since-purchase.csv
+%   recent buyers   replication/data/moments/ehs_recent_buyer_data_moments.md
+%   owner moves     replication/data/moments/ukhls_owner_mobility.csv
+%   sale split      replication/data/moments/epc_transaction_hazards.csv
+%   register counts replication/logs/2-moments/build_epc_band_transitions.log,
+%                   build_epc_energy_calibration.log
+\section{Data and Stylized Facts}\label{sec:data}
+
+In this section, first we describe different data sources we use to establish the stylized facts that motivate our model and to calibrate it. Then we describe how we measure energy efficiency. And, finally, we document three stylized facts about energy efficiency of owner-occupied homes.
+
+
+% ----------------------------------------------------------------------
+\subsection{Data sources and sample construction}\label{sec:data-sources}
+
+We use two main data sources. First, the English Housing Survey (EHS), and second, the register of Energy Performance Certificates (EPCs) for England and Wales. In the EHS, an annual cross section of households is surveyed in England. The survey combines a household interview with a physical inspection of subsamples of dwellings. The physical inspection is conducted by trained surveyors. The household interview collects information on income, mortgages, ownership, and other associated variables. The physical inspection collects information on the size of the dwelling, building fabric, space heating, hot water, etc. Based on this inspection the survey computes the dwelling's Standard Assessment Procedure (SAP) rating and its EPC.  For our purpose, we use the interview waves of 2011--12 to 2019--20 and supplement them with physical survey waves covering that period.
+
+
+In England and Wales, a certificate is typically lodged when a dwelling is built, sold, or rented. Lodged certificates are collected in the register of EPCs. We use this register and restrict attention to the period October 2008 to January 2023. The register provides a unique identifier for each dwelling, detailed location information, inspection and lodgement dates, dwelling construction-year bands, reason for the certificate issue, tenure of the dwelling, current and potential energy rating bands, type of the dwelling, current and potential costs of heating, hot water, and lighting, and a set of recommendations in a separate file which documents how the dwelling's energy efficiency can be improved and what can be the lower and upper bounds on the cost of those improvements. In the register we observe 24.1 million domestic certificates, of which 12.2 million are for owner-occupied dwellings. To create a panel of EPCs, within each dwelling we first order certificates by lodgement date and then form pairs of consecutive certificates from different years.
+
+
+We also use four additional datasets which are used for calibrating the model and for generating data moments for the estimation. These datasets are: (i) the Wealth and Assets Survey (WAS) which provides information on household balance sheets, (ii) Understanding Society which provides information on earnings histories and address changes, (iii) national life tables which provide survival probabilities, and (iv) domestic energy prices which are combined with modelled energy use from the EPC register to compute energy bills by efficiency state.
+
+In the EHS analysis below, our unit of observation is the household; in the EPC register analysis it is the dwelling. As we are interested in the age gradient in energy efficiency, we define age as the age of the household reference person. Further, in most of the analysis we restrict attention to the stock of homes built by 1990, which is the boundary between the older and newer construction-year bands in both data sources. We do this because newer homes are efficient largely because they were built to tighter building regulations, not because of choices made by their owners. We provide additional details about specific variables and sample selection in Appendix~\ref{app:data}.
+
+
+% ----------------------------------------------------------------------
+
+We measure energy efficiency of a dwelling through its  Energy Performance Certificate (EPC). An EPC is an assessment of a dwelling's energy performance. It is derived from the Standard Assessment Procedure (SAP) rating~\citep{bre_sap2012}. The SAP rating is based on the estimated energy costs of heating, hot water, and lighting per square meter of floor area.\footnote{These estimates are made under standard assumptions about occupancy and heating patterns. The rating therefore does not incorporate metered consumption, and does not take into account how the occupants use energy.} The EPC rates a dwelling on seven bands, from A (most efficient) to G (least efficient).\footnote{It is important to note that a change in band might not reflect physical work on the dwelling. It can also reflect a different assessor, a revision of the SAP methodology, or measurement error in the rating. } In our empirical analysis, to map the data to the model, we classify bands A--C as efficient and bands D--G as inefficient.\footnote{Band C is the policy benchmark in England. The Clean Growth Strategy sets the target that as many homes as possible reach band C by 2035~\citep{hmg2017cleangrowth}.}
+
+
+
+Now we present three stylized facts about energy efficiency of owner-occupied homes using the EHS and the EPC register.
+% ----------------------------------------------------------------------
+\subsection{Three stylized facts}\label{sec:data-facts}
+
+
+\subsubsection{Fact 1: older owners live in less efficient homes.}\label{sec:data-age-gradient}
+
+
+
+
+Using the EHS data we regress the log SAP rating, a continuous measure of energy efficiency, on indicators for the age group of the household, with ages 25--34 as the omitted group.
+Figure \ref{fig:ehs-age-gradient} reports coefficients with confidence intervals. The standard errors are clustered by dwelling age and region.  We observe that, without controls, on average, owners aged 65$+$ live in homes that are about 9 percent less energy efficient than those of owners aged 25--34. Controlling for floor area, income, household size and composition, dwelling age, and labor force status reduces
+the gap to about 7 percent. Further, adding year and region fixed effects does not have any meaningful effect. Hence,  in all three specifications efficiency decreases steadily with age. While observable differences between households and between their homes matter, the age gradient remains significant even after accounting for them.
+
+\begin{figure}[h]
+  \centering
+  \caption{The age gradient in energy efficiency, owner-occupiers}
+  \label{fig:ehs-age-gradient}
+  \includegraphics{fig-ehs-age-gradient.pdf}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Source:} English Housing Survey 2011--12 to 2019--20\\
+    \textit{Notes:} This figure shows coefficients and 95 percent confidence intervals from regressions of log energy efficiency on indicators for the age of the
+    household reference person. The sample is restricted to owner-occupiers. The age group 25--34 is omitted. Energy
+    efficiency is derived from the SAP rating, so higher values mean better
+    performance. ``No controls'' is unconditional and is denoted by a hollow circle. The second specification, denoted by a gray square, adds log floor area, log real income, household size, an indicator for a single-person household, dwelling-age categories, and the labor force status of the household reference person. The third specification, denoted by a solid circle, adds year and region fixed effects. Standard errors are clustered by dwelling age and region (81 clusters).
+  \end{minipage}
+  \vspace{-0.5cm}
+\end{figure}
+
+
+Figure \ref{fig:ehs-age-gradient} uses the continuous measure of energy efficiency. Because in the model we develop in the next section energy efficiency is characterized in a binary form,  in Table~\ref{tab:vintage-gradient} we show the same gradient in the binary measure. Among all owned homes, the share in bands A--C falls from 37.9
+percent at ages 25--34 to 13.3 percent at ages  65--75. However, a part of this
+difference comes from the differences in the age of the dwelling, since homes built after 1990 tend to be more efficient. In the EHS, 29 percent of young owners live in a home built after 1990 compared to only 9 percent of owners aged  65--75. Even so, when we restrict our attention to the stock built by 1990 the age gradient remains. The A--C share is 21 percent at ages 25--34 and declines to 16.9 percent at 35--64, and to 9.7 percent at  65--75. Hence, young owners of older homes are more than twice as likely as owners aged  65--75 to live in an efficient one.
+
+
+\begin{table}[h]
+  \centering
+  \caption{Energy efficiency and dwelling vintage by age, owner-occupiers}
+  \label{tab:vintage-gradient}
+  \begin{threeparttable}
+    \pkgtable{tab-vintage-gradient}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Source:} English Housing Survey 2011--12 to 2019--20
+      \item \textit{Notes:}  Weighted means for owner-occupiers, English
+      Housing Survey physical-survey waves, each wave weighted equally. The
+      rows for ages 25--34 and 35--64 use five waves; the row for ages  65--75
+      uses the two waves that record exact age (2011--12 and 2012--13). The
+      last column is the efficiency target in estimation.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+As the EHS is not a panel, both Figure \ref{fig:ehs-age-gradient} and Table \ref{tab:vintage-gradient} confound age with cohort effects. Hence, based on this stylized fact only we cannot interpret the gradient
+causally. However,  the structural model developed in the next section supplies the structure that separates these channels.
+
+% ----------------------------------------------------------------------
+\subsubsection{Fact 2: efficiency status changes in both directions.}\label{sec:data-transitions}
+
+
+While the  first stylized fact compares the homes of different owners at a point in time, it does not tell us whether the efficiency of a given home changes over time.  Owners can upgrade an inefficient home, and an efficient home can become inefficient due to depreciation. As the EHS does not follow dwellings over time, we use the EPC register. We first pair consecutive certificates for the
+same owner-occupied dwelling.  We then measure how often homes cross the
+efficiency threshold in each direction.
+
+
+\begin{table}[t]
+  \centering
+  \caption{Transitions across the efficiency threshold between EPC
+    certificates, owner-occupied homes}\label{tab:epc-transitions}
+  \begin{threeparttable}
+    \pkgtable{tab-epc-transitions}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Source:} Register of Energy Performance Certificates for England and Wales, October 2008 to January 2023
+      \item \textit{Notes:} Pairs of consecutive certificates for the same
+      owner-occupied dwelling, in different years, from the register of
+      Energy Performance Certificates for England and Wales. The annual rate
+      averages, over pairs that start in the origin state, an indicator for
+      ending in the other state divided by the number of years between the
+      two certificates. The row for all homes includes pairs whose
+      construction era is unknown. A transition is a change in the assessed
+      band, not necessarily physical work on the home.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+
+Table \ref{tab:epc-transitions} reports annual transition rates across the
+efficiency threshold between consecutive certificates for the same dwelling. Among homes built by 1990, 6.9 percent of homes in
+bands D--G move to A--C each year, and 15.2 percent of homes in bands A--C
+move back to D--G. The downgrade rate is about twice as large as the upward rate. But as there are more homes in bands D--G, the absolute number of homes that move up is larger than the number that move down. Newer homes move up more often (11.9 percent) and down
+less often (5.8 percent). Hence, there is churning in both directions.\footnote{As certificates are typically issued during sales and lettings, the
+  rates captured in Table \ref{tab:epc-transitions} describe homes that are re-certified. Hence, this provides a partial picture of the housing stock.  The appendix reports the comparison between the first and latest certificate of each home and the full matrix of band transitions (Figures~\ref{fig:epc-first-last}
+  and~\ref{fig:epc-transition-matrix}).}
+
+% ----------------------------------------------------------------------
+\subsubsection{Fact 3: efficiency is tied to when the owner bought.}
+
+The first two stylized facts show that older owners live in less efficient
+homes and that the efficiency status of a home is not constant but changes over time. However, they do not tell us when these transitions across efficiency bands happen. For example, if an owner improves a home mainly around the time she buys it, and then its
+efficiency wears off afterwards, then the efficiency of a home should depend
+on how long ago its owner bought it, and not only on the owner's age. Further, as
+older owners have, on average, owned their homes for longer, this could
+account for part of the age gradient. As the EHS records how many years the
+household has owned its current home, it allows us to compare owners of the
+same age who bought at different times. For this analysis we restrict attention to homes built by 1990.
+
+Figure \ref{fig:abc-years-since-purchase} shows the efficient A--C share among owners
+of homes built by 1990 against the number of years since they bought the home,
+conditional on age. Among owners of age group $65+$, the share is 21.5 percent
+for those who bought within the last five years. This reduces to  13 percent for those
+who bought $20+$ years ago. For owners aged 35--64 the profile is
+flatter: about 19 percent for those who bought within five years, 15 percent
+at 10--19 years, and 16.5 percent at $20+$ years. Owners aged 25--34 are
+observed only at short durations, with shares of 21.4 and 19.6 percent.
+The interesting takeaway from this figure is that owners who bought recently live in similarly efficient homes at every age. The difference seems to arise largely from the varying lengths of ownership.
+
+\begin{figure}[t]
+  \centering
+  \caption{Energy efficiency by years since purchase and age, owners of
+    homes built by 1990}
+  \label{fig:abc-years-since-purchase}
+  \includegraphics{fig-abc-years-since-purchase.pdf}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Source:} English Housing Survey 2011--12 to 2019--20\\
+    \textit{Notes:} Share of owner-occupiers in homes built by 1990 whose
+    home is in bands A--C, by the number of completed years the household
+    has owned the home and the age of the household reference person, with
+    95 percent confidence intervals. English Housing Survey, five
+    physical-survey waves (2011--12 to 2019--20), each wave weighted
+    equally. Cells with fewer than 100 households are not shown.
+  \end{minipage}
+\end{figure}
+
+Figure~\ref{fig:abc-years-since-purchase} provides an alternative way to interpret
+the age gradient. Older owners could have a lower A--C share for two
+reasons. First, conditional on years since purchase, they could live in less efficient homes than younger owners. Second,  they could have owned
+their homes for longer. As over time efficiency degrades, homes owned for longer are less often in bands A--C. Figure \ref{fig:abc-years-since-purchase} indicates that the second reason might be more important in determining the age gradient.
+
+
+
+Till now we have shown that (i) older owners live in less
+efficient homes, (ii) the efficiency status of a home changes in both
+directions, and (iii) efficiency is associated with length of ownership. Two explanations are consistent with these stylized facts. First, because of a higher probability of mortality in later life, older owners have
+fewer expected years left in which to recover the cost of a renovation. Hence, a
+renovation is worth less to them. Second, mobility declines with age (see Appendix~\ref{app:data-ukhls}), so
+older owners make fewer purchases.  If
+    efficiency is mostly acquired at purchase, fewer purchases mean fewer
+    efficient homes, and the age gradient follows.
+
+Fact 3 seems to be  consistent with the second explanation. However, it does not settle the question. This is because years since purchase is not assigned at random.
+The two explanations also interact, because a short horizon is itself a
+reason not to move. The available data also does not allow for the separation of these effects. The EHS is a cross-section, so it mixes age effects with cohort effects. The EPC register observes a home only when it is certified, so it captures renovation by owners who do not sell only when it leads to a new certificate.  We therefore develop a structural lifecycle model in which households choose when to move, what home to buy, and when to renovate.
+
+% Previous version (Swapnil), replaced 13 October 2026:
+% The three stylized facts together show: (1) older owners live in less
+% efficient homes, (ii) efficiency status changes in both directions, and
+% (iii) efficiency is associated with length of ownership. Two explanations
+% can explain this age gradient. First, as older owners have fewer years left
+% in which to recover the cost of a renovation, so a renovation is worth less
+% to them. Second, mobility reduces with age. Hence, older owners have fewer
+% purchases. If renovation is more likely to happen around the time of a
+% purchase, then we are again going to get the age gradient in efficiency.
+% The present data cannot separate these two explanations. The EHS compares
+% different owners at one point in time, so it mixes age with cohort.
+% Similarly, the EPC register observes a home only when it is re-certified.
+% We therefore turn to a structural lifecycle model in which households
+% choose both when to move and when to renovate.

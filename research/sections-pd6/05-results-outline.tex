@@ -1,0 +1,216 @@
+% Section 5 -- Results (outline: paragraphs and what each must say; no prose yet)
+% Structure (28 October): an opening and two subsections, one per explanation
+% of Section 2: the payoff horizon (5.1), then the window (5.2).
+%
+% Numbers from the draft exhibits of the replication package (R0, n = 65,536,
+% CPU unless noted); none of the tables is in the paper yet:
+%   lifecycle     output/figures/fig-lifecycle-fit.csv        (fig:lifecycle-fit)
+%   horizon       output/tables/tab-payoff-horizon.csv        (tab:payoff-horizon)
+%   flows and     output/tables/tab-flows-accounting.csv      (tab:flows-accounting;
+%   accounting                                                 merged 28 October)
+%   mechanisms    output/tables/tab-mechanisms.csv            (tab:mechanisms; GPU
+%                 cells of the 30 September batch, decay rows on CPU)
+%   varrho 0.96   data/model/r0/lifecycle/*-varrho0.96.csv    (flows, horizon)
+% The search box is in data/model/r0/search-box.json.
+
+\outpara{Opening: the question and the answer (before the first subsection)}
+\begin{itemize}
+  \item The question from Section~\ref{sec:data}: do older owners live in
+    less efficient homes because efficiency pays off over fewer years
+    (the payoff horizon), or because they buy homes less often (the
+    window)? Section~\ref{sec:model} gave the direction of each force;
+    this section gives their size at the estimates.
+  \item The answer up front: almost all of the gradient comes from
+    purchases. The payoff horizon is short at every age, because
+    efficiency wears off, so it hardly varies with age. Older owners buy
+    less often, and buying an efficient home is the main way to get one.
+  \item Road map: the horizon (5.1), then the window (5.2).
+  \item \open{Title: ``Results'' or one that states the question, e.g.
+    ``Why Older Owners Live in Less Efficient Homes''.}
+\end{itemize}
+
+\outpara{Opening: the life cycle at the estimates (Figure fig:lifecycle-fit)}
+\begin{itemize}
+  \item The model's profiles of homeownership, the A--C share, mortgages,
+    income, and consumption by age. Decided 12 and 21 October: model only,
+    opens Section 5.
+  \item What the reader needs from it: when households buy (renters buy in
+    their late twenties and thirties, few purchases after 50), and the
+    A--C share falling with age.
+  \item Outcomes, not trade-offs: this is where sentences such as ``young
+    households rent and save, then buy'' belong (kept out of
+    Section~\ref{sec:model} on purpose).
+\end{itemize}
+
+\subsection{The payoff horizon}
+
+\outpara{The horizon by age (Table tab:payoff-horizon)}
+\begin{itemize}
+  \item The horizon of equation~\eqref{eq:payoff-horizon}, built up one
+    force at a time, at ages 25, 45, 65, 75.
+  \item Survival alone: 26.9, 22.0, 14.6, 10.0 years. This is the intuition
+    of the first explanation, and it falls steeply with age.
+  \item Adding loss of efficiency: 5.3, 5.3, 5.0, 4.4. Adding moving at the
+    model's rate: 3.4, 3.0, 3.1, 2.9. Loss of efficiency caps the horizon at
+    every age, so survival hardly matters before 75.
+  \item With the moving rates of owners in UKHLS the horizon rises in
+    midlife (3.8, 4.7, 4.6, 4.2): the old move less, which offsets the
+    higher probability of dying (Section~\ref{sec:model}).
+\end{itemize}
+
+\outpara{What a flat horizon implies}
+\begin{itemize}
+  \item Proposition~\ref{prop:window}: the gap between the two thresholds is
+    the extra cost of renovating in place spread over $\widetilde H$. With
+    $\widetilde H$ nearly flat in age, the gap is about as wide at 75 as at
+    35. Proposition~\ref{prop:buy}: a buyer's choice of an efficient home
+    hardly depends on age.
+  \item So the margins on which the horizon acts (what a buyer chooses,
+    whether an owner renovates in place) should be flat in age, and the
+    horizon cannot produce much of a gradient. Section 5.2 checks this in
+    the accounting.
+  \item Optional: the reference-home example parked from Section 3.3 (bill
+    saving against the cost of renovating) fits here, now that the
+    estimates are known (parked-text.md).
+\end{itemize}
+
+\outpara{The payoff per year and how long it lasts (Table tab:mechanisms,
+Panel A)}
+\begin{itemize}
+  \item Change one ingredient at a time, let households re-optimize, keep
+    the other parameters at the estimates. Report the A--C share by age and
+    the gap and the ratio between 25--34 and 65--75.
+  \item Comfort (the payoff per year): none or doubled shifts every share
+    (gap 7.4 and 11.3) but hardly the ratio (1.76 and 1.68). A larger
+    payoff per year raises the level, not the age profile.
+  \item Retention (how long the payoff lasts): $\varrho=0.88$, 0.92, 0.96
+    raises every share; the gap widens and then narrows (11.4, 11.5, 6.2)
+    and the ratio falls (1.68, 1.49, 1.17). A longer horizon does not
+    steepen the gradient: with slow decay the stock remembers older
+    purchases, so older owners catch up.
+  \item \open{$\eta=0$ is the lower edge of the training box [0, 0.15],
+    the same concern as for $\varrho$ at 0.80 and 0.99. Keep only the
+    doubled cell (interior), add an interior cell such as $\eta/2$ (new
+    run), or say so in the note.}
+\end{itemize}
+
+\outpara{When efficiency lasts 25 years: $\varrho=0.96$ (promised in
+Section~\ref{sec:estimates})}
+\begin{itemize}
+  \item Why: $\varrho$ is imprecise and close to the lower edge of its
+    range. At 0.96 efficiency lasts 25 years.
+  \item The horizon roughly doubles (6.2 at 25, 5.4 at 75 at the model's
+    moving rate; 6.7, 9.8, 7.0 with the moving rates in UKHLS) and survival
+    starts to matter (with loss of efficiency alone, 14.1 at 25 against 7.8
+    at 75).
+  \item The fit is worse: shares of 43.1, 45.9, 36.8 against 21.0, 16.9,
+    9.7 in the data.
+  \item The test: do purchases still account for the fall in the inflow?
+    \open{Not computed yet: the accounting at 0.96 needs only the existing
+    simulation (flows\_by\_age, varrho 0.96), not a new run. The flow,
+    horizon, and accounting tables at 0.96 go to the appendix.}
+\end{itemize}
+
+\subsection{The window}
+
+\outpara{Where efficient homes come from (Table tab:flows-accounting,
+Panel A)}
+\begin{itemize}
+  \item Per 100 owners a year, by age (25--34, 35--64, 65--75): the stock
+    of A--C owners (22.5, 17.7, 12.7) and how it changes.
+  \item Inflows by route. Buying an A--C home: 6.9, 4.1, 1.9. Renovating at
+    purchase: 0.3, 0.4, 0.3. Renovating in place: 1.2, 1.4, 1.2. Buying is
+    the main route at every age and the only one that falls with age.
+  \item Because purchases fall, the share of the inflow that comes from
+    renovating in place rises with age: 14, 24, and 36 percent. This is the
+    claim Section~\ref{sec:identification} makes when it explains how the
+    fixed cost shapes the profile.
+  \item Outflows. Loss of efficiency is the largest outflow at every age
+    (4.6, 3.5, 2.3), then selling to rent and selling to buy a D--G home;
+    death matters only at 65--75 (0.24).
+  \item Table note: loss of efficiency is 18--21 percent of the stock
+    column, not $1-\varrho=16$ percent, because it applies to the stock
+    after the year's purchases and sales (checked against the table).
+\end{itemize}
+
+\outpara{Which margin produces the fall (Panels B and C)}
+\begin{itemize}
+  \item Write the inflow as purchases per owner times the A--C share of
+    purchases, plus the in-place renovation rate times the share of D--G
+    owners. Decompose its fall from 25--34 and from 35--64 to 65--75.
+  \item Purchases by renters and D--G owners, per 100 owners, fall from
+    15.0 to 10.1 to 4.5 (A--C owners who sell and buy again are left out:
+    they are already in the stock). They account for 99 percent of the
+    fall from 25--34 and 103 percent from 35--64.
+  \item The margins on which the horizon acts are flat, as 5.1 implies:
+    the A--C share of purchases is 40--46 percent and the in-place rate
+    1.4--1.7 percent of D--G owners at every age. The other margins offset
+    one another: together they account for 1 percent of the fall from
+    25--34 and $-3$ percent from 35--64 (Panel C). The flat A--C share of
+    purchases is the model's version of Fact~3 (recent buyers are about as
+    efficient at every age).
+  \item With purchases held at the 25--34 rate, the A--C share at 65--75
+    would be 25.3 percent instead of 12.7. Holding any other margin moves
+    it by at most 1 point.
+  \item Caveat: accounting is not causation. Purchases are a choice, and a
+    short horizon is itself a reason not to move
+    (Section~\ref{sec:data}). The next paragraph tests the window directly.
+\end{itemize}
+
+\outpara{Closing the window (Table tab:mechanisms, Panel B)}
+\begin{itemize}
+  \item With no efficient homes for sale, the gap falls from 9.6 to 1.3
+    points and the shares to 6.9, 5.5, 5.6. The window is necessary for
+    the gradient. This is the causal counterpart of the accounting.
+\end{itemize}
+
+\outpara{Why renovating in place does not replace buying}
+\begin{itemize}
+  \item The fixed cost is the extra cost of renovating in place in
+    Proposition~\ref{prop:window}. Without it, or with it halved, every
+    share rises and the profile flattens (ratio 1.36 and 1.57 against
+    1.75): owners who no longer buy renovate in place instead. This is the
+    role Section~\ref{sec:identification} gives $\xi_f$.
+  \item \open{$\xi_f=0$ is the lower edge of the box [0, 0.2]; the halved
+    cell is interior. Keep only the halved cell, or say so in the note.}
+\end{itemize}
+
+\outpara{What sets how often the old buy: the bequest motive}
+\begin{itemize}
+  \item A weak bequest motive ($\upsilon=5$): owners at 65--75 buy 23.7
+    homes per 100 instead of 6.1, and the gradient reverses (gap $-7.5$).
+    A strong one ($\upsilon=200$): they buy 2.8, and the gap widens to 22.3.
+  \item The bequest motive matters through purchases, not through the
+    value of the heirs' premium. This is the third force of
+    Section~\ref{sec:model}, now with a size.
+  \item \open{$\upsilon=5$ is the lower edge of the box [5, 500]. An
+    interior weak value (e.g.\ 20) needs a new run.}
+\end{itemize}
+
+\outpara{Section close (one paragraph)}
+\begin{itemize}
+  \item Answer to Section~\ref{sec:data}: the gradient is a purchase
+    gradient. Fact~3 is what this predicts.
+  \item Bridge to Section~\ref{sec:policy}: a policy that lowers the cost
+    of renovating in place acts on the margin that 5.2 shows cannot
+    replace buying; one that acts at the point of sale acts on the window.
+    Section~\ref{sec:policy} compares them.
+\end{itemize}
+
+\outpara{Exhibits (planning note, not text)}
+\begin{itemize}
+  \item Main text, four exhibits: Figure fig:lifecycle-fit (opening);
+    Table tab:payoff-horizon (5.1); Table tab:flows-accounting (5.2; Panel
+    A flows, Panel B margins, Panel C decomposition; merged 28 October,
+    not yet in the paper); Table tab:mechanisms (Panel A comfort and $\varrho$,
+    cited in 5.1; Panel B no efficient homes for sale, $\xi_f$, $\upsilon$,
+    cited in 5.2; placed in 5.2, where most rows are used).
+  \item Appendix: flows, horizon, and accounting at $\varrho=0.96$.
+  \item \open{Before building tab:mechanisms: (i) one baseline: the cells
+    were run on the GPU (22.4, 17.8, 12.8; gap 9.6), the flows on the CPU
+    (22.5, 17.7, 12.7; gap 9.9); re-run the cells on the CPU or report both;
+    (ii) ``purchases'' there are all purchases per 100 owners (6.0 at
+    65--75), not the 4.5 of the accounting; use one definition; (iii) drop
+    the cells at $\varrho=0.99$; the mandate cell goes to
+    Section~\ref{sec:policy}.}
+\end{itemize}

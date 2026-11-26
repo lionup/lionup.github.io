@@ -1,0 +1,426 @@
+% ======================================================================
+% Appendix A: Data construction (draft, written from the replication
+% package; every number below is taken from replication/data/moments,
+% replication/output or the package logs).
+% ======================================================================
+\section{Data Construction}\label{app:data}
+
+
+This appendix documents the samples, definitions, and calculations behind
+the facts in Section~\ref{sec:data} and the estimation targets in
+Section~\ref{sec:estimation}, in the order in which the main text uses
+them. Subsection~\ref{app:data-ehs} describes the English Housing Survey
+files and definitions, Subsection~\ref{app:data-regression} the
+age-gradient regressions, Subsection~\ref{app:data-epc} the EPC register,
+Subsections~\ref{app:data-was} and~\ref{app:data-ukhls} the Wealth and
+Assets Survey and Understanding Society, Subsection~\ref{app:data-other}
+mortality and energy bills, and Subsection~\ref{app:data-targets} the
+samples behind each estimation target.
+
+% ----------------------------------------------------------------------
+\subsection{English Housing Survey: files and definitions.}\label{app:data-ehs}
+
+\paragraph{Files.} The EHS is released in two forms. A housing-stock release
+pools two consecutive years of fieldwork and contains the households whose
+dwelling received a physical inspection, together with their interview
+records and a weight for the pooled sample. A fieldwork release contains the
+full interview sample of a single year, without physical data.
+Table~\ref{tab:ehs-releases} lists the releases we use. Statistics that need
+the physical survey (the EPC band, the SAP rating, and dwelling age) use
+housing-stock releases only.
+
+\begin{table}[htbp]
+  \centering
+  \caption{English Housing Survey releases}\label{tab:ehs-releases}
+  \begin{threeparttable}
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{@{}llllccc@{}}
+      \toprule
+      & & & & \multicolumn{3}{c}{Used for} \\
+      \cmidrule(l){5-7}
+      Release & File & UKDA SN & Fieldwork years & Homeownership & A--C share & Regression \\
+      \midrule
+      Housing stock 2011--12 & 11plus12 & 7511 & 2011--12, 2012--13 & \checkmark & \checkmark & \checkmark \\
+      Housing stock 2012--13 & 12and13  & 7802 & 2012--13, 2013--14 & \checkmark & \checkmark & \checkmark \\
+      Fieldwork 2013--14     & fs13     & 7801 & 2013--14           & \checkmark &            &            \\
+      Housing stock 2013--14 & 13plus14 & 8010 & 2013--14, 2014--15 &            &            & \checkmark \\
+      Fieldwork 2014--15     & fs14     & 8009 & 2014--15           & \checkmark &            &            \\
+      Housing stock 2014--15 & 14plus15 & 8186 & 2014--15, 2015--16 & \checkmark & \checkmark & \checkmark \\
+      Housing stock 2015--16 & 15plus16 & 8350 & 2015--16, 2016--17 &            &            & \checkmark \\
+      Housing stock 2016--17 & 16\_17   & 8494 & 2016--17, 2017--18 & \checkmark & \checkmark & \checkmark \\
+      Housing stock 2019--20 & 19plus20 & 9058 & 2019--20, 2020--21 & \checkmark & \checkmark & \checkmark \\
+      \bottomrule
+    \end{tabular}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} ``Homeownership'' and ``A--C share'' are the
+      estimation targets (Table~\ref{tab:target-samples}); ``Regression''
+      is the age-gradient regression of Figure~\ref{fig:ehs-age-gradient}.
+      Fieldwork years run from April to March.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\paragraph{Definitions.} Age is the age of the household reference person
+(HRP). All releases report it in bands (25--34, 35--44, 45--54, 55--64, and
+65 and over); exact age is available only in 11plus12, 12and13, and fs13,
+so statistics for ages 65--75 (inclusive) use those releases. A household is
+an owner if it owns outright or with a mortgage. A dwelling is built by 1990
+if the EHS dwelling-age variable places it in one of the bands before 1919,
+1919--44, 1945--64, 1965--80, or 1981--90. A dwelling is in A--C if its
+EPC band is A, B, or C; the EHS reports A and B as one band. The band is
+based on SAP 2009 in 11plus12 and on SAP 2012 in the later releases; the
+earlier release has only partial SAP 2012 recalculations, so we use its
+published SAP 2009 band. Years since purchase are the completed years the
+household has owned the home: exact in 11plus12 and 12and13, and in bands
+(less than one, one, two, 3--4, 5--9, 10--19, 20--29, and 30 or more years)
+in later releases. A recent buyer has owned the home for at most four
+completed years.
+
+\paragraph{Weights and pooling.} All EHS statistics use the household
+weight supplied with each release. When a statistic pools releases, we
+first normalize the weights so that they sum to one within each release and
+then average across releases. Each release therefore receives equal weight,
+whatever its sample size.
+
+\paragraph{Overlap between releases.} Because each housing-stock release
+pools two fieldwork years, adjacent releases contain the same households.
+In our files, 11plus12 and 12and13 share 6,058 households (the 2012--13
+fieldwork year). The fieldwork release fs13 repeats 2013--14 households
+that also appear in 12and13, and fs14 repeats 2014--15 households that also
+appear in 14plus15. Pooled point estimates count these households twice.
+Our bootstrap standard errors (Section~\ref{sec:estimation}) draw each of
+the 6,058 households shared by 11plus12 and 12and13 once. Household
+identifiers in releases after 2013 are anonymized separately in each file,
+so the other overlaps cannot be linked, and the standard errors of the
+homeownership targets are somewhat understated.
+
+% ----------------------------------------------------------------------
+\subsection{The age gradient in the SAP rating.}\label{app:data-regression}
+
+Figure~\ref{fig:ehs-age-gradient} reports estimates of
+\begin{equation}\label{eq:ehs-age-gradient}
+  \log \mathit{SAP}_i = \alpha + \sum_{j=2}^{5}\beta_j\,
+  \ind\{\text{age group}_i = j\} + \gamma' X_i + \delta_{t(i)} + \eta_{r(i)}
+  + \varepsilon_i,
+\end{equation}
+where $\mathit{SAP}_i$ is the SAP rating of household $i$'s dwelling, our
+measure of energy efficiency; a higher rating means a more efficient
+dwelling. The age groups are
+35--44, 45--54, 55--64, and 65 and over, with 25--34 as the reference group.
+$X_i$ contains log floor area, log equivalized household income before
+housing costs (deflated by CPIH, 2015 prices), and indicators for a
+single-person household, dwelling age, household size (top-coded at five),
+and the HRP's labor-force status. $\delta_t$ and $\eta_r$ are release and
+region (nine regions) fixed effects. The three specifications in the figure
+are: age indicators only; adding $X_i$; and adding $X_i$ and the fixed
+effects. The figure plots $\beta_j$; the text reports the percentage
+difference $\exp(\beta_j)-1$. Standard errors are clustered
+by dwelling age and region (81 clusters), and the intervals use the $t$
+distribution.
+
+The sample stacks the seven housing-stock releases marked ``Regression'' in
+Table~\ref{tab:ehs-releases}, keeps owner-occupiers with an HRP aged 25 or
+over, and contains 34,767 observations. A version that adds private renters
+has 48,705 observations. The SAP rating is based on SAP 2009 in 11plus12 and
+on SAP 2012 in later releases. The regressions are unweighted. For owners
+aged 65 and over, the SAP rating is 9.0 percent lower than at 25--34 without
+controls, 6.5 percent lower with $X_i$, and 6.6 percent lower with $X_i$ and
+the fixed effects.
+
+% ----------------------------------------------------------------------
+\subsection{EPC register.}\label{app:data-epc}
+
+\paragraph{Data.} We use the bulk download of all domestic certificates in
+England and Wales from the Energy Performance of Buildings register, with one
+file per local authority (343 authorities). Lodgement dates run from 1
+October 2008 to 31 January 2023. The register contains 24,133,533
+certificates and no duplicate certificate numbers.
+
+Each certificate reports the dwelling's unique property reference number
+(UPRN), the lodgement date, the current EPC band and SAP score, the
+construction-age band, property type, floor area, modelled energy use, the
+reason for the assessment (for example, a marketed sale or a new letting),
+and the tenure stated by the assessor. A separate file lists recommended
+improvements with indicative costs. We classify tenure from its text as
+owner-occupied (12,153,496 certificates), rented (9,255,763), or
+other or unknown (2,724,274). Construction-age bands are mapped to their
+final year. Homes are built by 1990 if that year is 1990 or earlier, which
+includes the bands ``before 1900'' and ``1983--1990''.
+
+\paragraph{Consecutive pairs and annual rates (Table~\ref{tab:epc-transitions}).}
+We keep owner-occupied certificates with a UPRN (12,006,376 certificates).
+Of these, 425,058 have a construction-age band with no year (mostly
+recorded as missing or invalid) and so have no vintage. We
+order them by lodgement year within each UPRN, and pair each certificate
+with the preceding one. Certificates of other tenures are removed before
+pairing, so a pair can span an intervening letting. We keep pairs whose
+lodgement years differ by at least one, leaving 1,705,904 pairs; a pair
+lodged within a single calendar year is dropped and not linked further
+back. A pair takes the vintage of its later certificate. For a pair $k$ with
+gap $g_k\geq 1$ in calendar years, the annual upgrade rate is the mean over
+pairs whose earlier certificate is in D--G of $\ind\{\text{later
+certificate in A--C}\}/g_k$. The annual decay rate is the mean over pairs
+whose earlier certificate is in A--C of $\ind\{\text{later certificate in
+D--G}\}/g_k$. Dividing by the gap treats the probability of a change over
+$g$ years as $g$ times an annual probability. This holds approximately when
+changes are rare, and it misses changes that are reversed between two
+certificates. Among homes built by 1990, the upgrade rate is 6.9 percent
+(1,295,552 pairs) and the decay rate 15.2 percent (171,041 pairs). The
+mean gap is 5.2 years. For homes built after 1990 the rates are 11.9
+percent (104,678) and 5.8 percent (123,400).
+
+\paragraph{Pairs around a sale.} The split by sale timing in
+Section~\ref{sec:data-transitions} classifies pairs by the reason for
+assessment recorded on each certificate, not by a match to transaction
+records. A pair is \emph{at sale} if its later certificate was lodged for a
+marketed or non-marketed sale. It is \emph{after a purchase} if its earlier
+certificate was lodged for a sale, its later certificate was not, and the
+two are at most two calendar years apart. All other pairs are \emph{away
+from a sale}. This split is computed by a separate script that reads the
+raw register and orders certificates within a year by their lodgement
+time. Its pooled rates are 7.3 percent for upgrades and 11.2 percent for
+decay, against 7.4 and 11.1 percent in Table~\ref{tab:epc-transitions}. For
+homes built by 1990, the upgrade rate is 7.3 percent at sale (835,104
+pairs), 6.6 percent after a purchase (133,087), and 5.5 percent away from a
+sale (326,260). The decay rate is 10.7 percent at sale (124,902), 49.0
+percent after a purchase (10,852), and 20.9 percent away from a sale
+(36,616). Pairs after a purchase are short (1.4 years on average) and
+few, and a sale certificate followed by a different rating within two
+years points to measurement error at either assessment as much as to
+physical change.
+
+\paragraph{First and latest certificates.}
+Figures~\ref{fig:epc-first-last} and~\ref{fig:epc-transition-matrix}
+compare, for each owner-occupied dwelling with at least two certificates
+at least one calendar year apart (1,557,929 dwellings), the first and the
+latest certificate. The mean gap is 5.9 years. Among homes built by 1990
+that start in D--G (1,178,403), 22.9 percent are in A--C at their latest
+certificate. The share is 29.1 percent for homes starting in D and between
+15 and 18 percent for homes starting in E, F, or G. Of the moves from D--G
+into A--C, 95 percent end in band C.
+
+\paragraph{Selection.} The register is not a random sample of the housing
+stock. A certificate is lodged when a home is sold, let, or built, or when
+an energy-efficiency scheme requires an assessment, so homes that change
+hands often are over-represented, and the timing of a certificate is
+itself a choice. Assessment conventions and default inputs change over
+time and differ across assessors, and they can move a home across the C/D
+boundary without physical work. We therefore use the register to describe
+the direction and rough size of changes in efficiency status. The model is
+not estimated on it.
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{fig-epc-first-last.pdf}
+  \caption{Efficiency at the latest certificate by band at the first
+  certificate, owner-occupied homes}
+  \label{fig:epc-first-last}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Notes:} For each EPC band at a dwelling's first owner-occupied
+    certificate, the share of dwellings in bands A--C at the latest
+    owner-occupied certificate. Dwellings with at least two such
+    certificates at least one calendar year apart, 1,557,929 dwellings
+    (mean gap 5.9 years). Left: all homes. Right: homes built by 1990,
+    based on the latest certificate. EPC register, England and Wales,
+    October 2008 to January 2023.
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics{fig-epc-transition-matrix.pdf}
+  \caption{Transitions between EPC bands, first to latest certificate,
+  owner-occupied homes}
+  \label{fig:epc-transition-matrix}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Notes:} Row percentages: the distribution of the band at the
+    latest certificate for each band at the first certificate. Lines mark
+    the boundary between bands C and D. Sample as in
+    Figure~\ref{fig:epc-first-last}.
+  \end{minipage}
+\end{figure}
+
+
+% ----------------------------------------------------------------------
+\subsection{Wealth and Assets Survey.}\label{app:data-was}
+
+We use the household files of WAS rounds 5 to 8, which cover Great Britain
+between April 2014 and March 2022. The
+sample keeps households with a positive cross-sectional weight and drops
+shared owners. Age is the HRP's age band; WAS does not release exact age.
+Pooled statistics give each round equal weight. Negative asset values are
+set to missing.
+
+\paragraph{Housing share of wealth.} Housing wealth is the value of the
+main residence for owners and zero for others. The target is the weighted
+mean, over households aged 35--64 with positive gross wealth, of housing
+wealth divided by the sum of housing wealth and gross non-housing financial
+wealth excluding endowments. Both numerator and denominator are gross of
+mortgage debt. Renters with financial wealth enter with a share of zero.
+
+\paragraph{Liquid wealth to income.} Liquid wealth is gross non-housing
+financial wealth excluding endowments, the closest harmonized household
+measure in WAS. It includes all financial assets, not only cash and
+deposits, and is not net of financial liabilities. Income is net regular
+household income before housing costs: \texttt{DVTotNIRR5} in round 5 and
+\texttt{DVTotInc\_BHC} in rounds 6--8. The targets are weighted medians of
+the household-level ratio for HRPs aged 65--74 and 75 and over, among
+households with positive income. The model counterparts are ages 65--75 and
+75 to the terminal age. Medians of household ratios differ from ratios of
+medians; the corresponding median incomes are £24,900 at 65--74 and
+£18,200 at 75 and over, and median liquid wealth is £29,936 and £23,499.
+
+\paragraph{Consumption and retirement income.} The consumption target uses
+published expenditure rather than microdata. Its numerator is mean annual
+household expenditure for an HRP aged 50--64 from ONS Family Spending
+(Table A11, United Kingdom, financial years ending 2016 and 2017). We count
+COICOP divisions 1--12 and spending on holidays abroad, but exclude
+housing (division 4, apart from water and other dwelling services) and
+moving costs; the model treats rent, energy, and maintenance separately. The weekly figures are multiplied by 52 and expressed in 2016
+pounds with the CPI. The denominator is the weighted mean net household
+income in WAS rounds 5 and 6 of households interviewed in the same two
+financial years, with an HRP aged 50--64 (2,628 and 2,721 households). The
+target is the ratio of the two equal-year means, 0.639. The
+retirement-income target is the ratio of weighted mean net household income
+at HRP ages 65--74 to that at 55--64 in the same WAS sample, 0.843; it
+compares households, not a pension replacement rate for individuals.
+Both targets use exact five-year HRP age bands from the person file. The
+numerator covers the United Kingdom and the denominator Great Britain.
+
+
+\paragraph{Equivalence scale.} The household-equivalence scale $e_j$ in the
+model is the square root of mean household size by HRP age in WAS rounds
+5--8. Means by age band are fitted with a cubic in age over ages 23--82,
+and the scale is rescaled so that its mean over ages 35--64 matches a
+reference value. 
+% ----------------------------------------------------------------------
+\subsection{Understanding Society.}\label{app:data-ukhls}
+
+\paragraph{Income process.} The income process is estimated from waves 1--10
+(2009--2019) of Understanding Society, restricted to England. Interviews from
+wave 10 conducted in 2020 are excluded. The sample consists of male
+household reference persons aged 20--64 who work 10--112 hours a week and
+are not retired, students, caring for family, or long-term sick. It further
+requires positive gross household income, hourly household earnings
+between £2 and £400 in 2015 prices, and at least five observations per
+person. This leaves 32,698 person-years. Income is gross monthly household
+income times twelve, deflated to 2015 prices. The regressions are
+unweighted. We regress log income on age indicators, marital status, the
+number of children, and education with person fixed effects (31,711
+observations, 4,265 persons). The deterministic age profile is a cubic in
+age fitted to the predicted profile. The residual is the sum of a
+permanent random walk and a transitory shock. Their variances come from
+the growth of the residual's variance with the lag $d=1,\dots,9$: the
+slope identifies the permanent variance (0.0092) and half the intercept
+the transitory variance (0.0424). The initial permanent variance is the
+cross-sectional variance at age 23 net of the two (0.168).
+
+\paragraph{Owner mobility.} The annual moving rates of owners used as an
+external check pair consecutive waves from 2--3 to 12--13. The base sample
+is household reference persons in England who own outright or with a
+mortgage at wave $t$, aged 23--90, with a positive cross-sectional weight.
+A move means the person's address changed between $t$ and $t+1$, among
+those observed at $t+1$. Weights are normalized to mean one within each pair
+of waves. The rates are 9.6 percent at ages 25--34 (6,975 person-years),
+3.6 percent at 35--64 (60,170), and 2.2 percent at 65--75 (22,605).
+
+% ----------------------------------------------------------------------
+\subsection{Mortality and energy bills.}\label{app:data-other}
+
+\paragraph{Mortality.} Survival probabilities come from the ONS National Life
+Tables for the United Kingdom, 2015--17, averaging the male and female
+number of survivors $l_x$ at each age. The model uses the implied annual
+survival probabilities for ages 23--81. Beyond the table, hazards are
+extrapolated with a constant growth rate equal to the median of the last
+seven hazard ratios, bounded between 1 and 1.25. The survival probability
+in the recurring terminal state (82 and over) is one minus the inverse of
+the expected number of remaining periods at 82, which gives 0.880.
+
+\paragraph{Energy bills.} Energy bills by efficiency state are based on
+owner-occupied certificates in the EPC register for homes built by 1990,
+lodged between 2015 and 2019, using the latest certificate of each building
+(2,833,945 buildings). We trim modelled consumption to 1--1,500 kWh per
+square meter and floor area to 10--1,000 square meters. The register
+reports modelled primary energy use. Unweighted means are 190.9 kWh per
+square meter a year in bands A--C and 322.3 in D--G. We convert primary
+to delivered energy by dividing by 1.59, the SAP 2012 primary-energy factors
+(1.22 for gas, 3.07 for electricity) averaged with an assumed 80/20
+gas/electricity mix. We then multiply by a common floor area of 101.75
+square meters and a price of £0.0602 per kWh. The price is the 80/20 average
+of DESNZ domestic unit prices, including VAT and excluding standing charges,
+averaged over 2015--2019: £0.0381 for gas (Great Britain) and £0.1485 for
+electricity (United Kingdom). Annual bills are £735 in A--C and £1,242 in
+D--G.
+
+% ----------------------------------------------------------------------
+\subsection{Samples behind the estimation targets.}\label{app:data-targets}
+
+Table~\ref{tab:target-samples} lists the source, sample, statistic, number
+of observations, and number of releases or rounds behind each of the eleven
+targets. Different targets describe different populations. The
+homeownership rates are shares of all households. The A--C shares condition
+on ownership and on homes built by 1990. The wealth ratios cover all
+households in the relevant age band.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Samples behind the estimation targets}\label{tab:target-samples}
+  \begin{threeparttable}
+    \small
+    \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}
+      l>{\raggedright\arraybackslash}X r r@{}}
+      \toprule
+      Target & Source & Sample and statistic & Obs. & Waves \\
+      \midrule
+      \multicolumn{5}{@{}l}{\textit{Homeownership}} \\
+      \quad Ages 25--34 & EHS & All households; weighted owner share & 12,533 & 7 \\
+      \quad Ages 35--64 & EHS & All households; weighted owner share & 46,055 & 7 \\
+      \quad Ages 65--75 & EHS & All households, exact age; weighted owner share & 5,801 & 3 \\
+      \addlinespace
+      \multicolumn{5}{@{}l}{\textit{Owners in an A--C home, built by 1990}} \\
+      \quad Ages 25--34 & EHS & Owners of homes built by 1990; weighted A--C share & 1,646 & 5 \\
+      \quad Ages 35--64 & EHS & Owners of homes built by 1990; weighted A--C share & 12,279 & 5 \\
+      \quad Ages 65--75 & EHS & As above, exact age & 1,831 & 2 \\
+      \addlinespace
+      \multicolumn{5}{@{}l}{\textit{Wealth, consumption and income}} \\
+      \quad Housing share of wealth, 35--64 & WAS & Households with positive
+        gross wealth; weighted mean of the household's housing share & 34,152 & 4 \\
+      \quad Liquid wealth to income, 65--75 & WAS & HRP aged 65--74, positive
+        income; weighted median ratio & 15,587 & 4 \\
+      \quad Liquid wealth to income, 75+ & WAS & HRP aged 75 and over,
+        positive income; weighted median ratio & 12,911 & 4 \\
+      \quad Consumption to income, 50--64 & ONS, WAS & Mean core expenditure
+        (published tables) over WAS mean net income & 5,349 & 2 years \\
+      \quad Retirement income, 65--74 to 55--64 & WAS & Ratio of weighted mean
+        net household income & 7,652 & 2 years \\
+      \bottomrule
+    \end{tabularx}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} Observations are pooled households before
+      equal-wave averaging. EHS waves are the releases in
+      Table~\ref{tab:ehs-releases}; WAS waves are rounds 5--8. The last two
+      targets use WAS households interviewed in the financial years ending
+      in 2016 and 2017. The count for the consumption ratio refers to the
+      income denominator.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\paragraph{Homeownership.} The three homeownership targets pool the seven
+releases marked in Table~\ref{tab:ehs-releases} and include every household
+with a positive weight, whatever its tenure. Ages 25--34 and 35--64 use the
+banded age. Ages 65--75 use exact age and so rest on 11plus12, 12and13, and
+fs13.
+
+\paragraph{A--C shares.} The A--C targets use the five housing-stock releases
+with a physical survey. The sample consists of owners of homes built by 1990
+with a recorded EPC band. Ages 65--75 use exact age and so rest on 11plus12
+and 12and13. These two releases cover fieldwork from 2011--12 to
+2013--14, and the 2012--13 households appear in both. The recent-buyer shares
+quoted in Section~\ref{sec:data} use the same five releases and the
+same definitions. They are not targets.
+
+
+% ======================================================================

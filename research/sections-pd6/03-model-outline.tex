@@ -1,0 +1,300 @@
+% Section 3 -- Model (outline: paragraphs and what each must say; no prose yet)
+%
+% Written from the code of the R0 model, not from the pd5 draft:
+%   spec        model-codes/codes/epc-lifecycle-deep-learning/epc_revised/spec.py
+%               (build_model("pnr1_revised_2026"))
+%   economics   estimation_epc/model_funcs_estimation_epc.py, epc_revised/economics.py,
+%               epc_backward/physics.py, epc_backward/continuation.py
+%   values      replication/data/model/r0/parameters.json,
+%               replication/output/tables/tab-fixed-parameters.csv, tab-estimates.csv
+% The pd5 model text (sections-pd5/03-model.tex) describes an older model; do
+% not copy from it without checking against the code.
+\section{Model}\label{sec:model}
+
+\outpara{Section opening (one paragraph)}
+\begin{itemize}
+  \item What the model is: a partial-equilibrium lifecycle model of
+    households who choose consumption, saving, renting or owning, the size
+    of the home, mortgage debt, and the energy efficiency of the home they
+    own.
+  \item Efficiency is binary and matches the data: an efficient home is in
+    bands A--C, an inefficient home in bands D--G (Section~\ref{sec:data}).
+  \item The two explanations of Section~2 are two forces in the model:
+    (i) the \emph{payoff horizon} -- how many years an owner expects to
+    benefit from an efficient home; (ii) \emph{acquisition opportunities}
+    -- efficiency is cheaper to obtain when buying a home than by renovating
+    the home one lives in, and older owners buy less often.
+  \item No preference for efficiency that varies with age: any age gradient
+    comes from these forces.
+  \item Road map: environment (3.1), household problem (3.2), the forces
+    behind the age gradient (3.3). Parameter values in
+    Section~\ref{sec:estimation}; full details in Appendix~B.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Environment}
+
+\outpara{Demographics}
+\begin{itemize}
+  \item One period is one year. Households enter at age 23, work until 64,
+    and retire at 65.
+  \item Survival probability $\phi_j$ by age (ONS life table, 2015--17).
+  \item Ages 82 and over form one group with a constant annual survival
+    probability (0.880): no one is forced to die at a fixed age. Footnote:
+    this avoids a terminal age at which owners would sell or stop renovating
+    for mechanical reasons.
+  \item Equivalence scale $e_j$ for household size (WAS).
+  \item \open{Symbol clash: the table of estimates uses $\phi$ for the
+    comfort value of efficiency and the fixed-parameter table uses $\phi_j$
+    for survival. Proposal: keep $\phi_j$ for survival and rename comfort
+    (e.g. $\eta$) in \codepath{tab_estimates.R} (exhibit code only, no
+    change to estimation).}
+\end{itemize}
+
+\outpara{Preferences}
+\begin{itemize}
+  \item Equation: expected lifetime utility = sum of discounted period
+    utility, plus warm-glow bequest at death, plus taste shocks on the
+    discrete choice.
+  \item Equation: period utility
+    $u_j(c,s)=e_j\,\frac{(c^{\alpha}s^{1-\alpha})^{1-\sigma}-1}{1-\sigma}$,
+    $\alpha=0.75$, $\sigma=2$.
+  \item Equation: bequest
+    $g(q)=\upsilon\frac{(q+\bar q)^{1-\sigma}-1}{1-\sigma}$;
+    the estate $q$ is liquid wealth plus the market value of the home
+    (at its efficiency at death) minus the mortgage. No selling cost.
+    The efficiency premium therefore reaches heirs only if the home is
+    still efficient.
+  \item Taste shocks: Type-I extreme value, scale $\sigma_\varepsilon=0.10$,
+    one per discrete alternative, iid over time. Gives logit choice
+    probabilities.
+\end{itemize}
+
+\outpara{Income}
+\begin{itemize}
+  \item Working life: $y_j=\kappa_j z_j \nu_j$; permanent component a
+    random walk, transitory iid; both mean-one lognormal
+    ($\sigma_p=0.096$, $\sigma_\nu=0.206$; Understanding Society).
+  \item Retirement: pension $=\rho_{\mathrm{ret}}\kappa_{64}z_{64}$, with a
+    floor and a cap; $\rho_{\mathrm{ret}}$ is estimated.
+  \item Net income $\tau_0 y^{1-\tau_1}$ (progressive taxes).
+  \item One sentence on units: a unit of the model is mean working-age
+    income (\pounds49{,}914); prices and sizes are in these units.
+  \item Keep the income equations compact (one display, three lines).
+\end{itemize}
+
+\outpara{Housing and energy efficiency}
+\begin{itemize}
+  \item A home has a size $h$ (a quantity of housing) and an efficiency
+    state: efficient ($\R$, A--C) or inefficient ($\NR$, D--G).
+  \item Prices are constant: $p^{\NR}=1$ (numeraire) and
+    $p^{\R}=(1+\gamma_p)p^{\NR}$, $\gamma_p=0.03$ (price premium of an
+    efficient home).
+  \item Equation: owner housing services
+    $s^o(h,\R)=\left[\omega_0+\eta+\omega_h\log(1+h/h_\omega)\right]h$ and
+    $s^o(h,\NR)=\left[\omega_0+\omega_h\log(1+h/h_\omega)\right]h$. The term
+    $\eta$ (estimated) is the comfort value of an efficient home: a warmer
+    home gives more housing services per unit of size.
+  \item Recurring costs of an owner: maintenance $\delta_h p^q h$ and the
+    energy bill $e^q h$, with $e^{\R}<e^{\NR}$ (EPC register and DESNZ
+    prices). Efficient homes cost less to heat.
+  \item Transaction costs: buyer pays $\zeta_b$, seller pays $\zeta_s$ of
+    the value.
+  \item Owned size between a minimum $h^{\min}$ (estimated; it governs who
+    can afford to own) and a maximum.
+  \item Summary sentence for the reader: efficiency pays in three ways --
+    comfort, lower bills, and a higher value at sale or death.
+  \item Interpretation: the housing stock in the model stands for homes
+    built by 1990, the stock in which the Section~2 facts are measured.
+    \open{confirm: the efficiency targets are for homes built by 1990 and
+    the model has no dwelling vintage}
+\end{itemize}
+
+\outpara{Loss of efficiency}
+\begin{itemize}
+  \item An efficient owned home stays efficient next year with probability
+    $\varrho$ and otherwise becomes inefficient. This applies to every
+    efficient owned home, including one just bought or just renovated.
+  \item Motivation: Fact~2 (downgrades in the register). Interpretation:
+    wear of heating systems and insulation, and rising standards. One
+    sentence.
+  \item Inefficient homes become efficient only by renovation: upgrades are
+    choices, downgrades are shocks.
+  \item $\varrho$ is estimated; it sets the expected life of an efficiency
+    investment, $1/(1-\varrho)$ years (about six years at the estimate).
+\end{itemize}
+
+\outpara{Three ways to obtain an efficient home}
+\begin{itemize}
+  \item (a) Buy a home that is already efficient: pay the price premium
+    $\gamma_p$ (plus transaction costs on it).
+  \item (b) Buy an inefficient home and renovate it in the year of
+    purchase.
+  \item (c) Renovate the home one already owns.
+  \item Equation: renovation cost $C(h)=\xi_f+\xi\,p^{\NR}h$, the same in
+    (b) and (c); $\xi_f$ fixed (estimated; search, disruption), $\xi=0.08$
+    proportional (materials and work).
+  \item Key point for the reader: a buyer can obtain efficiency by paying
+    the 3 percent premium, while a stayer must pay the renovation cost
+    (8 percent of value plus the fixed cost). A purchase is therefore a
+    cheaper time to obtain efficiency. This is the ``renovation window'' of
+    the title, and it works through the market for efficient homes, not
+    through a discount on renovation at purchase.
+  \item One sentence: there is no discount on the renovation cost at
+    purchase ($\theta_{\mathrm{move}}=1$), so (b) costs more than (a) and is
+    chosen rarely; it differs from (a) in collateral (the loan is set on
+    the inefficient value) and in its taste shock.
+  \item \open{Decision: keep (b) in the main text as one sentence, or
+    describe only (a) and (c) and put (b) in Appendix~B. It is part of the
+    estimated model either way.}
+  \item \open{The Section~2 bridge says ``if renovation happens mostly
+    around a purchase''; in the model, efficiency is mostly \emph{acquired}
+    at purchase by buying an efficient home. Align the wording.}
+\end{itemize}
+
+\outpara{Renting}
+\begin{itemize}
+  \item Renters choose the size of the home each year; there is no
+    transaction cost for renting.
+  \item Rent per unit of size is fixed (gross yield of 5 percent).
+  \item Renters do not choose efficiency: they rent from a stock in which a
+    share $\pi_R=0.175$ is efficient (EHS private rentals). They pay the
+    average energy bill and get the average comfort.
+  \item Reason in one sentence: whether a rental is efficient is the
+    landlord's decision, which is outside the model; this keeps the
+    renovation decision with owners, where the facts are measured.
+\end{itemize}
+
+\outpara{Saving and mortgages}
+\begin{itemize}
+  \item Liquid saving at $r_b$; no unsecured borrowing ($b\ge 0$).
+  \item Repayment mortgages at $r_m$; equation for the annual payment
+    $\pi(m,n)$. A new loan has a 25-year term. Owners may repay faster
+    than scheduled.
+  \item Equation: at purchase,
+    $m'\le\min\{\lambda_L p^q h',\ \text{loan whose payment}\le\lambda_D y^{P}\}$,
+    with $\lambda_L=0.90$, $\lambda_D=0.33$; $y^{P}$ is gross income
+    without the transitory shock.
+  \item Movers who have a mortgage keep its remaining term, and can borrow
+    at most the scheduled balance plus any increase in home value (plus
+    the renovation cost if they renovate at purchase): no cash-out through
+    moving. One sentence why: it rules out moves made only to refinance.
+  \item An owner who renovates in place can borrow the cost, within the
+    same limits, with the home valued as inefficient.
+  \item Footnote: the premium of an efficient home cannot be borrowed
+    against before the work is done.
+  \item Details (term rules, edge cases) in Appendix~B.
+\end{itemize}
+
+\outpara{Initial conditions (short)}
+\begin{itemize}
+  \item Households enter at 23 with income, liquid wealth, tenure, home
+    value and mortgage drawn from WAS heads aged 20--29.
+  \item Initial owners are in an efficient home with probability 0.218
+    (EHS, young owners).
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{The household problem}
+
+\outpara{Timing within a year}
+\begin{itemize}
+  \item Start of year: income realised; cash on hand
+    $x=(1+r_b)b+y^{\mathrm{net}}$.
+  \item The household chooses a discrete alternative and, within it,
+    consumption, saving, and (if buying) size and mortgage, or (if staying)
+    the mortgage payment.
+  \item End of year: the household dies with probability $1-\phi_j$ and
+    leaves its estate; survivors draw next year's income, and an efficient
+    home loses efficiency with probability $1-\varrho$.
+\end{itemize}
+
+\outpara{State and choices}
+\begin{itemize}
+  \item State: liquid wealth, mortgage balance and remaining term,
+    permanent and transitory income, tenure and efficiency of the home
+    (renter, inefficient owner, efficient owner), size of the owned home,
+    and age.
+  \item New table (choices): discrete alternatives by starting tenure.
+    Renter (4): rent; buy inefficient; buy efficient; buy inefficient and
+    renovate. Efficient owner (5): stay; sell and rent; sell and buy each
+    of the three purchase options. Inefficient owner (6): the same plus
+    renovate in place. 15 alternatives in all. Second column: the
+    continuous choices in each.
+\end{itemize}
+
+\outpara{Bellman equations (two displays)}
+\begin{itemize}
+  \item Value of alternative $d$: best continuous choice of
+    $u_j(c,s)+(1-\phi_j)g(q)+\beta\phi_j\,\E[V_{j+1}]$ subject to the
+    budget and borrowing limits of $d$.
+  \item Value before taste shocks: the expected maximum over alternatives,
+    $\sigma_\varepsilon\log\sum_d\exp(Q^d_j/\sigma_\varepsilon)$, and the
+    logit choice probabilities.
+  \item Words after each equation: what each term is. No post-decision
+    value function here; that belongs to the solution method
+    (Section~\ref{sec:estimation} and Appendix~C).
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{What drives the age gradient in the model}
+
+\outpara{The payoff from an efficient home}
+\begin{itemize}
+  \item Per year an owner gains comfort and saves
+    $(e^{\NR}-e^{\R})h$ on bills; at sale or death the home is worth
+    $\gamma_p p^{\NR} h$ more if it is still efficient.
+  \item These gains last only while the owner lives, stays, and the home
+    stays efficient. Define the payoff horizon (expected years of benefit):
+    survival $\times$ retention $\times$ staying. This is the object
+    reported in Section~\ref{sec:results} (Table on payoff horizons).
+  \item Older owners have a shorter horizon because survival falls with
+    age. A worked example in units of pounds for a typical home (bill
+    saving per year against the cost of renovation) makes the trade-off
+    concrete. \open{compute the example from R0 values: typical owned
+    size, bill saving $\approx$ \pounds540 a year at $h=5$, renovation cost
+    $\approx$ \pounds28{,}000 at $h=5$}
+\end{itemize}
+
+\outpara{Acquisition opportunities}
+\begin{itemize}
+  \item Efficiency is cheaper to obtain at purchase (premium) than in place
+    (renovation cost). How often an owner buys therefore matters.
+  \item Moving is costly (transaction costs, borrowing limits), and older
+    owners have less reason to move, so they buy less often and hold the
+    home they bought long ago -- whose efficiency has had time to decay.
+  \item This is the model counterpart of Fact~3.
+\end{itemize}
+
+\outpara{Other forces}
+\begin{itemize}
+  \item Bequests: a stronger bequest motive raises the value of the
+    efficiency premium for older owners (it passes to heirs) and makes
+    them hold more housing wealth.
+  \item Credit: borrowing limits bind for the young; the young buy more
+    often but have less cash for the premium or a renovation.
+  \item Comfort: the only utility gain of efficiency; it is the same at
+    every age.
+\end{itemize}
+
+\outpara{What the model leaves out (short)}
+\begin{itemize}
+  \item Prices, rents and interest rates are fixed (partial equilibrium);
+    no aggregate shocks.
+  \item No differences between cohorts: every cohort faces the same
+    environment. This is what lets the model separate age from cohort
+    (Section~2 bridge).
+  \item Landlords' decisions; the size of renovations (efficiency is
+    binary); energy price shocks.
+\end{itemize}
+
+\outpara{Appendix~B (model details; not in the main text)}
+\begin{itemize}
+  \item Cash flows of each alternative; sale proceeds.
+  \item Mortgage terms: porting, the borrowing cap of movers, the
+    renovation loan, payment in retirement.
+  \item The 82+ group and the simulation horizon.
+  \item Initial conditions.
+  \item Timing conventions (e.g. a household that renovates in place pays
+    the inefficient energy bill in that year).
+\end{itemize}

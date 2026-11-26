@@ -1,0 +1,527 @@
+% Section 4 -- Calibration and estimation (draft prose, from the R0 records)
+%
+%   fixed values   replication/output/tables/tab-fixed-parameters.csv
+%   estimates, SEs tab-estimates.csv: standard-errors-n4096, step 3 (+-3% of
+%                  the box width), variant two_seed_scaled; correlations and
+%                  singular values from
+%                  replication/data/model/standard-errors-n4096/summary.json
+%   Jacobian       replication/data/model/standard-errors-n4096/jacobian_step3.csv
+%   weights        replication/data/model/r0/estimation/target-selection.json
+%   fit            tab-fit.csv (targeted), fig-moment-fit.csv (all moments)
+%   magnitudes     xi_f = 0.159 x 49,914 = 7,900 pounds; hmin = 3.14 x 49,914
+%                  = 157,000 pounds; 1/(1 - 0.838) = 6.2 years;
+%                  C(h) / ((1 + zeta_b) gamma_p h) = 2.57 + 5.10 / h: 4.2 at
+%                  h = 3.14 (0.410 vs 0.0979, x 49,914 = 20,500 vs 4,900
+%                  pounds), 2.7 at h = 31.1, -> 0.08 / 0.0312 = 2.6; bill saving e^N - e^R = 0.0021 per
+%                  unit, 0.08 / 0.0021 = 38 years; eta / (omega_0 + omega_h
+%                  log(1 + h / h_omega)) = 5.3% at h = 3.14, 4.4% at h = 31.1,
+%                  worth (1 + x)^((1 - alpha) / alpha) - 1 = 1.4-1.7% of c;
+%                  SE of eta given varrho: 0.175 sqrt(1 - 0.992^2) = 0.022
+%   A--C decline   data 0.210 - 0.097 = 11.3 points, model 0.225 - 0.127 = 9.8
+\section{Solution and Estimation}\label{sec:estimation}
+
+The household's problem described in Section \ref{sec:model} is costly to solve. This is because of three reasons. First, the state space is large. Of the seven variables in equation \eqref{eq:state}, five of them are continuous. Second, the discrete choice set is large. A household chooses among four, five, or six discrete alternatives depending on its tenure, leading to fifteen discrete choices in total. Within each discrete alternative it makes two or three free continuous choices.\footnote{Liquid saving is determined by the budget constraint once consumption is chosen, so it is not a free choice.} Further, each alternative is valued by an expectation of next period's value over the permanent and transitory income shocks, and over whether an efficient home continues to stay efficient. Also, borrowing limits and minimum size of housing introduce kinks in the value of each alternative, making first order conditions insufficient for an optimum. Third, to provide a coherent story we intend to estimate the model. That implies evaluating the model at different combinations of parameter vectors. 
+
+
+Due to this complexity, we solve the model with deep learning, building on \citet{druedahl2026deep}
+and \citet{druedahl2026nonconvex}. We extend their approach from solving the model to estimating it. Section~\ref{sec:solution} explains how we
+solve the model, Section~\ref{sec:fixed-parameters} sets the fixed
+parameters, Section~\ref{sec:identification} discusses which moments
+identify the estimated ones, and Section~\ref{sec:smm} describes the
+estimator. Section~\ref{sec:estimates} reports the estimates and the fit.
+
+% ----------------------------------------------------------------------
+\subsection{Solving the model}\label{sec:solution}
+
+% Solution method: model-codes/.../completed-backup/code-training-first-full-20260925
+%   epc_backward/training_first/workflow.py (backward induction, sample, fits),
+%   epc_backward/physics.py (control mapping, logsum), nets.py, simulate.py.
+%   No FiLM in R0: the parameters are plain network inputs (features.py).
+
+
+
+The solution of the model consists of two functions of the state $\mathbf x_j$ at every
+age $j$. The first is the value function $V_j(\mathbf x_j)$ as defined in
+equation~\eqref{eq:logsum}. The second is the policy function, which gives, for every
+alternative $d$, the continuous choices $\mathbf a_j^d(\mathbf x_j)$ that
+attain the maximum in equation~\eqref{eq:choice-value}. Note that  the discrete choice needs no
+function of its own, since the probability of each alternative follows
+from the values $Q_j^d$. We stack these policy functions
+across alternatives into $\mathbf a_j(\mathbf x_j)$. The three value functions of
+Section~\ref{sec:model-problem} link one age to the next. Given $V_{j+1}$,
+equation~\eqref{eq:end-value} gives the end-of-period value function $W_j$.
+Equation \eqref{eq:choice-value} then gives the value function $Q_j^d$ of each
+alternative and the policy function $\mathbf a_j^d$ that attains it. And, finally,
+equation~\eqref{eq:logsum} gives $V_j$ and the probability of each
+alternative. We start from the oldest age group, solve the fixed point problem, and then use this recursion to find the solution at every age. Finally, with the
+value functions and the policy function in hand we simulate households and estimate the model.
+
+The standard way to implement this recursive solution is to store $V_{j+1}$ at the points
+of a grid and interpolate between them to compute the expectation in
+equation~\eqref{eq:end-value}. However, as mentioned above, a grid is out of
+reach here. We instead represent $V_j$ and $\mathbf a_j$ by neural networks
+\citep{maliar2021deep,azinovic2022deep,druedahl2026deep,druedahl2026nonconvex}. A grid method stores the function at fixed points and computes it
+elsewhere by interpolating between the nearest of them. The issue is that it needs points
+along every dimension. Hence, its number grows exponentially with the number
+of dimensions. On the contrary, a network is instead a single formula in its inputs. It
+passes them through several layers, where each of them combines linearly using the previous layer's outputs and then applies a fixed nonlinear
+function to them. A network's coefficients, called weights, are chosen to fit the
+function at a sample of points. Once the network is fitted,
+the formula can be evaluated at any point. Hence, networks can approximate smooth functions of many
+variables with far fewer coefficients than a grid in as many dimensions
+would need.\footnote{ Consider a grid with 50 points in each
+continuous state. An owner with a mortgage has five continuous states, $b$,
+$m$, $z$, $\nu$, and $h$, so the grid has $50^5\approx3.1\times10^8$ points
+for each of the two home types and each of up to 25 remaining terms, or up
+to $1.6\times10^{10}$ points at each age. Storing $V_j$ alone at these
+points takes up to 125 gigabytes per age in double precision. At every
+point, the maximization in equation~\eqref{eq:choice-value} must be solved
+in each of up to six alternatives over two or three continuous choices, and
+every candidate choice requires the expectation in
+equation~\eqref{eq:end-value}. Adding the eight parameters as dimensions -- the seven we estimate and the discount factor --
+as in the next paragraph, raises the number of points for each home type
+and term to $50^{13}\approx1.2\times10^{22}$. By comparison, the value
+network of each age has about 550,000 weights and is fitted at 20,480
+sampled points.}
+
+
+
+The solution of course depends on the parameters of the model. We set some of
+them before estimation (Section~\ref{sec:fixed-parameters}) and estimate
+the others (Sections~\ref{sec:identification} and~\ref{sec:smm}). The
+estimator needs to evaluate the model at many values of the estimated parameters. For this, a grid method would solve the model multiple times at each of them. We avoid
+this by making these parameters inputs of the networks, as
+\citet{druedahl2026nonconvex} suggest. Collecting  the parameters which we want to estimate in the vector
+$\vartheta$ we
+can compare the fit at different values of it, and write
+the value function and the policy function as
+$V_j(\mathbf x_j;\vartheta)$ and $\mathbf a_j(\mathbf x_j;\vartheta)$.
+At each age $j$, a value network and a policy network approximate
+\begin{equation}
+  V_j(\mathbf x_j;\vartheta)\approx
+  \widehat V_j\bigl(\mathbf x_j,\vartheta;\mathbf w^V_j\bigr),
+  \qquad
+  \mathbf a_j(\mathbf x_j;\vartheta)\approx
+  \widehat{\mathbf a}_j\bigl(\mathbf x_j,\vartheta;\mathbf w^a_j\bigr),
+  \label{eq:networks}
+\end{equation}
+where $\mathbf w^V_j$ and $\mathbf w^a_j$ are the weights of the two
+networks. Note that both networks have the same inputs which are the state $\mathbf x_j$,
+comprising liquid wealth $b$, the mortgage balance $m$ and its remaining
+term $n$, the components of income $z$ and $\nu$, tenure $o$, and the size
+of the home $h$, along with the parameters $\vartheta$ which we want to estimate and the discount factor $\beta$.
+Appendix~\ref{app:computation-networks} lists the inputs in full,
+including transformations of the state that help the fit. 
+
+The
+value network returns the value of the state whereas the policy network
+returns the continuous choices in every alternative. The two have distinct
+roles. The value network of age $j+1$ supplies $V_{j+1}$, which enters the
+end-of-period value function $W_j$ and hence the value function of every alternative at age
+$j$. The policy network approximates the maximizing choices, so that simulating a
+household does not require solving the maximization in
+equation~\eqref{eq:choice-value} again. The choices must satisfy the budget and borrowing constraints, so the
+policy network does not output them directly. It outputs consumption and
+the shares of the feasible ranges of home size and of the mortgage, which a
+fixed mapping turns into a feasible allocation with liquid saving as the
+residual (Appendix~\ref{app:computation-networks}).
+
+
+
+
+\paragraph{Backward induction with networks.}
+We do not put age as an input as each age has its own pair of networks. We train the networks age by age, backward from the last age group. At ages
+82 and above the problem is the same every year, and we iterate on it as a fixed point problem. Then moving backwards, at age $j$, the networks of age $j+1$ are
+already trained and are held fixed. We draw a sample of states and
+parameter vectors. For each draw, we first compute the end-of-period value $W_j$
+in equation~\eqref{eq:end-value} by integrating $\widehat V_{j+1}$ over next
+year's income shocks by quadrature and over whether an efficient home stays
+efficient. After this we solve the maximization problem in
+equation~\eqref{eq:choice-value}  for every feasible
+alternative. This step gives the value of each alternative, $Q_j^d$, and its
+maximizing choices. The logsum expression in equation~\eqref{eq:logsum} turns these
+values into the value of the state, $V_j$. The value network is fitted to
+these values and the policy network to the maximizing choices, and the
+algorithm moves to age $j-1$. Each network is essentially learning a function that has
+been computed at the sample points, and its job is to interpolate between
+them, across states and across parameter vectors.
+
+We cannot employ this method if the value function is not smooth. The taste shocks are what make this step work. Without them, the value of
+the state would be the largest of the $Q_j^d$. This maximum has a kink
+wherever the household is indifferent between two alternatives, and the
+kinks will move with the parameters. The logsum actually smooths each kink over a range
+of values of width about $\sigma_\varepsilon$ \citep{iskhakov2017endogenous}, so the value of the state is
+smooth in the state and in the parameters, which a network fits well.
+
+
+
+
+
+\paragraph{Simulation.}
+To simulate the model, for each household we draw her income shocks, whether her
+home stays efficient if she is an owner of an efficient home, whether she survives, and a taste shock for every
+alternative, every period. The policy network provides the allocation in every
+alternative. The value of each alternative follows from
+equation~\eqref{eq:choice-value} with $\widehat V_{j+1}$, and the household
+chooses the alternative with the largest value plus taste shock. All
+candidates in the estimation use the same draws.
+ Appendices~\ref{app:computation-networks}--\ref{app:computation-accuracy} describe the networks, the training, and
+the accuracy of the solution.
+
+% ----------------------------------------------------------------------
+\subsection{Parameters set before estimation}\label{sec:fixed-parameters}
+
+Table~\ref{tab:fixed-parameters} lists the parameters we set before
+estimation along with their sources. Nominal amounts are in units of mean
+working-age gross income.
+
+\paragraph{Demographics and income.}
+Survival probabilities come from the ONS National Life Tables for 2015--17.
+In the 82+ group a household survives each year with probability 0.880,
+which matches the remaining life expectancy at 82 in the same tables. The equivalence scale, the square root of household size as in \citet{kinnerud2025effects}, follows household size by
+age in the Wealth and Assets Survey and lies between 1.07 and 1.54.
+
+
+
+
+\begin{table}[p]
+  \centering
+  \caption{Parameters set before estimation}\label{tab:fixed-parameters}
+  \begin{threeparttable}
+    \footnotesize
+    \pkgtable{tab-fixed-parameters}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} Nominal amounts are in units of mean
+      working-age gross income. Rates are annual.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+We estimate the income process~\eqref{eq:income} from waves 1--10
+(2009--2019) of Understanding Society.
+We take the gross income of the household in 2015 prices as our income measure. The sample consists of households with reference persons aged 20--64 who work at least 10
+hours a week and are observed in at least five waves. The age profile $\kappa_j$ is calculated from a regression of log income
+on age indicators, marital status, the number of children, and education
+with household  fixed effects. We smooth the age effects with a cubic in
+age. The profile rises from \pounds31,200 at age 23 to a peak of
+\pounds58,300 at age 58. The residual of this regression is the sum of the
+permanent and transitory components. Since the permanent component is a
+random walk and the transitory shock is independent over time, the
+variance of the change in the residual between two interviews $k$ years
+apart is $k\sigma_\psi^2+2\sigma_\nu^2$ \citep{carroll1997nature}. We
+regress the squared changes for $k=1,\dots,9$ on $k$. The slope estimates
+$\sigma_\psi^2$ and half the intercept estimates $\sigma_\nu^2$, which
+gives $\sigma_\psi=0.096$ and $\sigma_\nu=0.206$. A permanent shock of one
+standard deviation thus changes the household's income by about 10 percent
+permanently, and a transitory shock changes it by
+about 21 percent for one year. Appendix~\ref{app:data-ukhls} gives the
+details. We estimate the tax function~\eqref{eq:tax} on the same sample, by regressing the log of net household income on the log of gross household income, both measured as deviations from the age profile of gross income. The parameter $\tau_1$ is one minus the slope and $\tau_0$ is the exponential of the intercept, which gives $\tau_0=0.777$ and $\tau_1=0.064$.
+
+The pension floor in equation~\eqref{eq:pension},
+$\underline y^{\mathrm{ret}}=0.30$ which translates to about \pounds15,000 a year,  is a minimum pension income. It lies between the Pension Credit guarantee for a couple, \pounds237.55 a week or about \pounds12,400 a year in 2016/17, and two full new State Pensions, about \pounds16,200 a year. The
+cap, $\overline y^{\mathrm{ret}}=3.64$, binds only for the highest earners. It follows the maximum benefit in \citet{kinnerud2025effects}, but we set it high: at the estimated replacement rate it binds only when permanent income in the last working year exceeds 4.7 times mean income.
+The replacement rate $\rho_{\mathrm{ret}}$ between them is estimated.
+
+
+\paragraph{Housing, renovation, and energy.}
+We set the price premium of an efficient home, $\gamma_p$, and the proportional
+cost of a renovation, $\xi$, using the EPC register matched to Land
+Registry Price Paid data, which cover sales in England and Wales in 2008--2024. For the  price premium, we regress the log price per square metre on an
+indicator for a home in bands A--C along with controls for floor area and the
+number of rooms and fixed effects for the month of sale, the postcode, the
+property type, the built form and the construction period. The premium lies between 2.0 and 3.5
+percent across different specifications. We set $\gamma_p=0.03$. 
+
+
+Each  certificate lists the measures recommended for the
+home, an indicative cost for each, and the band the home would reach if
+all were installed. We use this information to calibrate  the variable cost of renovation. We divide the total cost by the price of the home. For
+homes in bands D--G that the measures would bring to A--C, the ratio is 9.0
+percent on average, whereas for those it would bring only to band C it is 7.6 percent. The
+medians are lower, 6.8 and 5.2 percent. We set $\xi=0.08$, between the two means.
+Since the ratio covers the whole recommended cost, the fixed cost $\xi_f$,
+which we estimate, comes on top of it. 
+
+ Buying costs $\zeta_b=3.9$ percent of the value of the home. It covers
+stamp duty, legal and survey fees, and mortgage fees.\footnote{The buying cost is the sum of stamp
+duty (2.94 percent, the receipts of stamp duty divided by the value of
+transactions), legal fees (0.34 percent), a survey (0.21 percent), and
+mortgage fees (0.37 percent). Stamp duty: HMRC, UK stamp tax statistics,
+2018. Legal fees and survey: Reallymoving Conveyancing and Surveying Price
+Indices, 2018, as a share of the average transaction value of
+\pounds284,864. Mortgage fee: the average mortgage fee of
+\pounds1,047 in December 2018 (Moneyfacts).} Selling costs $\zeta_s=5.0$
+percent of the value of the home, the value that
+\citet{attanasio2012modelling} use for selling in a lifecycle model of UK
+housing. Since $(1+\zeta_b)\gamma_p=0.031$ is less than
+$\xi$, the extra outlay of buying an efficient home is smaller than the cost of
+renovating one of the same size, whatever its size and whatever $\xi_f$: the
+condition in
+Section~\ref{sec:model-environment} holds for every home, and across the
+ranges above: at a premium of 3.5 percent, $(1+\zeta_b)\gamma_p=0.037$,
+below the lower of the two medians, 5.2 percent.
+
+
+We set the energy bill per unit of housing at $e^N=0.0053$ for a home in bands
+D--G and $e^R=0.0032$ for a home in bands A--C. We compute them from the
+energy use that the EPC register models for each band combining it with DESNZ fuel
+prices (Appendix~\ref{app:data-other}). Then the rest of the
+return to efficiency comes from comfort, $\eta$, and from the higher price
+of the home at sale or bequest, which depends on how long efficiency lasts,
+$\varrho$. We estimate both $\eta$ and $\varrho$.
+
+\paragraph{Renting.}
+Rent per unit of housing follows from equation~\eqref{eq:rent}. We set the
+gross yield to $\chi=5.0$ percent, the ratio of annual rent to value for
+rented homes in England and Wales in 2016 \citep[Annex 2, Table
+A.3]{boe2017fsr}. We set $\pi_R=0.175$ which is the share of
+homes in bands A--C among privately rented homes built before 1990 in the
+English Housing Survey.\footnote{
+We leave out social housing, whose rents are not set in the market.} With
+$\gamma_p=0.03$, these values give $p^{\mathrm{rent}}=0.0503$: a renter pays
+5.03 percent of the value of an inefficient home of the same size a year,
+and pays the energy bill on top.
+
+Since $p^N=1$ and nominal values are  measured in units of $\overline Y$, the size of
+a home is its value as an inefficient home in units of $\overline Y$, and
+the size of a rented home is its annual rent divided by
+$p^{\mathrm{rent}}\overline Y$. We set the largest rented home at 1.2 times
+the 99th percentile of rents in the same sample, an annual rent of
+\pounds37,400, which gives $\overline h^{\mathrm{rent}}=14.9$. We set the
+largest owned home at 1.2 times the 99th percentile of home values in the
+Wealth and Assets Survey, \pounds1.55 million, which gives
+$\overline h^{\mathrm{own}}=31.1$. Fewer than 1 percent of renters and of
+owners in the data live in larger homes. The smallest rented home,
+$\underline h^{\mathrm{rent}}=0.01$, has a rent of about \pounds25 a year.
+It is a numerical floor that keeps renting feasible for every household,
+not a feature of the data. The smallest owned home,
+$\underline h^{\mathrm{own}}$, is estimated.
+
+\paragraph{Savings and credit.}
+Liquid saving earns $r_b=0.8$ percent a year which is the average real return on a
+long term riskfree bond from January 2009 to December 2019. To compute this, in each month we take the 25 year yield on the Bank of
+England's nominal gilt yield curve and subtract the twelve month rate of
+CPI inflation.  
+
+The mortgage interest rate is set at $r_m=3.4$ percent, which is the average over 2009--2019 of the Bank of England's quoted rate on a five year fixed rate mortgage. We set the new mortgage term at 25 years, and at origination its loan to value can be at most 90 percent of the value of the home \citep{attanasio2012modelling} and its payment to income at most 33 percent of the household's permanent gross income.\footnote{\citet{carro2023macroprudential} report a hard maximum loan-to-income ratio of 5.4 to 5.6. We take 5.5. Repaid over 25 years at 3.4 percent, a loan of 5.5 times income costs about 33 percent of income each year.}
+
+An owner pays a per-period maintenance cost of $\delta_h=2$ percent of the value of the home. This is the average over the period 2009--2019 of the depreciation of dwellings as a
+share of their gross capital stock excluding land, both at current prices,
+in the capital stock accounts of the Office for National Statistics.
+Note that, given these calibrated numbers, interest on the value of the home adds 0.8 percent forgone on her own
+savings or 3.4 percent on a mortgage. Hence, owning costs 2.8 percent of the value a year in all if she owns
+outright and 5.1 percent if she borrows 90 percent of the value.\footnote{The 5.1 percent is $0.9\times3.4+0.1\times0.8+2$: 90 percent of the value is borrowed at 3.4 percent, the remaining 10 percent forgoes 0.8 percent, and maintenance is 2 percent.} At the same time an owner
+also receives more services from each unit
+than a renter. Therefore, owning is
+cheaper than renting for a household with equity.  Buying and selling together cost 8.9 percent of the value, which an owner without a mortgage
+recovers in about four years at the 2.2 percent a year it saves over
+renting.
+
+\paragraph{Preferences.}
+Relative risk aversion is $\sigma=2$, as in \citet{kaplan2020housing}.
+ The discount factor is $\beta=0.97$.\footnote{ When $\beta$
+is estimated jointly with the seven parameters of
+Section~\ref{sec:identification}, the estimate is 0.98. That is the upper
+end of the range $[0.88,0.98]$ on which the networks are trained, so it is
+not an interior minimum. The criterion  of the estimator in
+Section~\ref{sec:smm} rises
+steeply below 0.97: it is 0.048 at $\beta=0.96$ and 0.109 at 0.95. Between
+0.97 and 0.98 it is nearly flat, at 0.016 and 0.013--0.014. The data
+therefore rule out a lower discount factor but barely distinguish 0.97 from
+0.98. The small gain at 0.98 comes from retirement income and the wealth of
+households over 75. The three renovated shares together fit better at
+0.97, and the renovation parameters $\varrho$, $\eta$ and $\xi_f$ differ by
+less than 6 percent between the two values. The value 0.97 is close to the
+0.964 in \citet{kaplan2020housing}.} The
+weight on nondurable consumption is $\alpha=0.75$, so housing services
+take a quarter of the Cobb--Douglas aggregate, and the bequest shifter is
+$\overline q=1$. The intercept and scale of owner services in
+equation~\eqref{eq:owner-services} are fixed at $\omega_0=1.015$ and
+$h_\omega=2$, and the size gradient $\omega_h$ is estimated.  The taste shocks have scale $\sigma_\varepsilon=0.10$. This
+scale sets how strongly choices respond to differences in their values. We
+do not estimate it, and the estimates are conditional on it.
+
+\paragraph{Initial conditions.}
+Households enter at age 23 with the income, liquid wealth, tenure, home
+value, and mortgage of households matched to  the Wealth and Assets Survey whose
+head is aged 20--29. The WAS does not record energy efficiency, so an owner starts in an efficient home with probability $\pi^R_0=0.218$, the share in bands A--C among  owners aged 16--24 in the English Housing Survey.
+
+% ----------------------------------------------------------------------
+\subsection{Estimated parameters and identification}\label{sec:identification}
+
+We estimate seven parameters, which are: (i) the minimum owned house size
+$\underline h^{\mathrm{own}}$, (ii) the owner-service size gradient $\omega_h$, (iii)
+the bequest scale $\upsilon$, (iv) the pension replacement rate
+$\rho_{\mathrm{ret}}$, (v) the fixed cost of a renovation $\xi_f$, (vi) the
+retention of efficiency $\varrho$, and (vii) the comfort value of efficiency
+$\eta$. To estimate these parameters, we target eleven data moments (Appendix~\ref{app:data-targets} gives the sample behind each), which are:
+ homeownership at ages 25--34, 35--64, and 65--75; the share of
+housing in the wealth of households aged 35--64; the ratio of income at
+ages 65--74 to income at ages 55--64; liquid wealth relative to income at
+ages 65--75 and 75+; consumption relative to income at ages 50--64; and the
+share of owners in an efficient home at ages 25--34, 35--64, and 65--75. Below we discuss the identification of these parameters based on the moments we target.
+
+
+First, homeownership at ages 25--34, 35--64, and 65--75 and the share of housing in
+the wealth of households aged 35--64 inform $\underline h^{\mathrm{own}}$
+and $\omega_h$. This is because a larger minimum owned home makes ownership harder to
+reach. Hence, it has a level effect and lowers ownership in every age group. At the same time, a steeper size gradient makes
+owning more valuable relative to renting. Hence, it raises ownership and the
+housing share of wealth. However, compared to $\underline h^{\mathrm{own}}$, its effect is not uniform across age groups. It increases ownership mostly among the young because most of them rent. 
+
+The ratio of income at 65--74 to income at 55--64 pins down the replacement
+rate $\rho_{\mathrm{ret}}$. Given the pension income, liquid wealth relative to
+income at 65--75 and at 75$+$ pin down the bequest scale $\upsilon$. A
+stronger bequest motive makes old households save relatively more for future generations. So, a higher pension lowers the wealth as it crowds out saving for old age, and a
+stronger bequest motive offsets it. Consumption relative to income at 50--64 summarizes
+saving before retirement.
+
+
+The  shares of owners in an efficient home at 25--34, 35--64, and 65--75
+inform $\xi_f$, $\varrho$, and $\eta$. All three shares are positively correlated  with $\varrho$
+and $\eta$ and negatively with $\xi_f$. However, proportions are different. The
+fixed cost lowers the share proportionally most among older owners. Older
+owners buy less often, so more of their efficiency comes from renovating in
+place, which pays the fixed cost, while buying an efficient home avoids it
+(Section~\ref{sec:results}). The fixed cost therefore governs how steeply
+the share falls with age, through the width of the  gap in
+Proposition~\ref{prop:window}.
+
+One issue with jointly estimating the retention of efficiency, determined by $\varrho$,  and its comfort value, $\eta$, is that both raise the share at every
+age in nearly the same proportions. This is because the stock of efficient homes can be
+large because efficiency is worth a lot while it lasts or because it lasts
+long. It is hard for the three targeted shares to tell the two apart.\footnote{ At the estimation point, doubling $\eta$ raises the share to 27.9, 23.1, and 16.6 percent at 25--34,
+35--64, and 65--75 (Section~\ref{sec:results}), and raising $\varrho$ from 0.84 to 0.88 instead raises
+it to 28.0, 23.5, and 16.7 percent.} The shares therefore are  pinning down a combination of
+the two. We deal with this problem in two ways after the estimation. First, we will show that away from the estimate the two parameters shape the age
+profile of the share differently (Section~\ref{sec:results}). Second, a moment that we do not target,
+the rate at which homes lose efficiency, will actually separate these two parameters near the estimate.
+
+%  Further from the estimate the two differ. The comfort value scales
+% the whole profile: without it, or with it doubled, the share at 25--34
+% stays between 1.68 and 1.76 times the share at 65--75. Retention also
+% flattens the profile, because homes lose efficiency whatever their owners
+% choose and the loss accumulates with age. At $\varrho=0.96$ the share at
+% 25--34 is 1.2 times the share at 65--75, against 1.75 at the estimate and
+% 2.2 in the data.
+
+% A moment we do not target separates the two near the estimate: the rate at
+% which homes lose efficiency. Retention sets this rate directly, and the EPC
+% register measures it between certificates
+% (Table~\ref{tab:epc-transitions}). Along the combination that the shares
+% pin down, a higher retention implies a slower loss.
+% Section~\ref{sec:estimates} shows that the estimate matches the rate in the
+% register, and what the weak separation implies for the precision of the
+% two estimates.
+
+% ----------------------------------------------------------------------
+\subsection{Estimator}\label{sec:smm}
+
+We denote parameters to estimate by $\vartheta$. These parameters are estimated using the method of simulated moments. The method needs the model at every value of $\vartheta$ that the search
+visits. As mentioned above, we expand the state space of the model to include $\vartheta$. Hence,  networks take $\vartheta$ as an input. We solve the model only once,
+for all values of $\vartheta \in \Theta$ at the same time, where $\Theta$ is the box of
+search ranges. Evaluating
+a new value then requires only a simulation.  Training the networks
+over it took 9.7 hours on one L40S GPU, and Table~\ref{tab:networks} in Appendix~\ref{app:computation-networks} lists their architecture and training
+settings, and Appendix~\ref{app:computation-search} describes the search.
+
+
+We also compute the  standard errors of estimated parameters using the sandwich formula
+\begin{equation}
+  V=A\,(\Omega+\Sigma_S)\,A',\qquad A=(G'WG)^{-1}G'W,
+  \label{eq:smm-variance}
+\end{equation}
+where $G$ is the derivative of the model moments with respect to the
+parameters, computed by central differences at $\pm3$ percent of the width
+of each search range, $\Omega$ is the covariance of the data moments, from a
+cluster bootstrap of the surveys,  $\Sigma_S$ is the covariance of the
+simulation noise in the model moments, and $W$ is the weighting matrix in the simulated method of moments.  Appendix~\ref{app:computation-se} gives
+the details.
+
+
+% ----------------------------------------------------------------------
+\subsection{Estimates and fit}\label{sec:estimates}
+
+\begin{table}[!h]
+  \centering
+  \caption{{Estimated parameters and targeted moments}}\label{tab:estimates}
+  \begin{threeparttable}
+    \pkgtable{tab-estimates}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Sources:} Panel~B: English Housing Survey
+      (homeownership, efficient shares), Wealth and Assets Survey
+      (wealth and income), and ONS Family Spending (consumption)}
+      \item {\textit{Notes:} Panel~A: standard errors in parentheses, from
+      equation~\eqref{eq:smm-variance}. They include sampling error in the
+      data moments and simulation error in the model moments. The search range is the box over
+      which the networks are trained and the estimator searches; it is not
+      a confidence interval. Panel~B: owners in an A--C home are shares of
+      owner-occupiers of homes built by 1990. Model moments are simulated
+      with 65,536 households at the estimates in Panel~A.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \caption{Model and data, targeted and untargeted moments}
+  \label{fig:moment-fit}
+  \includegraphics{fig-moment-fit.pdf}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Notes:} Each point is one moment with a counterpart of the same
+    definition in the model, on log scales. Solid points are targeted and
+    hollow points untargeted. The line is the 45-degree line. One moment,
+    the change in liquid wealth at 65--74, is not drawn because it is zero
+    in the model.
+  \end{minipage}
+\end{figure}
+
+Panel~A of Table~\ref{tab:estimates} reports the estimates. The smallest owned home is
+worth $\underline h^{\mathrm{own}}=3.14$ times mean income. The pension replaces about 77 percent of permanent income in the last working year.
+
+The fixed cost of a renovation is $\xi_f=0.159$, about \pounds7,900. With
+the proportional cost, renovating the smallest owned home costs 4.2 times
+the extra outlay of buying it efficient, about \pounds20,500 against
+\pounds4,900, and the largest 2.7 times. The ratio falls as house size grows because
+the fixed cost is spread over a larger home. An efficient home stays efficient with probability $\varrho=0.838$ a
+year, so efficiency lasts about six years on average, which at first appears to be low. However, we do not target the
+rate at which homes lose efficiency, but the model's rate, 16 percent a
+year, is close to the 15.2 percent of homes built by 1990 that drop from
+bands A--C to D--G each year between certificates (Table~\ref{tab:epc-transitions}).%
+\footnote{Part of this rate reflects reassessment rather than physical change:
+\citet[Table~3]{crawley2019quantifying} estimate that a home truly in band C
+has a 19 percent chance of being rated D or below.
+Efficiency in the model is therefore the certified band. It is the band on
+which the price premium $\gamma_p$ is estimated and the band that
+regulation targets. A household can lose it through wear, a change in the
+rating method, or reassessment, and $\varrho$ measures how long a home
+keeps it.}
+The comfort value $\eta=0.061$ gives an efficient home about 5 percent more
+services than an inefficient home of the same size, which is worth about
+1.5 percent of nondurable consumption.
+
+The parameters associated with ownership, saving, and pensions are precisely estimated, with relatively low standard errors. However,
+the three parameters of efficiency are not. The standard errors of $\xi_f$,
+$\varrho$, and $\eta$ are about as large as their search ranges. This is the
+weak separation we described in Section~\ref{sec:identification}.  Hence, the data
+pin down a combination of how long efficiency lasts and how much it is
+worth, but not each on its own. Another way to see this is that if $\varrho$ were known, the standard error of
+$\eta$ would be 0.02 instead of 0.175. Further, $\varrho$ lies 0.04
+above the lower end of its range, which is about a quarter of a standard error. This is where the
+normal approximation behind the standard errors is poor. As  networks are
+trained only within the search range, we cannot look beyond it. For these specific
+reasons Section~\ref{sec:results} also reports the results at a higher
+retention, $\varrho=0.96$, at which efficiency lasts 25 years.
+
+Panel~B of Table~\ref{tab:estimates} compares the targeted moments with the data. The model
+reproduces the fall of the efficient share with age. The share falls from
+22.5 percent of owners at 25--34 to 12.7 percent at 65--75. In the data these numbers are 21.0 and
+9.7 percent. Hence,  the model accounts for 9.8 of the 11.3-point decrease.
+The model matches well the ownership at 65--75 and at 35--64,
+but at 25--34 only 27.5 percent of households own, against 39.3 percent in
+the data. Further, it matches the housing share of wealth and liquid wealth at
+65--75, and overstates liquid wealth at 75+ slightly. Similarly, consumption at
+50--64 is slightly higher in the model, whereas the ratio of retirement income relative to income at 55--64 is 77 percent in the  model and 84 percent in the data.
+
+To assess how the model performs for non targeted moments, in Figure~\ref{fig:moment-fit} we plot the model with the data for all 61
+moments that have a counterpart with the same definition. Further, we contrast them with respect to the 45-degree line. A large fraction of moments, both targeted and not targeted are close to the 45-degree line. 

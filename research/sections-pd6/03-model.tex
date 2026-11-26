@@ -1,0 +1,782 @@
+% Section 3 -- Model (draft prose, written from 03-model-outline.tex)
+%
+% Written from the code of the R0 model, not from the pd5 draft:
+%   spec        model-codes/codes/epc-lifecycle-deep-learning/epc_revised/spec.py
+%   economics   estimation_epc/model_funcs_estimation_epc.py (budgets, services,
+%               bequest, transitions), epc_revised/economics.py (debt caps,
+%               renovation advance)
+%   values      replication/output/tables/tab-fixed-parameters.csv,
+%               tab-estimates.csv; calibration bundle
+%               data-moments/calibration-v3/output/inputs.json
+%   magnitudes (Section 3.3): calibrated parameters only, from
+%               tab-fixed-parameters.csv: xi/gamma_p = 0.08/0.03 = 2.7,
+%               zeta_b + zeta_s = 0.039 + 0.050 = 0.089, heirs' share
+%               gamma_p/xi = 3/8 (so Lambda mu > 3/8 suffices in Prop 3(a)),
+%               1/(1 + zeta_b - delta_h) = 1/1.019 = 0.981 (Prop 3(b))
+%               (no estimated values)
+%   payoff horizon: replication/code/4-exhibits/tab_payoff_horizon.R
+\section{Model}\label{sec:model}
+
+\begingroup
+
+In this section we build a partial equilibrium lifecycle model in which households face idiosyncratic income risk, mortality risk, and borrowing constraints. Households choose consumption, liquid saving, whether to rent or own, the size of their home, mortgage debt, and the energy efficiency of the home they own. Efficiency is assumed to be binary, which keeps the household's choice set manageable and allows us to map model moments to the data moments outlined in Section~\ref{sec:data}.  We borrow many ingredients which are standard in
+lifecycle models of housing
+\citep{cocco2005portfolio,piazzesi2016housing,kaplan2020housing,yang2009consumption}. 
+
+
+The two explanations of Section~\ref{sec:data} correspond to two forces in the model.
+The first is the \emph{horizon channel}. The idea is that an efficient home pays off only for as long as its owner lives in it and it stays efficient. The second force is the
+\emph{purchase window}: a buyer can choose an efficient
+home and pay a small price premium, whereas an owner of an inefficient home who stays must pay for a renovation. As older owners buy less often, they have fewer of these
+opportunities. It is important to emphasize that we impose no preference for efficiency that changes with age. 
+
+
+Section~\ref{sec:model-environment} describes the environment,
+Section~\ref{sec:model-problem} the household problem, and
+Section~\ref{sec:model-forces} the forces that shape the age gradient.
+Parameter values are in Section~\ref{sec:estimation} and further details in
+Appendix~\ref{app:model}.
+
+% ----------------------------------------------------------------------
+\subsection{Environment}\label{sec:model-environment}
+
+\paragraph{Demographics.}
+Time is discrete, and one period is one year. Households enter the model at
+age $J_0 = 23$, work until age 64, and retire at $J^{\mathrm{ret}} = 65$. A household of age $j$
+survives to the next period with probability $\phi_j$. Ages $\overline J=82$ and over form
+a single group in which the household survives each year with the same
+probability, $\phi_{\overline J}$, and faces the same problem every year. No
+household is forced to die at a fixed age.\footnote{A fixed terminal age
+would make the last owners sell or stop renovating for mechanical reasons.
+With a recurring last group, the oldest households keep a constant expected
+remaining lifetime, $1/(1-\phi_{\overline J})$ years.}
+
+
+
+
+\paragraph{Preferences.}
+A household maximizes expected lifetime utility
+\begin{equation}
+  \E_{J_0}\!\left[\sum_{j=J_0}^{\infty}\beta^{j-J_0}
+    \Bigl(\prod_{i=J_0}^{j-1}\phi_i\Bigr)
+    \Bigl(u_j(c_j,s_j)+(1-\phi_j)\,g(q_j)\Bigr)\right],
+  \label{eq:lifetime-utility}
+\end{equation}
+where $c_j$ is nondurable consumption, $s_j$ is the consumption of housing
+services, $q_j$ is the bequest the household leaves if she dies at the end
+of age $j$, and $\phi_j=\phi_{\overline J}$ for $j\geq \overline J$.  The product of survival
+probabilities is the probability of being alive at age $j$. Hence, as
+$\phi_{\overline J}<1$, the sum is finite. Section~\ref{sec:model-problem} adds
+a taste shock to each discrete choice. Period utility is
+\begin{equation}
+  u_j(c,s)=e_j\,\frac{\left(c^{\alpha}s^{1-\alpha}\right)^{1-\sigma}-1}{1-\sigma},
+  \label{eq:utility}
+\end{equation}
+where $\alpha$ is the weight on nondurable consumption, $1/\sigma$ is the
+elasticity of intertemporal substitution, and the equivalence scale $e_j$
+captures changes in household size with age. Bequests give warm-glow
+utility
+\begin{equation}
+  g(q)=\upsilon\,\frac{(q+\overline q)^{1-\sigma}-1}{1-\sigma},
+  \label{eq:bequest}
+\end{equation}
+where $\upsilon$ measures the strength of the bequest motive and $\overline q$
+makes it a luxury \citep{denardi2004wealth,denardi2010elderly}. The bequest $q$ is liquid wealth plus the market value of
+the home, at its efficiency in the year of death, minus the mortgage. Hence, an
+efficient home  passes its price premium to the heirs only if it is
+still efficient when the owner dies.
+
+
+
+\noindent\textbf{Income.}
+We follow \citet{carroll1997nature,gourinchas2002consumption,blundell2008consumption} to model income. During working age, a household's gross income is the product of a
+deterministic age profile and two stochastic components,
+\begin{equation}
+  y_j=\kappa_j\,z_j\,\nu_j,
+  \qquad
+  z_{j+1}=z_j\,\psi_{j+1},
+  \qquad j<J^{\mathrm{ret}},
+  \label{eq:income}
+\end{equation}
+where $\kappa_j$ is the deterministic age profile, $z_j$ is the permanent component,
+$\psi_{j}$ is a permanent shock, and $\nu_j$ is a transitory shock. The
+shocks are lognormal and their distributions are given as
+\begin{equation}
+  \log\psi_j\sim\mathcal N\!\left(-\tfrac12\sigma_\psi^2,\ \sigma_\psi^2\right),
+  \qquad
+  \log\nu_j\sim\mathcal N\!\left(-\tfrac12\sigma_\nu^2,\ \sigma_\nu^2\right),
+  \label{eq:income-shocks}
+\end{equation}
+so that $\E[\psi_j]=\E[\nu_j]=1$. We also assume that the shocks are independent of each other,
+across households, and over time. The permanent component is therefore a
+random walk in logs. 
+
+
+
+At retirement the permanent component is fixed at its value at age
+$J^{\mathrm{ret}}-1$, and the transitory shock is shut off. A retired
+household receives the pension
+\begin{equation}
+  y_j=\min\left\{\max\left\{\rho_{\mathrm{ret}}\kappa_{J^{\mathrm{ret}}-1}z_{J^{\mathrm{ret}}-1},\
+    \underline y^{\mathrm{ret}}\right\},\ \overline y^{\mathrm{ret}}\right\},
+  \qquad j\geq J^{\mathrm{ret}},
+  \label{eq:pension}
+\end{equation}
+where $\rho_{\mathrm{ret}}$ is the replacement rate of the household's
+permanent income in her last working year, $\underline y^{\mathrm{ret}}$
+is a floor, which stands for the minimum income the state guarantees to
+pensioners, and $\overline y^{\mathrm{ret}}$ is a cap on the pensions of
+the highest earners. The pension is certain, and it is also the household's
+permanent income in retirement. Earnings and pensions are taxed according
+to
+\begin{equation}
+  y^{\mathrm{net}}_j=\tau_0\,y_j^{1-\tau_1},
+  \label{eq:tax}
+\end{equation}
+where $\tau_1$ measures the progressivity of the tax system and $\tau_0$
+its average level \citep{heathcote2017progressivity}. All money amounts in
+the model are in units of mean working-age gross income.
+
+
+
+\noindent\textbf{Housing and energy efficiency.}
+A home has two characteristics. First,  the quantity of housing it provides, $h$,
+and, second,  its energy efficiency type, $t\in\{N,R\}$, where $N$ denotes an inefficient
+home and $R$ an efficient one. The quantity $h$ summarizes floor space,
+location, and the other attributes of a home that are valued by its
+occupant. We simply call it the size of the home.
+
+Prices are constant, since the model is partial equilibrium. The
+consumption good is the numeraire, and we choose the units of $h$ so that
+an inefficient home costs one unit of consumption per unit of size,
+$p^N=1$. An efficient home of the same size costs more,
+\begin{equation}
+  p^R=(1+\gamma_p)\,p^N,
+  \label{eq:price-premium}
+\end{equation}
+where $\gamma_p \in (0,1)$ is the price premium of efficiency.  The premium is what a buyer pays for an
+efficient home over an inefficient home of the same size, and what a seller
+of an efficient home receives over the seller of an inefficient one. A home of size $h$
+and efficiency $t$ is worth $p^th$.
+
+
+
+An owner of a home of size $h$ and efficiency type $t$ receives the flow of
+housing services given as
+\begin{equation}
+  s(h,t)=\bigl[\omega_0+\eta\,\ind\{t=R\}+\omega_h\log(1+h/h_\omega)\bigr]\,h.
+  \label{eq:owner-services}
+\end{equation}
+The term in brackets is the flow of services per unit of size. For an
+inefficient owned home it is $\omega_0+\omega_h\log(1+h/h_\omega)$, which
+rises with size at a decreasing rate. The constant $h_\omega$ scales the size. A unit of inefficient rented housing yields one unit of services, so the difference,
+$\omega_0-1+\omega_h\log(1+h/h_\omega)$, is the extra value an owner places
+on each unit of her own home, for instance because of security of tenure
+and control over the home. This extra value rises with size, so owning is
+worth more relative to renting for larger homes, such as houses rather
+than flats. The
+parameter $\eta$ is the comfort value of efficiency. An efficient home is
+warmer, less draughty, and less damp than an inefficient home of the same
+size, and so gives more services.
+
+Although owning a home bestows benefits through higher services, it also comes with several costs. There are two direct costs. First,  each period the owner pays a proportional maintenance cost $\delta_hp^th$, which offsets physical depreciation. Second, the owner also pays an energy bill $e^th$. We assume $e^R<e^N$ implying that an efficient home needs less energy to heat.
+
+An efficient home pays its owner in three ways: (i) more comfort, (ii) lower
+energy bills, and (iii) a higher value when it is sold or bequeathed. All three
+gains are proportional to the size of the home.
+
+
+We do not assume that efficiency is an absorbing state. An efficient owned home stays efficient the next year with probability $\varrho \in (0,1)$. This transition from efficient to inefficient type reflects the downgrades in heating systems, the wear of insulation, and a rising standard against which a home is rated.  To simplify the solution of the model we assume that the probability does not depend on the time since the home was renovated.
+
+
+There are three ways to own an efficient home. A household can (a) buy a home that is already efficient, (b) buy an inefficient home and renovate it in the year of purchase, or (c) renovate the inefficient home she already owns. A renovation of a home of size $h$ has both a fixed and a proportional cost, given as
+\begin{equation}
+  C(h)=\xi_f+\xi\,p^N h
+  \label{eq:renovation-cost}
+\end{equation}
+where $\xi_f$ is the fixed cost and $\xi$ the proportional cost.
+A buyer who chooses option (a) pays only the
+price premium on the new home, $\gamma_p p^N h'$, plus the transaction cost
+on it. An owner who stays can only take route (c) and must pay $C(h)$.
+When the premium is small relative to the cost of a renovation,
+$(1+\zeta_b)\gamma_p p^N h<C(h)$, for a household that moves, buying an
+efficient home costs less than renovating.\footnote{A
+household that buys a home of size $h$ can end up in an efficient home in
+two ways. Buying it efficient costs $(1+\zeta_b)p^Rh$ instead of
+$(1+\zeta_b)p^Nh$, an extra outlay of $(1+\zeta_b)\gamma_pp^Nh$ by
+equation~\eqref{eq:price-premium}. Buying it inefficient and renovating it,
+at purchase or later, costs an extra $C(h)$. Both routes leave the
+household with the same asset, so the condition compares their outlays.
+For an owner who would not otherwise move, buying an efficient home also
+  costs the transaction costs of the move itself.} This is the window of the title: a purchase is the cheaper time to obtain efficiency. Note that it does not come from a discount on renovation at purchase, as the cost of a renovation is the same whether or not the household moves. Under the same condition, route (b)
+costs more than route (a). Because of the taste shocks, however, some
+households still choose it, and its mortgage is set against the inefficient
+value of the home.
+
+It is important to note that the model has no dwelling age. We interpret its housing stock as the stock of homes built by 1990, in which efficiency is the result of retrofits rather than of construction standards.
+
+
+Owning also incurs an indirect cost due to the home being an illiquid asset. Buying a home costs a share $\zeta_b$ of its value and selling one a share $\zeta_s$.  These transaction costs induce friction in mobility of households across homes \citep{grossman1990asset}.\footnote{Higher transaction
+costs reduce the moves of owners, in the UK through stamp duty
+\citep{hilber2017transfer} and in the Netherlands
+\citep{vanommeren2005new}, and owners are less likely than renters to move
+for a job elsewhere \citep{battu2008housing,head2012housing}. Lifecycle
+models of housing treat illiquidity in the same way
+\citep{attanasio2012modelling,bajari2013dynamic,kaplan2020housing}. In our model these
+transaction costs are the only costs of moving.}
+
+The other option to get housing services is through renting. We assume that a renter can choose the size of her home
+every year without incurring any transaction cost. She pays rent $p^{\mathrm{rent}}$ per unit of
+size, and pays no maintenance cost. To reduce the number of discrete choices, we assume that the renter does not choose efficiency.  A rented home
+can be of efficient type with probability $\pi_R$. Hence, a renter pays the expected energy
+bill $\bigl[\pi_Re^R+(1-\pi_R)e^N\bigr]h$ and receives the housing services
+$(1+\pi_R\eta)h$. The rent gives landlords a constant gross
+yield $\chi$ on the value of the homes they let,
+\begin{equation}
+  p^{\mathrm{rent}}=\chi\bigl[\pi_Rp^R+(1-\pi_R)p^N\bigr]
+  =\chi\,(1+\pi_R\gamma_p)\,p^N,
+  \label{eq:rent}
+\end{equation}
+so the ratio of the average value of rented homes to rent is constant.  Whether a rented home is
+efficient is decided by its landlord, whom we do not model.  The efficiency
+choice in the model is made by owners, the households for whom the facts
+are measured.
+
+
+The size menu of homes available for renting or owning is different. A rented home has size
+between $\underline h^{\mathrm{rent}}$ and $\overline h^{\mathrm{rent}}$,
+and an owned home between $\underline h^{\mathrm{own}}$ and
+$\overline h^{\mathrm{own}}$, with
+$\underline h^{\mathrm{rent}}<\underline h^{\mathrm{own}}<\overline h^{\mathrm{rent}}<\overline h^{\mathrm{own}}$. The
+smallest homes can thus only be rented and the largest only owned, while
+homes in between can be either, as in \citet{kaplan2020housing}.\footnote{In general equilibrium, as is the case with \citet{kaplan2020housing}, how segmented the rental and
+owner-occupied stocks are determines whether looser credit raises house
+prices or the ownership rate. \citet{kaplan2020housing} let landlords
+convert owned homes into rentals at no cost.  Our prices
+and rents are fixed, so the model does not take a stand on this question.}
+
+
+
+
+\noindent
+\textbf{Saving and mortgages.}
+Households can  save in a liquid asset with return $r_b$ but cannot borrow
+without collateral. Hence, $b_j\geq 0$. Homes can be financed with repayment
+mortgages at rate $r_m$. A loan of balance $m$ with $n$ years remaining
+requires the annual payment
+\begin{equation}
+  P(m,n)=\frac{r_m(1+r_m)^n}{(1+r_m)^n-1}\,m.
+  \label{eq:mortgage-payment}
+\end{equation}
+We allow for prepayment. Hence, an owner may pay more than $P(m,n)$, up to the full balance. A new mortgage has a term of $L$ years. At purchase, the loan is constrained by the value of the home and by the buyer's income:
+\begin{equation}
+  m'\leq\lambda_L\,p^t h'
+  \qquad\text{and}\qquad
+  P(m',n')\leq\lambda_D\,y^{\mathrm{perm}}_j,
+  \label{eq:ltv-pti}
+\end{equation}
+where $\lambda_L$ is the maximum loan-to-value (LTV) ratio, $\lambda_D$ the
+maximum payment-to-income (PTI) ratio, and $y^{\mathrm{perm}}_j$ the household's
+permanent income at age $j$, that is, her gross income without the transitory shock (the pension in retirement). An owner who moves with a mortgage keeps its
+remaining term and can borrow at most the balance due under the old
+schedule plus any increase in the value of the home, and plus the cost of a renovation at purchase. We assume that moving cannot be used
+to take out equity or to restart the repayment
+schedule.\footnote{Without these rules, a household could sell and buy an
+almost identical home only to take out a new mortgage, and so release equity or restart the repayment schedule. The model allows refinancing only to pay for a renovation. UK mortgages are commonly
+portable when the borrower moves \citep{liu2023longterm}, so keeping the remaining term, as we do, matches UK practice.} An owner who
+renovates in place can borrow the cost of the renovation within the same
+limits, repaid by the existing payoff date.\footnote{When a household renovates, at purchase
+or in place, the loan is limited by the value of the home before the work,
+$\lambda_Lp^Nh$; the value the renovation adds, $\gamma_pp^Nh$, is not
+collateral. A household that buys an efficient home, by contrast, can
+borrow a share $\lambda_L$ of the premium.}  Appendix~\ref{app:model-mortgages} states these limits in full.
+
+\paragraph{Initial conditions.}
+Households enter at age 23 with a joint distribution of income, liquid
+wealth, tenure, home value, and mortgage, which we take from the data in
+Section~\ref{sec:estimation}.
+
+\paragraph{What the model leaves out.}
+House prices, rents, and interest rates are fixed, and there are no
+aggregate shocks. Every cohort faces the same environment, so the model has
+no differences between cohorts; this is what lets it isolate the effect of
+age from that of cohort. We do not model landlords' decisions, so the extent to which rented homes are efficient is taken as given.
+
+% ----------------------------------------------------------------------
+\subsection{The household problem}\label{sec:model-problem}
+
+\paragraph{Timing.}
+At the start of the year the household's income is realized, and her cash
+on hand is $x_j=(1+r_b)b_j+y^{\mathrm{net}}_j$. She draws a taste shock
+for each of her discrete alternatives, chooses an alternative, and, within
+that alternative,
+chooses consumption, saving, and her mortgage. At the end of the year the
+household dies with probability $1-\phi_j$ and leaves her estate. If she
+survives, she draws next year's income shocks, and an efficient owned home
+loses its efficiency with probability $1-\varrho$.
+
+\paragraph{State and choices.}
+At the start of the year a household is described by her age $j$ and the
+state
+\begin{equation}
+  \mathbf x_j=(b_j,m_j,n_j,z_j,\nu_j,o_j,h_j),
+  \label{eq:state}
+\end{equation}
+where $b_j$ is liquid wealth, $m_j$ and $n_j$ are the mortgage balance and
+its remaining term, $z_j$ and $\nu_j$ are the components of income, $h_j$
+is the size of an owned home, and  $o_j\in\{0,N,R\}$ records the
+household's tenure: $o_j=0$ for a renter and $o_j=t$ for an owner of a
+home of type $t$. Table \ref{tab:choices} lists the discrete alternatives
+available in each tenure option and the underlying continuous choices within each of those options. A renter
+has four alternatives: (i) to keep renting, (ii) to buy an efficient home, (iii) to
+buy an inefficient home and renovate it, or (iv) to buy an inefficient home and
+leave it as it is. An owner can stay, or sell and then rent or buy. An owner of an inefficient home can also renovate in place. As rental size is chosen each year, it is not a state variable.
+
+\begin{table}[!htbp]
+  \centering
+  \caption{Discrete alternatives and continuous choices, by
+  tenure at the start of the year}\label{tab:choices}
+  \begin{threeparttable}
+    \small
+    \begin{tabularx}{\textwidth}{@{}Xc@{}}
+      \toprule\toprule
+      Discrete alternative & Continuous choices \\
+      \midrule
+      \multicolumn{2}{@{}l}{\textit{Renter: 4 alternatives}} \\
+      Rent                                           & $c,\ b',\ h'$ \\
+      Buy an inefficient home                        & $c,\ b',\ h',\ m'$ \\
+      Buy an efficient home                          & $c,\ b',\ h',\ m'$ \\
+      Buy an inefficient home and renovate it        & $c,\ b',\ h',\ m'$ \\
+      \addlinespace
+      \multicolumn{2}{@{}l}{\textit{Owner of an efficient home: 5 alternatives}} \\
+      Stay                                           & $c,\ b',\ \widetilde P$ \\
+      Sell and rent                                  & $c,\ b',\ h'$ \\
+      Sell and buy an inefficient home               & $c,\ b',\ h',\ m'$ \\
+      Sell and buy an efficient home                 & $c,\ b',\ h',\ m'$ \\
+      Sell, buy an inefficient home and renovate it  & $c,\ b',\ h',\ m'$ \\
+      \addlinespace
+      \multicolumn{2}{@{}l}{\textit{Owner of an inefficient home: 6 alternatives}} \\
+      Stay                                           & $c,\ b',\ \widetilde P$ \\
+      Renovate in place                              & $c,\ b',\ \widetilde P$ \\
+      Sell and rent                                  & $c,\ b',\ h'$ \\
+      Sell and buy an inefficient home               & $c,\ b',\ h',\ m'$ \\
+      Sell and buy an efficient home                 & $c,\ b',\ h',\ m'$ \\
+      Sell, buy an inefficient home and renovate it  & $c,\ b',\ h',\ m'$ \\
+      \bottomrule\bottomrule
+    \end{tabularx}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item Notes: $c$ is consumption, $b'$ liquid saving, $h'$ the size of
+      the home rented or bought, $m'$ the mortgage taken at purchase, and
+      $\widetilde P$ the mortgage payment of an owner who stays. Consumption is
+      the residual of the budget constraint. Whether an alternative is
+      feasible depends on resources, the size limits, and the borrowing
+      limits.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+
+\paragraph{Taste shocks.}
+The model is agnostic about many reasons why a household moves or renovates in a
+given period. For instance, a household might move due to a new job, a change in the family composition due to a birth, death or marriage. Or she might decide to renovate due to a  failing boiler. We capture these idiosyncratic events through taste shocks. In each period, after observing her state, the household draws a shock $\varepsilon_j^d$ where superscript $d$ indicates the alternative she can choose. The shocks are independent across alternatives and over time and follow a
+Type-I extreme-value distribution with scale $\sigma_\varepsilon$. We provide more details about this in  Section~\ref{sec:estimation}. We assume that a taste shock adds directly to the value of an
+alternative as a whole, so it is the same for every allocation within the alternative. Hence, it affects which alternative the household chooses, but not how she consumes, saves, and borrows once the alternative is chosen.
+
+We divide each period into three stages. In the first stage, at the start
+of the period, the household knows her state $\mathbf x_j$, including this
+period's income and whether her home is still efficient.  At the start of the second stage, she draws the taste shocks and chooses one of the alternatives in Table~\ref{tab:choices}. After the discrete choice she chooses how much to consume and save, the size of her
+home if deciding to buy or rent, and her mortgage if deciding to buy a home. She pays this period's costs which can include rent or the price of the
+home she buys, the costs of buying and selling, maintenance, the energy
+bill, mortgage payments, and the cost of any renovation. After this she receives this
+period's utility from consumption and from the services of the home she lives
+in. Note that in the second stage nothing is random. In the third stage, which is the end of the period, the household has made all choices and knows her saving,
+her mortgage, and her home. The household then might die with probability
+$1-\phi_j$ and leave a bequest. If she survives, she draws next period's
+income shocks, her efficient home loses its efficiency with probability
+$1-\varrho$, and the next period begins at the first stage. Uncertainty is
+thus resolved twice in a period: the taste shocks between the first and second
+stages, and death, income, and the loss of efficiency between the third
+stage and the next period.
+
+We now formalize the household's problem with three value functions, one for each stage of
+the period described above. $V_j(\mathbf x_j)$ is the value of the state at
+the start of the period, i.e., before the taste shocks are drawn.
+$Q_j^d(\mathbf x_j)$ is the value of choosing alternative $d$, one row of
+Table~\ref{tab:choices}. $W_j(\overline{\mathbf x}_j)$ is the value at the
+end of the period, when all choices are made and before the household learns
+whether she survives. Below, we define them in reverse order.
+
+
+After her choices, the household carries the position
+\begin{equation}
+  \overline{\mathbf x}_j=(b',m',n',z_j,\overline o,h')
+  \label{eq:end-state}
+\end{equation}
+out of the period, where $b'$ is liquid saving,  $m'$ is the mortgage balance, $n'$ is the  remaining term  of her mortgage, $z_j$ the permanent component of her income, and $h'$ is the size of her home. The state $\overline o\in\{0,N,R\}$ records tenure and the
+efficiency of an owned home. The
+position $\overline {\mathbf x}_j$ determines everything that can happen next. If the household
+dies, she leaves the bequest $q(\overline{\mathbf x}_j)=b'+p^{\overline o}h'-m'$
+if she owns and $q(\overline{\mathbf x}_j)=b'$ if she rents. However, if she survives, the household
+starts the next period in the state $\mathbf x_{j+1}$, which differs from
+$\overline{\mathbf x}_j$ in  two ways. First, next period's income shocks are drawn, and second, an
+efficient home stays efficient with probability $\varrho$.
+
+The value for the household from this position is
+\begin{equation}
+  W_j(\overline{\mathbf x}_j)=(1-\phi_j)\,g\bigl(q(\overline{\mathbf x}_j)\bigr)
+  +\beta\phi_j\,\E\bigl[V_{j+1}(\mathbf x_{j+1})\mid\overline{\mathbf x}_j\bigr],
+  \label{eq:end-value}
+\end{equation}
+where the  first term is the value of the bequest if the household dies at the end
+of the period. The second captures the value of continuing, which is discounted and weighted
+by the  survival probability. The expectation  is over next period's income shocks and over
+whether an efficient home stays efficient. For the final age group, i.e., $j\geq\overline J$, the
+problem is the same every period, so $V_{j+1}=V_j$ and the value function
+solves a fixed point.
+
+
+We now come to the middle stage of the period, when the taste shocks are revealed and the discrete choice is made. Within each discrete choice $d$, the household chooses the continuous allocation $\mathbf a$ allowed by her budget, the home size limits, and the
+borrowing limits. The allocation determines the current period's consumption $c^d$, this period's housing
+services $s^d$, and the position $\overline{\mathbf x}^d_j$ the household
+carries out of the period. Appendix~\ref{app:model-budgets} gives the budget
+constraints under different discrete choices. The value of each alternative $d$ is given as
+\begin{equation}
+  Q_j^d(\mathbf x_j)=\max_{\mathbf a\in\mathcal A_j^d(\mathbf x_j)}
+  \Bigl\{u_j(c^d,s^d)+W_j\bigl(\overline{\mathbf x}^d_j\bigr)\Bigr\}.
+  \label{eq:choice-value}
+\end{equation}
+Note that all alternatives are valued with the same function $W_j$.  They differ only
+in this period's utility and in the future position they can lead to. 
+
+
+After drawing her taste shocks, the household chooses the alternative with
+the highest $Q_j^d(\mathbf x_j)+\varepsilon_j^d$. Before the shocks are
+drawn, the value of the state is
+\begin{equation}
+  V_j(\mathbf x_j)=\sigma_\varepsilon\log\sum_{d\in\mathcal D(o_j)}
+  \exp\!\bigl(Q_j^d(\mathbf x_j)/\sigma_\varepsilon\bigr),
+  \label{eq:logsum}
+\end{equation}
+ where $\mathcal D(o_j)$ is the set of feasible
+alternatives for the given tenure $o_j$. Alternative $d$ is chosen with
+probability
+$\exp(Q_j^d/\sigma_\varepsilon)/\sum_{d'}\exp(Q_j^{d'}/\sigma_\varepsilon)$
+\citep{mcfadden1974conditional,rust1987optimal}.
+Section~\ref{sec:estimation} describes how we use this formulation within a deep learning framework to solve the model.
+
+% ----------------------------------------------------------------------
+\subsection{What drives the age gradient in the model}\label{sec:model-forces}
+
+In each period in which she lives in an efficient home, an owner receives two benefits: (i) the
+comfort $\eta$, and (ii) the saving  $(e^N-e^R)h$ on energy bills. When the owner sells the
+home or dies, that home is worth $\gamma_pp^Nh$ more if it is still
+efficient. However, all these three gains depend on how long the owner keeps an efficient home. For an owner who owns an efficient home at age $j$, we measure the 
+payoff horizon from this efficiency as the expected discounted number of years, counting
+the first, in which the owner is alive, still lives in the home, and the
+home is still efficient. The expression for the horizon is given as
+\begin{equation}
+  H_j=\sum_{k\geq 0}\beta^k\prod_{i=0}^{k-1}\phi_{j+i}\,\varrho\,
+  \mu_{j+i+1},
+  \label{eq:payoff-horizon}
+\end{equation}
+% Description moved here from Section 5.1 (28 October); the old "where"
+% clause is in parked-text.md, entry 6.
+where the $k$-th term is the discounted probability that, $k$ years later,
+the owner is alive, still lives in the same home, and the home is still
+efficient. Notice that  the term for $k=0$ equals one, implying that the current year counts in
+full. Each additional period multiplies this probability by three factors: (i)
+$\phi_{j+i}$, the probability that an owner of age $j+i$ survives to the
+next year, (ii) $\varrho$, the probability that the home stays efficient, and
+(iii) $\mu_{j+i+1}$, the probability that the owner, now a year older, does not
+move. Hence, the horizon combines survival probability, the loss of efficiency,
+and moving probability.  The survival probability falls with age, which shortens the
+horizon of older owners. However, this is counteracted by moving. Older owners move
+less, which in turn lengthens their horizon. By year $k$, the probability of having lost efficiency
+is $1-\varrho^k$, which can be interpreted as extra discounting. The lower is
+$\varrho$, the less weight the horizon puts on later years. These are
+exactly those years in which the survival of younger and older owners differs most.
+ The age pattern of the horizon then depends on how
+survival, moving, and $\varrho$ act together, and
+Section~\ref{sec:estimates} reports it at the estimates.
+
+How much the payoff horizon matters depends on how the household gets
+the efficient home.  We make this statement more concrete for the two discrete choices of
+Table~\ref{tab:choices} in which efficiency is chosen. The first choice is when  an owner of an
+inefficient home who stays decides whether to renovate in place. The second is when a
+household that buys a home decides whether the home is efficient. We 
+characterize both of these choices in a simplified version of the model, which
+differs from the model of Section~\ref{sec:model-problem} in  two
+ways. First, there is no income risk. Second, taste shocks enter only an
+owner's choice between keeping her home and selling it. Each period an owner
+draws one shock for keeping her home and one for selling it. As no shock enters the choice whether to renovate, an
+owner that keeps an inefficient home renovates if
+ $Q_j^{\mathrm{stay},R}\ge Q_j^{\mathrm{stay},N}$ where superscript $\text{stay}$ refers to the case where the owner keeps the home, and $R$ and $N$ refer to the renovated and non-renovated options, respectively. Similarly, a household that buys a home takes it efficient if that has the higher value. Here $\mu_j$ is the probability that an owner of age $j$ keeps her home.  For analytical characterizations, we assume that the cost of a renovation, the price premium,
+the saving on the bill, and the comfort of an efficient home are small
+relative to the household's wealth.
+
+
+
+\paragraph{Renovating in place.}
+Consider an owner of an inefficient home of size $h$ at age $j$. She can leave the home
+inefficient or renovate it in place. Let $c$ be her
+consumption if she does not renovate. Write $s_N=s(h,N)$ and $s_R=s(h,R)$ for the services of the home before and after a renovation. Further, define
+$\theta\equiv(s_R/s_N)^{(1-\alpha)/\alpha}-1$. By
+equation~\eqref{eq:utility}, $u_j(c,s_R)=u_j\bigl((1+\theta)c,s_N\bigr)$. This means
+an efficient home is worth as much as a share $\theta$ more consumption. Let
+$\Delta e\equiv(e^N-e^R)h$ be the yearly saving on the bill,
+$\Delta p\equiv\gamma_pp^Nh$ the price premium, and
+$\Lambda\equiv\varrho/(1+r)$ the value today of a unit of wealth that comes
+with the efficient state next year, where $r$ is the rate at which the
+household finances the work. Here $r = r_b$ if she pays out of saving and $r = r_m$ if
+she borrows. Let $u_c$ be the marginal utility of consumption this year,
+$V'_{j+1}$ the marginal value of wealth next year, and $g'$ the marginal
+utility of the estate. Then we can define the survival probability weighted by marginal utility as
+\begin{equation}
+  \tilde\phi_j\equiv\frac{\beta\phi_j(1+r)V'_{j+1}}
+  {\beta\phi_j(1+r)V'_{j+1}+(1-\phi_j)\,g'},
+  \label{eq:phi-tilde}
+\end{equation}
+where the numerator captures the marginal value of a pound saved this year that the household will receive if she survives. The denominator is the total marginal value of a pound saved this year, which is received either if the household survives or dies. 
+
+
+
+
+ In the period of the work, an owner that stays and renovates pays
+\begin{equation*}
+  \overline C\equiv C(h)+\Delta e-\delta_h\Delta p
+\end{equation*}
+more than an owner whose home is already efficient. The additional cost includes the cost of renovation, the
+bill of an inefficient home, which is incurred during the period, less the maintenance on the premium. If the owner sells, the efficient state
+adds $(1-\delta_h-\zeta_s)\Delta p$ to the proceeds, since the seller pays
+the period's maintenance and the selling cost. So
+$\ell\equiv\overline C-(1-\delta_h-\zeta_s)\Delta p
+=C(h)+\Delta e-(1-\zeta_s)\Delta p$ is the part of $\overline C$ that a
+sale does not return.
+
+
+An owner of an inefficient home has two options, renovate now or wait. Renovating now means one more year of comfort. However, waiting has two advantages. The owner pays a year later. As the payment is delayed, she learns whether she will still be
+alive and in the home to enjoy the efficient state. This distinction matters because
+the market returns only part of the cost: if the owner dies, her heirs
+receive only the premium, and if the owner is alive next period but moves, a sale returns only part of what she paid. So the owner renovates now if this extra  comfort outweighs the cost of paying a year early and the expected losses from dying or moving.
+The comfort is worth more, in pecuniary terms, to a household that consumes more, so
+the rule translates into a threshold for consumption. The more likely the owner is to
+move, the higher the threshold. Proposition~\ref{prop:inplace} makes this argument
+precise.
+
+\begin{proposition}[Renovating in place]\label{prop:inplace}
+In the simplified model, consider an owner of an inefficient home at age
+$j$ who keeps her home this year, and suppose that she can pay for the
+work by saving less or borrowing more at the rate $r$. To first order,
+$Q_j^{\mathrm{stay},R}\ge Q_j^{\mathrm{stay},N}$ if and only if
+\begin{equation}
+  \theta c\;\ge\;
+  \underbrace{C(h)-\Lambda\overline C}_{\text{cost of renovating now}}
+  +\underbrace{(1-\tilde\phi_j)\bigl(\Lambda\overline C-\Delta p\bigr)}_{\text{loss at death}}
+  +\underbrace{\tilde\phi_j\,(1-\mu_{j+1})\,\Lambda\ell}_{\text{loss at exit}},
+  \label{eq:rule-inplace}
+\end{equation}
+provided that next year an owner of the inefficient home that keeps it
+would renovate it. Without this proviso the condition is
+necessary but not sufficient.
+\end{proposition}
+
+
+
+ The left side of \eqref{eq:rule-inplace} is
+the comfort this year measured in  the units of consumption. The right side is composed of three
+terms. The first is the cost of renovating now rather than next year. Since
+$(1+r)\bigl(C(h)-\Lambda\overline C\bigr)
+=(r+1-\varrho)\,C(h)-\varrho\,(\Delta e-\delta_h\Delta p)$, the first term is, up to the factor $(1+r)$, the
+interest on the cost and the expected loss of the efficient state, minus
+next year's bill saving net of maintenance. This is a user cost, and it is
+higher for a borrower than for a saver. The second is the loss at death. If
+the owner dies at the end of the year, her heirs receive the premium
+$\Delta p$ for the efficient state, rather than the $\Lambda\overline C$
+that the state is worth to a living owner who would otherwise renovate next
+year. The term is a gain if $\Delta p>\Lambda\overline C$. The last term captures the
+loss at exit. If the owner moves next year, she
+receives $(1-\delta_h-\zeta_s)\Delta p$ for the state rather than
+$\overline C$, and loses $\ell$. The owner therefore renovates if and only
+if her consumption is at least
+\begin{equation}
+  c_j^*=\frac{C(h)-\Lambda\overline C+(1-\tilde\phi_j)
+  \bigl(\Lambda\overline C-\Delta p\bigr)}{\theta}
+  +(1-\mu_{j+1})\,\frac{\tilde\phi_j\Lambda\ell}{\theta},
+  \label{eq:cstar-inplace}
+\end{equation}
+a threshold that rises in a straight line with the probability of moving. The proof of Proposition~\ref{prop:inplace} is in Appendix~\ref{app:proofs}. 
+
+
+
+\paragraph{Buying an efficient home.}
+A household that buys a home of size $h'$ (prime denotes the new home) can get the efficient state in two
+ways. She can buy
+the efficient home, for $(1+\zeta_b)\Delta p'$ more than the inefficient
+home, or buy it inefficient and renovate it at once, for $C(h')$. Let
+$C_b\equiv\min\{(1+\zeta_b)\Delta p',\,C(h')\}$ be the cost of the cheaper
+route. Denote by $Q_j^{\mathrm{buy},R}$ the value of buying an efficient home and by
+$Q_j^{\mathrm{buy},N}$ the value of buying an inefficient home. Further, let $c$ denote the
+household's consumption if she buys the inefficient home. In the period of
+purchase the buyer of the efficient home pays $C_b-\Delta e'$ more than the
+buyer of the inefficient home. This is because she pays the efficient bill at once, and no
+maintenance that year. Then in later periods  she pays
+$\delta_h\Delta p'-\Delta e'$ more than an owner of the inefficient home.
+The difference, $\overline C_b\equiv C_b-\delta_h\Delta p'$, plays the role
+of $\overline C$, and
+$\ell_b\equiv\overline C_b-(1-\delta_h-\zeta_s)\Delta p'
+=C_b-(1-\zeta_s)\Delta p'\le(\zeta_b+\zeta_s)\Delta p'$ that of $\ell$. However, unlike the choice in place, the buyer's choice is not one
+of timing. Once she has bought the inefficient home, getting the efficient
+state later costs no less than it would have cost at the purchase, so a buyer
+near her threshold who passes up the efficient home would not renovate later.
+
+\begin{proposition}[Buying an efficient home]\label{prop:buy}
+In the simplified model, consider a household that buys a home of size
+$h'$ at age $j$. Suppose that $\tilde\phi$, $\mu$, $\Lambda$, and her
+consumption $c$ are constant while she owns the home, and that no borrowing
+limit binds before she moves again. To first order,
+$Q_j^{\mathrm{buy},R}\ge Q_j^{\mathrm{buy},N}$ if and only if
+\begin{equation}
+  \theta'c\;\ge\;
+  \underbrace{(1-\Lambda)\overline C_b-(\Delta e'-\delta_h\Delta p')}_{\text{user cost}}
+  +\underbrace{(1-\tilde\phi)\bigl(\Lambda\overline C_b-\Delta p'\bigr)}_{\text{loss at death}}
+  +\underbrace{\tilde\phi\,(1-\mu)\,\Lambda\ell_b}_{\text{loss at exit}}.
+  \label{eq:rule-buy}
+\end{equation}
+\end{proposition}
+
+
+The three terms mirror those of
+Proposition~\ref{prop:inplace}.\footnote{The proposition holds survival,
+moving, and consumption constant while the household owns the home.
+Lemma~\ref{lem:horizon} in Appendix~\ref{app:proofs} drops this assumption,
+provided that an owner of the inefficient home would never renovate it.}
+The user cost equals $C_b-\Delta e'-\Lambda\overline C_b$. The loss at death
+is usually a gain: the heirs receive $\Delta p'$, which is about what the
+buyer paid for the state and more than the $\Lambda\overline C_b$ it is
+worth to a living owner. The loss at exit is small, since $\ell_b$ is. The
+buyer therefore takes the home efficient if and only if her consumption is
+at least
+\begin{equation}
+  c_b^*=\frac{(1-\Lambda)\overline C_b-(\Delta e'-\delta_h\Delta p')
+  +(1-\tilde\phi)\bigl(\Lambda\overline C_b-\Delta p'\bigr)}{\theta'}
+  +(1-\mu)\,\frac{\tilde\phi\Lambda\ell_b}{\theta'},
+  \label{eq:cstar-buy}
+\end{equation}
+a threshold that also rises in a straight line with the probability of
+moving, but with a small slope. Appendix~\ref{app:proofs} gives the proof.
+
+Propositions~\ref{prop:inplace} and~\ref{prop:buy} have the same three terms but differ in what the
+market returns, and so in how far a short horizon raises each threshold.
+Proposition~\ref{prop:window} compares them; Appendix~\ref{app:proofs} gives
+the proof.
+
+\begin{proposition}\label{prop:window}
+In the simplified model, compare an owner of an inefficient home of size
+$h$ that keeps it with a household that buys a home of the same size.
+Suppose that both have the same $\tilde\phi$, $\mu$, and $\Lambda$, and
+satisfy the assumptions of Proposition~\ref{prop:buy}.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{In place.} A higher probability of moving raises the threshold
+  $c_j^*$ in proportion to $\ell$, the part of the cost of the work that a
+  sale does not return. A higher probability of dying also raises it if
+  $\Lambda\mu\overline C>\Delta p$, since the heirs then receive less than
+  the efficient state is worth to the owner alive next year.
+\item \emph{At a purchase.} A higher probability of moving raises the
+  threshold $c_b^*$ only in proportion to $\ell_b$, which is at most the
+  transaction costs on the premium, $(\zeta_b+\zeta_s)\Delta p'$. A higher
+  probability of dying lowers it if $\Lambda(1+\zeta_b-\delta_h)<1$, since
+  the heirs then receive more than the efficient state is worth to the
+  owner alive next year.
+\item \emph{The gap.} The in-place threshold is greater than  the buyer's threshold, and the gap widens as the probability of moving or of dying
+  rises. A household whose consumption lies between the two thresholds
+  would not renovate in place, but would take an efficient home if she
+  bought one.
+\end{enumerate}
+\end{proposition}
+
+
+Formally, the slopes in parts~(a) and~(b) are $\tilde\phi\Lambda\ell/\theta$
+and $\tilde\phi\Lambda\ell_b/\theta'$, and the gap in part~(c) is
+\begin{equation}
+  c_j^*-c_b^*=\frac{C(h)-C_b+\Delta e}{\theta\widetilde H}>0,
+  \qquad
+  \widetilde H\equiv\frac{1}{1-\tilde\phi\Lambda\mu},
+  \label{eq:window}
+\end{equation}
+where $C(h)-C_b+\Delta e=\overline C-\overline C_b$ is the extra one-off
+cost of renovating in place.
+
+\begin{figure}[t]
+  \centering
+  \caption{The two thresholds and the probability of moving}
+  \label{fig:thresholds}
+  \includegraphics{fig-thresholds.pdf}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Notes:} Schematic. The consumption above which an owner
+    renovates in place, $c_j^*$ (equation~\eqref{eq:cstar-inplace}), and
+    above which a buyer takes the home efficient, $c_b^*$
+    (equation~\eqref{eq:cstar-buy}), against the probability of moving next
+    year, for a next home of the same size and the same $\tilde\phi$ and
+    $\Lambda$, as in Proposition~\ref{prop:window}. The slopes are those of
+    its parts~(a) and~(b), with $\theta'=\theta$ since $h'=h$.
+    Drawn with illustrative values, so the axes carry no units. 
+  \end{minipage}
+\end{figure}
+
+Figure~\ref{fig:thresholds} draws the two thresholds with the probability of moving on the horizontal axis and the consumption on the vertical axis. In
+equation~\eqref{eq:window}, $\widetilde H$ is the payoff horizon of
+equation~\eqref{eq:payoff-horizon} at constant parameters, with next year
+weighted by its marginal utility relative to this year.\footnote{At
+constant parameters $H_j=1/(1-\beta\phi\varrho\mu)$, while
+$\tilde\phi\Lambda=\beta\phi\varrho V'_{j+1}/u_c$ by the Euler equation.
+Appendix~\ref{app:proofs} shows that both propositions spread a one-off
+cost over $\widetilde H$ (equation~\eqref{eq:common}), and
+Lemma~\ref{lem:horizon} extends this to parameters that vary with age.}
+Since $\mu$ is a choice probability, parts~(a) and~(b) compare households that
+differ in how likely they are to move, for instance because of their stage of
+life. Moving and death change a threshold only in
+proportion to the part of the cost that the market does not return. If a
+sale returned the whole cost, and the heirs valued the state as a living
+owner does, the threshold would be the same for an owner who moves next
+year as for one who never moves, and the same at every age. For an owner
+in place, the part not returned is large.
+
+ The gap ties the payoff horizon to age. A short horizon has
+different sources at different ages: young owners move often, and old
+owners are more likely to die. Either source widens the gap
+(Proposition~\ref{prop:window}(c)). An owner of an inefficient home whose
+consumption lies in the gap does not renovate; she waits for her next
+purchase to get efficiency. The young buy often, so their wait is short.
+The old rarely buy, so they keep waiting. The horizon decides who waits,
+and purchases decide how long.
+
+Because an owner in the gap gets efficiency only when she next
+buys, the frequency of purchases matters. Moving is costly, as the household pays the
+selling and buying costs and must meet the borrowing limits again. Older
+owners move less and so buy less often, and the home they live in is
+more likely to have been bought long ago. If no renovation takes place, a home that was
+efficient at purchase is still efficient $k$ years later with probability
+$\varrho^k$. Older owners' homes are therefore less likely to be efficient. 
+
+Three further forces affect the age gradient. First, bequests. The bequest incorporates the efficiency of the home. Hence, the heirs receive
+the premium. Keeping other factors constant, a stronger bequest motive lowers
+$\tilde\phi_j$, and more so at older ages, which puts more weight on the heirs' value of the state,
+$\Delta p$, and less on that of a living owner
+(Proposition~\ref{prop:window}(a) and~(b)). This deters a renovation in place whose
+cost is well above the premium, and favours the purchase of an efficient
+home, whose cost is close to it. Second, mortgage credit. $\Lambda$ is
+lower for a borrower than for a saver, since $r_m>r_b$. Hence, both thresholds
+are higher for a borrower. Young households buy more often but face
+tighter borrowing limits, and an owner who renovates in place cannot borrow against the premium of an
+efficient home before the work is done. Third, comfort. Although the utility
+value of comfort, $\eta$, is the same at every age, its monetary value,
+$\theta c$, moves with consumption. So comfort adds an age gradient 
+through the lifecycle profile of consumption.
+
+
+Through the lens of a simplified model we show the determinants of acquiring energy-efficient homes. These same forces operate in the full model. However, there every
+alternative has a taste shock, so the thresholds become probabilities. With income risk, $\mu$ and $\tilde\phi$ also average over next
+year's income. Further, the probability of moving can depend on whether the
+home is efficient. The propositions give the direction of each force, not its size, so they
+cannot say which force drives the age gradient. We solve this issue in the next section by estimating the full model.
+\endgroup

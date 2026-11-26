@@ -1,0 +1,337 @@
+% Section 1 -- Introduction
+% Draft prose, written 9 November 2026 from 01-introduction-outline.tex
+% (frame "A+B"; the outline stays on disk and is no longer typeset). One
+% paragraph per outline point, in the outline's order. Every number is taken
+% from the text or tables of Sections 2, 4, 5 and 6: Section 5 numbers use
+% 65--75, Section 6 numbers 65--74. \open{} marks a decision still to take,
+% \addref{} a reference not yet in epc-pd.bib.
+\section{Introduction}\label{sec:intro}
+
+% \input{sections-pd6/01-introduction-outline}
+
+% 1. The prediction, and a fact that seems to confirm it
+One of the basic predictions of the theory of investment is that people invest less
+when fewer years remain to collect the return
+\citep{becker1962investment,ben1967production}. For instance, a longer expected life raises investment in schooling
+\citep{jayachandran2009life,oster2013limited,fortson2011mortality}, and
+workers who expect to retire later train more
+\citep{montizaan2010effects}.\footnote{The prediction also holds outside
+human capital: executives in their final years in office cut R\&D
+\citep{dechow1991executive}. There is a debate about which horizon matters:
+Americans worked fewer lifetime hours as they lived longer, so the
+remaining lifetime cannot be the whole story
+\citep{hazan2009longevity,cervellati2013life}.} Schooling and training stay
+with the worker, who can neither buy them ready-made nor sell them on. However, when we look at durable goods like housing, which change hands over
+time, investments are embodied in the good and pass from seller to buyer.
+The energy efficiency of a home is one such investment. Efficiency
+improvements lower the energy bill for years and stay with the house when
+its owner sells, so a buyer can acquire them with the home. At the
+same time,  mortality risk rises over the lifecycle,  which by the
+standard argument shortens the horizon (although older owners, who move
+less, stay longer in their homes). In this paper we study  which of these forces -- a horizon that shortens with age
+and efficiency that is bought and sold with the house -- shapes
+the energy efficiency of  homes over the lifecycle of households. In the rest of the paper, for brevity, we call the first force the horizon channel and the second the purchase window, or simply the window.
+
+
+% 2. The English facts
+We first use survey and register data in England to document three stylized facts. First, older owners live in less efficient homes. In the English Housing
+Survey, among owner-occupied homes built by 1990, 21 percent of those
+owned by households aged 25--34 are in Energy Performance Certificate (EPC, henceforth) bands
+A--C, against 9.7 percent of those owned by households aged 65--75, representing a gap of about 11 percentage points.  Second,  following a home across successive certificates in the
+EPC register, we show that  efficiency is not fixed: each year about 7
+percent of homes built by 1990 in bands D--G move to A--C, and about 15 percent
+of those in A--C move down. Third, efficiency is tied to when the
+owner bought. Owners who bought recently live in about equally
+efficient homes at every age.
+
+
+
+
+% 3. Two routes to efficiency, and which force acts on which
+ What do these three stylized facts say about the two forces discussed above? The answer depends on
+how an owner gets an efficient home. An owner can make her home efficient in two ways: (i) buy a home that is
+already efficient, or (ii) renovate the one she has. The difference between the two lies in what a
+later sale returns. In the first case, a buyer pays for efficiency in the price and gets it
+back when she sells, if the home is still efficient. In the second case,   a renovator pays for the work, and a sale  returns only
+part of it.\footnote{Prices capitalise the value of energy savings
+\citep{myers2019home,aydin2020capitalization,fuerst2015energy}, and
+retrofits typically cost more than the savings they deliver
+\citep{fowlie2018weatherization}.}  The horizon channel acts on  the owner's renovation decision. An older owner has fewer years to recover her investment, so
+she might renovate less. On the other hand,  the purchase window affects whether an
+owner can get efficiency through a purchase. Because a buyer gets back at resale most of what she paid for
+efficiency, buying an efficient home is the cheaper route. However, it is open
+only when an owner moves, and older owners in Britain move less often
+\citep{banks2012housing}. Between moves, efficiency wears off, as the
+second fact shows. An owner who stays therefore lives in a home that
+becomes less efficient each year, and older owners have usually stayed the
+longest since their last purchase. So, both the horizon channel and the purchase window
+can produce the first fact.  The third fact favours the window: among owners who bought
+recently, older and younger owners live in about equally efficient homes,
+so the gap opens with the time since purchase rather than with age itself.
+It does not settle the question, because under the horizon channel, too,
+an owner who stops renovating sees her home's efficiency fall with the
+time since purchase.
+
+
+
+
+% 4. Why a model, and the model (old paragraph 4 parked, entry 10)
+Why does it matter whether the declining age gradient comes from the
+horizon channel or the purchase window? The two channels have different
+implications for an ageing population. If the horizon channel determined
+the gradient, then an increase in life expectancy would raise investment in
+efficiency. However, if the purchase window determined it, longer
+lives would do little to raise investment: what matters is how often owners buy, and
+older owners buy less often. This means, from a policy perspective, knowledge of the underlying mechanism is crucial to determine whether to raise efficiency by incentivizing renovation or by acting at the point of sale.
+
+
+
+To separate the implication of the horizon channel and the purchase window, we need two quantities that are not fully observable: (i) how fast efficiency wears off relative to how fast mortality
+rises, and (ii) how much cheaper efficiency is at a purchase than through a
+renovation.\footnote{The register gives the rate at which homes lose a band,
+but only for homes that are certified again, and a change in band is not
+always a physical change. The register matched to Land Registry prices gives
+the price premium and the proportional cost of a renovation, but not the fixed
+cost of the work. The model we build below estimates both the rate at which
+efficiency is lost and the fixed cost (Section~\ref{sec:identification}).}  To obtain them, we build a
+lifecycle model of households with
+income risk, mortality risk, and borrowing limits, built on the standard
+ingredients of lifecycle models of housing
+\citep{cocco2005portfolio,yang2009consumption,kaplan2020housing}. Each year
+a household chooses consumption and liquid saving, whether to rent or own,
+the size of her home, and her mortgage, and, if she owns, whether her home
+is efficient or not. An owner keeps her home, renovates
+it in place, or sells; a seller or a renter rents, buys an efficient home,
+buys an inefficient one, or buys an inefficient one and renovates it at
+once. Efficiency lowers the energy bill, gives
+comfort, and sells at a price premium, and each year it is lost with a
+fixed probability. Renovating has a fixed and a variable cost, buying and
+selling have transaction costs, and a bequest motive values what heirs
+receive, including the premium on an efficient home. The model holds
+tastes, information, and the cost of the work fixed across ages.\footnote{Other explanations could also produce the facts: older owners
+may value efficiency less, know less about it, find the work more
+burdensome, or prefer to run down their home equity. These are preference-based explanations and we do not rule them out. However, we ask whether the dynamics of the investment alone can
+account for the gradient.} Any age gradient in the model must therefore come from the horizon channel or from the purchase window, which opens when an owner buys and so depends on transaction costs, borrowing limits, bequests, and income.
+
+
+
+
+% 5. What the model says before any numbers
+The model has many discrete and continuous choices
+and occasionally binding borrowing constraints, so we
+proceed in two steps. In the first, we simplify the model to
+isolate the key mechanisms analytically. This gives three results. (i) An
+owner is less willing to renovate the home she lives in the more likely
+she is to leave it, whether by moving or by dying, because a sale
+returns only part of the cost of the work. This is the horizon channel.
+(ii) A buyer's willingness to choose an efficient home depends
+little on how long she expects to stay, because she, or her heirs, recover
+most of the premium when the home is sold, provided it is still
+efficient. (iii) Renovating is therefore worthwhile for fewer owners than
+buying an efficient home is, because it costs more once what a sale returns
+is counted. Further, this difference grows with the chance of leaving. Some
+owners would not renovate the home they live in, yet would choose an
+efficient home if they were buying; whether they live in one depends on
+whether they move. This is the purchase window. These results give the
+direction of each channel. How much each contributes to the age gradient is
+the second step, for which we solve and estimate the full model.
+
+
+% 6. Solving the model
+Solving and estimating this model is cumbersome. An owner with a
+mortgage has five continuous states --- liquid wealth, the mortgage balance,
+two components of income, and the size of the home --- two home types, and up
+to 25 remaining mortgage terms, and she chooses among up to six alternatives
+with two or three continuous choices in each. This means a grid-based solution method cannot be employed.\footnote{A grid with 50 points per
+continuous state would have up to $1.6\times10^{10}$ points at each age.} We instead approximate the value and policy
+functions at each age with neural networks, trained backward from the
+oldest age on randomly drawn states
+\citep{maliar2021deep,azinovic2022deep,druedahl2026deep}. Two devices make
+this work. Taste shocks over the alternatives smooth the kinks that
+discrete choices put in the value function, so that a network can fit it
+\citep{iskhakov2017endogenous}. And the parameters we estimate are inputs of
+the networks, so one training covers the whole estimation search
+\citep{druedahl2026nonconvex}.
+
+
+% 7. Estimation and the test the model passes untargeted
+We estimate seven parameters by the simulated method of moments, targeting
+eleven moments on ownership, wealth, consumption, and the share of efficient homes by
+age. The estimates deliver the two quantities that the facts alone could
+not. First, renovating a home costs between 2.7 and 4.2 times the extra
+outlay of buying the same home efficient, depending on its
+size.\footnote{The fixed cost of renovating is identified by how steeply
+the efficient share falls with age, because older owners rely more on
+renovating in place (Section~\ref{sec:identification}).} Second, efficiency
+wears off fast: an efficient home loses its efficiency with a probability
+of 16 percent a year, close to the 15 percent of efficient homes that drop
+to bands D--G each year in the register, a rate we do not
+target.\footnote{The targeted moments pin down only a combination of how
+long efficiency lasts and how much it is worth each year, because both
+raise the efficient share at every age; the register's rate separates
+them. Part of that rate reflects reassessment rather than physical change
+\citep{crawley2019quantifying}, so we also report the main results when
+efficiency lasts 25 years instead of six.} The estimated model reproduces
+10 percentage points of the 11 percentage point fall in the efficient share between ages
+25--34 and 65--75 (Figure~\ref{fig:moment-fit}).
+
+
+
+% 8. Results 1 and 2: the window, not the horizon (old paragraphs 8-9 parked, entry 11)
+Using the estimated model we first untangle whether the age gradient comes from the
+purchase window or from the horizon channel. The horizon channel turns out to be weak because the horizon itself hardly differs between young and old
+owners. What matters for a renovation is not how long the owner will live,
+but how long she will benefit from the work. If efficiency lasted forever,
+an owner aged 25 could expect to benefit for 27 discounted years and an owner aged 75
+for 10. But efficiency wears off long before most owners die, so the
+benefit lasts about five years at 25 and about four at 75. However, the purchase window
+differs sharply with age. Owners of every age make similar choices when
+they act. A little over two in five buyers choose an efficient home, and
+fewer than two in a hundred owners of inefficient homes renovate in a
+year. What falls with age is how often owners buy, and this fall accounts
+for almost all of the decline with age in the number of owners who gain an
+efficient home. Older owners do not
+renovate instead, because of the cost of the work, which a buyer of
+an efficient home avoids. When we remove the option to buy an efficient
+home, the gap between the youngest and the oldest owners falls from about
+ten percentage points to about one.\footnote{The result survives a much
+slower loss of efficiency. If efficiency lasts 25 years rather than six,
+the horizon now plays a role, but purchases still account for about 90
+percent of the decline.}
+
+% 10. Result 3: which policies reach older owners
+The United Kingdom aims to bring as many
+homes as possible to band C by 2035 \citep{hmg2017cleangrowth}.
+Households headed by someone aged 65 or over own more than a third of
+owner-occupied homes in England \citep{mhclg2024ehs}, and their number is
+projected to grow by about a fifth in the ten years to 2032, twice as fast
+as households overall \citep{ons2025households}. We use the estimated model for a series of counterfactuals, focusing on policies which governments generally apply to improve the efficiency of homes. Because the gradient
+comes from the window, the route through which a policy acts decides whom
+it reaches. We compare steady states in partial equilibrium and report each
+policy as a change from the model without it. A
+subsidy that halves the variable cost of renovating raises the efficient
+share by about 8 points among owners aged 65--74 but by less than 3 points
+at 25--34, so it narrows the gap between them by more than 5 points, at a
+cost of about \pounds290 per household a year. It reaches older owners because they
+are the ones who rely on renovating in place. A point-of-sale standard,
+which requires every home that is bought to be efficient, raises the share
+the most, by about 13 points among all owners, but by more among the young
+(about 16 points) than the old (about 10), so it widens the gap by about 6
+points. It also slows turnover. A household that would have bought an
+inefficient home now pays more to buy, and some put off moving: owners move
+and buy about a quarter less often. Each move that does not happen is a
+window that does not open, so the standard gives back part of its own
+gain. Lowering the costs of buying and selling works in the opposite
+direction. When we halve them, owners buy more than twice as often, more
+windows open, and the efficient share rises by about 5 points among all
+owners. But owners who expect to move sooner renovate less: the rate of
+renovation among owners who stay falls by about a third.
+
+% 10b. Result 3, continued: changing the payoff instead of the cost
+The counterfactual policies we discussed above change what it costs to get an efficient home. A policy
+can instead change what an efficient home pays its owner: a lower energy
+bill each year, and a higher price when the home is sold. We vary each in
+turn. Doubling energy prices, as a tax on household energy would, raises
+the efficient share in about the same proportion among young and old
+owners, by about 40 percent. It lifts the whole age profile without
+changing its shape, but it lowers homeownership by about 3 percentage points. The price premium works differently, and against a
+natural conjecture. If older owners renovate little because the market pays
+little for efficiency, a larger premium should bring them into efficient
+homes. In the model, doubling the premium does raise renovation, most among
+older owners, because a sale then returns more of the cost of the work. But
+a buyer pays the premium, so buying an efficient home becomes more
+expensive and fewer buyers choose one. Young owners, who get most of their
+efficiency by buying, lose the most. The age gap almost closes, but because
+the homes of young owners become less efficient, not because those of older
+owners improve.
+
+
+
+% 11. Why it matters beyond homes: quality is chosen at the transaction
+The mechanism is not specific to energy. Much of the quality of a durable
+is chosen when it is bought, because that is when changing it is cheap.
+Models of durable adjustment explain when households replace what they own
+\citep{grossman1990asset,eberly1994adjustment,attanasio2000consumer}. Our
+results add that the quality a household holds then depends on how often
+it transacts, so a household that rarely transacts holds quality chosen
+long ago. The fuel economy of the car fleet improves as old cars are
+scrapped and new ones bought, so a regulation that raises the price of new
+cars delays the improvement
+\citep{gruenspecht1982differentiated,stavins2006vintage,jacobsen2015vehicle},
+and when owners replace or resell a car is itself an economic choice
+\citep{adda2000balladurette,stolyarov2002turnover}.
+Homes differ from cars in two ways. First, a home is rarely replaced but often
+resold. Second, its efficiency can also be raised in place. The moment of
+gaining efficiency is still mostly the purchase, and how often homes change hands depends on
+the age of their owners and on the costs of transacting. Older owners
+therefore gain efficient homes more slowly than younger ones,
+even if no owner's incentive to renovate changes with age. Building codes
+reach only new homes \citep{levinson2016energy,jacobsen2013building}, and
+most of the homes that will stand in 2035 are already built.\footnote{England
+had 25.6 million dwellings in March 2024 and added about 210,000 in the
+following year \citep{mhclg2025supply}. At that rate, homes already built
+will make up more than nine-tenths of the stock in 2035.}
+
+% 12. Contribution relative to the literature
+We contribute to four literatures. The first studies how the horizon shapes
+investment \citep{becker1962investment,ben1967production} and finds that a
+longer life raises schooling
+\citep{jayachandran2009life,oster2013limited,fortson2011mortality}, though
+which horizon counts is still debated
+\citep{hazan2009longevity,cervellati2013life}. We answer this question for
+an investment embodied in a durable that wears off and is left behind at a
+move: its payoff horizon is short at every age, so the remaining lifetime is
+not what sets the age profile of investment; the timing of transactions is. The second asks
+why households appear to underinvest in energy efficiency
+\citep{jaffe1994energy,allcott2012energy,gerarden2017assessing,fowlie2018weatherization},
+and often points to high implicit discount rates or heterogeneity in them
+\citep{hausman1979individual,newell2015individual,bento2012there}. Low
+efficiency among older owners need not reflect high discount rates or
+misperceived savings; in our model it reflects when the cheap moment to
+invest arrives. Buyers pay a premium for a better certificate
+\citep{fuerst2015energy}, and ratings bunch just above band thresholds
+\citep{collins2018bunching}, so the certified band carries value of its
+own; we take the band as the object of choice and its premium as part of
+the payoff. The third builds lifecycle models of housing with tenure, home
+size, mortgages, and moving
+\citep{cocco2005portfolio,yang2009consumption,attanasio2012modelling,kaplan2020housing}
+and studies saving and housing in old age
+\citep{denardi2010elderly,davidoff2010home,nakajima2017reverse,nakajima2020home}.
+We add a quality attribute of
+the home that can be bought with it or added in place, and that wears off.
+The fourth shows that transaction costs reduce mobility
+\citep{vanommeren2005new,hilber2017transfer,best2018housing}.\footnote{A mortgage locked in at a low rate also reduces mobility \citep{quigley1987interest,ferreira2010housing,fonseca2024mortgage}. The model has no such lock-in, but it keeps the mortgage rules under which a borrower who moves is more restricted than one without a mortgage (Section~\ref{sec:model-environment}). Like transaction costs, this makes moving less attractive for borrowers, and a household that moves less often has fewer chances to buy an efficient home. We would therefore expect the same channel to apply.} We
+show that transaction costs, through mobility, also slow
+the upgrading of the quality of the housing stock. Three papers are closest
+to ours. \citet{fleischer2026energy} solve the renovation problem of a Dutch
+household from age 60 that stays in its home, and find that mortality risk
+and liquidity constraints delay renovation; our owners can also buy an
+efficient home, and it is this second route, not the shorter horizon, that
+separates young owners from old. The two findings on the horizon do not
+conflict. In their model a renovation lowers energy use for good, so its
+benefit lasts as long as the household lives and mortality cuts it short. In
+ours efficiency wears off in about six years, so the benefit is short at
+every age and the remaining lifetime changes it little.
+\citet{droes2024home} show in Dutch survey
+data that households with higher incomes both improve their homes more often
+and sort into homes that are already efficient; we study the same two
+margins by age, in a model that explains why older owners rely less on
+buying and how policy acts on each margin. \citet{reusens2026renovation}
+estimate that the Flemish obligation on buyers of the least efficient homes
+to renovate within five years lowered the price of these homes by about 2
+percent; we simulate a stricter standard, under which every home that is
+bought must be efficient, and trace which owners it reaches and how it
+changes how often they move. Methodologically, we solve a large
+lifecycle model with neural networks, building on \citet{maliar2021deep},
+\citet{azinovic2022deep}, and
+\citet{druedahl2026deep,druedahl2026nonconvex}.
+
+
+
+% 14. Road map
+Section~\ref{sec:data} describes the data and three facts.
+Section~\ref{sec:model} sets out the model and the three propositions.
+Section~\ref{sec:estimation} describes the solution and the estimation.
+Section~\ref{sec:results} separates the horizon from the window, and
+Section~\ref{sec:policy} studies policies. Section~\ref{sec:conclusion}
+concludes.

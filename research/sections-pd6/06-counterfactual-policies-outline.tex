@@ -1,0 +1,256 @@
+% Section 6 -- Counterfactual policies (outline: paragraphs and what each must
+% say; no prose yet). Written 29 October 2026.
+%
+% Length rule (agreed 29 October): the main text runs to about 40--45 pages
+% with about 12 exhibits. Each result goes either to the main text, with full
+% intuition, or to the online appendix, as a table and one paragraph with a
+% one-sentence pointer from the text. Budget for this section: about 8 pages
+% and 1--2 exhibits. \tier{MAIN} and \tier{ONLINE APP.} mark the tier of each
+% item.
+%
+% Numbers are from the draft exhibits of the replication package: the policy
+% network ("island"), seed 1, n = 65,536, 30 September batch. None of these
+% tables is in the paper yet.
+%   levers     output/tables/tab-policy-levers.csv   (m5 factorial, m7 doses)
+%   variants   output/tables/tab-policy-variants.csv (m4: mandate, energy
+%              prices, bill gap, mortality, no A-C for sale; island vs R0)
+%   seeds      output/tables/tab-policy-seeds.csv    (m5 and m6)
+%   doses      output/figures/fig-policy-dose.csv    (m7)
+% The Shapley split by age and the flows by route and age were computed on 29
+% October from the m5 and m6 cells in a scratch script. They are not yet in
+% any package script.
+% Decided 29 October: the section reports only changes from the policy
+% network's own baseline, never its levels, and the network is not retrained.
+% Every level in the paper comes from the estimated model (Section 5). So no
+% ratio of shares and no statement that needs a level (such as the gradient
+% reversing); proportional statements use percent changes within the network.
+\providecommand{\tier}[1]{\textsf{\small [#1]}~}
+
+% The opening and 6.1 were drafted as prose in 06-counterfactual-policies.tex
+% on 5 November 2026; their outline is kept here but not typeset.
+\iffalse
+\outpara{Opening: the question and the answer (before the first subsection)}
+\begin{itemize}
+  \item \tier{MAIN} The question: which policies raise efficiency among older
+    owners? Section~\ref{sec:results} implies that the route a policy acts on
+    decides whom it reaches. Older owners rarely buy, so a policy that acts
+    at a purchase reaches mostly the young. A policy that lowers the cost of
+    renovating in place acts on the threshold gap, which every owner faces.
+  \item \tier{MAIN} The answer up front. Halving the variable cost of
+    renovation raises the A--C share of owners at 65--74 by 8.1 points and at
+    25--34 by 2.5, narrowing the gap between them by 5.6 points, more than
+    half the 9.6-point gap at the estimates (65--75; to be restated in the
+    same band after the re-simulation). A point-of-sale standard
+    raises the share the most, by 13.2 points, but widens the gap by 6.4.
+  \item \tier{MAIN} Road map: 6.1 to 6.4.
+  \item \open{Title: ``Counterfactual Policies'' or one that states the
+    question, e.g.\ ``Which Policies Reach Older Owners''.}
+\end{itemize}
+
+\subsection{How the counterfactuals are computed}
+
+\outpara{One paragraph in the main text; details in the online appendix}
+\begin{itemize}
+  \item \tier{MAIN} One network holds the estimated parameters fixed and
+    takes the policy parameters as inputs: $\xi_f$, $\xi$, $\zeta_b$,
+    $\zeta_s$, $\lambda_L$, $\lambda_D$, each trained over a box around its
+    baseline. Each policy is then a simulation in which households
+    re-optimize. The point-of-sale standard and the energy-price variants
+    change the model, not a lever, so each is trained from the same network.
+  \item \tier{MAIN} Every policy uses the same draws as the baseline (common
+    random numbers). Effects are differences from that baseline, in
+    percentage points.
+  \item \tier{MAIN} Scope: (i) partial equilibrium: house prices, the price
+    premium of efficient homes, and the supply of efficient homes for sale
+    are held fixed, which matters most for a large standard; (ii) each
+    policy is in place over the whole life cycle, from 23 on, and the
+    transition after a reform is not computed; (iii) no welfare
+    calculation.
+  \item \tier{MAIN, one sentence} The policy network is a second
+    approximation of the same model, and its baseline lies below the
+    estimates: 13.6 percent of all owners against 16.2. So we report only
+    changes from its own baseline, and every level in the paper comes from
+    the estimated model. Changes carry over: the standard imposed directly
+    widens the gap by 4.1 points on each network.
+  \item \tier{ONLINE APP.} Where the two baselines differ: both solve the
+    same problem at the same parameters, and the two policy-network seeds
+    agree; they differ mainly in whether a renter who buys picks an A--C
+    home, a close call that small approximation errors tip. A table of the
+    two baselines (shares, gap, ownership, moves), the cross-check of the
+    standard, the per-age accuracy audits, and the training box.
+    Appendix~\ref{app:computation} covers the network.
+\end{itemize}
+\fi
+
+% Drafted as prose in 06-counterfactual-policies.tex on 5 November 2026
+% (heading, text and Table tab:policy-renovation moved there). The outline
+% below is kept for reference; its ``why the old gain most'' bullet is
+% superseded: 72 against 22 D--G owners per 100 households reflects
+% ownership by age, not the share among owners (82 and 88 percent of
+% owners).
+\iffalse
+\subsection{Lowering the cost of renovating in place}
+
+\outpara{The two costs and what they act on}
+\begin{itemize}
+  \item \tier{MAIN} The variable cost $\xi$ is halved from 0.08 to 0.04, and
+    the fixed cost $\xi_f$ from 0.159 to 0.079. Either lowers the owner's
+    threshold $c_j^*$ and narrows the threshold gap
+    (Section~\ref{sec:results-window}).
+\end{itemize}
+
+\outpara{The variable cost halved (main table)}
+\begin{itemize}
+  \item \tier{MAIN} All owners $+6.3$; 25--34 $+2.5$; 65--74 $+8.1$. The gap
+    narrows by 5.6 points.
+  \item \tier{MAIN} Why the old gain most: renovation in place at 65--74
+    rises by 2.0 per 100 households a year, from 0.9, and at 25--34 by 0.5,
+    from 0.2. The subsidy acts on owners of D--G homes, and they are
+    concentrated among the old: 72 per 100 households at 65--74 against 22
+    at 25--34. Buying an efficient home hardly changes, by $-0.1$ at both
+    ages.
+  \item \tier{MAIN} Outlay: 5.7 ($\times10^3$, model money per
+    household-year, inframarginal payments included), or 0.91 per point of
+    the all-owner share.
+\end{itemize}
+
+\outpara{The fixed cost halved (main table)}
+\begin{itemize}
+  \item \tier{MAIN} All owners $+1.7$; 25--34 $+0.9$; 65--74 $+1.5$; gap
+    $-0.6$. Same direction as the variable cost, smaller. Outlay
+    0.73 per point.
+  \item \open{Why the fixed cost does so much less than the variable cost
+    at a similar outlay per point. Check against the size of each cost
+    relative to a typical renovation before writing an intuition.}
+\end{itemize}
+
+\outpara{Dose (online appendix, one sentence in the text)}
+\begin{itemize}
+  \item \tier{ONLINE APP.} Figure fig:policy-dose. Effects grow more than in
+    proportion to the cut. A cut of the variable cost to 25 percent raises
+    the all-owner share by 13.6 points and narrows the gap by 10.6. Whether
+    the gradient would reverse is a statement about levels, so it is not
+    made.
+\end{itemize}
+\fi
+
+% 6.2 drafted in 06-counterfactual-policies.tex (5 November 2026).
+\iffalse
+\subsection{Acting at a purchase}\label{sec:policy-purchase}
+
+\outpara{A point-of-sale standard (main table)}
+\begin{itemize}
+  \item \tier{MAIN} Every purchase of a D--G home is renovated at purchase.
+    All owners $+13.2$, the largest effect of any policy; 25--34 $+16.3$;
+    65--74 $+9.9$. The gap widens by 6.4 points. Ownership falls by 0.3
+    points, and owner moves fall by 2.1 per 100
+    owners.
+  \item \tier{MAIN} Why: the standard acts on the window, and the young
+    pass through it most often. The old gain largely because they bought
+    under the standard earlier in life. This comes from comparing whole life
+    cycles (6.1), so a reform introduced today would reach today's old
+    owners less.
+  \item \open{Outlay: the standard costs the government nothing, and the
+    cost falls on buyers. Leave the outlay column blank or report the
+    buyers' renovation spending?}
+\end{itemize}
+
+\outpara{Buying and selling costs halved (main table, level only)}
+\begin{itemize}
+  \item \tier{MAIN} All owners $+4.9$. Owner moves rise by 10.0 per 100
+    owners, from 7.6. More owners pass through the window: buying an
+    efficient home rises by 2.6 per 100 households a year at 25--34 and by
+    3.0 at 65--74, while renovation in place falls slightly.
+  \item \tier{MAIN} Outlay 5.46 per point, six times that of the variable
+    cost.
+  \item \tier{MAIN, one sentence; ONLINE APP.} The split by age is not
+    robust: the gap changes by $+3.8$ on seed 1 and $+0.5$ on seed 2, so
+    only the level is reported (Table tab:policy-seeds).
+\end{itemize}
+\fi
+
+% 6.3 drafted in 06-counterfactual-policies.tex (5 November 2026; energy
+% prices). The rest of this block (the online-appendix variants, the
+% combined cost levers) is kept for the online appendix.
+\iffalse
+\subsection{Changing the payoff}\label{sec:policy-payoff}
+
+\outpara{What shifts the level without tilting it (one paragraph)}
+\begin{itemize}
+  \item \tier{MAIN} Energy prices doubled: all owners $+5.2$; 25--34
+    $+7.1$; 65--74 $+4.3$. Ownership falls by 2.9 points. In percent of the
+    policy network's own baseline, the share rises by about 40 percent at
+    25--34 and 37 percent at 65--74. Like comfort in
+    Figure~\ref{fig:mechanisms-payoff}, a higher payoff per year raises the
+    share at every age in about the same proportion.
+  \item \tier{ONLINE APP., one sentence each} No energy-bill gap between
+    A--C and D--G homes: $-3.5$. Credit limits: debt-to-income
+    0.33 to 0.365, 0.0; loan-to-value 0.90 to 0.85, $-0.2$. Mortality halved
+    and no A--C homes for sale on the policy network, as a check on
+    Section~\ref{sec:results}.
+\end{itemize}
+
+\outpara{Combining the cost levers (online appendix, one sentence in the
+text)}
+\begin{itemize}
+  \item \tier{ONLINE APP.} All three halved: $+12.2$ (seed 2: $+12.7$).
+    Shapley shares: variable cost 57 percent, fixed cost 26, buying and
+    selling costs 17 (seed 2: 54, 25, 21).
+  \item \tier{ONLINE APP.} The levers interact. The fixed cost's share, 3.2
+    points, is twice its effect alone, 1.7. The share of buying and selling
+    costs, 2.1, is less than half its effect alone, 4.9. Cheaper renovation
+    makes the fixed cost bite more and a cheaper move matter less.
+  \item \tier{ONLINE APP.} Split of the gap: the variable cost $-5.5$ and
+    $-5.1$ on the two seeds, the fixed cost $-1.5$ and $-1.4$; buying and
+    selling costs $+4.8$ and $+1.6$, not robust.
+\end{itemize}
+\fi
+
+% Decided 5 November 2026: the section describes the implications of each
+% policy and does not rank them. So no outlay per point (report the total
+% outlay), and the close below must be rewritten without ``lowest outlay
+% per point'' or other ranking language.
+\outpara{Section close (one paragraph)}
+\begin{itemize}
+  \item \tier{MAIN} Whom a policy reaches depends on the route it acts on.
+    Lowering the cost of renovating in place reaches older owners and
+    flattens the gradient, at the lowest outlay per point. Acting at a
+    purchase raises the level the most but widens the gradient. Raising the
+    payoff per year raises the share in about the same proportion at every
+    age.
+  \item \tier{MAIN} Scope, restated briefly: partial equilibrium, whole life
+    cycles, no welfare.
+\end{itemize}
+
+\outpara{Exhibits and open decisions (planning note, not text)}
+\begin{itemize}
+  \item \tier{MAIN} One table, tab:policy, of changes only (no level row;
+    the notes point to the levels at the estimates in Section 5), with
+    numbered columns built in the R script: (1) all owners, (2) 25--34,
+    (3) 65--74, (4) gap, (5) owner moves, (6) outlay per point. Rows:
+    \begin{itemize}
+      \item renovating in place: the variable cost halved, the fixed cost
+        halved;
+      \item at a purchase: the point-of-sale standard (column 6 a dash: a
+        regulation, no public outlay), buying and selling costs halved
+        (columns 1, 5 and 6 only);
+      \item the payoff: energy prices doubled.
+    \end{itemize}
+    It merges \texttt{tab\_policy\_levers.R} and
+    \texttt{tab\_policy\_variants.R}.
+  \item \open{An optional main figure, which would be new: the effect at
+    65--74 against the effect at 25--34 for each policy, with the
+    45-degree line, so that which policies tilt the profile is visible at
+    a glance.}
+  \item \tier{ONLINE APP.} Table tab:policy-seeds, extended with the Shapley
+    split by age; credit limits, the bill gap, mortality halved and no A--C
+    homes for sale (tab:policy-variants-other, extended); the two baselines
+    and the cross-check of the standard; Figure fig:policy-dose.
+  \item \open{Experiments not yet run, each needing a training on a pod:
+    a grant for renovating in place only; a larger price premium through
+    disclosure ($\gamma_p$){\draft, in training since 5 November 2026}.
+    None is needed for the argument above.}
+  \item \open{Welfare by age (from the value networks, new code) or energy
+    saved (from the simulations): a JPE referee is likely to ask for one
+    of them.}
+\end{itemize}

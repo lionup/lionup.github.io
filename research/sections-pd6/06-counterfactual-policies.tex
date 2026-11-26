@@ -1,0 +1,425 @@
+% Section 6 -- Counterfactual policies
+% Opening, 6.1 (Table tab:policy-renovation) and 6.2 (Table
+% tab:policy-purchase) drafted 5 November 2026 from the outline
+% (06-counterfactual-policies-outline.tex, whose opening, 6.1 and 6.2 are
+% fenced off with \iffalse there). 6.3 drafted 5 November 2026 (energy
+% prices; the paragraph on the price premium waits for its training). The
+% close is still the outline, typeset below. The 65--74 band of the policy runs is accepted (5 November
+% 2026); no 65--75 re-simulation.
+\section{Counterfactual Policies}\label{sec:policy}
+
+Section~\ref{sec:results} shows that older owners live in less efficient
+homes because they buy less often. In this section we analyze the effects of
+different policies on the efficient share among young and old owners, as well as overall ownership of efficient homes. We focus on three types of policies, distinguishing them by the route through which they act. The first policy focuses on lowering the cost of renovating in place, the fixed cost $\xi_f$ and the
+variable cost $\xi$. This policy lowers the threshold $c_j^*$ in
+equation~\eqref{eq:cstar-inplace}, the consumption at which an owner who
+stays renovates. The second policy acts at a purchase. A point-of-sale
+standard requires every home that is bought to be made efficient. Similarly, lower
+costs of buying and selling, $\zeta_b$ and $\zeta_s$, make households buy
+more often. The last group, higher energy prices, raises the payoff of
+efficiency each year without changing either cost. For each policy we
+report how the efficient share changes among all owners, among young and
+old owners, and in the gap between them.  For the subsidies to
+renovation, we also report the public expenditure they need.
+
+
+We compute the counterfactuals with the approach of
+Section~\ref{sec:solution}, in which parameters are inputs of the
+networks. Here the inputs are six parameters that a policy can change: the
+fixed and variable costs of a renovation, $\xi_f$ and $\xi$; the costs of
+buying and selling, $\zeta_b$ and $\zeta_s$; and the maximum loan-to-value
+and payment-to-income ratios, $\lambda_L$ and $\lambda_D$. Each ranges over
+an interval that contains its value in Tables~\ref{tab:fixed-parameters}
+and~\ref{tab:estimates} and every value we consider, and every other
+parameter is held at its value in those tables. We call this the
+counterfactual solution.  Higher energy prices change two
+parameters that are not inputs, the energy bills per unit of size $e^R$
+and $e^N$. The point-of-sale standard changes the choices: a buyer can no
+longer buy an inefficient home without renovating it at once. Every
+simulation draws the same 65,536 households and the same
+income shocks, taste shocks, and draws that decide whether a home stays
+efficient, so two simulations differ only in the policy. We report the
+effect of a policy as the change, in percentage points, from the baseline
+of the counterfactual solution.
+
+
+Before discussing the implications of these policies, we outline three caveats which apply to these experiments. First, the model is partial
+equilibrium. Hence, the price premium of efficient homes
+does not respond to a policy and a buyer can always buy an efficient home at
+the same premium irrespective of how many buyers want one. This matters most for a
+policy that raises the demand for efficient homes a great deal, such as
+the standard. Second, we compare two steady states, one with the policy
+and one without: each household lives its whole life under the policy,
+from age 23. We do not compute the transition due to computation constraints. Third, we do not compute welfare. The model has no cost of
+energy use beyond the bill a household pays, so household welfare would
+leave out any gain from lower emissions, and it would need an assumption
+about how each subsidy is financed. We report the efficient share and the
+flows behind it.
+
+% \open{Appendix~\ref{app:computation} does not yet have the subsection the
+% pointer above promises (the two baselines, the training box, the accuracy
+% audits of the counterfactual solution).}
+% \open{The cross-check that changes carry over, held for the user: the
+% point-of-sale standard imposed without re-solving widens the gap by 4.1
+% points on each solution (65--74 band), but halving xi_f changes the gap by
+% -0.6 on the counterfactual solution (65--74) and by -1.0 on the estimated
+% model (65--75, Section 5.2: 9.62 to 8.59).}
+% Decided 5 November 2026: Section 6 reports xi_f halved on the
+% counterfactual solution, comparable with xi halved, and the text does not
+% mention the larger narrowing in the estimated model.
+
+\subsection{Lowering the cost of renovating in place}\label{sec:policy-renovation}
+% Numbers: tab-policy-renovation.csv (tab_policy_renovation.R; the text_*
+% rows for the in-place rates and flows); the dose footnote from
+% fig-policy-dose.csv and, for the in-place rates by dose
+% (renovate_stay_takeup_all: 1.394, 2.396, 4.250, 7.706 percent at xi = 0.08,
+% 0.06, 0.04, 0.02), the m7-dose-island-s1 cells; share change per point of
+% the rate 2.1-2.2 (xi) and 1.8-2.0 (xi_f); the figure itself is not in the
+% paper (decided 5 November 2026); the pound amounts from Section 4.5 (xi_f = 0.159 x
+% 49,914 = 7,900; the smallest owned home 20,500, of which 7,900 fixed) and
+% outlay x 49,914 (0.574% -> 287, 0.123% -> 61 pounds). Outlay description:
+% text_renovations_per100hh_base / text_renovations_per100hh (1.01; 2.69 V,
+% 1.55 F) and text_subsidy_per_renovation_units (0.2135 V -> 10,657 pounds;
+% 0.0793 F -> 3,958, written 3,950 as half of the rounded 7,900); the outlay
+% definition from epc_revised/counterfactual_outcomes.py (outlay(): theta_move
+% = 1; survival weights from simulation.survival_weights).
+
+A renovation costs $C(h)=\xi_f+\xi p^N h$
+irrespective of whether the owner renovates at a
+purchase or in place. A cut in either part i.e., the fixed cost $\xi_f$ or the variable cost $\xi$ lowers the threshold $c_j^*$ in
+equation~\eqref{eq:cstar-inplace} and narrows the threshold gap in
+equation~\eqref{eq:window} which is the extra cost of renovating in place over
+buying an efficient home. We halve each part separately. The variable cost
+$\xi$ is reduced from 8 to 4 percent of the value of the home, and the fixed cost
+$\xi_f$ from 0.159 to 0.079. The variable cost is the larger part of a
+renovation. Renovating the smallest owned home, combining fixed and variable parts, costs about \pounds20,500,
+of which \pounds12,600 is the variable cost (Section~\ref{sec:estimates}),
+and the variable cost rises with the size of the home. Halving the variable cost saves
+\pounds6,300 on the smallest owned home and more on a larger one. Halving
+the fixed cost saves \pounds3,950 on every home, irrespective of its size.
+
+
+
+\begin{table}[t]
+  \centering
+  \caption[Lowering the cost of renovating in place]{{Lowering the
+  cost of renovating in place}}\label{tab:policy-renovation}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-policy-renovation}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} Each column halves one part of the cost
+      of a renovation, $C(h)=\xi_f+\xi p^N h$, on the counterfactual
+      solution and keeps every other parameter at its value in
+      Tables~\ref{tab:fixed-parameters} and~\ref{tab:estimates}. Changes
+      from the baseline of the counterfactual solution, from 65,536
+      simulated households with the same draws in the baseline and in both
+      columns. Shares are A--C owners as a percentage of owners in each age
+      group; the gap is the share at 25--34 less the share at 65--74.
+      Public outlay: the subsidy paid on all renovations, including those
+      that would take place without it. }
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+
+Table~\ref{tab:policy-renovation} shows the effects of halving each cost component. Halving the variable cost raises the efficient share by 6.3 percentage
+points among all owners, by 2.5 points at 25--34 and by 8.1 points at
+65--74. As old owners are more likely to renovate in place, the gap between young and old owners narrows by 5.6 points. The subsidy roughly
+triples the fraction of owners of inefficient homes who renovate in place
+each year. This increase occurs at both age groups. But it adds most where renovating in place
+supplies most of the inflow into efficient ownership. As older owners
+buy less often, it supplies a larger part of theirs: 36 percent at 65--75
+against 14 percent at 25--34 in the estimated model
+(Section~\ref{sec:results-window}). 
+
+Halving the fixed cost acts in the same way but by less magnitude. This is  because it
+saves less on each renovation. It raises the efficient share by 1.7 points
+among all owners, by 0.9 at 25--34 and by 1.5 at 65--74, and narrows the
+gap by 0.6 points (Table~\ref{tab:policy-renovation}, column~(2)).
+
+To compute the public expenditure with this policy, we assume that the government pays the part of the cost that the
+policy removes. That means $\xi p^N h/2$ when the variable cost is halved and
+$\xi_f/2$ when the fixed cost is halved, where $h$ is the size of the
+renovated home. We count households of every age and tenure, renters
+included, with each age weighted by the probability of surviving to it, and
+ express it as a percentage of mean working-age gross income. The expenditure is therefore the number of renovations per
+household a year times the average subsidy per renovation. Without a
+subsidy there are 1.0 renovations per 100 households a year. Halving the
+variable cost raises this to 2.7, and the average subsidy is about
+\pounds10,700 for the smallest owned home. The expenditure turns out to be 0.57 percent of
+mean income per household a year which is about \pounds290. Halving the fixed cost
+raises renovations to 1.5 per 100 households a year at \pounds3,950 each,
+an outlay of 0.12 percent, which is about \pounds60.\footnote{ In the model, taxes and pensions
+depend only on earnings (equations~\eqref{eq:pension} and~\eqref{eq:tax}),
+so no other item of the public budget responds to the subsidy.}
+
+
+\subsection{Acting at a purchase}\label{sec:policy-purchase}
+% Numbers: tab-policy-purchase.csv (tab_policy_purchase.R). Column (1): the
+% m4 cell mandate (trained with the standard) less island_s1. Column (2): the
+% average of T less baseline in m5 (seed 1) and m6 (seed 2), decided 5
+% November 2026 (T_s1, T_s2 in the CSV: all 4.92, 5.04; gap 3.77, 0.50;
+% moves 10.00, 9.93). text_* rows: ownership (-0.30; the standard imposed
+% without retraining, island_s1_mask_mandate, -6.11; T +2.92); owner moves in
+% percent (-27.4; T +131); purchases per household in percent (-23.2; T
+% +118); the in-place rate of D-G owners in percent (-4.0, not quoted: two
+% trainings of the baseline differ by -3.9, and the change by age has mixed
+% signs; T -34.4, seeds -36.1 and -32.8);
+% purchases of A-C homes under the standard (96.0 percent at 25-34, 88.0 at
+% 65-74). Owner moves in the baseline: 7.56 (seed 1), 7.64 (seed 2) per 100
+% owners. Section 5.2: tab-flows-accounting (P = 15.0 and 4.5; 40-46
+% percent). Outlay of (2): 2.6505 x 49,914 = 1,323 pounds. Training noise:
+% island_s2 less island_s1, at most 0.78 points in a share.
+
+The second group of policies acts at a purchase, which, as established in  Section~\ref{sec:results-window}, is where most of the inflow
+into efficient ownership happens.
+Table~\ref{tab:policy-purchase} reports results for two such policies. The first policy is a
+point-of-sale standard. We impose the condition that every home that is bought must be efficient. Hence, a
+buyer either buys an efficient home or renovates an inefficient one at
+purchase. As this imposition is not determined by a parameter of the networks,  we solve the
+model again with the standard in place. Households therefore know of this policy
+throughout their lives and plan for it. In the second policy we halve the costs
+of buying and selling, $\zeta_b$ from 3.9 to 1.95 percent of the value of
+the home and $\zeta_s$ from 5.0 to 2.5 percent. Table~\ref{tab:policy-purchase} reports the results.
+
+\begin{table}[t]
+  \centering
+  \caption[Acting at a purchase]{{Acting at a
+  purchase}}\label{tab:policy-purchase}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-policy-purchase}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} Column~(1) requires every home that is
+      bought to be A--C; the model is solved again with the standard in
+      place, on one training of the networks. Two trainings of the baseline
+      of the counterfactual solution differ by at most 0.8 points in each
+      share. Column~(2) halves $\zeta_b$, from 0.039 to 0.0195, and
+      $\zeta_s$, from 0.050 to 0.025, on the counterfactual solution, and
+      reports the average of the effects on two trainings of its networks.
+      Every other parameter is at its value in
+      Tables~\ref{tab:fixed-parameters} and~\ref{tab:estimates}. Changes
+      from the baseline of the same training, from 65,536 simulated
+      households with the same draws in the baseline and with the policy.
+      Shares and the gap as in Table~\ref{tab:policy-renovation}. Owner
+      moves are sales by owners.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+In column (1) we report the results of the standard policy. The standard raises the efficient share by 13.2 points among all owners. Looking at age groups, it raises the share by
+16.3 points at 25--34 and by 9.9 points at 65--74. Consequently, it widens the gap by 6.4
+points. In the estimated
+model, between 40 and 46 percent of purchases are of efficient homes, and a
+few more are renovated at purchase.
+As under the standard every purchase adds to the efficient stock, the gain
+is largest where households buy most often.  Renovation in place changes very little, since the standard does not
+apply to owners who stay. 
+
+It is important to note that the standard  makes buying expensive for a household that would have
+bought an inefficient home. This is because  it must pay at least $(1+\zeta_b)\Delta p'$
+more, the premium of an efficient home and the buying cost on it. Such a
+buyer's consumption is below the threshold $c_b^*$ of
+Proposition~\ref{prop:buy}, so the efficient state is worth less to it than
+this cost, and therefore some of these households put off moving. Consequently, owner moves
+reduce by 2.1 per 100 owners a year, or 27 percent, and purchases fall by 23
+percent. From this perspective we observe a trade-off. Each move that does not take place is a  purchase window that
+does not open. Hence,  the fall in moves partly offsets the gain which the standard intended to generate. However, overall homeownership barely changes. It falls by 0.3 points as households know
+of the standard in advance  and plan for it. When the standard is imposed without warning
+instead, so that households make their plans as if there were no standard
+and meet it only when they buy, ownership actually falls by 6.1 points. Note that the standard
+needs no public expenditure as it is a regulation and its cost falls on buyers.
+
+
+
+Halving the costs of buying and selling makes households buy more often.
+Purchases rise by 118 percent and owner moves rise by
+10.0 per 100 owners a year, from 7.6 (Table~\ref{tab:policy-purchase},
+column~(2)).  As households move more often, the efficient share rises by 5.0 points among all owners. The share rises by 6.6
+points at 25--34 and by 4.5 at 65--74.\footnote{  The two trainings of the networks
+agree on the gain among all owners, 4.9 and 5.0 points, but less on how it
+splits by age: the gap widens by 3.8 points on one and by 0.5 on the other.}
+ Ownership rises by 2.9 points. However, again, there is a trade-off.
+Owners who expect to move sooner renovate in place less, since the
+threshold $c_j^*$ in equation~\eqref{eq:cstar-inplace} rises with the
+probability of moving. Therefore, the fraction of owners of inefficient homes who
+renovate in place each year falls by about a third.
+
+\subsection{Changing the payoff}\label{sec:policy-payoff}
+% Numbers: tab-policy-payoff.csv (tab_policy_payoff.R; Table tab:policy-payoff
+% and the text_* rows): the m4 cells
+% energy_price_x2 and energy_gap_zero, each trained on its own network (seed
+% 1 only), less island_s1. Shares 5.22 / 7.12 / 4.31, gap 2.81; in percent
+% 39.8 and 36.6; the ratio of the 25-34 to the 65-74 share 1.520 -> 1.556
+% (island_s2: 1.588). Bill gap removed: -3.50; -23.3 and -25.5 percent.
+% Routes: efficient homes bought (per household) +28.3 percent; the in-place
+% rate of D-G owners +20.9 percent; the efficient share of purchases 38.4 ->
+% 47.9 (island_s2 36.8); the inflow at a purchase 88.7 percent at 25-34 and
+% 69.8 at 65-74 (island_s1). Ownership -2.87; by band -0.46 (within the
+% variation between trainings), -2.47, -4.34, -3.47, -3.27, -4.03 (island_s2
+% less island_s1 at most 1.40, at 35-44). Median rent paid -8.7 percent;
+% median value of an owned home to income at 35-64 -4.9 percent; renters
+% 35-64 who own two years later 17.4 -> 15.5 percent (island_s2 17.7);
+% owners who rent two years later rise at 25-34 (9.0 -> 9.7), 35-64 and 65+.
+% Owner moves +0.75 per 100 owners (island_s2 +0.09); per 100 households
+% +0.235, purchases +0.167, so at least 71 percent of the extra moves end in
+% a purchase (the script's comment gives the bound). The derivatives in the
+% footnote follow from eq:cstar-inplace and eq:cstar-buy with C-bar and ell
+% rising one for one with Delta e.
+% Numbers (price premium doubled, gamma_p 0.03 -> 0.06): tab-policy-payoff.csv
+% (tab_policy_payoff.R), from replication/data/model/batch-2026-11-05/out/
+% m9-policy-experiments-seed20260926-n65536 (RTX 4090, 6 November 2026):
+% premium_x2 less island_s1 of the same batch (island_s1 and island_s2
+% re-simulated on the 4090, not the m4 cells used above; the two island_s1
+% differ by at most 0.23 points in a share, gap 6.12 in m4 and 6.35 in m9, so
+% the text quotes changes, not levels: the gap closes by 5.64/6.35 = 89
+% percent, 92 percent of the m4 gap). Shares 13.605 ->
+% 8.870 (-4.73), 25-34 18.056 -> 9.721 (-8.34, -46.2 percent), 65-74
+% 11.703 -> 9.005 (-2.70, -23.1 percent), gap 6.353 -> 0.716 (-5.64); ratio
+% of the 25-34 to the 65-74 share 1.543 -> 1.080 (island_s2: 1.619).
+% 35-44 -9.03, 45-54 -6.37, 55-64 -4.96, 75+ -0.64 (island_s2 less
+% island_s1: -0.69). Efficient homes bought per household -43.3 percent
+% (25-34 -51.5, 65-74 -32.7); efficient share of purchases 38.4 -> 21.9
+% (island_s2 36.6); in-place rate of D-G owners +41.0 percent (25-34 +31.2,
+% 65-74 +61.4); renovated at purchase 4.45 -> 6.42 percent of purchases;
+% homes bought efficient as a share of the inflow (island_s1) 84.1 percent
+% at 25-34, 59.2 at 65-74; inflow per household at 65-74 +4.2 percent.
+% Ownership +0.13 (25-34 -0.77; island_s2 less island_s1 -0.25); owner moves
+% -0.10 per 100 owners (island_s2 +0.10). C(h)/((1+zeta_b) gamma_p h) at
+% gamma_p = 0.06: 1.283 + 2.545/h, 2.09 at h = 3.14 and 1.37 at h = 31.1
+% (rows text_cost_ratio_*).
+
+The policies in Sections~\ref{sec:policy-renovation}
+and~\ref{sec:policy-purchase} alter the cost associated with achieving the efficient state. However, a
+policy can instead change the payoff from owning an efficient home. In the model, an efficient home pays its owner in
+three ways: (i) comfort,  (ii) a lower energy bill, and (iii) a higher price when it
+is sold.
+Section~\ref{sec:results-horizon} varied comfort. In this section  we vary the
+other two. The energy
+bill is a part of the payoff that a policy, such as a tax on household
+energy, can alter. A higher energy price raises every bill and, with them,
+the yearly saving $\Delta e=(e^N-e^R)h$. We double energy prices for both
+qualities, which doubles $\Delta e$. As energy prices are not a parameter of
+the networks, we solve the model again with doubled prices. We
+then double the price premium. Table~\ref{tab:policy-payoff} reports both
+experiments.
+
+\begin{table}[t]
+  \centering
+  \caption[Changing the payoff]{{Changing the payoff}}\label{tab:policy-payoff}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-policy-payoff}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} Column~(1) doubles the energy bill per
+      unit of size of both qualities, $e^R$ and $e^N$. Column~(2) doubles
+      the price premium of an efficient home, $\gamma_p$, from 0.03 to 0.06.
+      }
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+Doubling energy prices raises the efficient share by 5.2 points among all
+owners (Table~\ref{tab:policy-payoff}, column~(1)). Looking at age groups, the efficient share increases by 7.1 points at 25--34 and by 4.3 points at 65--74. Hence,  the gap
+widens by 2.8 points. In proportion, however, the share rises by approximately
+the same amount at both ages,  40 percent at 25--34 and by 37 percent at 65--74.  Like comfort in
+Figure~\ref{fig:mechanisms-payoff}, the bill saving sets the level and not the slope of the age profile.
+
+
+
+The saving does not enter the two thresholds alike. A buyer who takes the
+efficient home pays the lower bill from its first year, and the threshold
+$c_b^*$ in equation~\eqref{eq:cstar-buy} falls by the whole saving,
+$\Delta e'/\theta'$. An owner who renovates now rather than next year gains
+only next year's saving, which it collects only if it survives, stays, and
+the home remains efficient. The threshold $c_j^*$ in
+equation~\eqref{eq:cstar-inplace} falls by
+$\Lambda\tilde\phi_j\mu_{j+1}\Delta e/\theta$.\footnote{The owner pays the
+bill of the inefficient home in the year of the work, so $\overline C$ and
+$\ell$ both rise one for one with $\Delta e$. Differentiating
+equation~\eqref{eq:cstar-inplace} then gives $\partial c_j^*/\partial\Delta
+e=-\Lambda\tilde\phi_j\mu_{j+1}/\theta$, and differentiating
+equation~\eqref{eq:cstar-buy} gives $\partial c_b^*/\partial\Delta
+e'=-1/\theta'$.} A larger saving therefore widens the gap between the two
+thresholds in equation~\eqref{eq:window}, and buying an efficient home gains
+more than renovating in place. The number of efficient homes bought rises by
+28 percent, and the share of purchases that are efficient rises from 38 to
+48 percent, whereas the rate of renovation in place rises by 21 percent. At
+every age most efficient homes are acquired at a purchase, 89 percent of
+the inflow at 25--34 and 70 percent at 65--74. Hence the share rises in
+about the same proportion at both ages.
+
+Doubling energy prices also has associated costs. Ownership falls by 2.9
+points, and by between 2.5 and 4.3 points in every age group from 35 on.
+Owners and renters alike pay the bill on every unit of size, so housing
+becomes dearer for both. Renters rent smaller homes, as the median rent
+falls by 9 percent, and buyers buy smaller ones, as the median value of an
+owned home relative to income falls by 5 percent at 35--64. The fall in
+ownership is consistent with the floor on the size of an owned home. An
+owned home cannot be smaller than $\underline h^{\mathrm{own}}$, 3.14 times
+mean income, whereas a rented home can. A household that now wants less
+housing than the smallest owned home therefore rents instead. Fewer renters
+buy: the share of renters aged 35--64 who own two years later falls from
+17.4 to 15.5 percent, and slightly more owners sell and rent. Owners also
+move more often, by 0.8 per 100 owners a year, and at least 70 percent of
+the extra moves end in another purchase.
+
+The third part of the payoff is the price premium, which an owner collects
+when it sells an efficient home and its heirs collect if it dies. A policy
+that makes buyers value the certificate more, for example by making the
+rating more visible when a home is sold, raises the premium $\gamma_p$. We
+double it, from 3 to 6 percent, and, as with energy prices, solve the model
+again. The buyers of efficient homes pay the premium to their sellers, so it
+needs no public outlay. Doubling the premium lowers the efficient share by
+4.7 points among all owners (column~(2)), by 8.3 points at 25--34 and by
+2.7 points at 65--74, and the gap narrows by 5.6 points, almost nine-tenths
+of it. In proportion, the share falls by 46 percent at 25--34 and by 23
+percent at 65--74. Unlike the bill saving, the premium changes the slope of
+the age profile. It barely changes who owns or how often owners move.
+
+The premium enters the two routes to efficiency with opposite signs. A buyer
+pays it. Doubling it doubles the cost of buying the efficient state,
+$C_b=(1+\zeta_b)\Delta p'$, and so lowers the extra one-off cost of
+renovating in place, $C(h)-C_b+\Delta e$, which sets the gap between the two
+thresholds in equation~\eqref{eq:window}. Renovating the smallest owned home
+now costs 2.1 times the extra outlay of buying it efficient, rather than 4.2
+times, and renovating the largest 1.4 times rather than 2.7. An owner who
+renovates, by contrast, gets more of its cost back, since the premium is
+what a sale returns and what the heirs receive: a larger $\Delta p$ shrinks
+both the loss at exit and the loss at death in
+equation~\eqref{eq:rule-inplace}. The routes in column~(2) show both
+responses. The number of efficient homes bought falls by 43 percent, and the share of
+purchases that are of efficient homes falls from 38 to 22 percent. The
+fraction of owners of inefficient homes who renovate in place each year
+rises by 41 percent, and the share of purchases renovated at purchase rises
+from 4.4 to 6.4 percent.
+
+The fall in efficient purchases outweighs the rise in renovation, and most
+so among the young, who acquire efficiency mainly by buying it. At 25--34,
+homes bought efficient make up 84 percent of the inflow into efficient
+homes, against 59 percent at 65--74. At 25--34 the number of efficient homes
+bought falls by 52 percent, whereas the in-place rate rises by 31 percent.
+Older owners respond more on the other margin: at 65--74 the in-place rate
+rises by 61 percent, and the inflow into efficient homes rises by 4 percent.
+Their share nevertheless falls, because they reach 65 with fewer efficient
+homes. The share at 55--64 falls by 5.0 points, and efficiency lasts about
+six years. After 75 the share does not change by more than the variation
+between two trainings of the networks.
+
+The experiment bears on a natural conjecture, that the gradient reflects a
+small premium. When the market pays little for efficiency, an owner who
+expects to leave the home soon, by moving or dying, gets little of the cost
+of a renovation back. A larger premium would then bring older owners into
+efficient homes and close the gap from below. In the model, a larger premium
+does raise renovation, most among older owners, but it lowers their
+efficient share, and the gap closes from above, through what the young buy.
+The premium therefore acts on the gradient through the purchase window of
+Section~\ref{sec:results-window}: the larger the premium, the smaller the
+advantage of buying efficiency over renovating, and the young use that
+route most. For the same reason, the size of the gradient depends on the
+premium measured in the data. Because the premium is fixed in the model,
+the experiment compares two markets that price efficiency differently; the
+supply of efficient homes for sale does not respond.
+
+% \input{sections-pd6/06-counterfactual-policies-outline}

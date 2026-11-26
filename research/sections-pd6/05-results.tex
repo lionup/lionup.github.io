@@ -1,0 +1,430 @@
+% Section 5 -- Results
+% Prose drafted 28 October from the Option B outline (05-results-outline.tex,
+% kept on disk, no longer typeset). Exhibits placed 28 October, each after the
+% paragraph that first cites it: fig:lifecycle-fit, tab:payoff-horizon,
+% fig:mechanisms-payoff (5.1; replaced Table tab:mechanisms-payoff on 30
+% October, the table moved to Appendix F, A6-online-results.tex),
+% tab:flows-accounting, tab:mechanisms-window
+% (5.2; the two were one table, tab:mechanisms, until 29 October). Table bodies come from
+% replication/output/{tables,figures}; captions and notes are draft (red).
+\section{Results}\label{sec:results}
+
+% Section~\ref{sec:data} left two explanations for why older owners live in
+% less efficient homes. Efficiency may pay off over fewer years for an older
+% owner, who is more likely to die before the cost of a renovation is
+% recovered. We call this the payoff horizon. Or older households may buy
+% homes less often, and a purchase is when most households get an efficient
+% home. We call this the window. Section~\ref{sec:model} gave the direction
+% in which each force moves the choices that create efficient homes, but not
+% its size, so it could not say which one drives the age gradient. This
+% section measures both at the estimates. The answer is that almost all of
+% the gradient comes from purchases. The payoff horizon is short at every
+% age, because efficiency wears off, and so it hardly differs between young
+% and old owners. Purchases differ a great deal, and buying is how most
+% efficient homes are acquired. Section~\ref{sec:results-horizon} measures
+% the horizon and what it does, and Section~\ref{sec:results-window} the
+% window. \open{Title: ``Results'', or one that states the question, e.g.\
+% ``Why Older Owners Live in Less Efficient Homes''.}
+
+ Section~\ref{sec:data} proposed two probable explanations for why older owners
+live in less efficient homes. These were the  horizon channel and the purchase window. In Section~\ref{sec:model} the model was set up to include these two forces. This section asks
+which of the two or whether their combination produces the age gradient at the estimates of
+Section~\ref{sec:estimation}. We first show the lifecycle that the
+estimates imply.
+
+Figure~\ref{fig:lifecycle-fit} plots the lifecycle  profiles of homeownership,  the share of owners in an efficient home, mean consumption and mortgage status at the estimates.
+Households rent when young and buy in their late twenties and thirties. Hence, the homeownership rate increases from 22 percent at 25 to 52 percent at 40 and
+75 percent at 60 and remains constant at about 78 percent after that. Most of the ownership is through a mortgage. The share of households with a mortgage rises from about 20 percent to 60 percent by age 55, and decreases after that. By age 70, nearly three
+quarters of households own outright. Consumption has the usual hump shape. It rises with income until the
+late fifties and falls after retirement. The share of owners in an
+efficient home peaks at 23 percent around 30, falls to 18 percent at 50,
+and to 11 percent at 75. The share starts to fall soon after the ages at which
+most households buy.
+
+
+\begin{figure}[!h]
+  \centering
+  \caption[Lifecycle at the estimates]{{Lifecycle profiles at the estimates}}
+  \label{fig:lifecycle-fit}
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics{fig-lifecycle-fit-own.pdf}
+        \caption{{Homeownership}}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics{fig-lifecycle-fit-abc.pdf}
+        \caption{{Owners in an A--C home}}
+  \end{subfigure}
+  \par\medskip
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+    \includegraphics{fig-lifecycle-fit-res.pdf}
+    \caption{{Net income and consumption}}
+  \end{subfigure}\hfill
+  \begin{subfigure}[t]{0.49\textwidth}
+    \centering
+        \includegraphics{fig-lifecycle-fit-mort.pdf}
+            \caption{{Owners by mortgage status}}
+  \end{subfigure}
+  \par\smallskip
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    { \textit{Notes:} Simulated at the estimates of
+    Table~\ref{tab:estimates}.
+    Panel~(a) plots homeownership, overall and split by whether the home  is efficient (A--C) or not, as shares of all
+    households. Panel~(b) plots  owners of an efficient home
+    as a share of owners.
+    Panel~(c) plots mean income and mean consumption.
+    Panel~(d) plots owners with a mortgage and owners who own outright, as shares
+    of all households.} 
+  \end{minipage}
+\end{figure}
+
+% Road map (drafted 28 October, after the opening was rewritten). The draft
+% group starts here, so the opening paragraph and Figure 5 print in black.
+ Panel~(b) of Figure~\ref{fig:lifecycle-fit} shows how the efficient
+share falls with age. However, from this we cannot deduce why this share is falling. As outlined above, there are two channels. The first
+is the  horizon channel. Under this channel an efficient home pays off only while its owner lives
+in it and it stays efficient. As survival probability reduces as households age, older owners have  fewer expected years left to enjoy the benefit of  an efficient home. The second  channel is the purchase window. A  buyer can choose an
+efficient home for a small price premium whereas an owner who stays must pay
+for the renovation. As the probability to buy reduces over age, this channel can lead to a declining efficient home share with age. In  the rest of
+this section we measure the size of both these channels at estimated parameters. First, in  Section~\ref{sec:results-horizon}
+we compute the payoff horizon by age and ask whether a larger or
+longer-lasting payoff changes the gradient. Second, in Section~\ref{sec:results-window} we explore the purchase window. Here we follow owners into and out of efficient homes,
+find the margin that produces the fall with age, and close the purchase window by
+taking efficient homes off the market. Finally, we ask why older owners do not
+renovate in place instead, and which factors determine how often they buy. We show that  almost all of the gradient comes from purchases. 
+
+
+\subsection{\texorpdfstring{The horizon channel}{The horizon channel}}\label{sec:results-horizon}
+  For the ease of exposition, we rewrite the expression of the payoff horizon $H_j$
+\begin{align*}
+  H_j =\sum_{k\geq 0} \beta^k \prod_{i=0}^{k-1} \phi_{j+i} \varrho\mu_{j+i+1}
+\end{align*}
+where $\beta$ is the discount factor, $\phi_{j+i}$ the probability that an
+owner of age $j+i$ survives to the next year, $\varrho$ the probability that
+an efficient home stays efficient, and $\mu_{j+i+1}$ the probability that an
+owner of age $j+i+1$ does not move. Table~\ref{tab:payoff-horizon} computes the payoff horizon at different ages and illustrates the effect of these factors by adding one factor at a time. In column~(1) we keep discounting and survival only, setting $\varrho$ and
+$\mu$ to one. In  column~(2) we add the loss of efficiency at the estimate
+$\varrho=0.84$. Lastly in columns~(3) and~(4) we add moving, with $\mu_j$ either the model's
+probability that an owner of an efficient home does not move or the
+probability that an owner does not move in the Understanding Society survey.
+
+With survival alone (column~(1)), the horizon falls steeply with age. At age 25, the horizon is 27 years which falls to ten years at age 75. This is the
+intuition behind the first explanation. However, once we include the  loss of efficiency, the picture changes. At $\varrho=0.84$ efficiency lasts about six years on average, and
+a home that is efficient today is still efficient five years later with
+probability $\varrho^5\approx0.41$. Once this loss is added in column~(2), the horizon is
+5.3 years at 25, 5.3 at 45, 5.0 at 65, and 4.4 at 75. In short, the horizon is essentially flat. Adding the model's probabilities of moving (column~(3)) lowers the horizon
+to 3.4, 3.0, 3.1, and 2.9 years. With the moving probabilities of owners in
+Understanding Society (column~(4)), the horizon is 3.8 years at 25, 4.7 at 45, 4.6 at 65, and 4.2 at 75.
+As older owners move less, it offsets their higher probability of dying.\footnote{One caveat with these results is that $\varrho$ appears to be low and imprecisely estimated. The question arises: what if $\varrho$ were set to a higher value? In  Appendix~\ref{app:varrho-horizon} we recompute the horizon at
+$\varrho=0.96$, at which efficiency lasts 25 years, with the other
+parameters at the estimates. With loss of
+efficiency alone, survival now matters and the horizon falls from 14.1 years at
+25 to 7.8 at 75 (column~(5) of Table~\ref{tab:payoff-horizon-varrho}). Once we  include
+moving it is again close to flat: 6.2 years at 25, 5.7 at 45, 6.1
+at 65, and 5.4 at 75 with the model's probabilities of moving (column~(6)),
+and 6.7, 9.8, 8.8, and 7.0 years with those in Understanding Society
+(column~(7)). Hence, most owners move long before a rating that lasts 25 years wears
+off. Section~\ref{sec:results-window} returns to this case once it has set
+out the accounting.}
+
+\begin{table}[t]
+  \centering
+  \caption[Payoff horizon of an efficient home, by age]{{Payoff
+  horizon of an efficient home, by age}}\label{tab:payoff-horizon}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-payoff-horizon}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} The horizon $H_j$ of
+      equation~\eqref{eq:payoff-horizon}, in years, for an owner of an
+      efficient home at age $j$, at the estimates ($\beta=0.97$,
+      $\varrho=0.84$). Each column adds one force: column~(1)
+      has discounting and survival only, for an owner who never moves in a
+      home that never loses efficiency; column~(2) adds the loss of A--C
+      status at rate $1-\varrho$; columns~(3) and~(4) add moving, at the
+      model's probability that an owner of an A--C home moves (3) or at the
+      probability that an owner moves in Understanding Society (4). The last row is the horizon at
+      75 as a percentage of the horizon at 25.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+
+
+
+The main message of Table~\ref{tab:payoff-horizon} is that the horizon is essentially flat once we take decay and moving into account. This has implications for choices for which horizon matters. In Section~\ref{sec:model-forces} we show that each
+choice depends on a level of consumption. This is because the comfort of an efficient
+home is worth more to a household that consumes more. So, an owner renovates in
+place if its consumption is at least $c_j^*$
+(equation~\eqref{eq:cstar-inplace}), and a buyer takes an efficient home if
+its consumption is at least $c_b^*$ (equation~\eqref{eq:cstar-buy}). We call
+the difference between the two the threshold gap. An owner whose consumption
+lies in it will not renovate, but would buy an efficient home at its next
+purchase. By equation~\eqref{eq:window}, the threshold gap is the extra
+one time cost of renovating in place spread over the horizon.
+If the horizon changes little with age, it implies that the threshold gap for a given home is about as wide
+for an owner of 75 as for an owner of 35. Also, by
+Proposition~\ref{prop:buy}, a higher probability of moving or dying raises
+a buyer's threshold only in proportion to the transaction costs on the
+premium. Therefore, the share of buyers who take an efficient home should not fall
+much with age either. Hence, the two margins on which the horizon acts, what a
+buyer chooses and whether an owner who stays renovates, should therefore be
+close to flat in age. 
+
+
+
+We next change the payoff of an efficient home by varying the comfort value $\eta$ and the probability of maintaining renovation status $\varrho$ and ask whether
+the age profile of the efficient share shifts or tilts.
+Figure~\ref{fig:mechanisms-payoff} plots the result. For each run we keep the other parameters at their
+estimates and let households reoptimize. Each point in the figure plots the efficient
+share of owners at 25--34 against the share at 65--75.  We superimpose dashed lines through the origin, along each of which the ratio of the two shares is constant. At the estimated point, the ratio is 1.75. A change that moves a point along its
+line changes the level of the profile, not its slope. A change that moves it
+toward the 45-degree line, on which young and old owners are alike, flattens
+the gradient.
+
+By varying  $\eta$ we set how large the payoff is each year by keeping its horizon fixed. If  young households choose the efficient home because  they expect to
+enjoy it for a longer period, a larger payoff per year would be worth more to them. This would raise the share proportionally more among the young. However, it does not.
+Without comfort the efficient share falls to 17.2 percent at 25--34 and 9.7
+percent at 65--75. With comfort doubled it rises to 27.9 and 16.6 percent.
+The resulting ratios are 1.76 and 1.68, against 1.75 at the estimates. Hence, the comfort
+points stay close to the line of the estimates. In short, a larger payoff per year
+actually raises the level of the profile, but does not alter its slope much.
+
+Retention $\varrho$ sets how long the payoff lasts and it does so through two effects. First,
+it lengthens the horizon and this should steepen the gradient, since survival
+starts to matter once efficiency lasts.
+Second, it slows the loss of efficiency in homes bought in the past, and this
+can flatten the gradient. This is because older owners bought longer ago, so they lose
+more of their efficiency when it wears off fast. The figure shows the net of the two
+effects. Raising $\varrho$ from its estimate of 0.84 to 0.88 acts like a
+larger payoff as  it lands almost exactly on the point of doubled comfort. However, raising it further,
+to 0.92 and to 0.96, bends the path toward the  45-degree line, and the ratio
+consistently falls from  1.75 at the estimates to 1.49 and 1.17.  The
+gradient flattens, so the second effect wins. Purchases at 65--75 do not
+change (Table~\ref{tab:mechanisms-payoff} in
+Appendix~\ref{app:results-more}), so older owners do not catch up by buying
+more often. When efficiency lasts, they catch up because they keep more of
+the efficiency they bought.\footnote{Appendix~\ref{app:varrho-accounting} separates the two effects at
+$\varrho=0.96$. The share of buyers who choose an efficient home now falls
+with age, from 58 to 45 percent, which is the horizon at work. But older
+owners lose less of the efficiency they bought when young, and this
+outweighs it.}
+
+ In conclusion, the  horizon channel does not produce the gradient. Once we take into account
+efficiency wearing off and owners' moving probability, the horizon is about the same at every
+age. Figure~\ref{fig:mechanisms-payoff} emphasizes this point. If young owners
+chose efficient homes because they expect to enjoy them for longer, a larger
+payoff each year would raise their share the most, and a payoff that lasts
+longer would steepen the gradient. However, neither happens. A larger payoff raises
+the share at every age proportionally. A payoff that lasts
+longer actually flattens the gradient, as older owners then keep more of the
+efficiency they purchased long ago. Therefore, what separates older owners from younger
+ones is how long ago they bought as well as how often they buy.
+Section~\ref{sec:results-window} takes this up.
+
+
+\begin{figure}[t]
+  \centering
+  \caption[The efficient share of young and old owners when the payoff
+  changes]{{The efficient share of young and old owners when the
+  payoff changes}}\label{fig:mechanisms-payoff}
+  \includegraphics[scale=0.7]{fig-mechanisms-payoff.pdf}
+  \par\smallskip
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    { \textit{Notes:} Each point is a simulation 
+    that changes one parameter while keeping the others at the estimates of
+    Table~\ref{tab:estimates} and allows for  households to reoptimize. A--C owners
+    as a percentage of owners aged 25--34 (vertical) and 65--75
+    (horizontal). Along each dashed line through the origin the share at 25--34
+    is a fixed multiple of the share at 65--75, given at the end of the line;
+    on the 45-degree line the two shares are equal. Comfort value
+    $\eta$ takes three values: none, the estimate of 0.061, and twice the estimate. Retention
+    $\varrho$ takes four values: the estimate of 0.84, 0.88, 0.92, and 0.96.}
+  \end{minipage}
+\end{figure}
+
+\subsection{The purchase window}\label{sec:results-window}
+
+ Section~\ref{sec:results-horizon} shows that the horizon is about the
+same at every age, so the thresholds on which it acts barely change with
+age. The choices themselves can still change, because whether a buyer takes
+an efficient home, or an owner who stays renovates, also depends on how much
+the household consumes, and consumption falls after retirement (panel~(c) of
+Figure~\ref{fig:lifecycle-fit}). Table~\ref{tab:flows-accounting} therefore
+measures the two choices directly. If both are flat in age, the gradient
+must come from how often households buy, and the table checks this too. It follows
+owners from one year to the next
+and records how they enter and leave the stock of efficient homes, per 100
+owners a year. Panel~A shows that at every age the main way in is to buy an
+efficient home: 6.9 per 100 owners at 25--34, 4.1 at 35--64, and 1.9 at
+65--75. Few buyers renovate at purchase, 0.3 to 0.4 per 100 owners.
+Renovating in place adds 1.2 to 1.4 per 100 owners at every age. Buying is
+therefore the only route that falls with age. As it falls, renovating in
+place becomes a larger part of a smaller inflow: 14 percent of the inflow at
+25--34, 24 percent at 35--64, and 36 percent at 65--75. This is why the
+fixed cost of renovating, which a buyer of an efficient home avoids, weighs
+most on older owners (Section~\ref{sec:identification}). On the way out,
+the largest flow at every age is the loss of efficiency: 4.6, 3.5, and 2.3
+per 100 owners.\footnote{ The loss is 18 to 21 percent of the stock in
+the first row, more than $1-\varrho=16$ percent, because it applies to the
+stock after the year's purchases and sales, which includes the homes bought
+that year.} Selling to rent and selling to buy an inefficient home follow.
+Death matters only at 65--75, and even there it removes 0.24 per 100
+owners. The net inflow is 1.5 per 100 owners at 25--34, close to zero at
+35--64, and $-0.5$ at 65--75. The stock of efficient homes grows among young
+owners and shrinks among old ones, because purchases no longer replace what
+wears off.
+
+\begin{table}[!tp]
+  \centering
+  \caption[Flows into and out of efficient ownership, by age]{{Flows
+  into and out of efficient ownership, by age}}\label{tab:flows-accounting}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-flows-accounting}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} Simulated at the estimates of
+      Table~\ref{tab:estimates}. Panel~A: flows per 100
+      owners in the age group a year. The stock is the A--C share of owners
+      at the start of the year. Inflows are households outside the A--C stock
+      at the start of the year. Lost A--C status applies to the stock after
+      the year's purchases and sales, so as a share of the start-of-year
+      stock it exceeds $1-\varrho$. Owners who move from one A--C home to
+      another stay in the stock and are not shown. Panel~B: the inflow is
+      $P(c_b+c_r)+N r$, where $P$ is the number of purchases by renters and
+      owners of D--G homes per 100 owners, $c_b$ and $c_r$ are the shares of
+      those purchases that are of A--C homes and that are renovated at
+      purchase, $N$ is 100 less the stock, and $r$ is the in-place
+      renovation rate of D--G owners. Panel~C: the change in each margin is
+      weighted by the average of the other margins in the two age groups, so
+      the parts add up to 100.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+To find which margin produces the fall in the inflow, we write it as
+\begin{equation*}
+  \text{inflow}=P\,(c_b+c_r)+N\,r,
+\end{equation*}
+where $P$ is the number of purchases by renters and owners of inefficient
+homes per 100 owners, $c_b$ and $c_r$ are the fractions of those purchases
+that are of efficient homes and that are renovated at purchase, $N$ is the
+number of owners of inefficient homes per 100 owners, and $r$ is the
+fraction of them that renovate in place. Purchases by owners of efficient
+homes are left out, since they cannot add to the stock. Panel~B shows that
+$P$ falls from 15.0 at 25--34 to 10.1 at 35--64 and 4.5 at 65--75.  The
+two choices are close to flat, so the fall in consumption with age does not
+undo the flat horizon. Between 40 and 46 percent of
+purchases are of efficient homes at every age, and between 1.4 and 1.7
+percent of owners of inefficient homes renovate in place each year. The
+flat share of efficient purchases is the model's counterpart of Fact~3:
+owners who bought recently live in similarly efficient homes at every age.
+Panel~C decomposes the fall in the inflow from 25--34 to 65--75, 5.05 per
+100 owners, and from 35--64 to 65--75, 2.52 per 100 owners. It evaluates the
+change in each margin at the average of the other margins in the two age
+groups, so the parts add up exactly to the fall. Purchases account for 99
+percent of the first fall and 103 percent of the second. The other margins
+offset one another, and together they account for 1 percent of the first
+fall and $-3$ percent of the second. Owners over 65 renovate in place a
+little less often than those aged 35--64, 1.4 against 1.7 percent, which
+accounts for a tenth of the second fall. But older buyers more often
+renovate at purchase, 6.4 against 4.2 percent of purchases, and with the
+other margins this more than offsets it.\footnote{ The same conclusion holds for the stock. Rebuilding
+the stock year by year from these margins, with purchases held at their rate
+at 25--34, the efficient share at 65--75 would be 25.3 percent instead of
+12.7. Holding any other margin at its rate at 25--34 changes it by at most
+1.1 points. }
+
+The accounting shows where the gradient appears, not why. Purchases are a
+choice, and a short horizon is itself a reason not to move
+(Section~\ref{sec:data}). We therefore change the choices themselves. The
+most direct test closes the window. In the first experiment of
+Table~\ref{tab:mechanisms-window}, efficient homes cannot be bought: a buyer can
+still buy an inefficient home and renovate it at once, and an owner can
+still renovate in place, and households reoptimize. The efficient share
+falls to 6.9, 5.5, and 5.6 percent at 25--34, 35--64, and 65--75, and the gap
+between the youngest and the oldest group shrinks from 9.6 points to 1.3.
+The payoff horizon still differs by age in this economy, but without
+efficient homes to buy almost no gradient remains. Almost all of the
+gradient needs the window, which is the causal counterpart of the
+accounting.
+
+\begin{table}[t]
+  \centering
+  \caption[The efficient share of owners when the window changes]{{The efficient share of owners when the window changes}}\label{tab:mechanisms-window}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-mechanisms-window}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item {\textit{Notes:} Each row changes one element of the
+      model, keeps the other parameters at the estimates of
+      Table~\ref{tab:estimates} (values in parentheses), and lets households
+      reoptimize. Shares are A--C owners as a percentage of owners in each
+      age group, from 65,536 simulated households. The gap is the share at
+      25--34 less the share at 65--75, in percentage points; the ratio is
+      the share at 25--34 over the share at 65--75. No A--C homes for sale: a buyer
+      cannot buy an efficient home, but can still buy an inefficient home and
+      renovate it at once, and an owner can still renovate in place. EHS: the
+      targets of Table~\ref{tab:estimates}.}
+      \item {$^a$All home purchases, by renters and owners, per 100
+      owners aged 65--75 a year.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+If owners who stop buying do not renovate in place instead, something must
+make renovating in place costly relative to buying. In
+equation~\eqref{eq:window} it is the extra one-off cost of renovating in
+place, and the fixed cost $\xi_f$ is part of it. Halving $\xi_f$ narrows the
+threshold gap: the efficient share rises at every age, most at 65--75 (15.0 against
+12.8 percent), where more of the inflow comes from renovating in place, and
+the ratio of the share at 25--34 to the share at 65--75 falls from 1.75 to
+1.57. Without a fixed cost the ratio is 1.36. The fixed cost governs how
+steeply the share falls with age, as Section~\ref{sec:identification}
+argued, but even without it the threshold gap narrows and does not close.
+
+What, then, sets how often older households buy? The last rows of
+Table~\ref{tab:mechanisms-window} vary the strength of the bequest motive,
+$\upsilon$, which is pinned down by the wealth of households over 65
+(Section~\ref{sec:identification}), not by any moment of efficiency. With a
+weak bequest motive, $\upsilon=5$ instead of the estimate
+of 66.5, households aged 65--75 make 23.7 purchases a year per 100 owners
+instead of 6.1, and the gradient reverses: the efficient share is 23.3,
+28.6, and 30.8 percent at 25--34, 35--64, and 65--75. With a strong one,
+$\upsilon=200$, they make 2.8 purchases per 100 owners, and the gap between
+25--34 and 65--75 widens to 22.3 points. The share at 65--75 moves with
+purchases: it rises by a factor of 2.4 when they rise by a factor of 3.9,
+and about halves when they halve. This is what the window predicts. It
+gives the bequest force of Section~\ref{sec:model-forces} a size, and it is
+consistent with the bequest motive shaping the gradient through how often
+the old buy. 
+
+The accounting and the experiment without efficient homes for sale give the
+same answer when efficiency lasts 25 years (Appendices~\ref{app:varrho-accounting} and~\ref{app:varrho-window}). At
+$\varrho=0.96$, with the other parameters at the estimates, purchases account
+for 90 percent of the fall in the inflow from 25--34 to 65--75 and 89 percent
+of the fall from 35--64, against 99 and 103 percent at the estimates
+(Table~\ref{tab:flows-accounting-varrho}). The horizon now has a role: the
+share of purchases that are of efficient homes falls from 58 percent at
+25--34 to 45 percent at 65--75, and this margin, on which the horizon acts,
+accounts for 17 and 13 percent of the two falls. Without efficient homes for
+sale, the gap between 25--34 and 65--75 shrinks from 6.2 points to 1.4,
+against 9.6 to 1.3 at the estimates (Table~\ref{tab:mechanisms-varrho}). The
+gap that remains without the window is about the same at both values of
+$\varrho$. A longer-lasting payoff gives the horizon a role, but the window
+still produces most of the gradient.
+
+The gradient in the model is a purchase gradient. The payoff horizon is
+short at every age, because efficiency wears off, so it hardly differs
+between young and old owners, and the choices on which it acts hardly vary
+with age. Older owners live in less efficient homes because they buy less
+often, and buying is how most efficient homes are acquired. This is what
+Fact~3 shows in the data. The distinction matters for policy. A subsidy that
+lowers the cost of renovating in place narrows the threshold gap, while a
+policy that acts at the point of sale works through the window. Section~\ref{sec:policy}
+compares the two.
+
+% Outline (kept for reference, not typeset):
+% \input{sections-pd6/05-results-outline}

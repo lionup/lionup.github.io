@@ -1,0 +1,141 @@
+% Appendix E -- The decomposition when efficiency lasts longer (draft, 29 October 2026)
+%   tables    replication/output/tables/tab-payoff-horizon-varrho.tex
+%             (code/4-exhibits/tab_payoff_horizon.R),
+%             tab-flows-accounting-varrho0.96.tex (tab_flows_accounting.R -varrho0.96),
+%             tab-mechanisms-varrho.tex (tab_mechanisms.R)
+%   runs      replication/data/model/r0/lifecycle/*-varrho0.96.csv and
+%             *-varrho0.96-disable_efficient_stock_purchase1.csv (simulate_lifecycle.py, CPU)
+%   in-place  25-34, without A-C homes for sale: tab-flows-accounting-varrho0.96-
+%             disable_efficient_stock_purchase1.csv (not a paper table)
+%   parked    whether re-estimating with varrho fixed at 0.96 would change the
+%             decomposition (author, 29 October 2026; to come back to)
+\section{A Longer-Lasting Payoff}\label{app:varrho}
+
+The retention of efficiency $\varrho$ is imprecisely estimated and lies close
+to the lower end of its search range (Section~\ref{sec:estimates}). At the
+estimate, $\varrho=0.84$, an efficient home keeps its rating for about six
+years on average. This appendix repeats the three calculations of
+Section~\ref{sec:results} at $\varrho=0.96$, at which a home keeps its rating
+for 25 years. The other parameters stay at the estimates of
+Table~\ref{tab:estimates}, and households re-optimize. The networks of
+Appendix~\ref{app:computation} take $\varrho$ as an input and were trained
+over its search range, $[0.80,0.99]$, so the model need not be solved again.
+The calculations ask how the decomposition changes when efficiency lasts
+longer, not whether the model still fits the data: at $\varrho=0.96$ the
+efficient share is 43.1, 45.9, and 36.8 percent of owners at 25--34, 35--64,
+and 65--75, about twice the shares in the data.
+
+\subsection{The payoff horizon.}\label{app:varrho-horizon}
+Table~\ref{tab:payoff-horizon-varrho} computes the horizon of
+Section~\ref{sec:results-horizon} at both values of $\varrho$. Column~(1),
+with discounting and survival only, does not depend on $\varrho$. Once the
+loss of efficiency is added, the horizon at 75 is 83 percent of the horizon
+at 25 at the estimate (column~(2)), but 55 percent at $\varrho=0.96$
+(column~(5)): when efficiency lasts, survival starts to matter. Moving undoes
+most of this. With the model's probabilities of moving, the horizon at
+$\varrho=0.96$ is 6.2 years at 25 and 5.4 at 75 (column~(6)); with those in
+Understanding Society it is 6.7 and 7.0 years (column~(7)). Most owners move
+long before a rating that lasts 25 years wears off, so the horizon stays
+short and close to flat in age.
+
+\subsection{The accounting.}\label{app:varrho-accounting}
+Table~\ref{tab:flows-accounting-varrho} repeats
+Table~\ref{tab:flows-accounting} at $\varrho=0.96$. Buying an efficient home
+is still the main way into the stock and the only one that falls steeply
+with age: 8.8 per 100 owners at 25--34, 4.4 at 35--64, and 1.7 at 65--75,
+while renovating in place adds 1.0 to 1.1 at every age (Panel~A). The loss of
+efficiency is now a smaller outflow, 1.5 to 2.1 per 100 owners against 2.3 to
+4.6 at the estimate, so older owners keep more of what they bought when
+young, and the stock falls less with age than the inflow. In Panel~B
+purchases fall from 15.0 per 100 owners at 25--34 to 3.8 at 65--75, close to
+the 15.0 and 4.5 at the estimate. Unlike at the estimate, the share of those
+purchases that are of efficient homes also falls with age, from 58 percent to
+45 percent. Panel~C attributes the fall in the inflow. Purchases account for
+90 percent of the fall from 25--34 and 89 percent of the fall from 35--64,
+against 99 and 103 percent at the estimate. The share of efficient
+purchases, the margin on which the horizon acts, accounts for 17 and 13
+percent. Rebuilt from these margins, the efficient share at 65--75 would be
+72.3 percent instead of 36.8 with purchases held at their rate at 25--34, and
+41.6 percent with the share of efficient purchases held at its rate at
+25--34.
+
+\subsection{Closing the window.}\label{app:varrho-window}
+Table~\ref{tab:mechanisms-varrho} removes efficient homes from the market at
+both values of $\varrho$. A buyer can still buy an inefficient home and
+renovate it at once, an owner can still renovate in place, and households
+re-optimize. At $\varrho=0.96$ the efficient share falls to 13.8, 10.3, and
+12.4 percent at 25--34, 35--64, and 65--75, and the gap between 25--34 and
+65--75 shrinks from 6.2 points to 1.4 (column~(4)). At the estimate it shrinks
+from 9.6 points to 1.3. Households that cannot buy efficiency renovate more:
+at 25--34, renovation in place rises from 1.0 to 1.7 per 100 owners a year,
+and renovation at purchase from 0.3 to 0.6. Yet the gap that remains without
+the window is about the same at both values of $\varrho$. A longer-lasting
+payoff adds little to the part of the gradient that does not run through
+purchases.
+
+The three calculations point the same way as at the estimate. A
+longer-lasting payoff gives the horizon a role, through the share of buyers
+who choose an efficient home, but the window still accounts for most of the
+gradient.
+
+\begin{table}[htbp]
+  \centering
+  \caption[The payoff horizon when efficiency lasts longer]{The
+  payoff horizon when efficiency lasts longer}\label{tab:payoff-horizon-varrho}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-payoff-horizon-varrho}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} The horizon $H_j$ of
+      equation~\eqref{eq:payoff-horizon}, in years, as in
+      Table~\ref{tab:payoff-horizon}. Columns~(1)--(4) are those of
+      Table~\ref{tab:payoff-horizon}, at the estimates. Columns~(5)--(7) set
+      $\varrho=0.96$ and keep the other parameters at the estimates; the
+      model's probability that an owner of an A--C home moves, in
+      column~(6), is from the simulation at $\varrho=0.96$. Column~(1) does
+      not depend on $\varrho$. The last row is the horizon at 75 as a
+      percentage of the horizon at 25.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption[Flows into and out of efficient ownership when efficiency lasts
+  longer]{Flows into and out of efficient ownership when efficiency
+  lasts longer}\label{tab:flows-accounting-varrho}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-flows-accounting-varrho0.96}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} Simulated at $\varrho=0.96$, the other
+      parameters at the estimates of Table~\ref{tab:estimates}, 65,536
+      households, who re-optimize. Rows, panels, and the decomposition as in
+      Table~\ref{tab:flows-accounting}.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+  \centering
+  \caption[The efficient share of owners without efficient homes for
+  sale]{The efficient share of owners without efficient homes for
+  sale}\label{tab:mechanisms-varrho}
+  \begin{threeparttable}
+    \small
+    \pkgtable{tab-mechanisms-varrho}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} Shares, gap, and ratio as in
+      Table~\ref{tab:mechanisms-window}, other parameters at the estimates of
+      Table~\ref{tab:estimates}. No A--C homes for sale: a buyer cannot buy
+      an efficient home, but can still buy an inefficient home and renovate
+      it at once, and an owner can still renovate in place; households
+      re-optimize. EHS: the targets of Table~\ref{tab:estimates}.
+      \item $^a$The rows at $\varrho=0.84$ are those of
+      Table~\ref{tab:mechanisms-window}, simulated on a GPU; the rows at
+      $\varrho=0.96$ are simulated on a CPU. At the estimates the CPU gives
+      shares of 22.5, 17.7, and 12.7 percent; the two differ by simulation
+      noise only.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

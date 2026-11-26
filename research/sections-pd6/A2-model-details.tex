@@ -1,0 +1,109 @@
+% Appendix B -- Model details (draft prose; from the R0 code)
+%   budgets      estimation_epc/model_funcs_estimation_epc.py: outcomes(),
+%                _buy_cost, sell_proceeds_t, _owner_recurring_cost,
+%                _stay_payment_and_balance, _buy_effective_n_rem, _stay_n_rem_next
+%   debt caps    epc_revised/economics.py: buy_terms, stay_min_payment,
+%                permanent_income
+%   82+ group    epc_revised/spec.py (T = 60, recurring_terminal = 1),
+%                simulation horizon 70 periods
+\section{Model Details}\label{app:model}
+
+\subsection{The 82+ group and the simulation.}\label{app:model-terminal}
+The model has 60 ages, $J_0=23$ to $\bar J=82$. The last stands for all
+ages from $\bar J$ on: a household in this group survives each year with
+probability $\phi_{\bar J}$, and its income, equivalence scale, and choice
+set do not change. Its value function is therefore the same every year and
+solves a fixed point. Simulated households are followed for 70 years from
+age $J_0$; those still alive after $\bar J$ follow the policy of age $\bar J$.
+
+\subsection{Mortgages.}\label{app:model-mortgages}
+Let $t_0$ be the efficiency of an owner's current home and
+$B=(1+r_m)m-P(m,n)$ the balance due next year under the existing
+schedule. The rate $r_m$ is the same for all loans. The remaining term falls by one
+each year. A loan taken by a household without a mortgage has term $L$. A
+mover with a positive balance keeps its remaining term, which falls by one
+as for a stayer. When one year remains, the payment
+$P(m,1)=(1+r_m)m$ repays the balance. The repayment schedule continues
+in retirement; there is no interest-only phase.
+
+\emph{Purchase.} A buyer's loan satisfies
+\begin{equation*}
+  m'\leq\min\bigl\{\lambda_Lp^th',\ P^{-1}\bigl(\lambda_Dy^{\mathrm{perm}};\,n'\bigr)\bigr\},
+\end{equation*}
+where $P^{-1}(\cdot;n')$ is the largest balance whose payment over $n'$
+years equals its argument, $n'$ is the term of the new loan, and $y^{\mathrm{perm}}$ is
+gross income with the transitory shock set to one (the pension in
+retirement). For a purchase with renovation, $t=N$. An owner who moves
+also faces
+\begin{equation*}
+  m'\leq B+\max\bigl\{p^th'-p^{t_0}h,\ 0\bigr\}+C(h')\,\ind\{\text{renovates at purchase}\}.
+\end{equation*}
+A mover can therefore borrow for a more valuable home and for a renovation
+at purchase, but cannot take equity out; a move to a home of equal value
+continues the existing schedule.
+
+\emph{Renovation in place.} An owner who renovates in place receives the
+advance
+\begin{equation*}
+  A=\min\bigl\{C(h),\ \max\{K-B,\ 0\}\bigr\},
+  \qquad
+  K=\min\bigl\{\lambda_Lp^Nh,\ P^{-1}\bigl(\lambda_Dy^{\mathrm{perm}};\,\hat n\bigr)\bigr\},
+\end{equation*}
+where $\hat n=n-1$ for an owner with a mortgage and $\hat n=L$ for an owner
+without one. The advance is added to next year's balance and is repaid by
+the existing payoff date. The collateral is the inefficient value of the
+home.
+
+\subsection{Initial conditions.}\label{app:model-initial}
+Households enter at age 23 with the income, liquid wealth, tenure, home
+value, mortgage balance, and remaining term of records of household heads
+aged 20--29 in the Wealth and Assets Survey; Appendix~\ref{app:data-was}
+describes the sample. Records are drawn in proportion to their weights.
+Income in the record sets the permanent component, with a floor, and the
+transitory component starts at one. Negative net financial wealth is set
+to zero, since the model has no unsecured debt. An owner's home size is its
+value in the record, kept within the limits $[\underline h^{\mathrm{own}},\bar
+h^{\mathrm{own}}]$. An owner is placed in an efficient home with
+probability $\pi^R_0$; the market value of its home is kept, so the size
+of an efficient home is its value divided by $p^R$.
+
+\subsection{Budget constraints.}\label{app:model-budgets}
+Let $x$ be cash on hand. Consumption is the residual in each budget
+constraint below.
+
+\emph{Renting.} A renter who keeps renting, or an owner who sells and
+rents, pays
+\begin{equation*}
+  c+b'+\bigl[p^{\mathrm{rent}}+\pi_Re^R+(1-\pi_R)e^N\bigr]h'=x+S,
+\end{equation*}
+where $S=0$ for a renter and, for an owner who sells, $S$ is the sale
+proceeds
+\begin{equation*}
+  S=(1-\delta_h-\zeta_s)\,p^{t_0}h-(1+r_m)m.
+\end{equation*}
+The seller pays the year's maintenance on the home it sells and repays the
+mortgage in full. Rental size lies between $\underline h^{\mathrm{rent}}$ and
+$\bar h^{\mathrm{rent}}$.
+
+\emph{Buying.} A household that buys a home of size $h'$ and state $t$
+pays
+\begin{equation*}
+  c+b'+(1+\zeta_b)\,p^th'+e^th'=x+S+m'.
+\end{equation*}
+A household that buys an inefficient home and renovates it pays
+$(1+\zeta_b)p^Nh'+C(h')+e^Rh'$ for the home, the work, and the energy bill.
+A buyer pays the energy bill of the new home in the year of purchase and no
+maintenance on it until the next year.
+
+\emph{Staying.} An owner who stays pays
+\begin{equation*}
+  c+b'+\tilde P+\delta_hp^{t_0}h+e^{t_0}h=x,
+  \qquad
+  P(m,n)\leq\tilde P\leq(1+r_m)m,
+\end{equation*}
+and its balance next year is $m'=(1+r_m)m-\tilde P$. An owner who
+renovates in place also pays $C(h)$, and the lower limit on its payment
+falls to $P(m,n)-A$, where $A$ is the renovation advance of
+Appendix~\ref{app:model-mortgages}.
+In the year of the renovation it pays maintenance and the energy bill of
+an inefficient home, and it receives the services of an efficient home.

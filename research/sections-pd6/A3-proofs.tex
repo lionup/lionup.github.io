@@ -1,0 +1,332 @@
+% Appendix C -- The simplified model of Section 3.3: proofs (draft prose)
+%   source: model-codes/codes/epc-lifecycle-deep-learning/notes/
+%           stylized-mechanism-2026-10-16/phase-regions.tex, Appendix A
+%   timing  estimation_epc/model_funcs_estimation_epc.py: bequest_value
+%           (estate at the end-of-year price), reward (util + (1-surv) g),
+%           renovate in place pays the inefficient bill that year,
+%           renovate-at-buy and buy-efficient pay the efficient bill at once
+\section{The Simplified Model: Proofs}\label{app:proofs}
+
+\paragraph{Setup.}
+We use the simplified model of Section~\ref{sec:model-forces}. We suppress
+the parts of the state that do not change, and write $V_{j+1}(a,t)$ for the
+value next year, before the taste shocks are drawn, of an owner of a home
+of type $t$ that leaves this year with financial wealth $a$, saving less
+mortgage. Next year the owner draws one shock for keeping its home and one
+for selling it, distributed as in Section~\ref{sec:model-problem}. Let
+$Q^k_{j+1}(a,t)$ be the value of keeping the home: that of Stay for an
+efficient home, and the higher of $Q^{\mathrm{stay},N}_{j+1}$ and
+$Q^{\mathrm{stay},R}_{j+1}$ for an inefficient one. Let $Q^m_{j+1}(a,t)$ be the value of selling,
+the highest value among the alternatives that sell the home. Then
+\begin{equation}
+  V_{j+1}=\sigma_\varepsilon\log\Bigl[\exp\bigl(Q^k_{j+1}/\sigma_\varepsilon\bigr)
+  +\exp\bigl(Q^m_{j+1}/\sigma_\varepsilon\bigr)\Bigr],
+  \label{eq:app-logsum}
+\end{equation}
+and the owner keeps its home with probability
+$\partial V_{j+1}/\partial Q^k_{j+1}$. $V'_{j+1}$ is the marginal value of
+cash on hand next year, so that $\partial V_{j+1}/\partial a=(1+r)V'_{j+1}$,
+where $r$ is the rate on the asset the household adjusts at the margin; we
+write $V'^{\,k}_{j+1}$ and $V'^{\,m}_{j+1}$ for its values in the two
+branches. When the household can adjust
+that asset without hitting a borrowing limit, its Euler equation is
+\begin{equation}
+  u_c=\beta\phi_j(1+r)V'_{j+1}+(1-\phi_j)\,g',
+  \label{eq:app-euler}
+\end{equation}
+since by equation~\eqref{eq:end-value} the estate is not discounted. With
+$\tilde\phi_j$ from equation~\eqref{eq:phi-tilde}, this gives
+$\tilde\phi_j=\beta\phi_j(1+r)V'_{j+1}/u_c$,
+$1-\tilde\phi_j=(1-\phi_j)g'/u_c$, and
+$\tilde\phi_j\Lambda=\beta\phi_j\varrho V'_{j+1}/u_c$. We write $R_s\equiv(1-\delta_h-\zeta_s)\Delta p$ for what the efficient
+state adds to the proceeds of a sale, and $q\equiv\tilde\phi\Lambda$.
+
+\paragraph{Outline.}
+The proof of Proposition~\ref{prop:inplace} compares renovating this year
+with renovating next year. Lemma~\ref{lem:decomp} writes the gain from
+renovating now as this year's comfort, less the cost, plus the value of the
+efficient state next year. Lemma~\ref{lem:match} bounds that value. An owner
+of the inefficient home can match an efficient owner next year: if the
+efficient owner keeps its home, by renovating, which costs $\overline C$
+more; if it sells, by selling too, with $R_s$ less. Whether an owner sells
+can itself depend on whether its home is efficient. But the owners whose
+choice turns on efficiency are close to indifferent between keeping and
+selling, so to first order the state is worth the same to them either way.
+
+The proof of Proposition~\ref{prop:buy} compares the buyer with an owner of
+the inefficient home who lives as the buyer does, but without the state. It
+needs no proviso about renovating later. The state is cheaper to buy than
+to make, $\overline C_b<C(h')+\Delta e'-\delta_h\Delta p'$, so near the
+buyer's threshold an owner of the inefficient home would not renovate it.
+
+\paragraph{Two routes, one horizon.}
+Let $\mathcal C$ be the extra cost in the year the household gets the
+efficient state, over the extra cost of holding it for a year:
+$\mathcal C=\overline C$ in place and $\mathcal C=\overline C_b$ at a
+purchase. Rearranged, conditions \eqref{eq:rule-inplace}
+and~\eqref{eq:rule-buy} both say that the household gets the efficient
+state if and only if
+\begin{equation}
+  \theta c+(\Delta e-\delta_h\Delta p)+(1-\tilde\phi)\,\Delta p
+  +\tilde\phi\,(1-\mu)\,\Lambda\,(1-\delta_h-\zeta_s)\Delta p
+  \;\ge\;\frac{\mathcal C}{\widetilde H},
+  \qquad
+  \widetilde H\equiv\frac{1}{1-\tilde\phi\Lambda\mu},
+  \label{eq:common}
+\end{equation}
+with $\theta$, $\Delta e$, and $\Delta p$ those of the home concerned. The
+left side is what the efficient state yields in a year: the comfort, the
+bill saving net of the maintenance on the premium, the premium that the
+heirs receive if the owner dies, and the premium net of costs that the
+owner receives if it moves. The right side spreads the cost $\mathcal C$
+over the horizon $\widetilde H$. At constant parameters
+$H_j=1/(1-\beta\phi\varrho\mu)$ in equation~\eqref{eq:payoff-horizon},
+while $\tilde\phi\Lambda=\beta\phi\varrho V'_{j+1}/u_c$ by the Euler
+equation. So $\widetilde H$ is $H_j$ with next year weighted by its
+marginal utility relative to this year. The two routes face the same
+horizon, but spread different costs over it.
+
+\begin{lemma}[Decomposition]\label{lem:decomp}
+Take an owner of an inefficient home of size $h$ at age $j$ that keeps its
+home this year. Let $c$ and $a'$ be its consumption and end-of-year
+wealth if it does not renovate, $C\equiv C(h)$, and suppose that it can reduce $a'$ by
+$C$ at the rate $r$. Then $G_j\equiv Q_j^{\mathrm{stay},R}-Q_j^{\mathrm{stay},N}$
+satisfies, to first order,
+\begin{equation}
+  \frac{G_j}{u_c}\approx\theta c-C+\tilde\phi_j\Lambda D_{j+1}
+  +(1-\tilde\phi_j)\Delta p,
+  \qquad
+  D_{j+1}\equiv\frac{V_{j+1}(a'-C,R)-V_{j+1}(a'-C,N)}{V'_{j+1}},
+  \label{eq:app-decomp}
+\end{equation}
+where $D_{j+1}$ is the money value of being efficient next year.
+\end{lemma}
+
+\begin{proof}
+If it does not renovate, $Q_j^{\mathrm{stay},N}=u_j(c,s_N)+(1-\phi_j)g(a'+p^Nh)
++\beta\phi_jV_{j+1}(a',N)$. Renovating, consuming $c$, and leaving the year
+with $a'-C$ is feasible. In the year of the work the renovator receives
+$s_R$ and pays the inefficient bill and maintenance
+(Appendix~\ref{app:model-budgets}). If it dies, the estate values the home
+at $p^Rh$. If it survives, the home is efficient next year with probability
+$\varrho$. So
+\begin{multline*}
+  G_j\ge\bigl[u_j(c,s_R)-u_j(c,s_N)\bigr]
+  -\bigl[(1-\phi_j)\bigl(g(a'+p^Nh)-g(a'-C+p^Nh)\bigr)
+  +\beta\phi_j\bigl(V_{j+1}(a',N)-V_{j+1}(a'-C,N)\bigr)\bigr]\\
+  +\beta\phi_j\varrho\bigl[V_{j+1}(a'-C,R)-V_{j+1}(a'-C,N)\bigr]
+  +(1-\phi_j)\bigl[g(a'-C+p^Rh)-g(a'-C+p^Nh)\bigr].
+\end{multline*}
+To first order the four terms are $u_c\theta c$, $-Cu_c$ by the Euler
+equation~\eqref{eq:app-euler}, $\beta\phi_j\varrho V'_{j+1}D_{j+1}
+=u_c\tilde\phi_j\Lambda D_{j+1}$, and $(1-\phi_j)g'\Delta p
+=u_c(1-\tilde\phi_j)\Delta p$. The renovator's best allocation differs from
+$(c,a'-C)$ by a first-order amount, so by the envelope theorem the
+inequality holds with equality to first order.
+\end{proof}
+
+\begin{lemma}[Matching]\label{lem:match}
+Let
+\begin{equation*}
+  D^k\equiv\frac{Q^k_{j+1}(a,R)-Q^k_{j+1}(a,N)}{V'^{\,k}_{j+1}},
+  \qquad
+  D^m\equiv\frac{Q^m_{j+1}(a,R)-Q^m_{j+1}(a,N)}{V'^{\,m}_{j+1}}
+\end{equation*}
+be the money values of the efficient state next year to an owner that
+keeps its home and to one that sells it. To first order:
+\begin{enumerate}[label=(\roman*)]
+\item $D_{j+1}=\mu_{j+1}D^k+(1-\mu_{j+1})D^m$, where $\mu_{j+1}$ is the
+  probability of keeping the home, averaged between the inefficient and
+  the efficient state and weighted by marginal utility;
+\item $D^k\le\overline C$, with equality if an owner of the inefficient
+  home that keeps it would renovate it;
+\item $D^m=R_s$;
+\item $D_{j+1}\le U_{j+1}$, the money value of the state along the
+  efficient owner's path: the comfort and the bill saving net of
+  maintenance in each year it holds the state, the premium its heirs
+  receive if it dies, and $R_s$ if it sells. Equality holds if an owner of
+  the inefficient home would never renovate it.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) By \eqref{eq:app-logsum}, the derivatives of $V_{j+1}$ with respect to
+$Q^k_{j+1}$ and $Q^m_{j+1}$ are the probabilities of keeping and of selling
+the home. Integrating along the line from the values of the inefficient
+state to those of the efficient one gives, exactly,
+\begin{equation*}
+  V_{j+1}(a,R)-V_{j+1}(a,N)=\bar\mu\bigl[Q^k_{j+1}(a,R)-Q^k_{j+1}(a,N)\bigr]
+  +(1-\bar\mu)\bigl[Q^m_{j+1}(a,R)-Q^m_{j+1}(a,N)\bigr],
+\end{equation*}
+where $\bar\mu$ is the probability of keeping the home averaged along the
+line. Dividing by $V'_{j+1}$ gives (i), with
+$\mu_{j+1}=\bar\mu V'^{\,k}_{j+1}/\bigl[\bar\mu V'^{\,k}_{j+1}+(1-\bar\mu)V'^{\,m}_{j+1}\bigr]$;
+the denominator differs from $V'_{j+1}$ by a first-order amount, which
+multiplies a first-order term. The probabilities of keeping the home in the
+two states also differ by a first-order amount, so to first order it does
+not matter at which state they are taken. (ii) An owner of the
+inefficient home that keeps it can renovate and live as an efficient owner
+that stays. It gets the same services $s_R$ and the same home next year,
+and its borrowing limit is no tighter, since it may borrow for the work.
+It pays $C+(\delta_hp^N+e^N)h$ instead of $(\delta_hp^R+e^R)h$, that is,
+$\overline C$ more. So $D^k\le\overline C$, with equality when this is its
+best choice. (iii) An efficient home adds $R_s$ to the proceeds of a sale
+(Appendix~\ref{app:model-budgets}), and after the sale the two owners face
+the same choices. (iv) An owner of the inefficient home can follow the
+efficient owner's path: given the same taste shocks, it keeps or sells its
+home when the efficient owner does, with the same consumption, but without
+the state. Its taste shocks are then the same, so to first order this
+costs it $U_{j+1}$, computed with the efficient owner's probabilities of
+keeping its home. So $D_{j+1}\le U_{j+1}$, with equality when never
+renovating is its best choice; its own choices between keeping and selling
+then differ from the efficient owner's only at the margin, where they cost
+nothing to first order.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:inplace}]
+Let $\ell_{j+1}\equiv\overline C-D_{j+1}$. Substituting
+$D_{j+1}=\overline C-\ell_{j+1}$ in \eqref{eq:app-decomp},
+\begin{equation}
+  \frac{G_j}{u_c}\approx\theta c-\bigl(C-\Lambda\overline C\bigr)
+  -(1-\tilde\phi_j)\bigl(\Lambda\overline C-\Delta p\bigr)
+  -\tilde\phi_j\Lambda\,\ell_{j+1}.
+  \label{eq:app-gap}
+\end{equation}
+By Lemma~\ref{lem:match}(i)--(iii),
+$\ell_{j+1}=\mu_{j+1}(\overline C-D^k)+(1-\mu_{j+1})\ell\ge(1-\mu_{j+1})\ell$,
+so $G_j\ge0$ implies \eqref{eq:rule-inplace}. Under the proviso,
+$D^k=\overline C$ and $\ell_{j+1}=(1-\mu_{j+1})\ell$, so \eqref{eq:app-gap}
+has the sign of \eqref{eq:rule-inplace}, which is then also sufficient.
+\end{proof}
+
+\begin{remark}[Constant parameters]\label{rem:constant}
+Suppose that $\tilde\phi$, $\mu$, $\Lambda$, and consumption are constant
+over the following years, and that no borrowing limit binds. Then
+\eqref{eq:rule-inplace} is necessary and sufficient without the proviso.
+Let $Z\equiv\theta c+(\Delta e-\delta_h\Delta p)+(1-\tilde\phi)\Delta p$,
+the yield of the state in a year in which the owner keeps it. Since
+$\theta c-C+(1-\tilde\phi)\Delta p=Z-\overline C$, \eqref{eq:app-decomp}
+reads $G_j/u_c\approx Z-\overline C+qD_{j+1}$. Next year, an owner of the
+inefficient home can renovate the first time it keeps its home, which values the
+state at $\overline D\equiv\mu\overline C+(1-\mu)R_s$; never renovate,
+which values it at $U$ with $U=\mu(Z+qU)+(1-\mu)R_s$; or renovate after
+$k$ years, which values it at $U+(\mu q)^k(\overline D-U)$. It takes the
+best of these, so $D_{j+1}=\min\{U,\overline D\}$. Let
+$E\equiv Z-(1-\mu q)\overline C+q(1-\mu)R_s$; $E\ge0$ is
+\eqref{eq:common} with $\mathcal C=\overline C$, that is,
+\eqref{eq:rule-inplace} rearranged. If $D_{j+1}=\overline D$, then
+$G_j/u_c\approx E$. If $D_{j+1}=U$, then
+$(1-\mu q)\,G_j/u_c\approx(1-\mu q)(Z-\overline C)+q\bigl[\mu Z+(1-\mu)R_s\bigr]=E$.
+Either way $G_j$ has the sign of $E$.
+\end{remark}
+
+\begin{proof}[Proof of Proposition~\ref{prop:buy}]
+Write $R_s'\equiv(1-\delta_h-\zeta_s)\Delta p'$,
+$Z'\equiv\theta'c+(\Delta e'-\delta_h\Delta p')+(1-\tilde\phi)\Delta p'$,
+and $\overline C'\equiv C(h')+\Delta e'-\delta_h\Delta p'$ for the in-place
+cost of $h'$. Compare the two purchases at the consumption $c$ and the size
+$h'$ of the buyer of the inefficient home. Getting the state costs $C_b$
+more this year and saves the bill $\Delta e'$, so the buyer of the state
+leaves the year with $C_b-\Delta e'$ less. If it dies, the estate values
+the home at $p^Rh'$. As in Lemma~\ref{lem:decomp}, to first order the gain
+$G_b\equiv Q_j^{\mathrm{buy},R}-Q_j^{\mathrm{buy},N}$ satisfies
+\begin{equation*}
+  \frac{G_b}{u_c}\approx\theta'c+\Delta e'-C_b+qD'+(1-\tilde\phi)\Delta p'
+  =Z'-\overline C_b+qD',
+\end{equation*}
+where $D'$ is the money value of the state next year. As in
+Remark~\ref{rem:constant}, an owner of the inefficient home $h'$ can
+renovate it the first time it keeps it, which values the state at
+$\overline D'\equiv\mu\overline C'+(1-\mu)R_s'$, or never renovate it, which
+values it at $U'=[\mu Z'+(1-\mu)R_s']/(1-\mu q)$, or wait; so
+$D'=\min\{U',\overline D'\}$. Both $Z'$ and $U'$ rise with $c$, so $G_b$ is
+continuous and strictly increasing in $c$. Where $D'=U'$,
+\begin{equation*}
+  (1-\mu q)\,\frac{G_b}{u_c}\approx
+  E_b\equiv Z'-(1-\mu q)\overline C_b+q(1-\mu)R_s',
+\end{equation*}
+and $E_b\ge0$ is \eqref{eq:common} with $\mathcal C=\overline C_b$, that
+is, \eqref{eq:rule-buy} rearranged. At the consumption where $E_b=0$,
+$U'=\mu\overline C_b+(1-\mu)R_s'\le\overline D'$, since
+$\overline C_b\le C(h')-\delta_h\Delta p'<\overline C'$. So $D'=U'$ and
+$G_b=0$ there. As $G_b$ and $E_b$ both increase in $c$, $G_b\ge0$ if and
+only if $E_b\ge0$.
+\end{proof}
+
+\begin{lemma}[The payoff horizon]\label{lem:horizon}
+Let a household buy a home of size $h'$ at age $j$, and let
+$\tilde\phi_{j+k}$, $\Lambda_{j+k}$, $\mu_{j+k+1}$, and $c_{j+k}$ vary with
+$k$. Suppose that an owner of the inefficient home $h'$ would never
+renovate it, and that no borrowing limit binds. Let $P_0=1$ and
+$P_k=\prod_{i<k}\tilde\phi_{j+i}\Lambda_{j+i}\mu_{j+i+1}$, the discounted
+probability of still holding the state $k$ years after the purchase. Then,
+to first order, the household buys the home efficient if and only if
+\begin{equation*}
+  \sum_{k\ge0}P_k\Bigl[\theta'c_{j+k}+(\Delta e'-\delta_h\Delta p')
+  +(1-\tilde\phi_{j+k})\Delta p'
+  +\tilde\phi_{j+k}\Lambda_{j+k}(1-\mu_{j+k+1})R_s'\Bigr]
+  \;\ge\;\overline C_b.
+\end{equation*}
+The weights sum to $\widetilde H_j\equiv\sum_kP_k$. Since
+$\tilde\phi_{j+i}\Lambda_{j+i}=\beta\phi_{j+i}\varrho V'_{j+i+1}/u_{c,j+i}$
+and $V'_{j+i+1}\approx u_{c,j+i+1}$,
+\begin{equation*}
+  P_k\approx\beta^k\Bigl(\prod_{i<k}\phi_{j+i}\,\varrho\,\mu_{j+i+1}\Bigr)
+  \frac{u_{c,j+k}}{u_{c,j}},
+\end{equation*}
+so $\widetilde H_j$ is the payoff horizon $H_j$ of
+equation~\eqref{eq:payoff-horizon}, with each year weighted by its marginal
+utility relative to the year of purchase. At constant parameters the
+condition is \eqref{eq:common} with $\mathcal C=\overline C_b$.
+\end{lemma}
+
+\begin{proof}
+Write $Z_{j+k}$ for the first three terms in the bracket and
+$q_{j+k}\equiv\tilde\phi_{j+k}\Lambda_{j+k}$. As in the proof of
+Proposition~\ref{prop:buy}, $G_b/u_c\approx Z_j-\overline C_b+q_jD'_{j+1}$,
+and under the assumptions $D'_{j+1}=U'_{j+1}$ by
+Lemma~\ref{lem:match}(iv), where
+$U'_{j+k}=\mu_{j+k}\bigl(Z_{j+k}+q_{j+k}U'_{j+k+1}\bigr)+(1-\mu_{j+k})R_s'$.
+Substituting forward, and since $P_k\to0$,
+$q_jU'_{j+1}=\sum_{k\ge1}P_kZ_{j+k}+\sum_{k\ge0}P_kq_{j+k}(1-\mu_{j+k+1})R_s'$.
+Adding $Z_j-\overline C_b$ gives the condition.
+\end{proof}
+
+\begin{proof}[Proof of Proposition~\ref{prop:window}]
+Under the assumptions of Proposition~\ref{prop:buy}, the in-place condition
+\eqref{eq:rule-inplace} is necessary and sufficient by
+Remark~\ref{rem:constant}. So the thresholds $c_j^*$ and $c_b^*$ are the
+consumption at which \eqref{eq:common} holds with equality, with
+$\mathcal C=\overline C$ and $\mathcal C=\overline C_b$, and
+$\theta c^*=(1-\tilde\phi\Lambda\mu)\,\mathcal C-(\Delta e-\delta_h\Delta p)
+-(1-\tilde\phi)\Delta p-\tilde\phi(1-\mu)\Lambda R_s$.
+A higher probability of moving lowers $\mu$, and a higher probability of
+dying lowers $\tilde\phi$.
+
+\emph{Moving.} The derivative of $c^*$ in $1-\mu$ is
+$\tilde\phi\Lambda(\mathcal C-R_s)/\theta$, and $\mathcal C-R_s$ is $\ell$
+in place and $\ell_b$ at a purchase. Since $C_b\le(1+\zeta_b)\Delta p'$,
+$\ell_b\le(\zeta_b+\zeta_s)\Delta p'$.
+
+\emph{Death.} The derivative of $c^*$ in $1-\tilde\phi$ is
+$[\Lambda(\mu\mathcal C+(1-\mu)R_s)-\Delta p]/\theta$. Here
+$\Lambda(\mu\mathcal C+(1-\mu)R_s)$ is what the state is worth to the owner
+alive next year, by Lemma~\ref{lem:match} in place and by the proof of
+Proposition~\ref{prop:buy} at a purchase, and $\Delta p$ is what the heirs
+receive. In place the derivative is at least
+$(\Lambda\mu\overline C-\Delta p)/\theta$, which is positive under the
+condition of part~(a). At a purchase,
+$\mu\overline C_b+(1-\mu)R_s'\le(1+\zeta_b-\delta_h)\Delta p'$, since
+$\overline C_b\le(1+\zeta_b-\delta_h)\Delta p'$ and $R_s'<\Delta p'$. So
+the derivative is at most $[\Lambda(1+\zeta_b-\delta_h)-1]\Delta p'/\theta'$,
+which is negative under the condition of part~(b). As $\Lambda\le\varrho$,
+that condition holds when $\varrho<1/(1+\zeta_b-\delta_h)=0.981$.
+
+\emph{The gap.} With $h'=h$,
+$\theta(c^*_j-c^*_b)=(\overline C-\overline C_b)/\widetilde H$ and
+$\overline C-\overline C_b=C(h)-C_b+\Delta e>0$, since $C_b\le C(h)$. And
+$1/\widetilde H=1-\tilde\phi\Lambda\mu$ falls in $\tilde\phi$ and $\mu$. A
+household with $c_b^*\le c<c_j^*$ would not renovate in place by
+Proposition~\ref{prop:inplace}, and would take an efficient home at a
+purchase by Proposition~\ref{prop:buy}.
+\end{proof}

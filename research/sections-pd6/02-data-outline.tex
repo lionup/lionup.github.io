@@ -1,0 +1,333 @@
+% Section 2 -- Data (outline: paragraphs and what each must say; no prose yet)
+%
+% Numbers below are from the replication package:
+%   Fig. 1   replication/output/figures/fig-ehs-age-gradient.csv (owners rows)
+%   Table 2  replication/output/tables/tab-vintage-gradient.csv
+%   Table 3  replication/output/tables/tab-epc-transitions.csv
+%   Fig. 4   replication/output/figures/fig-abc-years-since-purchase.csv
+%   recent buyers   replication/data/moments/ehs_recent_buyer_data_moments.md
+%   owner moves     replication/data/moments/ukhls_owner_mobility.csv
+%   sale split      replication/data/moments/epc_transaction_hazards.csv
+\section{Data}\label{sec:data}
+
+\outpara{Section opening}
+\begin{itemize}
+  \item What the section does: describes the data, defines energy efficiency,
+    and documents three facts that the model must reproduce or respect.
+  \item The three facts in one line each: (i) older owners live in less
+    efficient homes, also within the stock built by 1990; (ii) a home's
+    efficiency status changes in both directions over time; (iii) efficiency
+    is tied to when the owner bought, and older owners bought long ago.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Data sources and samples.}
+
+\outpara{English Housing Survey (main source for the facts)}
+\begin{itemize}
+  \item Interview plus a physical inspection of the dwelling by a surveyor;
+    the inspection gives the SAP rating and the EPC band (defined in
+    Section~\ref{sec:data-epc}).
+  \item Waves used: interview sample 2011--12 to 2019--20; the physical
+    sample with the EPC band in five waves (2011--12, 2012--13, 2014--15,
+    2016--17, 2019--20). Survey weights throughout.
+  \item Exact age of the household reference person exists only in the
+    2011--13 waves, so the 65--75 group uses two waves; other groups use
+    five. This is why Figure~\ref{fig:ehs-age-gradient} uses 65+ while
+    Table~\ref{tab:vintage-gradient} uses 65--75.
+  \item Each wave gets equal weight in a pooled moment (not weighted by
+    sample size).
+  \item Cite: \addref{DLUHC/MHCLG, English Housing Survey, UK Data Service
+    study numbers for each wave}.
+\end{itemize}
+
+\outpara{EPC register (transitions)}
+\begin{itemize}
+  \item All Energy Performance Certificates (Section~\ref{sec:data-epc})
+    lodged for dwellings in England and Wales; repeated
+    certificates for the same address give transitions between bands.
+  \item Sample: owner-occupied dwellings, consecutive certificate pairs;
+    construction era from the certificate; size of the sample (pairs from
+    Table~\ref{tab:epc-transitions}).
+  \item Selection: certificates are lodged mainly at sale or letting, so the
+    register over-represents homes around transactions; it is not a random
+    sample of the stock.
+  \item \open{check in Appendix A1 how ``at sale'' is identified: the EPC
+    transaction-type field or a link to HM Land Registry Price Paid data}
+  \item Cite: \addref{DLUHC, Energy Performance of Buildings Register
+    (domestic), access date}.
+\end{itemize}
+
+\outpara{Other sources used in the model}
+\begin{itemize}
+  \item One or two sentences only; details in Section~\ref{sec:estimation}
+    and Appendix A1.
+  \item Wealth and Assets Survey: balance sheets, housing wealth, liquid
+    wealth; targets and initial conditions.
+  \item Understanding Society: earnings process; owners' moving rates by age
+    (used in Section~\ref{sec:results}).
+  \item ONS life tables (2015--17), energy prices (DESNZ) with EPC-register
+    energy costs for bills; HM Land Registry Price Paid for the price
+    premium of an efficient home.
+  \item Cite: \addref{ONS, Wealth and Assets Survey, UKDS SN 7215};
+    \addref{University of Essex, ISER, Understanding Society, UKDS SN 6614};
+    \addref{ONS national life tables 2015--17}; \addref{DESNZ, Quarterly
+    Energy Prices}; \addref{HM Land Registry, Price Paid Data}.
+  \item Table~\ref{tab:data-sources}: one row per source (coverage, variables
+    used, role in the paper).
+\end{itemize}
+
+\begin{table}[t]
+  \centering
+  \caption{Data sources}\label{tab:data-sources}
+  \open{to build by hand: one row per source -- EHS, EPC register, WAS,
+  Understanding Society, ONS life tables, DESNZ energy prices, Price Paid;
+  columns: coverage and years, variables used, role (facts, targets,
+  calibration, validation). Update the pd-5 version: add the Understanding
+  Society moving rates, the energy-bill calibration and Price Paid.}
+\end{table}
+
+\outpara{Common definitions}
+\begin{itemize}
+  \item Unit: owner-occupier households; age is the age of the household
+    reference person, grouped 25--34, 35--64 and 65--75.
+  \item ``Homes built by 1990'': construction year $\le 1990$ in the EPC
+    register; dwelling-age bands up to 1981--90 in the EHS.
+  \item Why restrict to that stock: newer homes are efficient because of
+    building standards at construction, not because of owners' choices; the
+    model holds a fixed stock of older homes whose status owners change.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Measuring energy efficiency.}\label{sec:data-epc}
+
+\outpara{The Energy Performance Certificate}
+\begin{itemize}
+  \item An EPC rates a dwelling's modelled energy performance from the SAP
+    rating, on seven bands from A (best) to G (worst).
+  \item It is an engineering assessment of the building, not metered
+    consumption; it does not depend on how the occupants use energy.
+  \item A certificate is required when a dwelling is built, sold or let, and
+    is valid for ten years \citep{govuk_epc_guide}.
+  \item Cite: \citet{govuk_epc_guide}; \addref{SAP methodology (BRE, the
+    Standard Assessment Procedure, version used in the waves)}.
+\end{itemize}
+
+\outpara{Why we use the A--C threshold}
+\begin{itemize}
+  \item We classify bands A--C as efficient and D--G as inefficient; this is
+    the binary state in the model (Section~\ref{sec:model}).
+  \item Policy relevance: the UK goal is for as many homes as possible to
+    reach band C by 2035.
+    \addref{HM Government (2017), Clean Growth Strategy; HM Government
+    (2021), Heat and Buildings Strategy}
+  \item The rating matters to buyers: EPC bands are capitalised in English
+    house prices. \addref{Fuerst, McAllister, Nanda and Wyatt (2015), Energy
+    Economics}
+  \item Most homes that cross the threshold upward land in band C (appendix
+    Figure~\ref{fig:epc-transition-matrix}), so the binary split loses
+    little.
+  \item Caveat to state once here: a change in band can reflect physical
+    work, a new assessor or a change in the assessment method; ratings
+    bunch at band thresholds. \addref{evidence on EPC bunching at band
+    thresholds, e.g.\ Collins and Curtis (2018) or Comerford, Lange and Moro
+    (2018); verify before citing}
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Fact 1: older owners live in less efficient homes.}
+
+\outpara{The age gradient, with controls (Figure~\ref{fig:ehs-age-gradient})}
+\begin{itemize}
+  \item Regression of log energy inefficiency (from the SAP rating) on
+    age-group indicators; owner-occupiers; reference group 25--34;
+    $N = 34{,}767$; standard errors clustered by dwelling age $\times$ region
+    (81 clusters).
+  \item Owners 65+ live in homes 13.9\% less efficient than owners 25--34
+    without controls, 10.7\% with household and dwelling controls (floor
+    area, income, household size and type, dwelling age, labour-force
+    status), 11.1\% adding year and region fixed effects.
+  \item The gradient rises steadily with age in all three specifications.
+  \item Controls absorb only part of it: the gradient is not explained by
+    size, income or dwelling age.
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics{fig-ehs-age-gradient.pdf}
+  \caption{The age gradient in energy inefficiency, owner-occupiers}
+  \label{fig:ehs-age-gradient}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Notes:} \open{to write: sample (owners, EHS 2011--12 to
+    2019--20), outcome, the three specifications and their markers,
+    confidence intervals, clustering.}
+  \end{minipage}
+\end{figure}
+
+\outpara{The gradient within the stock built by 1990 (Table~\ref{tab:vintage-gradient})}
+\begin{itemize}
+  \item A--C share among all owned homes: 0.379 at 25--34, 0.250 at
+    35--64, 0.133 at 65--75.
+  \item Part of this is vintage: 29.0\% of young owners live in a home built
+    after 1990, against 9.3\% of owners 65--75.
+  \item Within homes built by 1990 the gradient remains: 0.210, 0.169,
+    0.097; young owners are more than twice as likely as owners 65--75 to
+    live in an A--C home.
+  \item These three shares are the efficiency targets of the estimation
+    (Section~\ref{sec:estimation}).
+\end{itemize}
+
+\begin{table}[t]
+  \centering
+  \caption{Energy efficiency and dwelling vintage by age, owner-occupiers}
+  \label{tab:vintage-gradient}
+  \begin{threeparttable}
+    \pkgtable{tab-vintage-gradient}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} \open{to write: EHS waves and weights; the
+      65--75 row uses the two waves with exact age; the last column is the
+      estimation target.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\outpara{What the cross-section does and does not show}
+\begin{itemize}
+  \item A cross-section mixes age with cohort, selective moving and
+    mortality, and unobserved differences between homes.
+  \item We do not read the gradient as the causal effect of ageing; the
+    model gives the structure that separates these channels.
+  \item Bridge to Fact 2: to understand how the gradient arises we need to
+    know how a home's status changes over time.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Fact 2: efficiency status changes in both directions.}
+
+\outpara{Transition rates between certificates (Table~\ref{tab:epc-transitions})}
+\begin{itemize}
+  \item Consecutive certificates for the same owner-occupied home, converted
+    to annual rates.
+  \item Homes built by 1990: 6.9\% of D--G homes a year move to A--C
+    (1,295,552 pairs); 15.2\% of A--C homes a year move back to D--G
+    (171,041 pairs).
+  \item Homes built after 1990: upgrades more frequent (11.9\%), downgrades
+    rarer (5.8\%).
+  \item Being A--C is therefore not a permanent property of an older home.
+\end{itemize}
+
+\begin{table}[t]
+  \centering
+  \caption{Transitions across the efficiency threshold between EPC
+  certificates, owner-occupied homes}\label{tab:epc-transitions}
+  \begin{threeparttable}
+    \pkgtable{tab-epc-transitions}
+    \begin{tablenotes}[flushleft]\footnotesize
+      \item \textit{Notes:} \open{to write: pair construction, annualisation,
+      the all-homes row includes unknown construction era, a transition is
+      an assessment outcome.}
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+\outpara{How to read these rates}
+\begin{itemize}
+  \item A transition is an assessment outcome: physical work, deterioration
+    or replacement of systems, a different assessor or a new version of the
+    method all produce one.
+  \item Certificates cluster at sales and lettings, so these are rates among
+    homes that are re-certified, not hazards in the whole stock.
+  \item We therefore do not target them; we use them as a check. The
+    estimated decay of the A--C state in the model ($1-\varrho = 0.16$ a
+    year, Section~\ref{sec:estimation}) is close to the 15.2\% downgrade rate
+    for older homes.
+  \item The first-versus-latest comparison and the full band matrix are in
+    the appendix (Figures~\ref{fig:epc-first-last}
+    and~\ref{fig:epc-transition-matrix}).
+\end{itemize}
+
+\outpara{Transitions at sale and away from sale}
+\begin{itemize}
+  \item \open{decision pending: add the sale / no-sale split to
+    Table~\ref{tab:epc-transitions} or drop this paragraph.}
+  \item If kept: the upgrade rate is higher for certificates lodged at a
+    sale than for re-certifications away from a sale (all vintages: 7.8\%
+    against 6.0\% a year), consistent with purchase as a moment of upgrade.
+  \item Caveat: certificates lodged for a sale may be more favourable
+    (certificate inflation), and non-sale re-certification is often
+    triggered by grant schemes; so this is suggestive only.
+  \item Homes built by 1990 (package, \texttt{epc\_transaction\_hazards.csv}):
+    upgrade 7.3\% a year for pairs whose second certificate is at a sale,
+    6.6\% shortly after a purchase, 5.5\% away from a sale (pd-5 quoted the
+    last two).
+  \item Warning sign to discuss if kept: the A--C to D--G rate is 49\% a
+    year for post-purchase pairs, against 21\% away from a sale, which may
+    point to favourable ratings around a sale rather than real
+    deterioration. \open{check how the pair classes are defined in Appendix
+    A1 before interpreting.}
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{Fact 3: efficiency is tied to when the owner bought.}
+
+\outpara{Efficiency by years since purchase (Figure~\ref{fig:abc-years-since-purchase})}
+\begin{itemize}
+  \item A--C share of owners in homes built by 1990, by years since the
+    owner bought, within age groups (EHS, five waves).
+  \item Owners 65+: 0.22 for those who bought within 4 years, falling to
+    0.13 for those who bought 20+ years ago.
+  \item Owners 35--64: nearly flat (0.19 at 0--4 years, 0.15 at 10--19,
+    0.16 at 20+). Do not claim a uniform decline.
+  \item Owners 25--34: only short durations are observed (0.21, 0.20).
+  \item Recent buyers differ little by age; the gap is among long-standing
+    owners.
+\end{itemize}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics{fig-abc-years-since-purchase.pdf}
+  \caption{Energy efficiency by years since purchase and age, owners of
+  homes built by 1990}
+  \label{fig:abc-years-since-purchase}
+  \begin{minipage}{0.96\textwidth}\footnotesize
+    \textit{Notes:} \open{to write: EHS physical sample, five waves, equal
+    weights by wave; years since purchase from length of ownership; 95\%
+    confidence intervals; cell sizes.}
+  \end{minipage}
+\end{figure}
+
+\outpara{Older owners bought long ago}
+\begin{itemize}
+  \item Share of owners who bought within the last five years (homes built
+    by 1990): 64.6\% at 25--34, 19.3\% at 35--64, 7.3\% at 65--75.
+  \item Owners' annual moving rate falls with age (Understanding Society):
+    9.6\% at 25--34, 3.6\% at 35--64, 2.2\% at 65--75.
+  \item Among recent buyers the A--C share is 0.214, 0.188 and 0.135 by age;
+    among other owners 0.205, 0.164 and 0.094. The 65--75 recent-buyer cell
+    is small ($N = 136$, two waves).
+  \item Reading: the efficiency of the home is set largely at purchase and
+    erodes afterwards; older owners are mostly far from their last purchase.
+    The recent-buyer shares are untargeted and are compared with the model
+    in Section~\ref{sec:estimation}.
+  \item Caveat: years since purchase also proxies for cohort and for the
+    homes that long-standing owners chose to keep.
+\end{itemize}
+
+% ----------------------------------------------------------------------
+\subsection{What the model must capture.}
+
+\outpara{From facts to model}
+\begin{itemize}
+  \item Fact 1: a gradient within older homes, which the model targets.
+  \item Fact 2: efficiency decays and can be restored, so the model needs a
+    stock that depreciates and two ways to restore it (renovate in place, or
+    buy or renovate at purchase).
+  \item Fact 3: purchases are where efficiency is acquired, and purchases fall
+    with age; the model must make buying, moving and renovation lifecycle
+    choices (horizon, bequests, credit).
+  \item Forward reference to Section~\ref{sec:model}.
+\end{itemize}
+
+% Appendix exhibits cited above but not yet in this file (they belong to the
+% appendix, to be added later): fig:epc-first-last and fig:epc-transition-matrix
+% (replication/output/figures/fig-epc-first-last.pdf, fig-epc-transition-matrix.pdf).
